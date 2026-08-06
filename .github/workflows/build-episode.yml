@@ -12,9 +12,12 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
 
       - name: Check for pending episode
         id: check
@@ -25,9 +28,13 @@ jobs:
             echo "found=false" >> $GITHUB_OUTPUT
             echo "No pending script. Nothing to do."
           else
+            base=$(basename "${scripts[0]}" .txt)
             echo "found=true" >> $GITHUB_OUTPUT
             echo "script=${scripts[0]}" >> $GITHUB_OUTPUT
-            echo "Found ${scripts[0]}"
+            echo "base=$base" >> $GITHUB_OUTPUT
+            echo "Found ${scripts[0]} (base $base)"
+            wc -w "${scripts[0]}"
+            test -f "pending/$base.json"
           fi
 
       - uses: actions/setup-python@v5
@@ -44,44 +51,72 @@ jobs:
             voices-v1.0.bin
           key: kokoro-model-v1.0
 
-      - name: Install dependencies
+      - name: Install system packages
         if: steps.check.outputs.found == 'true'
         run: |
-          pip install kokoro-onnx soundfile numpy pillow --quiet
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-          if [ ! -f kokoro-v1.0.onnx ]; then
-            curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
-          fi
-          if [ ! -f voices-v1.0.bin ]; then
-            curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
-          fi
-          ls -la kokoro-v1.0.onnx voices-v1.0.bin
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg espeak-ng
+          ffmpeg -version | head -1
+          espeak-ng --version || true
 
-      - name: Render and publish
+      - name: Install python packages
+        if: steps.check.outputs.found == 'true'
+        run: pip install kokoro-onnx soundfile numpy pillow --quiet
+
+      - name: Fetch Kokoro model files
         if: steps.check.outputs.found == 'true'
         run: |
           set -e
-          SCRIPT="${{ steps.check.outputs.script }}"
-          BASE=$(basename "$SCRIPT" .txt)
-          META="pending/$BASE.json"
-          test -f "$META" || { echo "Missing $META"; exit 1; }
+          [ -f kokoro-v1.0.onnx ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f voices-v1.0.bin ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          ls -la kokoro-v1.0.onnx voices-v1.0.bin
+
+      - name: Render audio
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          python3 tools/render_episode.py "${{ steps.check.outputs.script }}" "${{ steps.check.outputs.base }}.wav" bm_daniel 1.05
+          ls -la "${{ steps.check.outputs.base }}.wav"
+
+      - name: Encode MP3
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
           mkdir -p episodes
-          python3 tools/render_episode.py "$SCRIPT" "$BASE.wav" bm_daniel 1.05
-          ffmpeg -y -loglevel error -i "$BASE.wav" -codec:a libmp3lame -b:a 96k -ar 44100 \
+          ffmpeg -y -loglevel error -i "${{ steps.check.outputs.base }}.wav" \
+            -codec:a libmp3lame -b:a 96k -ar 44100 \
             -metadata artist="The Daily Build" -metadata album="The Daily Build" \
-            "episodes/$BASE.mp3"
-          ls -la "episodes/$BASE.mp3"
-          [ ! -f cover.png ] && python3 tools/make_cover.py || true
-          python3 tools/add_episode.py "$BASE" "$META"
+            "episodes/${{ steps.check.outputs.base }}.mp3"
+          ls -la "episodes/${{ steps.check.outputs.base }}.mp3"
+
+      - name: Register episode and build feed
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          if [ ! -f cover.png ]; then python3 tools/make_cover.py; fi
+          python3 tools/add_episode.py "${{ steps.check.outputs.base }}" "pending/${{ steps.check.outputs.base }}.json"
           python3 tools/generate_feed.py
-          rm -f "$SCRIPT" "$META" "$BASE.wav"
+          head -c 600 feed.xml
+
+      - name: Commit and push
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          rm -f "${{ steps.check.outputs.script }}" "pending/${{ steps.check.outputs.base }}.json" "${{ steps.check.outputs.base }}.wav"
           git config user.name "Daily Build Bot"
           git config user.email "actions@github.com"
+          git checkout -B master
           git add -A
-          git commit -m "Publish $BASE" || { echo "Nothing to commit"; exit 0; }
-          git push
+          git status --short
+          git commit -m "Publish ${{ steps.check.outputs.base }}" || { echo "Nothing to commit"; exit 0; }
+          for i in 1 2 3; do
+            git fetch origin master
+            git rebase origin/master && git push origin HEAD:master && exit 0
+            git rebase --abort || true
+            sleep 10
+          done
+          echo "push failed after 3 attempts"; exit 1
 
       - name: Report
         if: steps.check.outputs.found == 'true'
-        run: |
-          echo "Published. Feed: https://playfundwin.github.io/daily-build-feed/feed.xml"
+        run: echo "Published ${{ steps.check.outputs.base }}. Feed: https://playfundwin.github.io/daily-build-feed/feed.xml"

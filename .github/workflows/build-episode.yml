@@ -115,8 +115,11 @@ jobs:
             git rebase --abort || true
             sleep 10
           done
-          echo "push failed after 3 attempts"; exit 1
+          echo "push failed after 3 attempts"
+          exit 1
 
       - name: Report
         if: steps.check.outputs.found == 'true'
-        run: echo "Published ${{ steps.check.outputs.base }}. Feed: https://playfundwin.github.io/daily-build-feed/feed.xml"
+        run: |
+          echo "Published ${{ steps.check.outputs.base }}"
+          echo "Feed: https://playfundwin.github.io/daily-build-feed/feed.xml"

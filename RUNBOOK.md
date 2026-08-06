@@ -22,6 +22,15 @@ committing the pending files you MUST explicitly dispatch the workflow
 (`github_dispatch_workflow` with workflow `build-episode.yml`, ref `master`) or nothing
 will build.
 
+Pages hosting: this repo uses Actions-based Pages deployment (Settings → Pages →
+Source: GitHub Actions), not the legacy branch/Jekyll builder — that builder got
+permanently stuck on every single commit and never once served this repo (fixed
+2026-08-06). `build-episode.yml`'s last two steps deploy the site directly
+(`actions/upload-pages-artifact` + `actions/deploy-pages`), so a successful workflow
+run means Pages is already live. `deploy-pages.yml` also exists in this repo as a
+manual-trigger fallback (Actions tab → Deploy Pages → Run workflow) for redeploying
+Pages without publishing a new episode.
+
 ## 1. Read the archive
 Read `archive/covered.md` (raw URL:
 https://raw.githubusercontent.com/PlayFundWin/daily-build-feed/master/archive/covered.md).
@@ -60,8 +69,9 @@ threads opened or closed.
 ## 5. Build
 Dispatch `build-episode.yml` on `master`. The workflow renders with Kokoro (voice
 `bm_daniel`, speed 1.05), encodes a 96k MP3, registers the episode, prunes to the newest
-30, regenerates `feed.xml`, deletes the pending files and pushes. Typical run: 10-20
-minutes including the model download (cached between runs).
+30, regenerates `feed.xml`, publishes everything to `master` via the Git Data API, then
+deploys `feed.xml` / `cover.png` / `episodes/*.mp3` straight to GitHub Pages as its last
+two steps. Typical run: 10-20 minutes including the model download (cached between runs).
 
 Poll the run until it completes. On failure, read the job logs, fix, and re-dispatch —
 do not leave a half-published state (pending files present but no MP3).
@@ -71,7 +81,9 @@ do not leave a half-published state (pending files present but no MP3).
   today's `<item>`.
 - `https://playfundwin.github.io/daily-build-feed/episodes/epNNN.mp3` returns 200 with a
   Content-Length matching the feed's `length` attribute.
-Pages deploys take a couple of minutes after the push — retry before declaring failure.
+Pages deploys inside the same workflow run (its last step), so a successful run means
+it's already live — but still retry for a minute or two before declaring failure, since
+Pages' CDN can lag slightly.
 
 ## 7. Notify
 `SendUserFile` is not available for the MP3 in this flow (the audio only exists on the

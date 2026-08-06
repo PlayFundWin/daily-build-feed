@@ -8,11 +8,16 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -105,6 +110,31 @@ jobs:
             exit 1
           fi
           cat /tmp/pub.log
+
+      # Pages is deployed via GitHub Actions (build_type: workflow), not the legacy
+      # Jekyll branch builder — that builder was permanently stuck/broken and never
+      # served this repo. GITHUB_TOKEN-authored pushes (the API publish step above)
+      # do not themselves trigger deploy-pages.yml's push trigger, so this job
+      # deploys Pages directly using the same working tree it just published.
+      - name: Stage Pages site
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          mkdir -p _site/episodes
+          cp feed.xml _site/
+          [ -f cover.png ] && cp cover.png _site/ || true
+          cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          ls -la _site _site/episodes
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outputs.found == 'true'
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: steps.check.outputs.found == 'true'
+        uses: actions/deploy-pages@v4
 
       - name: Report
         if: steps.check.outputs.found == 'true'

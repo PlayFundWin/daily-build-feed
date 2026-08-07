@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 2 — Google buries Assistant, and the browser extension playbook</title>
+      <description>Google sets a firm date to kill Google Assistant, Microsoft caps its own engineers&#x27; AI token spend, and Anthropic loosens Claude&#x27;s biology safeguards. Plus a deep dive on tiny gap-filler browser extensions backed by real published revenue, and what Allego&#x27;s hundred-million-euro UK charging commitment means for EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep002.mp3" length="13193712" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep002</guid>
+      <pubDate>Fri, 07 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:19</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+    </item>
+    <item>
       <title>Ep 1 — Wallets for robots, and the hundred-pound directory</title>
       <description>Cloudflare gives AI agents spending-capped wallets, Meta declares war on Claude Code, and a deep dive on the niche directory playbook: real people, real published revenue, under a hundred pounds to start. Plus what this week means for PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep001.mp3" length="10932970" type="audio/mpeg"/>

@@ -47,9 +47,18 @@ today's date and the relevant archive lines so they skip covered ground.
 - B: Small AI-buildable business ideas with recent PUBLISHED revenue evidence (Indie
   Hackers, Hacker News, Starter Story, Product Hunt, subreddits). Pick ONE deep-dive
   idea: real named evidence, ~90% Claude-buildable in days, sellable in the UK, under
-  five hundred pounds to start. Plus 3 runner-ups. Never invent numbers.
+  five hundred pounds to start. Plus 3 runner-ups. Never invent numbers. Before picking,
+  check `episodes/episodes.json` descriptions and `archive/covered.md` for ideas already
+  featured — pick something meaningfully different in category, not a variant of one
+  already covered.
 - C: Sector news for the listener's ventures: UK fundraising/prize-draw tech and
-  regulation; grassroots sports tech; UK EV destination charging.
+  regulation; grassroots sports tech; UK EV destination charging. Check these named
+  sources FIRST, before open web search, to keep this agent cheap on quiet weeks: the
+  Fundraising Regulator's own consultation/registration pages, Zapmap and DfT public
+  charging-point stats, and two or three named UK trade outlets (Third Sector, Civil
+  Society, Fleet News / Fleet Point for EV). If those turn up nothing new beyond what's
+  already in `archive/covered.md`, say so plainly and stop — do not pad by broadening
+  into unrelated general AI/business news search just to fill space.
 
 ## 3. Script
 Write the script following `STYLE.md` exactly. ~4,000 words (Kokoro at speed 1.05 runs
@@ -66,6 +75,12 @@ Also update `archive/covered.md` in the same pass: append episode number, date, 
 one line per news item covered, the build idea with its evidence, and any FOLLOW-UP
 threads opened or closed.
 
+Note: `pending/` is a work queue, not an archive — the build workflow deletes both
+files from it on every publish. It separately copies the script to a permanent
+`transcripts/epNNN.txt` before doing so (added 2026-08-08), so the full script survives
+for reuse (LinkedIn/blog/social repurposing) — don't rely on `pending/` for history, and
+don't recreate the old behaviour of only keeping the two-sentence JSON description.
+
 ## 5. Build
 Dispatch `build-episode.yml` on `master`. The workflow renders with Kokoro (voice
 `bm_daniel`, speed 1.05), encodes a 96k MP3, registers the episode, prunes to the newest
@@ -77,13 +92,25 @@ Poll the run until it completes. On failure, read the job logs, fix, and re-disp
 do not leave a half-published state (pending files present but no MP3).
 
 ## 6. Verify
-- `https://playfundwin.github.io/daily-build-feed/feed.xml` returns 200 and contains
-  today's `<item>`.
-- `https://playfundwin.github.io/daily-build-feed/episodes/epNNN.mp3` returns 200 with a
-  Content-Length matching the feed's `length` attribute.
-Pages deploys inside the same workflow run (its last step), so a successful run means
-it's already live — but still retry for a minute or two before declaring failure, since
-Pages' CDN can lag slightly.
+PRIMARY method — use the GitHub API, not a direct URL fetch. This sandbox's bash has no
+general network egress (only allowlisted package registries — confirmed via curl 403
+against the Pages domain), and WebFetch has proven unreliable against this feed's
+XML/binary responses (repeatedly reports back "[binary data]" instead of content).
+Don't waste a cycle rediscovering this each time — go straight to the API:
+- `github_get` on `/repos/PlayFundWin/daily-build-feed/deployments?environment=github-pages&per_page=1`
+  — the latest entry's `sha` should match the publish commit `api_publish.py` just made;
+  then `github_get` its `/statuses` URL and confirm the newest status `state` is
+  `success`.
+- `github_get_file` on `episodes/episodes.json` (ref `master`) and confirm today's
+  episode number, byte size and duration are present — `add_episode.py` only writes
+  this file after `ffprobe` successfully reads a real MP3, so its presence is itself
+  proof of a working render, not just a guess.
+Treat those two checks together as sufficient proof of a live episode.
+SECONDARY, opportunistic only: if you want a literal HTTP 200 and WebFetch happens to
+cooperate, hit `https://playfundwin.github.io/daily-build-feed/feed.xml` and the day's
+`episodes/epNNN.mp3` and check the `Content-Length` against the feed's `length`
+attribute. But do not block publishing, retry-loop, or declare the run a failure solely
+because this secondary check doesn't work — the API check above already is the proof.
 
 ## 7. Notify
 `SendUserFile` is not available for the MP3 in this flow (the audio only exists on the

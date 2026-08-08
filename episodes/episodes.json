@@ -1,5 +1,14 @@
 [
   {
+    "num": 3,
+    "date": "2026-08-08",
+    "title": "Ep 3 \u2014 OpenAI flags critical cyber risk, and the thirty-grand Reddit bot",
+    "description": "OpenAI classifies its next model as having potential critical cyber capability and Claude Code ships self-hosted runners with cross-session agent messaging. Plus a deep dive on AI-powered community outreach backed by a real thirty-thousand-dollar-a-month founder story, and a quiet-news status check for PlayFundWin, LeaguePages and EV-Partnerships.",
+    "file": "ep003.mp3",
+    "bytes": 13627240,
+    "seconds": 1136
+  },
+  {
     "num": 2,
     "date": "2026-08-07",
     "title": "Ep 2 \u2014 Google buries Assistant, and the browser extension playbook",

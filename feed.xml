@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 3 — OpenAI flags critical cyber risk, and the thirty-grand Reddit bot</title>
+      <description>OpenAI classifies its next model as having potential critical cyber capability and Claude Code ships self-hosted runners with cross-session agent messaging. Plus a deep dive on AI-powered community outreach backed by a real thirty-thousand-dollar-a-month founder story, and a quiet-news status check for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep003.mp3" length="13627240" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep003</guid>
+      <pubDate>Sat, 08 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:56</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+    </item>
+    <item>
       <title>Ep 2 — Google buries Assistant, and the browser extension playbook</title>
       <description>Google sets a firm date to kill Google Assistant, Microsoft caps its own engineers&#x27; AI token spend, and Anthropic loosens Claude&#x27;s biology safeguards. Plus a deep dive on tiny gap-filler browser extensions backed by real published revenue, and what Allego&#x27;s hundred-million-euro UK charging commitment means for EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep002.mp3" length="13193712" type="audio/mpeg"/>

@@ -25,3 +25,15 @@ News covered:
 Build idea: gap-filler browser extensions for AI tools (evidence: wonderfuly's NotebookLM Web Importer, HN "$500/mo side projects" thread Dec 2025, passed $500/mo; Edmund Yong's Easy Folders, $3.7k+ MRR / $42k+ total revenue, Indie Hackers Aug 2024 — flagged on-air as ~2yr old data, niche still active). Runner-ups: JustFax-style utility (skwee357, HN, thin evidence, €500+/mo); DB Pro desktop tool (upmostly, HN, thin evidence, $1k MRR); TrueCast recruiter copilot (Frajedo, HN, weakest evidence, 3 customers, €600/mo).
 FOLLOW-UP: chased Steve's 10 validation emails from Ep 1 on-air — no result reported yet, re-chase in Ep 3.
 Ventures: Fundraising Regulator — no update since Ep 1, consultation closed 3 Apr 2026, final position still due Sep 2026 (FOLLOW-UP remains open); LeagueApps acquired NCSI safeguarding/compliance provider (8 Jul 2026, background context — 3wk old — DBS-integration angle flagged for LeaguePages); Allego committing €100m for up to 1,400 UK ultra-rapid chargers by 2030, landowner-lease model (1 Aug 2026) — directly validates EV-Partnerships pitch, no sports venue named yet by Allego.
+
+## Episode 003 — 2026-08-08 — OpenAI flags critical cyber risk, and the thirty-grand Reddit bot
+News covered:
+- OpenAI classifies upcoming Astra model as first "Critical" cyber capability under its Preparedness Framework, adding isolation/monitoring (7 Aug 2026)
+- Claude Code v2.1.223–224: self-hosted runners, cross-session agent messaging, archive-based plugin installs, sub-agent spawn cap removed (6-7 Aug 2026)
+- xAI launches Grok Imagine Image 2.0, reportedly near GPT-Image-2 on leaderboards (7 Aug 2026)
+- Google Maps "Ask Maps" goes agentic: food ordering, hotel/event price comparison, opt-in Gmail-aware trip planning, US rollout first (6 Aug 2026)
+- Suno adds watermarking/fingerprinting, distribution limits, Musixmatch/Audible Magic copyright screening amid label legal pressure (6 Aug 2026)
+- OpenAI ~$300-400 ambient hardware device with Jony Ive's LoveFrom — SEARCH-ONLY/unconfirmed, Bloomberg via Fortune (6-7 Aug 2026), flagged as rumour only, not led with
+Build idea: AI-powered community/Reddit outreach automation (evidence: Richard Wang, Leadmore AI, $30k+ MRR, Indie Hackers Dec 2025). Runner-ups: Bearconnect.io LinkedIn automation (Pratham Naik, $1.3k MRR, Nov 2025); Meerkats.ai AI GTM orchestration (Santanu Dasgupta, $3k MRR in 4wk, May 2026); AI Flow Chat/Starpop content tools (Alexander Van Le, $20k/mo combined, Feb 2026).
+FOLLOW-UP: re-chased Steve's 10 validation emails from Ep 1 again on-air — still no result reported, will name names in Ep 4 if unsent.
+Ventures: Fundraising Regulator — still no ruling, consultation closed 3 Apr 2026, registration reopening Sep 2026 confirmed directly from regulator's page (FOLLOW-UP remains open); Gambling Commission Jan 2026 report (~80% of prize-draw participants also gamble elsewhere) flagged as background, secondary-source only, not independently verified; grassroots sports tech and sports-venue EV destination charging both had a quiet week — no new developments beyond recirculation of the Allego/Stagecoach stories already covered in Ep 2.

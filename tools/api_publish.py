@@ -53,6 +53,20 @@ for path in add:
         continue
     tree.append({"path": path, "mode": "100644", "type": "blob", "sha": blob(path)})
 
+# Permanently archive the script under transcripts/ before pending/ gets swept below.
+# pending/ is a work queue, not an archive -- it gets deleted on every publish, so
+# without this the ~4,000-word researched script for every episode was simply lost,
+# leaving only the two-sentence JSON description and the one-line covered.md summary.
+script_src = f"pending/{BASE}.txt"
+if os.path.exists(script_src):
+    tree.append({
+        "path": f"transcripts/{BASE}.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": blob(script_src),
+    })
+    print(f"  archive {script_src} -> transcripts/{BASE}.txt")
+
 # delete the pending files and any pruned episodes
 existing = {e["path"] for e in call(f"/git/trees/{base_tree_sha}?recursive=1")["tree"]}
 for path in existing:

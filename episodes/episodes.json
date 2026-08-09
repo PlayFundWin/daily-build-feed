@@ -1,5 +1,14 @@
 [
   {
+    "num": 4,
+    "date": "2026-08-09",
+    "title": "Ep 4 \u2014 Claude Code loosens the leash, and the two-hundred-grand voice memo app",
+    "description": "Claude Code makes auto mode the default from the fourteenth of August, and a Meta coding agent breached an external company's systems during a security test. Plus a deep dive on a voice-notes app that sold for two hundred thousand dollars, and a quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
+    "file": "ep004.mp3",
+    "bytes": 13379912,
+    "seconds": 1115
+  },
+  {
     "num": 3,
     "date": "2026-08-08",
     "title": "Ep 3 \u2014 OpenAI flags critical cyber risk, and the thirty-grand Reddit bot",

@@ -7,7 +7,7 @@ unreliable. Handles binary (MP3, PNG) correctly via base64 blobs.
 Usage: python3 tools/api_publish.py <base>       e.g. ep002
 Env:   GITHUB_TOKEN, GITHUB_REPOSITORY (owner/repo)
 """
-import base64, json, os, sys, urllib.request
+import base64, json, os, sys, urllib.request, urllib.error
 
 BASE = sys.argv[1]
 REPO = os.environ["GITHUB_REPOSITORY"]
@@ -19,12 +19,27 @@ BRANCH = "master"
 def call(path, payload=None, method=None):
     url = path if path.startswith("http") else API + path
     data = json.dumps(payload).encode() if payload is not None else None
-    req = urllib.request.Request(url, data=data, method=method or ("POST" if data else "GET"))
+    m = method or ("POST" if data else "GET")
+    req = urllib.request.Request(url, data=data, method=m)
     req.add_header("Authorization", f"Bearer {TOKEN}")
     req.add_header("Accept", "application/vnd.github+json")
     req.add_header("Content-Type", "application/json")
-    with urllib.request.urlopen(req) as r:
-        return json.load(r)
+    try:
+        with urllib.request.urlopen(req) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        try:
+            body = e.read().decode(errors="replace")
+        except Exception:
+            body = "<no body>"
+        sys.stderr.write(f"API-CALL-FAILED {m} {url} -> HTTP {e.code}\n")
+        sys.stderr.write(f"RESPONSE-BODY: {body[:1500]}\n")
+        if payload is not None:
+            sys.stderr.write(f"PAYLOAD-KEYS: {list(payload.keys())}\n")
+            if "tree" in payload:
+                sys.stderr.write(f"TREE-PATHS: {[t.get('path') for t in payload['tree']]}\n")
+        sys.stderr.flush()
+        sys.exit(1)
 
 
 def blob(path):
@@ -68,8 +83,12 @@ if os.path.exists(script_src):
     print(f"  archive {script_src} -> transcripts/{BASE}.txt")
 
 # delete the pending files and any pruned episodes
-existing = {e["path"] for e in call(f"/git/trees/{base_tree_sha}?recursive=1")["tree"]}
+existing_entries = call(f"/git/trees/{base_tree_sha}?recursive=1")["tree"]
+existing = {e["path"] for e in existing_entries if e.get("type") == "blob"}
+already_in_tree = {t["path"] for t in tree}
 for path in existing:
+    if path in already_in_tree:
+        continue
     if path.startswith("pending/") and path.startswith(f"pending/{BASE}"):
         tree.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
         print(f"  delete {path}")

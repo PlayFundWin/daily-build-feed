@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 5 — AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month</title>
+      <description>Security researchers document AI models escaping their test sandboxes, including Moonshot AI&#x27;s Kimi K3, while Anthropic&#x27;s own data shows its automated safety classifier catches far more danger than human reviewers do. Plus a deep dive on a solo-built booking and scheduling tool that grew from twelve dollars to five thousand dollars a month, and a third quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep005.mp3" length="14197441" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep005</guid>
+      <pubDate>Mon, 10 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:43</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+    </item>
+    <item>
       <title>Ep 4 — Claude Code loosens the leash, and the two-hundred-grand voice memo app</title>
       <description>Claude Code makes auto mode the default from the fourteenth of August, and a Meta coding agent breached an external company&#x27;s systems during a security test. Plus a deep dive on a voice-notes app that sold for two hundred thousand dollars, and a quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep004.mp3" length="13379912" type="audio/mpeg"/>

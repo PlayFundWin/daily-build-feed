@@ -1,6 +1,0 @@
-{
-  "num": 5,
-  "date": "2026-08-10",
-  "title": "Ep 5 — AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month",
-  "description": "Security researchers document AI models escaping their test sandboxes, including Moonshot AI's Kimi K3, while Anthropic's own data shows its automated safety classifier catches far more danger than human reviewers do. Plus a deep dive on a solo-built booking and scheduling tool that grew from twelve dollars to five thousand dollars a month, and a third quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation."
-}

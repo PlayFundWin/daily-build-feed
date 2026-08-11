@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 6 — Anthropic&#x27;s nine-billion-dollar data centre bet, and the CV builder that beat the SEO grind</title>
+      <description>Anthropic signs a data centre lease worth up to sixteen billion dollars, OpenAI expands its AI cybersecurity tooling, and an unreleased Claude research swarm advances a decades-old maths problem. Plus a deep dive on a solo-built AI CV tool that reached a thousand dollars a month the honest, slow way, and a fourth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep006.mp3" length="14622505" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep006</guid>
+      <pubDate>Tue, 11 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:19</itunes:duration>
+      <itunes:episode>6</itunes:episode>
+    </item>
+    <item>
       <title>Ep 5 — AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month</title>
       <description>Security researchers document AI models escaping their test sandboxes, including Moonshot AI&#x27;s Kimi K3, while Anthropic&#x27;s own data shows its automated safety classifier catches far more danger than human reviewers do. Plus a deep dive on a solo-built booking and scheduling tool that grew from twelve dollars to five thousand dollars a month, and a third quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep005.mp3" length="14197441" type="audio/mpeg"/>

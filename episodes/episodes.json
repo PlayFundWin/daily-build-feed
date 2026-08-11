@@ -1,5 +1,14 @@
 [
   {
+    "num": 6,
+    "date": "2026-08-11",
+    "title": "Ep 6 \u2014 Anthropic's nine-billion-dollar data centre bet, and the CV builder that beat the SEO grind",
+    "description": "Anthropic signs a data centre lease worth up to sixteen billion dollars, OpenAI expands its AI cybersecurity tooling, and an unreleased Claude research swarm advances a decades-old maths problem. Plus a deep dive on a solo-built AI CV tool that reached a thousand dollars a month the honest, slow way, and a fourth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
+    "file": "ep006.mp3",
+    "bytes": 14622505,
+    "seconds": 1219
+  },
+  {
     "num": 5,
     "date": "2026-08-10",
     "title": "Ep 5 \u2014 AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month",

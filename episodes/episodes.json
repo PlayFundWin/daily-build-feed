@@ -1,5 +1,14 @@
 [
   {
+    "num": 7,
+    "date": "2026-08-12",
+    "title": "Ep 7 \u2014 Gemini crosses a billion users, and the mockup generator earning twelve thousand a month",
+    "description": "Google's Gemini app reportedly crosses one billion monthly users, OpenAI puts restaurant bookings inside ChatGPT, and Anthropic cancels a scheduled Claude Sonnet five price rise while extending its Compliance API to local Cowork and Claude Code sessions. Plus a deep dive on an AI mockup generator for merch sellers that reached twelve thousand dollars a month, and a fifth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
+    "file": "ep007.mp3",
+    "bytes": 14225339,
+    "seconds": 1185
+  },
+  {
     "num": 6,
     "date": "2026-08-11",
     "title": "Ep 6 \u2014 Anthropic's nine-billion-dollar data centre bet, and the CV builder that beat the SEO grind",

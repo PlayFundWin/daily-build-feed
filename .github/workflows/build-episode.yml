@@ -46,6 +46,21 @@ jobs:
             test -f "pending/$base.json"
           fi
 
+      - name: Check for duplicate episode date
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -e
+          pending_date=$(jq -r '.date' "pending/${{ steps.check.outputs.base }}.json")
+          echo "Pending episode date: $pending_date"
+          if [ -f episodes/episodes.json ]; then
+            latest_date=$(jq -r '.[0].date // empty' episodes/episodes.json)
+            if [ -n "$latest_date" ] && [ "$pending_date" = "$latest_date" ]; then
+              echo "::error::DUPLICATE DATE - pending/${{ steps.check.outputs.base }}.json is dated $pending_date, which matches the most recently published episode's date. Refusing to publish a second episode for the same day. If this is genuinely intentional, fix the date in the pending JSON first."
+              exit 1
+            fi
+          fi
+          echo "Date check passed: $pending_date is new."
+
       - uses: actions/setup-python@v5
         if: steps.check.outputs.found == 'true'
         with:
@@ -60,6 +75,13 @@ jobs:
             voices-v1.0.bin
           key: kokoro-model-v1.0
 
+      - name: Cache Whisper model
+        if: steps.check.outputs.found == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-tiny-en-v1
+
       - name: Install system packages
         if: steps.check.outputs.found == 'true'
         run: |
@@ -68,7 +90,7 @@ jobs:
 
       - name: Install python packages
         if: steps.check.outputs.found == 'true'
-        run: pip install kokoro-onnx soundfile numpy pillow --quiet
+        run: pip install kokoro-onnx soundfile numpy pillow faster-whisper --quiet
 
       - name: Fetch Kokoro model files
         if: steps.check.outputs.found == 'true'
@@ -94,6 +116,12 @@ jobs:
             -metadata artist="The Daily Build" -metadata album="The Daily Build" \
             "episodes/${{ steps.check.outputs.base }}.mp3"
           ls -la "episodes/${{ steps.check.outputs.base }}.mp3"
+
+      - name: Verify audio content (ASR spot-check)
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          python3 tools/verify_audio.py "episodes/${{ steps.check.outputs.base }}.mp3" "${{ steps.check.outputs.script }}"
 
       - name: Register episode and build feed
         if: steps.check.outputs.found == 'true'

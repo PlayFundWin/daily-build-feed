@@ -18,10 +18,18 @@ type, and R2 / api.cloudflare.com are blocked. So the split is:
 - **GitHub Actions does**: TTS render, MP3 encode, feed regeneration, committing the
   audio. Runners have full network and write access.
 
-CRITICAL: commits made through the API do NOT fire `push` workflow triggers. After
-committing the pending files you MUST explicitly dispatch the workflow
-(`github_dispatch_workflow` with workflow `build-episode.yml`, ref `master`) or nothing
-will build.
+Commits made via the GitHub MCP tools DO fire the `push` trigger on `pending/**` (they're
+authored as an external actor, not the runner's own `GITHUB_TOKEN`), so a build usually
+starts on its own once both pending files land — sometimes before you get to the next
+step. Still call `github_dispatch_workflow` (`build-episode.yml`, ref `master`) as a
+belt-and-suspenders fallback if nothing seems to have started after a minute or two. The
+workflow carries a `concurrency` group with `cancel-in-progress: true` (added
+2026-08-13, after three overlapping runs from one episode's two pending-file commits
+plus a manual dispatch), so extra triggers are safe — the newest one just supersedes any
+earlier, still-running attempt instead of racing it to a duplicate publish. (The one
+place `GITHUB_TOKEN`-authored pushes genuinely don't retrigger anything is the
+workflow's own "Publish via API" step — that's a separate, still-correct fact; see the
+comment above "Stage Pages site" in `build-episode.yml`.)
 
 Pages hosting: this repo uses Actions-based Pages deployment (Settings → Pages →
 Source: GitHub Actions), not the legacy branch/Jekyll builder — that builder got
@@ -116,6 +124,12 @@ cooperate, hit `https://playfundwin.github.io/daily-build-feed/feed.xml` and the
 attribute. But do not block publishing, retry-loop, or declare the run a failure solely
 because this secondary check doesn't work — the API check above already is the proof.
 
+If you see more than one workflow run in progress for the same episode (check
+`/repos/PlayFundWin/daily-build-feed/actions/workflows/build-episode.yml/runs`), that's
+expected now and then given two pending-file commits plus a possible manual dispatch —
+the concurrency guard means only the newest survives, so just confirm the two checks
+above pass, don't try to cancel anything yourself.
+
 ## 7. Log to Notion
 Log today's episode to the **"Daily Build — Episode Log"** Notion database (lives under
 the "PlayFundWin AI Ops" page; data source `collection://c7871de0-669f-4d3e-9d6b-ece7e19ed9a5`).
@@ -126,7 +140,7 @@ build-ideas vs. actioned status).
 Use `notion-create-pages` with `parent: {"type": "data_source_id", "data_source_id":
 "c7871de0-669f-4d3e-9d6b-ece7e19ed9a5"}`. One page per episode:
 - Properties: `Episode` (title — the full episode title, e.g. "Ep NNN — ..."),
-  `Number`, `date:Date:start` (YYYY-MM-DD), `Duration` (mm:ss, from the feed/workflow),
+  `Number`, `Date` (YYYY-MM-DD), `Duration` (mm:ss, from the feed/workflow),
   `Status` (`Published`), `Audio URL`
   (`https://playfundwin.github.io/daily-build-feed/episodes/epNNN.mp3`), `Description`
   (the two-sentence summary from `pending/epNNN.json`).

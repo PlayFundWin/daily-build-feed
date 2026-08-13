@@ -94,14 +94,33 @@ for reuse (LinkedIn/blog/social repurposing) — don't rely on `pending/` for hi
 don't recreate the old behaviour of only keeping the two-sentence JSON description.
 
 ## 5. Build
-Dispatch `build-episode.yml` on `master`. The workflow renders with Kokoro (voice
-`bm_daniel`, speed 1.05), encodes a 96k MP3, registers the episode, prunes to the newest
-30, regenerates `feed.xml`, publishes everything to `master` via the Git Data API, then
-deploys `feed.xml` / `cover.png` / `episodes/*.mp3` straight to GitHub Pages as its last
-two steps. Typical run: 10-20 minutes including the model download (cached between runs).
+Dispatch `build-episode.yml` on `master`. The workflow first checks the pending
+episode's `date` against `episodes/episodes.json`'s most recent entry and refuses to
+build if they match (added 2026-08-13 — guards against ever publishing two episodes
+dated the same day, e.g. from an accidental double-trigger of this whole routine). It
+then renders with Kokoro (voice `bm_daniel`, speed 1.05), encodes a 96k MP3, runs an
+ASR-based content spot-check on the rendered audio (added 2026-08-13, see below),
+registers the episode, prunes to the newest 30, regenerates `feed.xml`, publishes
+everything to `master` via the Git Data API, then deploys `feed.xml` / `cover.png` /
+`episodes/*.mp3` straight to GitHub Pages as its last two steps. Typical run: 10-20
+minutes including the model downloads (cached between runs).
 
 Poll the run until it completes. On failure, read the job logs, fix, and re-dispatch —
 do not leave a half-published state (pending files present but no MP3).
+
+**Audio content check** (`tools/verify_audio.py`): transcribes the finished MP3 with
+faster-whisper (`tiny.en`, CPU) and compares the transcript's word count against the
+script's. This is a coarse spot-check, not a word-for-word match — it exists to catch
+truncation, silence, a stuck/looping render, or the wrong voice loading, none of which
+the file-exists/`ffprobe` checks in section 6 would notice, since those only prove a
+valid, playable MP3 of plausible duration exists, not that it says the right thing. The
+pass/fail thresholds (0.55–1.6x the script's word count, set in `MIN_RATIO`/`MAX_RATIO`
+in the script) are untuned as of 2026-08-13 — picked without a baseline of this
+pipeline's actual Whisper-vs-script ratio on a known-good episode. If this step fails,
+read the actual numbers in the job log before assuming the audio is broken — it may be a
+threshold-tuning problem rather than a bad render, especially on the first few runs
+after this was added. Tighten or loosen the thresholds once several real runs establish
+what a normal ratio looks like for this voice/speed.
 
 ## 6. Verify
 PRIMARY method — use the GitHub API, not a direct URL fetch. This sandbox's bash has no
@@ -116,7 +135,9 @@ Don't waste a cycle rediscovering this each time — go straight to the API:
 - `github_get_file` on `episodes/episodes.json` (ref `master`) and confirm today's
   episode number, byte size and duration are present — `add_episode.py` only writes
   this file after `ffprobe` successfully reads a real MP3, so its presence is itself
-  proof of a working render, not just a guess.
+  proof of a working render, not just a guess. It also only runs after the ASR content
+  check (section 5) has passed, so this same presence check now doubles as indirect
+  proof the audio content check passed too.
 Treat those two checks together as sufficient proof of a live episode.
 SECONDARY, opportunistic only: if you want a literal HTTP 200 and WebFetch happens to
 cooperate, hit `https://playfundwin.github.io/daily-build-feed/feed.xml` and the day's

@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 8 — Anthropic&#x27;s six-billion-dollar video bet, and the FAQ chatbot earning three hundred thousand a year</title>
+      <description>Anthropic reportedly negotiates a six-billion-dollar acquisition of video-AI startup Decart, Lovable&#x27;s no-code builder doubles to a thirteen-billion-dollar valuation in eight months, and xAI&#x27;s Grok four point six lands inside Cursor on day one. Plus a deep dive on UK-founded chatbot My Ask AI, which reportedly reached three hundred thousand dollars a year, and the Fundraising Regulator quietly pushes its prize-draw ruling from September twenty twenty-six to early twenty twenty-seven.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep008.mp3" length="13873940" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep008</guid>
+      <pubDate>Thu, 13 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:16</itunes:duration>
+      <itunes:episode>8</itunes:episode>
+    </item>
+    <item>
       <title>Ep 7 — Gemini crosses a billion users, and the mockup generator earning twelve thousand a month</title>
       <description>Google&#x27;s Gemini app reportedly crosses one billion monthly users, OpenAI puts restaurant bookings inside ChatGPT, and Anthropic cancels a scheduled Claude Sonnet five price rise while extending its Compliance API to local Cowork and Claude Code sessions. Plus a deep dive on an AI mockup generator for merch sellers that reached twelve thousand dollars a month, and a fifth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep007.mp3" length="14225339" type="audio/mpeg"/>

@@ -6,6 +6,10 @@ on:
       - 'pending/**'
   workflow_dispatch:
 
+concurrency:
+  group: build-episode
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pages: write

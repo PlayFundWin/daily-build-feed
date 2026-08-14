@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 9 — A fourteen-times-faster OpenAI mode, and the paperwork chatbot that quietly hit sixty thousand a month</title>
+      <description>OpenAI previews a fourteen-times-faster Ultrafast inference mode and reportedly tops a forty-billion-dollar revenue run rate ahead of a possible IPO, while Claude Code ships cross-session agent messaging and Microsoft begins retiring free Copilot features on the eighteenth of August. Plus a deep dive on niching a document-chat tool for grant and compliance paperwork, evidence-backed by PDF.ai&#x27;s real run to sixty thousand dollars a month, and a quiet week for the Fundraising Regulator&#x27;s prize-draw ruling and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep009.mp3" length="13500285" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep009</guid>
+      <pubDate>Fri, 14 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:45</itunes:duration>
+      <itunes:episode>9</itunes:episode>
+    </item>
+    <item>
       <title>Ep 8 — Anthropic&#x27;s six-billion-dollar video bet, and the FAQ chatbot earning three hundred thousand a year</title>
       <description>Anthropic reportedly negotiates a six-billion-dollar acquisition of video-AI startup Decart, Lovable&#x27;s no-code builder doubles to a thirteen-billion-dollar valuation in eight months, and xAI&#x27;s Grok four point six lands inside Cursor on day one. Plus a deep dive on UK-founded chatbot My Ask AI, which reportedly reached three hundred thousand dollars a year, and the Fundraising Regulator quietly pushes its prize-draw ruling from September twenty twenty-six to early twenty twenty-seven.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep008.mp3" length="13873940" type="audio/mpeg"/>

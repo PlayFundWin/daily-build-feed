@@ -1,5 +1,14 @@
 [
   {
+    "num": 9,
+    "date": "2026-08-14",
+    "title": "Ep 9 \u2014 A fourteen-times-faster OpenAI mode, and the paperwork chatbot that quietly hit sixty thousand a month",
+    "description": "OpenAI previews a fourteen-times-faster Ultrafast inference mode and reportedly tops a forty-billion-dollar revenue run rate ahead of a possible IPO, while Claude Code ships cross-session agent messaging and Microsoft begins retiring free Copilot features on the eighteenth of August. Plus a deep dive on niching a document-chat tool for grant and compliance paperwork, evidence-backed by PDF.ai's real run to sixty thousand dollars a month, and a quiet week for the Fundraising Regulator's prize-draw ruling and EV-Partnerships.",
+    "file": "ep009.mp3",
+    "bytes": 13500285,
+    "seconds": 1125
+  },
+  {
     "num": 8,
     "date": "2026-08-13",
     "title": "Ep 8 \u2014 Anthropic's six-billion-dollar video bet, and the FAQ chatbot earning three hundred thousand a year",

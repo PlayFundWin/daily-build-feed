@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 10 — Claude&#x27;s invisible watermark, and the testimonial widget that hit a million a year</title>
+      <description>Anthropic begins invisibly watermarking Claude&#x27;s text output for EU transparency rules, Google launches a cheaper, faster Gemini three point seven Flash for coding, and IBM strikes a formal enterprise partnership with OpenAI. Plus a deep dive on testimonial-widget tool Senja, which two co-founders grew from one hundred dollars a month to a million dollars a year, and a quiet week for the Fundraising Regulator&#x27;s prize-draw ruling and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep010.mp3" length="13227566" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep010</guid>
+      <pubDate>Sat, 15 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:22</itunes:duration>
+      <itunes:episode>10</itunes:episode>
+    </item>
+    <item>
       <title>Ep 9 — A fourteen-times-faster OpenAI mode, and the paperwork chatbot that quietly hit sixty thousand a month</title>
       <description>OpenAI previews a fourteen-times-faster Ultrafast inference mode and reportedly tops a forty-billion-dollar revenue run rate ahead of a possible IPO, while Claude Code ships cross-session agent messaging and Microsoft begins retiring free Copilot features on the eighteenth of August. Plus a deep dive on niching a document-chat tool for grant and compliance paperwork, evidence-backed by PDF.ai&#x27;s real run to sixty thousand dollars a month, and a quiet week for the Fundraising Regulator&#x27;s prize-draw ruling and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep009.mp3" length="13500285" type="audio/mpeg"/>

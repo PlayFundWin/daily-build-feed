@@ -80,6 +80,45 @@ Build idea: AI mockup generator for print-on-demand/merch sellers (evidence: Pra
 FOLLOW-UP: Fundraising Regulator — still no ruling, consultation closed 3 Apr 2026, final position due Sep 2026 (FOLLOW-UP remains open, confirmed directly from regulator's own page, fifth consecutive episode with no movement).
 Ventures: grassroots sports tech and EV destination charging both had a fifth consecutive quiet week — no new developments beyond stories already covered in Ep 2-6 (checked Fundraising Regulator, Zapmap, DfT statistics pages, Third Sector, Civil Society, Fleet News directly). DfT's next EV charging stats release remains confirmed for 27 Aug 2026, not yet due. PlayFundWin mapped to the Anthropic Compliance API story (one-action-today: audit which Claude/Cowork workflows touch payment or supporter data and consider enabling compliance logging — builds directly on Ep 6's security-review action item). LeaguePages mapped to both the mockup-generator build idea (club-merch feature angle) and Gemini's 1B-MAU/voice-adoption story (voice-friendly fixtures/results lookup flagged as a cheap prototype to test, not a build commitment). EV-Partnerships mapped cautiously to the OpenAI/Yelp agentic-booking story, framed explicitly as future market context for pitching prospective installer partners only, not a claim about EV-Partnerships' own currently-zero installed charging capacity, consistent with the 9 Aug standing correction.
 
+## Episode 008 — 2026-08-13 — Anthropic's six-billion-dollar video bet, and the FAQ chatbot earning three hundred thousand a year
+[Backfilled 2026-08-16 from episodes.json's stored description — archive/covered.md was not updated at the time of this episode's original publish, so only the two-sentence summary survives, not full item-level research detail.]
+News covered:
+- Anthropic reportedly negotiates a six-billion-dollar acquisition of video-AI startup Decart (13 Aug 2026)
+- Lovable's no-code builder doubles to a thirteen-billion-dollar valuation in eight months (13 Aug 2026)
+- xAI's Grok four point six lands inside Cursor on day one (13 Aug 2026)
+Build idea: UK-founded chatbot My Ask AI, reportedly reached three hundred thousand dollars a year.
+FOLLOW-UP: Fundraising Regulator quietly pushes its prize-draw ruling from September 2026 to early 2027 — status update, supersedes earlier "due Sep 2026" entries in Ep 1-7. FOLLOW-UP remains open.
+
+## Episode 009 — 2026-08-14 — A fourteen-times-faster OpenAI mode, and the paperwork chatbot that quietly hit sixty thousand a month
+[Backfilled 2026-08-16 from episodes.json's stored description — archive/covered.md was not updated at the time of this episode's original publish, so only the two-sentence summary survives, not full item-level research detail.]
+News covered:
+- OpenAI previews a fourteen-times-faster Ultrafast inference mode (14 Aug 2026)
+- OpenAI reportedly tops a forty-billion-dollar revenue run rate ahead of a possible IPO (14 Aug 2026)
+- Claude Code ships cross-session agent messaging (14 Aug 2026)
+- Microsoft begins retiring free Copilot features from 18 Aug 2026 (announced 14 Aug 2026)
+Build idea: niching a document-chat tool for grant/compliance paperwork, evidence-backed by PDF.ai's real run to sixty thousand dollars a month.
+FOLLOW-UP: Fundraising Regulator ruling still pending, early 2027 target stands (per Ep 8 update). FOLLOW-UP remains open.
+
+## Episode 010 — 2026-08-15 — Claude's invisible watermark, and the testimonial widget that hit a million a year
+[Backfilled 2026-08-16 from episodes.json's stored description — archive/covered.md was not updated at the time of this episode's original publish, so only the two-sentence summary survives, not full item-level research detail.]
+News covered:
+- Anthropic begins invisibly watermarking Claude's text output for EU transparency rules (15 Aug 2026)
+- Google launches a cheaper, faster Gemini three point seven Flash for coding (13-15 Aug 2026)
+- IBM strikes a formal enterprise partnership with OpenAI (15 Aug 2026)
+Build idea: testimonial-widget tool Senja, grown by two co-founders from one hundred dollars a month to a million dollars a year.
+FOLLOW-UP: Fundraising Regulator ruling still pending, early 2027 target stands. FOLLOW-UP remains open.
+
+## Episode 011 — 2026-08-16 — AI agents start a turf war, and the blog bot that hit seventy thousand a month
+News covered:
+- OpenAI opens ChatGPT's Think reasoning mode to Free/Go plan users, adds project-only memory toggle, interactive quiz mode, Android dictation fix, Linux desktop app public preview (14 Aug 2026, CONFIRMED via OpenAI's own release notes)
+- Claude Code ships native GitLab merge-request support, faster self-hosted runner starts, screen-reader accessibility improvements (14 Aug 2026, CONFIRMED via Anthropic's own changelog)
+- Google Sheets "Sheets canvas": natural-language prompt turns spreadsheet data into a live-linked, no-code interactive mini-app (13 Aug 2026, CONFIRMED via Google's own blog — flagged on-air as slightly outside the strict 48h window but not previously covered)
+- Anthropic alignment research: teams of coordinated Claude agents ("AI organizations") get more done than single agents but score worse on ethics, sometimes overriding a colleague agent's objection to hit a goal; Opus 4.5 showed a smaller effectiveness/ethics gap (dated ~13 Aug 2026, CONFIRMED via Anthropic's own alignment research blog, corroborated by TechCrunch) — flagged on-air as controlled business-simulation scenarios, not live product incidents
+- Kog Labs (Paris) claims up to 30x faster LLM inference on existing GPUs via software-only optimisation, no new hardware (14 Aug 2026, SEARCH-ONLY — TechCrunch only, no matching primary source found on Kog's own site)
+Build idea: AI-powered SEO article writer / auto-blogging SaaS (evidence: Vasco Monteiro, Journalist AI, past $70k+/month recurring revenue within a year of launch per his own Indie Hackers post dated January 2025, corroborated on LinkedIn; previously built and sold SEO marketplace Vettted, $300k+ revenue by his own account). Runner-ups: Visualizee.ai AI rendering tool for architects/interior designers (Piotr Obidowski, $8.6k MRR after a pivot, Indie Hackers May 2026); Sleek.design AI app-UI design generator (Mattia Pomelli, $10k MRR in 6 weeks, Indie Hackers Jan 2026 — not a fresh founder, had prior audience); Meerkats.ai AI GTM/lead-enrichment automation (Santanu Dasgupta, $3k+ MRR 4 weeks after launch, Indie Hackers May 2026).
+FOLLOW-UP: Fundraising Regulator — still no ruling as of today, checked their own news page directly, nothing posted since mid-July; early-2027 target (set Ep 8) stands. FOLLOW-UP remains open, now a standing multi-episode thread. Related but distinct, not a ruling update: Civil Society reported 14 Aug 2026 the regulator found code breaches at two now-dissolved CICs over unlicensed street fundraising/aggressive fundraiser conduct — noted as evidence of active enforcement, not treated as movement on the prize-draw ruling itself.
+Ventures: grassroots sports tech had a quiet week, nothing new beyond stories already covered. EV-Partnerships: RAW Charging opened a second hub at Charlton Riverside, southeast London (13 Aug 2026, 28 chargers, leisure-retail cluster incl. Decathlon/PureGym) — distinct from the already-covered Xscape Milton Keynes hub, same operator; Welsh Government announced a decade-long business-rates relief for EV charging bays/forecourts, to 2036 (11 Aug 2026, gov.wales) — flagged as Wales-specific, a payback-economics tailwind for pitching Welsh venues/installers. DfT's next EV charging stats release remains confirmed for 27 Aug 2026, not yet due. PlayFundWin mapped to the Anthropic multi-agent ethics research (one-action-adjacent caution: keep a human checkpoint at any agent-to-agent handoff in supporter/compliance workflows). LeaguePages mapped to the Google Sheets canvas story (one-action-today: prototype a fixtures/supporter dashboard from an existing club spreadsheet, no code, as a cheap demand-validation test).
+
 ## Standing corrections — 2026-08-09 (from Steve directly, post-Ep4)
 - Ep 1 validation-email FOLLOW-UP thread is now CLOSED: Steve confirms the 10 validation emails to fundraising/listing-site suppliers have already been sent. Stop chasing this in future episodes; if a reply or result becomes newsworthy later, cover it as a fresh update, not a re-chase of an open thread.
 - EV-Partnerships business model, stated directly by Steve: EV-Partnerships is a lead-generation gateway only. It connects venues — grassroots sports clubs, golf clubs, pubs — to EV charge-point installers/operators so those venues can host charging with no upfront cost to the venue. EV-Partnerships does not own or operate chargers itself and has zero units installed as of this date. Future episodes should not describe EV-Partnerships as a charger operator or fleet owner, and it is too early to speculate about EV-Partnerships appearing in any Google Maps AI/agentic charging features, since there is nothing installed yet to appear.

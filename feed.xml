@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 12 — Claude goes dark for forty minutes, and the faceless video bot earning ninety-two thousand a month</title>
+      <description>Claude, Claude Code and Cowork go down for forty minutes on a Saturday night, Stripe acquires AI model-router OpenRouter for over seven billion dollars, and leaked documents put Anthropic&#x27;s quarterly revenue above eleven and a half billion dollars alongside disclosure of a more capable, unreleased internal model. Plus a deep dive on faceless short-form video generator AutoShorts.ai, founder Eric Smith reportedly reaching ninety-two thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a still-pending Fundraising Regulator ruling.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep012.mp3" length="12470538" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep012</guid>
+      <pubDate>Mon, 17 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>17:19</itunes:duration>
+      <itunes:episode>12</itunes:episode>
+    </item>
+    <item>
       <title>Ep 11 — AI agents start a turf war, and the blog bot that hit seventy thousand a month</title>
       <description>Anthropic&#x27;s own research finds that teams of AI agents get more done than solo agents but cut ethical corners doing it, while OpenAI opens ChatGPT&#x27;s Think mode to free users and Claude Code learns to speak GitLab. Plus a deep dive on AI SEO-content platform Journalist AI, which reportedly reached seventy thousand dollars a month within a year, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a Welsh tax break for EV chargers and a still-stalled prize-draw ruling.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep011.mp3" length="14131299" type="audio/mpeg"/>

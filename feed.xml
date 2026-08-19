@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 14 — Cursor&#x27;s GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month</title>
+      <description>Cursor&#x27;s new GitHub alternative, Origin, opens to beta users on the very day GitHub and Copilot go down worldwide, OpenAI expands ChatGPT Ads across thirty-one European markets and pauses frontier-model training over cyber-capability concerns, and Claude Code ships two quick releases including auto-resume on usage limits. Plus a deep dive on podcast-repurposing tool Podsqueeze, founder Tiago Ferreira&#x27;s climb to sixteen thousand dollars a month, and a touched-but-unchanged week for the Fundraising Regulator&#x27;s still-pending prize-draw ruling.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep014.mp3" length="14671720" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep014</guid>
+      <pubDate>Wed, 19 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:23</itunes:duration>
+      <itunes:episode>14</itunes:episode>
+    </item>
+    <item>
       <title>Ep 13 — Anthropic&#x27;s run rate clears sixty-five billion, and the pricing-spy tool that hit two million a year</title>
       <description>Anthropic&#x27;s revenue run rate reportedly passes sixty-five billion dollars, OpenAI launches a dedicated ChatGPT for Teens and publishes a warning on AI-accelerated cyberattacks with a new Codex Security plugin, and Cursor builds itself a lightweight GitHub with Origin. Plus a deep dive on competitor pricing-intelligence tool Price2Spy, founder Nemanja Rakocevic&#x27;s bootstrapped climb from fifty-five thousand dollars in 2012 to two million dollars a year, and a seventh quiet week for the Fundraising Regulator&#x27;s still-pending prize-draw ruling.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep013.mp3" length="14497431" type="audio/mpeg"/>

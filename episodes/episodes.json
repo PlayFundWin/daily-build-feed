@@ -1,5 +1,14 @@
 [
   {
+    "num": 14,
+    "date": "2026-08-19",
+    "title": "Ep 14 \u2014 Cursor's GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month",
+    "description": "Cursor's new GitHub alternative, Origin, opens to beta users on the very day GitHub and Copilot go down worldwide, OpenAI expands ChatGPT Ads across thirty-one European markets and pauses frontier-model training over cyber-capability concerns, and Claude Code ships two quick releases including auto-resume on usage limits. Plus a deep dive on podcast-repurposing tool Podsqueeze, founder Tiago Ferreira's climb to sixteen thousand dollars a month, and a touched-but-unchanged week for the Fundraising Regulator's still-pending prize-draw ruling.",
+    "file": "ep014.mp3",
+    "bytes": 14671720,
+    "seconds": 1223
+  },
+  {
     "num": 13,
     "date": "2026-08-18",
     "title": "Ep 13 \u2014 Anthropic's run rate clears sixty-five billion, and the pricing-spy tool that hit two million a year",

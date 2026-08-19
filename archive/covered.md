@@ -11,7 +11,7 @@ runbook. Treat pre-14 entries as good-enough to avoid re-covering ground, not as
 complete record of every aside made on air.
 
 ## Standing corrections
-(none recorded yet)
+- 2026-08-19 (Steve, live correction): stop covering the Fundraising Regulator prize-draw ruling as on-air script content. The early-2027 timeline is already established and repeating "still pending, still early 2027" every episode is no longer useful air time. Keep checking the Regulator's pages as part of research (so it's not missed if something actually changes), but do not narrate a "nothing changed" update in future scripts — only mention it again if the ruling actually lands, the timeline changes, or something materially new happens. Ep14's script (committed just before this correction landed) still includes a "nothing changed" beat on this — that one's already in the build pipeline and won't be pulled, but Ep15 onward should drop it entirely under normal circumstances.
 
 ## Ep 1 — 2026-08-06
 News: Cloudflare gives AI agents spending-capped wallets; Meta "declares war" on Claude Code.

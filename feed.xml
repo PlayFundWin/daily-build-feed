@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 15 — OpenAI locks its own staff out of your prompts, and the AI clone that hit six figures before it launched</title>
+      <description>OpenAI previews a privacy layer that flags misuse without staff reading your prompts, Cursor lets its coding agents run whole goals unsupervised, and Google, Replit and Amazon all ship new AI features. Plus a deep dive on Jodie Cook&#x27;s AI-clone coaching platform Coachvox AI, which reportedly hit six figures in revenue before launch, and fresh urban EV-charging hub openings from IONITY and RAW Charging that validate the EV-Partnerships destination-charging thesis.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep015.mp3" length="14214054" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep015</guid>
+      <pubDate>Thu, 20 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:44</itunes:duration>
+      <itunes:episode>15</itunes:episode>
+    </item>
+    <item>
       <title>Ep 14 — Cursor&#x27;s GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month</title>
       <description>Cursor&#x27;s new GitHub alternative, Origin, opens to beta users on the very day GitHub and Copilot go down worldwide, OpenAI expands ChatGPT Ads across thirty-one European markets and pauses frontier-model training over cyber-capability concerns, and Claude Code ships two quick releases including auto-resume on usage limits. Plus a deep dive on podcast-repurposing tool Podsqueeze, founder Tiago Ferreira&#x27;s climb to sixteen thousand dollars a month, and a touched-but-unchanged week for the Fundraising Regulator&#x27;s still-pending prize-draw ruling.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep014.mp3" length="14671720" type="audio/mpeg"/>

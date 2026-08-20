@@ -1,5 +1,14 @@
 [
   {
+    "num": 15,
+    "date": "2026-08-20",
+    "title": "Ep 15 \u2014 OpenAI locks its own staff out of your prompts, and the AI clone that hit six figures before it launched",
+    "description": "OpenAI previews a privacy layer that flags misuse without staff reading your prompts, Cursor lets its coding agents run whole goals unsupervised, and Google, Replit and Amazon all ship new AI features. Plus a deep dive on Jodie Cook's AI-clone coaching platform Coachvox AI, which reportedly hit six figures in revenue before launch, and fresh urban EV-charging hub openings from IONITY and RAW Charging that validate the EV-Partnerships destination-charging thesis.",
+    "file": "ep015.mp3",
+    "bytes": 14214054,
+    "seconds": 1184
+  },
+  {
     "num": 14,
     "date": "2026-08-19",
     "title": "Ep 14 \u2014 Cursor's GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month",

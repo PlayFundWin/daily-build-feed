@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 16 — Anthropic gives agents working hands, and the essay tool that limped to two thousand dollars before it hit ten million a year</title>
+      <description>Anthropic ships Computer Use and a new Browser Use tool to general availability and launches a free Claude Academy, while OpenAI opens a new AI Futures policy research arm. Plus a deep dive on Jenni AI, the academic-writing assistant that grew from two thousand dollars a month to over ten million dollars a year in revenue, and why the Fundraising Regulator, grassroots sports tech and EV destination charging trackers are all quiet this week for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep016.mp3" length="14409032" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep016</guid>
+      <pubDate>Fri, 21 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:01</itunes:duration>
+      <itunes:episode>16</itunes:episode>
+    </item>
+    <item>
       <title>Ep 15 — OpenAI locks its own staff out of your prompts, and the AI clone that hit six figures before it launched</title>
       <description>OpenAI previews a privacy layer that flags misuse without staff reading your prompts, Cursor lets its coding agents run whole goals unsupervised, and Google, Replit and Amazon all ship new AI features. Plus a deep dive on Jodie Cook&#x27;s AI-clone coaching platform Coachvox AI, which reportedly hit six figures in revenue before launch, and fresh urban EV-charging hub openings from IONITY and RAW Charging that validate the EV-Partnerships destination-charging thesis.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep015.mp3" length="14214054" type="audio/mpeg"/>

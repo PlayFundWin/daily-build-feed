@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 17 — The quietest two days yet from the big three, and the scheduler that hit a hundred and forty five thousand a month once it started selling to robots</title>
+      <description>Anthropic opens a formal vetted-access track for cybersecurity capabilities and Google ships a free Preferred Sources button for AI search visibility, while OpenAI, Cursor, Replit and the voice AI vendors stay unusually quiet. Plus a deep dive on open source scheduler Postiz, which grew from seven hundred dollars a month to over a hundred and forty five thousand by repositioning for AI agents, and a live DCMS consultation on National Lottery good causes funding that speaks directly to PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep017.mp3" length="14305274" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep017</guid>
+      <pubDate>Sat, 22 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:52</itunes:duration>
+      <itunes:episode>17</itunes:episode>
+    </item>
+    <item>
       <title>Ep 16 — Anthropic gives agents working hands, and the essay tool that limped to two thousand dollars before it hit ten million a year</title>
       <description>Anthropic ships Computer Use and a new Browser Use tool to general availability and launches a free Claude Academy, while OpenAI opens a new AI Futures policy research arm. Plus a deep dive on Jenni AI, the academic-writing assistant that grew from two thousand dollars a month to over ten million dollars a year in revenue, and why the Fundraising Regulator, grassroots sports tech and EV destination charging trackers are all quiet this week for PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep016.mp3" length="14409032" type="audio/mpeg"/>

@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 18 — OpenAI cuts its prices by a fifth, and the architect&#x27;s rendering chatbot that turned a hundred and fifty dollars into eight thousand six hundred a month</title>
+      <description>OpenAI cuts GPT five point six Sol API and Codex pricing by more than twenty per cent for three months and ElevenLabs retires its local MCP server, while Anthropic, Google, Cursor and Replit all take the weekend off. Plus a deep dive on architectural-rendering chatbot Visualizee, which turned a hundred and fifty dollars a month into eight thousand six hundred by niching down and switching to subscription pricing, and why the DCMS National Lottery consultation closing next month matters for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep018.mp3" length="14724696" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep018</guid>
+      <pubDate>Mon, 24 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:27</itunes:duration>
+      <itunes:episode>18</itunes:episode>
+    </item>
+    <item>
       <title>Ep 17 — The quietest two days yet from the big three, and the scheduler that hit a hundred and forty five thousand a month once it started selling to robots</title>
       <description>Anthropic opens a formal vetted-access track for cybersecurity capabilities and Google ships a free Preferred Sources button for AI search visibility, while OpenAI, Cursor, Replit and the voice AI vendors stay unusually quiet. Plus a deep dive on open source scheduler Postiz, which grew from seven hundred dollars a month to over a hundred and forty five thousand by repositioning for AI agents, and a live DCMS consultation on National Lottery good causes funding that speaks directly to PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep017.mp3" length="14305274" type="audio/mpeg"/>

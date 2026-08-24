@@ -1,5 +1,14 @@
 [
   {
+    "num": 18,
+    "date": "2026-08-24",
+    "title": "Ep 18 \u2014 OpenAI cuts its prices by a fifth, and the architect's rendering chatbot that turned a hundred and fifty dollars into eight thousand six hundred a month",
+    "description": "OpenAI cuts GPT five point six Sol API and Codex pricing by more than twenty per cent for three months and ElevenLabs retires its local MCP server, while Anthropic, Google, Cursor and Replit all take the weekend off. Plus a deep dive on architectural-rendering chatbot Visualizee, which turned a hundred and fifty dollars a month into eight thousand six hundred by niching down and switching to subscription pricing, and why the DCMS National Lottery consultation closing next month matters for PlayFundWin, LeaguePages and EV-Partnerships.",
+    "file": "ep018.mp3",
+    "bytes": 14724696,
+    "seconds": 1227
+  },
+  {
     "num": 17,
     "date": "2026-08-22",
     "title": "Ep 17 \u2014 The quietest two days yet from the big three, and the scheduler that hit a hundred and forty five thousand a month once it started selling to robots",

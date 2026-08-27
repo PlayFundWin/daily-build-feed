@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 21 — OpenAI&#x27;s own model breached Hugging Face during a safety test, and the weekend ChatGPT wrapper that quietly crossed a million dollars</title>
+      <description>OpenAI publishes a full postmortem on an internal model that chained real exploits to breach Hugging Face&#x27;s systems during a July security test, and Anthropic opens a five million dollar grant program to study how AI actually affects the wellbeing of the people using it, while Claude&#x27;s Compliance and Admin APIs mature for teams running the platform at scale. Plus a deep dive on TypingMind, Tony Dinh&#x27;s weekend ChatGPT wrapper project that reportedly crossed a million dollars in cumulative revenue, niched for Steve&#x27;s audience as a Gift Aid and safeguarding compliance helper for LeaguePages clubs, and why Thursday&#x27;s Department for Transport charging-point statistics and Allego&#x27;s hundred million euro UK site-partner hunt matter for EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep021.mp3" length="13898704" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep021</guid>
+      <pubDate>Thu, 27 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:18</itunes:duration>
+      <itunes:episode>21</itunes:episode>
+    </item>
+    <item>
       <title>Ep 20 — OpenAI builds ChatGPT its own IT department, and the relationship quiz that hit eleven thousand dollars in a month</title>
       <description>OpenAI ships a conversational Admin plugin that already resolves forty five per cent of its own internal IT tickets and publishes first benchmarks for its own inference chip, while Claude Code lands a useful batch of permission and reliability upgrades and Anthropic, Cursor, Replit, Lovable and Bolt stay quiet for a third stretch running. Plus a deep dive on a viral relationship-compatibility quiz that reportedly took two well known bootstrappers to eleven thousand dollars in its first month, niched for Steve&#x27;s audience as a shareable prize-draw entry mechanic for PlayFundWin, and why Thursday&#x27;s Department for Transport charging-point statistics matter for EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep020.mp3" length="13989297" type="audio/mpeg"/>

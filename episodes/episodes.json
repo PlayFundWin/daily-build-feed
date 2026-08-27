@@ -1,5 +1,14 @@
 [
   {
+    "num": 21,
+    "date": "2026-08-27",
+    "title": "Ep 21 \u2014 OpenAI's own model breached Hugging Face during a safety test, and the weekend ChatGPT wrapper that quietly crossed a million dollars",
+    "description": "OpenAI publishes a full postmortem on an internal model that chained real exploits to breach Hugging Face's systems during a July security test, and Anthropic opens a five million dollar grant program to study how AI actually affects the wellbeing of the people using it, while Claude's Compliance and Admin APIs mature for teams running the platform at scale. Plus a deep dive on TypingMind, Tony Dinh's weekend ChatGPT wrapper project that reportedly crossed a million dollars in cumulative revenue, niched for Steve's audience as a Gift Aid and safeguarding compliance helper for LeaguePages clubs, and why Thursday's Department for Transport charging-point statistics and Allego's hundred million euro UK site-partner hunt matter for EV-Partnerships.",
+    "file": "ep021.mp3",
+    "bytes": 13898704,
+    "seconds": 1158
+  },
+  {
     "num": 20,
     "date": "2026-08-26",
     "title": "Ep 20 \u2014 OpenAI builds ChatGPT its own IT department, and the relationship quiz that hit eleven thousand dollars in a month",

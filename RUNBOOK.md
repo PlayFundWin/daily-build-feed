@@ -50,6 +50,10 @@ corrections from Steve that override anything said in earlier episodes (e.g. a
 FOLLOW-UP thread that's actually closed, or a standing fact about one of the ventures).
 Read `episodes/episodes.json` for the next episode number (NNN, zero-padded to 3).
 
+Also read the **Process log** section near the end of this file — it's the same idea as
+covered.md's Standing corrections, but for how this pipeline itself is run rather than
+episode content. It's short; read it every time.
+
 ## 2. Research — three parallel subagents
 Launch three general-purpose agents in ONE message so they run concurrently. Give each
 today's date and the relevant archive lines so they skip covered ground.
@@ -70,10 +74,24 @@ today's date and the relevant archive lines so they skip covered ground.
   charging-point stats, and two or three named UK trade outlets (Third Sector, Civil
   Society, Fleet News / Fleet Point for EV). If those turn up nothing new beyond what's
   already in `archive/covered.md`, say so plainly and stop — do not pad by broadening
-  into unrelated general AI/business news search just to fill space.
+  into unrelated general AI/business news search just to fill space. Note: DfT's public
+  charging-point statistics are typically published around 09:30 UK time — since this
+  show targets a 07:00 UK ship time, don't chase "today's" DfT release on its actual
+  publish day expecting fresh numbers; plan to report the real figures the day after
+  they land instead (see Process log, 2026-08-27).
+
+Vary how you phrase these three briefs and which named sources you check first from one
+day to the next — don't silently reuse identical query wording or check the same source
+first every single run, since that flattens both what gets found and how the eventual
+script reads (see Process log, 2026-08-27). Rotate the order within a category (e.g.
+don't always hit Indie Hackers before Starter Story, don't always check the Fundraising
+Regulator before Zapmap) and phrase each day's actual search queries freshly.
 
 ## 3. Script
-Write the script following `STYLE.md` exactly. ~4,000 words (Kokoro at speed 1.05 runs
+Write the script following `STYLE.md` exactly, including its vocabulary-variety rules —
+don't lean on the same connective phrases or copy any of STYLE.md's example phrasing
+verbatim into the script episode after episode; every example in that file illustrates a
+pattern, it isn't text to reuse. ~4,000 words (Kokoro at speed 1.05 runs
 roughly 270 words per minute, so 4,000 words ≈ 15 minutes; scale up if you want closer
 to 20). Blank line between paragraphs — each blank line becomes a spoken pause.
 
@@ -138,25 +156,30 @@ Don't waste a cycle rediscovering this each time — go straight to the API:
   proof of a working render, not just a guess. It also only runs after the ASR content
   check (section 5) has passed, so this same presence check now doubles as indirect
   proof the audio content check passed too.
-Treat those two checks together as sufficient proof of a live episode.
+- `github_get_file` on `archive/covered.md` (ref `master`) and confirm today's episode
+  actually has a section in it (added 2026-08-27, see Process log — Ep20 was published
+  with no covered.md entry at all and nothing in this runbook would have caught it
+  before this check existed).
+Treat those three checks together as sufficient proof of a live, properly-recorded
+episode.
 SECONDARY, opportunistic only: if you want a literal HTTP 200 and WebFetch happens to
 cooperate, hit `https://playfundwin.github.io/daily-build-feed/feed.xml` and the day's
 `episodes/epNNN.mp3` and check the `Content-Length` against the feed's `length`
 attribute. But do not block publishing, retry-loop, or declare the run a failure solely
-because this secondary check doesn't work — the API check above already is the proof.
+because this secondary check doesn't work — the API checks above already are the proof.
 
 If you see more than one workflow run in progress for the same episode (check
 `/repos/PlayFundWin/daily-build-feed/actions/workflows/build-episode.yml/runs`), that's
 expected now and then given two pending-file commits plus a possible manual dispatch —
-the concurrency guard means only the newest survives, so just confirm the two checks
+the concurrency guard means only the newest survives, so just confirm the checks
 above pass, don't try to cancel anything yourself.
 
 ## 7. Log to Notion
 Log today's episode to the **"Daily Build — Episode Log"** Notion database (lives under
 the "PlayFundWin AI Ops" page; data source `collection://c7871de0-669f-4d3e-9d6b-ece7e19ed9a5`).
 This is the durable, readable brief of what the episode contains — separate from, and
-more detailed than, the "Daily Build — Ideas Ledger" database (which only tracks
-build-ideas vs. actioned status).
+more detailed than, the "Daily Build — Ideas Ledger" database (see step 7a below, which
+is a separate step and must not be skipped).
 
 Use `notion-create-pages` with `parent: {"type": "data_source_id", "data_source_id":
 "c7871de0-669f-4d3e-9d6b-ece7e19ed9a5"}`. One page per episode:
@@ -181,11 +204,67 @@ If the Notion tools are unavailable or this step fails, say so plainly in the no
 step below and log the missed episode(s) to Notion retroactively next run — never let a
 Notion failure block or delay publishing the episode itself.
 
+## 7a. Log to Ideas Ledger
+Also upsert one entry for today's build idea in the **"Daily Build — Ideas Ledger"**
+Notion database (data source `collection://eb0480b5-9d8f-43dd-91d8-76fa1032eb30`, lives
+under "PlayFundWin AI Ops"). This step was missing from the runbook for the first 20
+episodes and the ledger drifted badly out of date as a result (fixed 2026-08-27, see
+Process log) — do not skip it.
+
+Use `notion-create-pages` with `parent: {"type": "data_source_id", "data_source_id":
+"eb0480b5-9d8f-43dd-91d8-76fa1032eb30"}`. One page for today's build idea:
+- `Idea` (title — "Ep NNN — <idea name>, niched to <venture>" where it was niched for
+  one of Steve's ventures, otherwise just "Ep NNN — <idea name>")
+- `Episode` (number), `Date` (YYYY-MM-DD)
+- `Evidence` (named source + revenue figure cited on air, one or two sentences)
+- `Stream` (PFW / LeaguePages / Energy Partners / Cross-venture / New/Standalone)
+- `Status`: always `Proposed` by default. Only ever set `In Progress` or `Live` if
+  Steve has explicitly said, in conversation, that he or someone named is acting on it
+  — never infer this from the episode content alone.
+- `Owner`: `Unassigned` by default; only set to a named person if Steve has said so
+  explicitly.
+
+This is a **passive record only**. Steve does not want ideas he hasn't acted on chased,
+resurfaced, or asked about, on air or anywhere else — if he wants to progress an idea
+he'll raise it himself in chat. Never build or run any mechanism that revisits a
+`Proposed` idea to report or ask what happened to it.
+
 ## 8. Notify
 `SendUserFile` is not available for the MP3 in this flow (the audio only exists on the
 runner), so send Steve a short message: the episode title, a one-line summary, and the
 fact that it is live in the feed. If ANY step failed, say plainly what failed and what
 you did about it. Never claim success you did not verify.
+
+## Process log
+Dated entries only, added when a real gap in this pipeline is found and fixed — not a
+running commentary. This section is read in step 1 alongside the archive.
+
+- 2026-08-27: The Ideas Ledger (see 7a) wasn't being updated per-episode — this runbook
+  only ever referenced Episode Log, so the ledger had 4 entries out of 20 episodes.
+  Added step 7a; backfilled the missing 16 historical entries the same day, sourced
+  from `archive/covered.md` and `episodes/episodes.json` (thin entries marked as thin,
+  nothing invented).
+- 2026-08-27: `archive/covered.md` silently missed an entire episode (Ep20) with no
+  error anywhere — the verify step (section 6) only ever checked that the audio
+  published, never that the archive got its entry. Verify now also confirms
+  `covered.md` has a section for the just-published episode number.
+- 2026-08-27: DfT charging-point stats structurally can't be live when this show ships
+  (07:00 UK target vs DfT's ~09:30 publish time) — flagged as "check today" across four
+  separate episodes (17–20) without ever landing real numbers on the actual release
+  day. Research agent C (step 2) now plans to report real figures the day after they
+  publish rather than chasing them on release day itself.
+- 2026-08-27: Steve does not want the podcast chasing or resurfacing ideas he hasn't
+  acted on. The Ideas Ledger (7a) is a passive record only; no on-air "what happened to
+  last idea" segment exists or should ever be built.
+- 2026-08-27: Steve flagged the show repeating itself episode to episode — the fixed
+  segment structure was producing near-identical phrasing (STYLE.md's own example
+  confidence-flag line was found copy-pasted almost verbatim into Ep21's actual script
+  rather than used as an illustration). STYLE.md now has explicit vocabulary-variety
+  rules; step 2's research briefs are now varied in phrasing/source order rather than
+  reused verbatim day to day.
+- 2026-08-27: Steve wants the feed made more private (it was previously fine being
+  public-but-obscure). Implementation approach not yet decided/built as of this entry —
+  update this log once it is.
 
 ## Cost discipline
 Runs on a budget model by design. Three research subagents maximum plus at most one

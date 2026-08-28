@@ -1,5 +1,14 @@
 [
   {
+    "num": 22,
+    "date": "2026-08-28",
+    "title": "Ep 22 \u2014 Anthropic teaches Claude to run lab equipment, and the AI-visibility tracker that sold for eighty-five thousand dollars in nine days",
+    "description": "Anthropic opens a research preview letting Claude safely operate physical lab and robotic equipment through one shared driver standard, Google ships production-ready speech-to-text and text-to-video models, and Cursor and Lovable both loosen how their coding agents get built. Plus a deep dive on AI answer-engine visibility monitoring, the GEO tool that took solo builder Yogesh from five hundred dollars a month to an eighty-five-thousand-dollar sale in nine days, niched for Steve's audience as a visibility audit for LeaguePages' grassroots clubs and PlayFundWin's fundraising pitch, and why this week's Department for Transport charging-point statistics still hadn't surfaced for EV-Partnerships.",
+    "file": "ep022.mp3",
+    "bytes": 14618117,
+    "seconds": 1218
+  },
+  {
     "num": 21,
     "date": "2026-08-27",
     "title": "Ep 21 \u2014 OpenAI's own model breached Hugging Face during a safety test, and the weekend ChatGPT wrapper that quietly crossed a million dollars",

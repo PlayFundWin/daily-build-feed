@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 22 — Anthropic teaches Claude to run lab equipment, and the AI-visibility tracker that sold for eighty-five thousand dollars in nine days</title>
+      <description>Anthropic opens a research preview letting Claude safely operate physical lab and robotic equipment through one shared driver standard, Google ships production-ready speech-to-text and text-to-video models, and Cursor and Lovable both loosen how their coding agents get built. Plus a deep dive on AI answer-engine visibility monitoring, the GEO tool that took solo builder Yogesh from five hundred dollars a month to an eighty-five-thousand-dollar sale in nine days, niched for Steve&#x27;s audience as a visibility audit for LeaguePages&#x27; grassroots clubs and PlayFundWin&#x27;s fundraising pitch, and why this week&#x27;s Department for Transport charging-point statistics still hadn&#x27;t surfaced for EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep022.mp3" length="14618117" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep022</guid>
+      <pubDate>Fri, 28 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:18</itunes:duration>
+      <itunes:episode>22</itunes:episode>
+    </item>
+    <item>
       <title>Ep 21 — OpenAI&#x27;s own model breached Hugging Face during a safety test, and the weekend ChatGPT wrapper that quietly crossed a million dollars</title>
       <description>OpenAI publishes a full postmortem on an internal model that chained real exploits to breach Hugging Face&#x27;s systems during a July security test, and Anthropic opens a five million dollar grant program to study how AI actually affects the wellbeing of the people using it, while Claude&#x27;s Compliance and Admin APIs mature for teams running the platform at scale. Plus a deep dive on TypingMind, Tony Dinh&#x27;s weekend ChatGPT wrapper project that reportedly crossed a million dollars in cumulative revenue, niched for Steve&#x27;s audience as a Gift Aid and safeguarding compliance helper for LeaguePages clubs, and why Thursday&#x27;s Department for Transport charging-point statistics and Allego&#x27;s hundred million euro UK site-partner hunt matter for EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep021.mp3" length="13898704" type="audio/mpeg"/>

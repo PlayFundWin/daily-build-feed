@@ -58,8 +58,19 @@ print(f"base commit {base_commit_sha[:8]}")
 add = [f"episodes/{BASE}.mp3", "episodes/episodes.json", "feed.xml"]
 if os.path.exists("cover.png"):
     add.append("cover.png")
-if os.path.exists("archive/covered.md"):
-    add.append("archive/covered.md")
+# NOTE: archive/covered.md is intentionally NOT in this list. This script
+# never modifies it -- it's edited only by the Cowork session, via
+# github_put_file, before or around the pending-file commits that trigger
+# this workflow. base_tree above is fetched fresh from master's current tip,
+# so covered.md (like every other file this script doesn't touch, e.g.
+# RUNBOOK.md) already carries forward correctly through base_tree inheritance
+# with no need to re-upload it. Re-uploading it from this job's on-disk
+# checkout used to silently overwrite same-run session edits to covered.md
+# with this job's stale, pre-session-commit copy whenever the session
+# committed covered.md after the pending-file push that triggered this run --
+# which is what caused Ep20 and Ep21 to publish with no covered.md section at
+# all (see RUNBOOK.md Process log, 2026-08-28). Fixed by simply not touching
+# this path here.
 
 tree = []
 for path in add:

@@ -265,6 +265,15 @@ running commentary. This section is read in step 1 alongside the archive.
 - 2026-08-27: Steve wants the feed made more private (it was previously fine being
   public-but-obscure). Implementation approach not yet decided/built as of this entry —
   update this log once it is.
+- 2026-08-28: The 2026-08-27 fix to section 6 (verify `covered.md` has an entry for the
+  just-published episode) evidently wasn't actually in effect for, or wasn't caught
+  during, the Ep20 and Ep21 runs themselves — both episodes published with `master`
+  still missing their `covered.md` section, discovered when this run read the archive
+  in step 1. Backfilled both entries from `episodes/episodes.json`'s thin two-sentence
+  descriptions (marked as thin, nothing invented), same approach as the Ideas Ledger
+  backfill. Section 6's check is confirmed working for this episode (Ep22) going
+  forward; if a future run finds another gap despite that check passing, treat it as a
+  sign the check itself needs re-examining, not just another silent backfill.
 
 ## Cost discipline
 Runs on a budget model by design. Three research subagents maximum plus at most one

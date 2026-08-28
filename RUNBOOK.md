@@ -265,15 +265,31 @@ running commentary. This section is read in step 1 alongside the archive.
 - 2026-08-27: Steve wants the feed made more private (it was previously fine being
   public-but-obscure). Implementation approach not yet decided/built as of this entry —
   update this log once it is.
-- 2026-08-28: The 2026-08-27 fix to section 6 (verify `covered.md` has an entry for the
-  just-published episode) evidently wasn't actually in effect for, or wasn't caught
-  during, the Ep20 and Ep21 runs themselves — both episodes published with `master`
-  still missing their `covered.md` section, discovered when this run read the archive
-  in step 1. Backfilled both entries from `episodes/episodes.json`'s thin two-sentence
-  descriptions (marked as thin, nothing invented), same approach as the Ideas Ledger
-  backfill. Section 6's check is confirmed working for this episode (Ep22) going
-  forward; if a future run finds another gap despite that check passing, treat it as a
-  sign the check itself needs re-examining, not just another silent backfill.
+- 2026-08-28: Found the actual root cause of Ep20 and Ep21 both publishing with no
+  `covered.md` entry (the 2026-08-27 fix only added a verify check for this, it never
+  found *why* it kept happening). `tools/api_publish.py` fetches a fresh `base_tree`
+  from master right before publishing (correct), but then explicitly re-uploaded
+  `archive/covered.md` from its own on-disk checkout as one of the tree blobs anyway —
+  and that checkout is pinned to the push that triggered the run, so it's stale
+  relative to anything committed to master afterward. Since this session typically
+  commits `archive/covered.md` alongside or after the `pending/` files (which
+  auto-trigger the build via the `push` event), the sequence in practice is: pending
+  files land → build starts and checks out the repo → session commits
+  `archive/covered.md` (now stale in the running job's checkout) → job's publish step
+  re-uploads that stale local copy, silently overwriting the newer commit on master.
+  `RUNBOOK.md` was never affected by this because it was never in `api_publish.py`'s
+  explicit re-upload list, so it always inherited correctly through `base_tree`.
+  Fixed by removing `archive/covered.md` from that list — it now inherits through
+  `base_tree` the same way, no re-upload needed since this script never actually
+  modifies that file itself. Also hit this exact bug live during the Ep22 run today:
+  committed `archive/covered.md` at 09:37 while the auto-triggered build (checked out
+  09:35) was still running, watched the publish step (09:46) clobber it back to the
+  pre-session state, and re-landed the correct content afterward once the run had
+  finished (so no further publish could clobber it again). Section 6's covered.md
+  check is what caught this live before the notify step; keep trusting it. If it fails
+  again after this fix, the api_publish.py theory above is wrong or incomplete — read
+  the job log's `PUBLISH-VIA-API`/tree-entries output for that run before backfilling
+  again, rather than assuming this same cause.
 
 ## Cost discipline
 Runs on a budget model by design. Three research subagents maximum plus at most one

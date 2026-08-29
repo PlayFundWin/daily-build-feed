@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 23 — OpenAI cuts Cursor loose after a SpaceX takeover, and the AI wrapper that turned two hundred dollars into two million a year</title>
+      <description>OpenAI moves to cut Cursor off from its GPT models by the twelfth of November after SpaceX&#x27;s acquisition of the company, Google DeepMind pilots the first double-blind evaluation of a frontier AI model inside a cryptographic sandbox, and Anthropic widens Claude for Teachers to full U.S. school districts. Plus a deep dive on Three-Dee AI Studio, founder Jan Hammer&#x27;s wrapper around commercial text-to-three-dee generation APIs that grew from a two-hundred-dollar build to roughly two million dollars a year in revenue, and why Thursday&#x27;s Department for Transport charging-point statistics have now missed their own confirmed release date, leaving PlayFundWin, LeaguePages and EV-Partnerships with real gaps to work with instead of numbers to report.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep023.mp3" length="13650123" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep023</guid>
+      <pubDate>Sat, 29 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:57</itunes:duration>
+      <itunes:episode>23</itunes:episode>
+    </item>
+    <item>
       <title>Ep 22 — Anthropic teaches Claude to run lab equipment, and the AI-visibility tracker that sold for eighty-five thousand dollars in nine days</title>
       <description>Anthropic opens a research preview letting Claude safely operate physical lab and robotic equipment through one shared driver standard, Google ships production-ready speech-to-text and text-to-video models, and Cursor and Lovable both loosen how their coding agents get built. Plus a deep dive on AI answer-engine visibility monitoring, the GEO tool that took solo builder Yogesh from five hundred dollars a month to an eighty-five-thousand-dollar sale in nine days, niched for Steve&#x27;s audience as a visibility audit for LeaguePages&#x27; grassroots clubs and PlayFundWin&#x27;s fundraising pitch, and why this week&#x27;s Department for Transport charging-point statistics still hadn&#x27;t surfaced for EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep022.mp3" length="14618117" type="audio/mpeg"/>

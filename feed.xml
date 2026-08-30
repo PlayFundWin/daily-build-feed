@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 24 — Cursor learns to build without a GitHub account, and the compliance-paperwork tool with a revenue number that doesn&#x27;t add up</title>
+      <description>Cursor&#x27;s Cloud Agents can now build an app from nothing, no repo required, while Google takes speech-to-text and text-to-video tools to general availability and Anthropic teaches Claude to drive lab hardware through one shared spec. Plus a deep dive on Comp AI, a compliance-paperwork generator whose Stripe-linked revenue tracker shows two wildly different numbers, niched for Steve&#x27;s audience as an instant policy-pack tool for grassroots sports clubs, and the Department for Transport&#x27;s EV charging-point statistics that finally turned up three days late.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep024.mp3" length="14261075" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep024</guid>
+      <pubDate>Sun, 30 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:48</itunes:duration>
+      <itunes:episode>24</itunes:episode>
+    </item>
+    <item>
       <title>Ep 23 — OpenAI cuts Cursor loose after a SpaceX takeover, and the AI wrapper that turned two hundred dollars into two million a year</title>
       <description>OpenAI moves to cut Cursor off from its GPT models by the twelfth of November after SpaceX&#x27;s acquisition of the company, Google DeepMind pilots the first double-blind evaluation of a frontier AI model inside a cryptographic sandbox, and Anthropic widens Claude for Teachers to full U.S. school districts. Plus a deep dive on Three-Dee AI Studio, founder Jan Hammer&#x27;s wrapper around commercial text-to-three-dee generation APIs that grew from a two-hundred-dollar build to roughly two million dollars a year in revenue, and why Thursday&#x27;s Department for Transport charging-point statistics have now missed their own confirmed release date, leaving PlayFundWin, LeaguePages and EV-Partnerships with real gaps to work with instead of numbers to report.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep023.mp3" length="13650123" type="audio/mpeg"/>

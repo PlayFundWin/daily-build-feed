@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 25 — Anthropic pledges more compute to Cursor as music publishers sue over training data, and the weekend Amazon tool now clearing thirty thousand dollars a month</title>
+      <description>Sony Music Publishing and Warner Chappell sue Anthropic over how Claude was trained, an infostealer campaign is hijacking live Claude login sessions without needing a password, and Anthropic&#x27;s Chief Compute Officer publicly pledges more capacity to Cursor within hours of OpenAI&#x27;s move to cut it off. Plus a deep dive on Launch Fast, Hasaam Bhatti&#x27;s forty-eight-hour weekend build that reached thirty thousand dollars a month in Amazon seller-research revenue within ninety days, and why the DCMS National Lottery consultation and the still-unclaimed sports-venue EV-charging gap both remain live threads for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep025.mp3" length="14136628" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep025</guid>
+      <pubDate>Mon, 31 Aug 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:38</itunes:duration>
+      <itunes:episode>25</itunes:episode>
+    </item>
+    <item>
       <title>Ep 24 — Cursor learns to build without a GitHub account, and the compliance-paperwork tool with a revenue number that doesn&#x27;t add up</title>
       <description>Cursor&#x27;s Cloud Agents can now build an app from nothing, no repo required, while Google takes speech-to-text and text-to-video tools to general availability and Anthropic teaches Claude to drive lab hardware through one shared spec. Plus a deep dive on Comp AI, a compliance-paperwork generator whose Stripe-linked revenue tracker shows two wildly different numbers, niched for Steve&#x27;s audience as an instant policy-pack tool for grassroots sports clubs, and the Department for Transport&#x27;s EV charging-point statistics that finally turned up three days late.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep024.mp3" length="14261075" type="audio/mpeg"/>

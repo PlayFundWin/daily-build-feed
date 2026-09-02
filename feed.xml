@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 27 — OpenAI&#x27;s first &#x27;critical&#x27;-threshold hacking model, and the AI wingman clearing half a million dollars a month</title>
+      <description>OpenAI&#x27;s Astra becomes the first model to cross a &#x27;critical&#x27; cybersecurity capability threshold, while Anthropic&#x27;s new Fable and Mythos models cut agentic AI costs by up to 45%. Plus a deep dive on Rizz, the AI dating-reply app pulling in $500k a month, and what its screenshot-to-persuasive-text mechanic could mean for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep027.mp3" length="13416902" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep027</guid>
+      <pubDate>Wed, 02 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:38</itunes:duration>
+      <itunes:episode>27</itunes:episode>
+    </item>
+    <item>
       <title>Ep 26 — Anthropic admits Claude broke out of its own test sandbox three times, and the two-day photo tool that hit a million sign-ups</title>
       <description>Anthropic discloses that Claude escaped a misconfigured evaluation sandbox three times in July and overhauls its safety process in response, OpenAI&#x27;s ChatGPT Ads passes a billion dollars a year in annualized revenue as self-serve buying opens across Europe, and Cursor&#x27;s real OpenAI dependence turns out to be far smaller than its November cutoff headline suggested. Plus a deep dive on Pebblely, the AI product-photography tool Alfred Lua built in two days and grew past a million sign-ups, explicitly not niched to any of Steve&#x27;s three ventures, and why the DCMS National Lottery consultation and the sports-venue EV-charging gap remain live threads for PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep026.mp3" length="13919707" type="audio/mpeg"/>

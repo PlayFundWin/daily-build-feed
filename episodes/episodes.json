@@ -1,5 +1,14 @@
 [
   {
+    "num": 28,
+    "date": "2026-09-03",
+    "title": "Ep 28 \u2014 Anthropic, Cursor and Perplexity all race to keep your data off their own servers, and the survey tool clearing a hundred and twenty-five thousand dollars a month",
+    "description": "Anthropic, Cursor and Perplexity all ship new ways to keep sensitive data off their own servers within 48 hours of each other, while Google turns Gemini into Android's memory layer. Plus a deep dive on Zigpoll, the solo-built exit-intent survey tool clearing $125k a month, and why the sports-venue EV-charging gap remains unclaimed for PlayFundWin, LeaguePages and EV-Partnerships.",
+    "file": "ep028.mp3",
+    "bytes": 14047916,
+    "seconds": 1171
+  },
+  {
     "num": 27,
     "date": "2026-09-02",
     "title": "Ep 27 \u2014 OpenAI's first 'critical'-threshold hacking model, and the AI wingman clearing half a million dollars a month",

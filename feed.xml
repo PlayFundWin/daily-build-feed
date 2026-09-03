@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 28 — Anthropic, Cursor and Perplexity all race to keep your data off their own servers, and the survey tool clearing a hundred and twenty-five thousand dollars a month</title>
+      <description>Anthropic, Cursor and Perplexity all ship new ways to keep sensitive data off their own servers within 48 hours of each other, while Google turns Gemini into Android&#x27;s memory layer. Plus a deep dive on Zigpoll, the solo-built exit-intent survey tool clearing $125k a month, and why the sports-venue EV-charging gap remains unclaimed for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep028.mp3" length="14047916" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep028</guid>
+      <pubDate>Thu, 03 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:31</itunes:duration>
+      <itunes:episode>28</itunes:episode>
+    </item>
+    <item>
       <title>Ep 27 — OpenAI&#x27;s first &#x27;critical&#x27;-threshold hacking model, and the AI wingman clearing half a million dollars a month</title>
       <description>OpenAI&#x27;s Astra becomes the first model to cross a &#x27;critical&#x27; cybersecurity capability threshold, while Anthropic&#x27;s new Fable and Mythos models cut agentic AI costs by up to 45%. Plus a deep dive on Rizz, the AI dating-reply app pulling in $500k a month, and what its screenshot-to-persuasive-text mechanic could mean for PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep027.mp3" length="13416902" type="audio/mpeg"/>

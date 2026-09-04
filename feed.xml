@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 29 — Anthropic gives away a commerce-agent blueprint, and the freelancer bot that hit twenty-five thousand dollars a month</title>
+      <description>Anthropic open-sources a blueprint for AI shopping and merchant agents, Google upgrades its cheapest coding model without raising the price, and xAI opens always-on Grok Bot teammates to the enterprise. Plus a deep dive on the Upwork proposal-writing agent that reportedly hit twenty-five thousand dollars a month, and why a safer, human-in-the-loop version of it could work as sponsorship-outreach software for grassroots clubs and charities.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep029.mp3" length="14332859" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep029</guid>
+      <pubDate>Fri, 04 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:54</itunes:duration>
+      <itunes:episode>29</itunes:episode>
+    </item>
+    <item>
       <title>Ep 28 — Anthropic, Cursor and Perplexity all race to keep your data off their own servers, and the survey tool clearing a hundred and twenty-five thousand dollars a month</title>
       <description>Anthropic, Cursor and Perplexity all ship new ways to keep sensitive data off their own servers within 48 hours of each other, while Google turns Gemini into Android&#x27;s memory layer. Plus a deep dive on Zigpoll, the solo-built exit-intent survey tool clearing $125k a month, and why the sports-venue EV-charging gap remains unclaimed for PlayFundWin, LeaguePages and EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep028.mp3" length="14047916" type="audio/mpeg"/>

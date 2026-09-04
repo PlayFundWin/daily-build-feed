@@ -1,5 +1,14 @@
 [
   {
+    "num": 29,
+    "date": "2026-09-04",
+    "title": "Ep 29 \u2014 Anthropic gives away a commerce-agent blueprint, and the freelancer bot that hit twenty-five thousand dollars a month",
+    "description": "Anthropic open-sources a blueprint for AI shopping and merchant agents, Google upgrades its cheapest coding model without raising the price, and xAI opens always-on Grok Bot teammates to the enterprise. Plus a deep dive on the Upwork proposal-writing agent that reportedly hit twenty-five thousand dollars a month, and why a safer, human-in-the-loop version of it could work as sponsorship-outreach software for grassroots clubs and charities.",
+    "file": "ep029.mp3",
+    "bytes": 14332859,
+    "seconds": 1194
+  },
+  {
     "num": 28,
     "date": "2026-09-03",
     "title": "Ep 28 \u2014 Anthropic, Cursor and Perplexity all race to keep your data off their own servers, and the survey tool clearing a hundred and twenty-five thousand dollars a month",

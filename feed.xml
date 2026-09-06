@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 30 — Grok Bot Learns to Audit Your Vendor Contracts, and the Bug-Bite Scanner Clearing Nearly Three Thousand Dollars a Month</title>
+      <description>xAI&#x27;s Grok Bot proved it can audit enterprise vendor contracts and find real six-figure savings, Google made private company knowledge bases generally available in Gemini Enterprise, and Anthropic shipped a context-hygiene command for Claude Code. Plus a deep dive into an AI insect-bite identification app clearing nearly two thousand eight hundred dollars a month in RevenueCat-verified revenue, and why the UK EV destination-charging gap enters its thirteenth quiet episode for EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep030.mp3" length="13651690" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep030</guid>
+      <pubDate>Sun, 06 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:58</itunes:duration>
+      <itunes:episode>30</itunes:episode>
+    </item>
+    <item>
       <title>Ep 29 — Anthropic gives away a commerce-agent blueprint, and the freelancer bot that hit twenty-five thousand dollars a month</title>
       <description>Anthropic open-sources a blueprint for AI shopping and merchant agents, Google upgrades its cheapest coding model without raising the price, and xAI opens always-on Grok Bot teammates to the enterprise. Plus a deep dive on the Upwork proposal-writing agent that reportedly hit twenty-five thousand dollars a month, and why a safer, human-in-the-loop version of it could work as sponsorship-outreach software for grassroots clubs and charities.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep029.mp3" length="14332859" type="audio/mpeg"/>

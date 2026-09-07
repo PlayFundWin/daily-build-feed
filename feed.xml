@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 31 — OpenAI&#x27;s Chief Scientist Admits Nobody&#x27;s Solved Alignment, and the Job-Matching App Built for Candidates Instead of Recruiters</title>
+      <description>A quiet 48 hours for AI releases gave way to OpenAI chief scientist Jakub Pachocki&#x27;s essay calling for mandatory third-party safety audits, plus resolved threads on Windsurf/Devin Desktop and the Cursor model cutoff. Then a deep dive into Jobric, Erik Chavez&#x27;s candidate-first AI job-matching tool reporting $3,300 MRR, and why the UK sports-venue EV charging gap just hit fourteen episodes with no movement.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep031.mp3" length="13196219" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep031</guid>
+      <pubDate>Mon, 07 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>18:20</itunes:duration>
+      <itunes:episode>31</itunes:episode>
+    </item>
+    <item>
       <title>Ep 30 — Grok Bot Learns to Audit Your Vendor Contracts, and the Bug-Bite Scanner Clearing Nearly Three Thousand Dollars a Month</title>
       <description>xAI&#x27;s Grok Bot proved it can audit enterprise vendor contracts and find real six-figure savings, Google made private company knowledge bases generally available in Gemini Enterprise, and Anthropic shipped a context-hygiene command for Claude Code. Plus a deep dive into an AI insect-bite identification app clearing nearly two thousand eight hundred dollars a month in RevenueCat-verified revenue, and why the UK EV destination-charging gap enters its thirteenth quiet episode for EV-Partnerships.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep030.mp3" length="13651690" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Fri, 07 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>18:19</itunes:duration>
       <itunes:episode>2</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 1 — Wallets for robots, and the hundred-pound directory</title>
-      <description>Cloudflare gives AI agents spending-capped wallets, Meta declares war on Claude Code, and a deep dive on the niche directory playbook: real people, real published revenue, under a hundred pounds to start. Plus what this week means for PlayFundWin, LeaguePages and EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep001.mp3" length="10932970" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep001</guid>
-      <pubDate>Thu, 06 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>15:11</itunes:duration>
-      <itunes:episode>1</itunes:episode>
     </item>
   </channel>
 </rss>

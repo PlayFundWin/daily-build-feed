@@ -1,5 +1,14 @@
 [
   {
+    "num": 32,
+    "date": "2026-09-08",
+    "title": "Ep 32 \u2014 Claude proves a piece of Fermat's Last Theorem, and the voice-memo app that hit fifteen thousand a month",
+    "description": "Anthropic's Claude agents spend eleven days formalising a piece of Fermat's Last Theorem largely unsupervised, OpenAI discloses what its own researchers pay per day to run AI agents, and Figure AI signs a multi-billion-dollar compute deal with Nscale to train its humanoid robot. Plus a deep dive on AudioPen, a solo-built voice-memo-to-writing tool that reached fifteen thousand dollars a month, and a genuine regulatory update for PlayFundWin as the Fundraising Regulator's registration-threshold consultation is due to reopen, alongside a fifteen-day countdown on the DCMS National Lottery good-causes consultation.",
+    "file": "ep032.mp3",
+    "bytes": 11288131,
+    "seconds": 941
+  },
+  {
     "num": 31,
     "date": "2026-09-07",
     "title": "Ep 31 \u2014 OpenAI's Chief Scientist Admits Nobody's Solved Alignment, and the Job-Matching App Built for Candidates Instead of Recruiters",
@@ -259,14 +268,5 @@
     "file": "ep003.mp3",
     "bytes": 13627240,
     "seconds": 1136
-  },
-  {
-    "num": 2,
-    "date": "2026-08-07",
-    "title": "Ep 2 \u2014 Google buries Assistant, and the browser extension playbook",
-    "description": "Google sets a firm date to kill Google Assistant, Microsoft caps its own engineers' AI token spend, and Anthropic loosens Claude's biology safeguards. Plus a deep dive on tiny gap-filler browser extensions backed by real published revenue, and what Allego's hundred-million-euro UK charging commitment means for EV-Partnerships.",
-    "file": "ep002.mp3",
-    "bytes": 13193712,
-    "seconds": 1099
   }
 ]

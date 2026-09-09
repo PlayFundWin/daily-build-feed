@@ -1,5 +1,14 @@
 [
   {
+    "num": 33,
+    "date": "2026-09-09",
+    "title": "Ep 33 \u2014 Meta Launches Its Muse Agent, and the Pixel-Art Habit Tracker That Crossed a Thousand a Month",
+    "description": "Meta launched Muse, a personal do-it-for-you AI agent running in a sandboxed environment, OpenAI shipped ChatGPT Images 2.5 and an internal model's disputed proof attempt on the Navier-Stokes Millennium Prize problem, and US authorities named six Chinese AI labs running large-scale distillation campaigns against Claude, ChatGPT, Gemini and Grok. Plus a deep dive on Habit Pixel, a solo-built pixel-art habit tracker that crossed $1,000 MRR with around 900 subscribers, a correction on the Fundraising Regulator's prize-draw registration threshold for PlayFundWin (phased 10/15/20%, not a flat 20%), and a sixteenth consecutive quiet episode for EV-Partnerships' sports-venue charging gap.",
+    "file": "ep033.mp3",
+    "bytes": 14124089,
+    "seconds": 1177
+  },
+  {
     "num": 32,
     "date": "2026-09-08",
     "title": "Ep 32 \u2014 Claude proves a piece of Fermat's Last Theorem, and the voice-memo app that hit fifteen thousand a month",
@@ -259,14 +268,5 @@
     "file": "ep004.mp3",
     "bytes": 13379912,
     "seconds": 1115
-  },
-  {
-    "num": 3,
-    "date": "2026-08-08",
-    "title": "Ep 3 \u2014 OpenAI flags critical cyber risk, and the thirty-grand Reddit bot",
-    "description": "OpenAI classifies its next model as having potential critical cyber capability and Claude Code ships self-hosted runners with cross-session agent messaging. Plus a deep dive on AI-powered community outreach backed by a real thirty-thousand-dollar-a-month founder story, and a quiet-news status check for PlayFundWin, LeaguePages and EV-Partnerships.",
-    "file": "ep003.mp3",
-    "bytes": 13627240,
-    "seconds": 1136
   }
 ]

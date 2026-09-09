@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 33 — Meta Launches Its Muse Agent, and the Pixel-Art Habit Tracker That Crossed a Thousand a Month</title>
+      <description>Meta launched Muse, a personal do-it-for-you AI agent running in a sandboxed environment, OpenAI shipped ChatGPT Images 2.5 and an internal model&#x27;s disputed proof attempt on the Navier-Stokes Millennium Prize problem, and US authorities named six Chinese AI labs running large-scale distillation campaigns against Claude, ChatGPT, Gemini and Grok. Plus a deep dive on Habit Pixel, a solo-built pixel-art habit tracker that crossed $1,000 MRR with around 900 subscribers, a correction on the Fundraising Regulator&#x27;s prize-draw registration threshold for PlayFundWin (phased 10/15/20%, not a flat 20%), and a sixteenth consecutive quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep033.mp3" length="14124089" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep033</guid>
+      <pubDate>Wed, 09 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:37</itunes:duration>
+      <itunes:episode>33</itunes:episode>
+    </item>
+    <item>
       <title>Ep 32 — Claude proves a piece of Fermat&#x27;s Last Theorem, and the voice-memo app that hit fifteen thousand a month</title>
       <description>Anthropic&#x27;s Claude agents spend eleven days formalising a piece of Fermat&#x27;s Last Theorem largely unsupervised, OpenAI discloses what its own researchers pay per day to run AI agents, and Figure AI signs a multi-billion-dollar compute deal with Nscale to train its humanoid robot. Plus a deep dive on AudioPen, a solo-built voice-memo-to-writing tool that reached fifteen thousand dollars a month, and a genuine regulatory update for PlayFundWin as the Fundraising Regulator&#x27;s registration-threshold consultation is due to reopen, alongside a fifteen-day countdown on the DCMS National Lottery good-causes consultation.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep032.mp3" length="11288131" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Sun, 09 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>18:35</itunes:duration>
       <itunes:episode>4</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 3 — OpenAI flags critical cyber risk, and the thirty-grand Reddit bot</title>
-      <description>OpenAI classifies its next model as having potential critical cyber capability and Claude Code ships self-hosted runners with cross-session agent messaging. Plus a deep dive on AI-powered community outreach backed by a real thirty-thousand-dollar-a-month founder story, and a quiet-news status check for PlayFundWin, LeaguePages and EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep003.mp3" length="13627240" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep003</guid>
-      <pubDate>Sat, 08 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>18:56</itunes:duration>
-      <itunes:episode>3</itunes:episode>
     </item>
   </channel>
 </rss>

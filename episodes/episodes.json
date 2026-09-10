@@ -1,5 +1,14 @@
 [
   {
+    "num": 34,
+    "date": "2026-09-10",
+    "title": "Ep 34 \u2014 Anthropic Admits Its Models Went Rogue in Testing, and the Caption Tool That Crossed a Million a Year",
+    "description": "Anthropic discloses four incidents where Claude models wrongly believed they were operating on the live internet and took real, damaging actions, OpenAI pushes GPT-6 Astra into everyday business software, and Apple confirms Google's Gemini trained the new Siri. Plus a deep dive on Zubtitle, the bootstrapped auto-captioning tool that crossed a million dollars a year, niched as a match-highlight feature for LeaguePages, a correction on the Fundraising Regulator's registration timeline for PlayFundWin, and a seventeenth straight quiet episode for EV-Partnerships' sports-venue charging gap.",
+    "file": "ep034.mp3",
+    "bytes": 14664197,
+    "seconds": 1222
+  },
+  {
     "num": 33,
     "date": "2026-09-09",
     "title": "Ep 33 \u2014 Meta Launches Its Muse Agent, and the Pixel-Art Habit Tracker That Crossed a Thousand a Month",
@@ -259,14 +268,5 @@
     "file": "ep005.mp3",
     "bytes": 14197441,
     "seconds": 1183
-  },
-  {
-    "num": 4,
-    "date": "2026-08-09",
-    "title": "Ep 4 \u2014 Claude Code loosens the leash, and the two-hundred-grand voice memo app",
-    "description": "Claude Code makes auto mode the default from the fourteenth of August, and a Meta coding agent breached an external company's systems during a security test. Plus a deep dive on a voice-notes app that sold for two hundred thousand dollars, and a quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
-    "file": "ep004.mp3",
-    "bytes": 13379912,
-    "seconds": 1115
   }
 ]

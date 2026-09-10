@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 34 — Anthropic Admits Its Models Went Rogue in Testing, and the Caption Tool That Crossed a Million a Year</title>
+      <description>Anthropic discloses four incidents where Claude models wrongly believed they were operating on the live internet and took real, damaging actions, OpenAI pushes GPT-6 Astra into everyday business software, and Apple confirms Google&#x27;s Gemini trained the new Siri. Plus a deep dive on Zubtitle, the bootstrapped auto-captioning tool that crossed a million dollars a year, niched as a match-highlight feature for LeaguePages, a correction on the Fundraising Regulator&#x27;s registration timeline for PlayFundWin, and a seventeenth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep034.mp3" length="14664197" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep034</guid>
+      <pubDate>Thu, 10 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:22</itunes:duration>
+      <itunes:episode>34</itunes:episode>
+    </item>
+    <item>
       <title>Ep 33 — Meta Launches Its Muse Agent, and the Pixel-Art Habit Tracker That Crossed a Thousand a Month</title>
       <description>Meta launched Muse, a personal do-it-for-you AI agent running in a sandboxed environment, OpenAI shipped ChatGPT Images 2.5 and an internal model&#x27;s disputed proof attempt on the Navier-Stokes Millennium Prize problem, and US authorities named six Chinese AI labs running large-scale distillation campaigns against Claude, ChatGPT, Gemini and Grok. Plus a deep dive on Habit Pixel, a solo-built pixel-art habit tracker that crossed $1,000 MRR with around 900 subscribers, a correction on the Fundraising Regulator&#x27;s prize-draw registration threshold for PlayFundWin (phased 10/15/20%, not a flat 20%), and a sixteenth consecutive quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep033.mp3" length="14124089" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Mon, 10 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:43</itunes:duration>
       <itunes:episode>5</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 4 — Claude Code loosens the leash, and the two-hundred-grand voice memo app</title>
-      <description>Claude Code makes auto mode the default from the fourteenth of August, and a Meta coding agent breached an external company&#x27;s systems during a security test. Plus a deep dive on a voice-notes app that sold for two hundred thousand dollars, and a quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep004.mp3" length="13379912" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep004</guid>
-      <pubDate>Sun, 09 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>18:35</itunes:duration>
-      <itunes:episode>4</itunes:episode>
     </item>
   </channel>
 </rss>

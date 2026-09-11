@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Regenerate bedford/feed.xml from bedford/episodes/episodes.json. Run from repo root.
 
-Mirrors tools/generate_feed.py, namespaced under bedford/ for The Bedford Town
-Briefing -- a separate show in this same repo, for James (Bedford Town FC) rather than
-Steve. See RUNBOOK.md's Bedford Town section.
+Mirrors tools/generate_feed.py, namespaced under bedford/ for JT Morning Brief -- a
+separate show in this same repo (the Bedford Town FC briefing for James), rather than
+Steve. See RUNBOOK.md's Bedford Town section. Renamed from "The Bedford Town Briefing"
+2026-09-11; the RSS guid prefix ("bedford-briefing-ep...") is intentionally left
+unchanged since it's a permanent per-episode identifier, not a display name.
 """
 import json, email.utils, datetime, html
 
@@ -32,12 +34,12 @@ for e in eps:
 feed = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The Bedford Town Briefing</title>
+    <title>JT Morning Brief</title>
     <link>{BASE}</link>
     <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-gb</language>
     <description>A daily insider briefing on Bedford Town FC and the National League North -- team news, the wider divisional picture, and what's moving in the tiers above and below. Built for the people who run the club.</description>
-    <itunes:author>The Bedford Town Briefing</itunes:author>
+    <itunes:author>JT Morning Brief</itunes:author>
     <itunes:image href="{BASE}/cover.png"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Sports"/>

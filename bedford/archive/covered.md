@@ -1,4 +1,4 @@
-# The Bedford Town Briefing — coverage archive
+# JT Morning Brief — coverage archive
 
 Read this file at the start of every episode-production run (RUNBOOK.md step 1). Note
 every story, beat, and quote already covered here and never repeat one — closing

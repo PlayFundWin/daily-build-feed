@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Generate bedford/cover.png (1400x1400 podcast artwork) for The Bedford Town
-Briefing. Run from repo root. Mirrors tools/make_cover.py's approach and palette."""
+"""Generate bedford/cover.png (1400x1400 podcast artwork) for JT Morning Brief, the
+Bedford Town FC briefing for James. Run from repo root. Mirrors tools/make_cover.py's
+approach and palette. Renamed from "The Bedford Town Briefing" 2026-09-11."""
 import os
 from PIL import Image, ImageDraw, ImageFont
 
@@ -20,11 +21,11 @@ big = font("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 168)
 med = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 62)
 small = font("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 54)
 
-d.text((100, 420), "THE", font=med, fill="#8fa1bd")
-d.text((92, 500), "BEDFORD", font=big, fill="#ffffff")
-d.text((92, 690), "TOWN", font=big, fill="#f2b234")
+d.text((100, 420), "JT", font=med, fill="#8fa1bd")
+d.text((92, 500), "MORNING", font=big, fill="#ffffff")
+d.text((92, 690), "BRIEF", font=big, fill="#f2b234")
 d.text((100, 930), "Team news, every matchday morning", font=med, fill="#c6d2e4")
-d.text((100, W - 118), "FOR THE COACHING STAFF  •  DAILY", font=small, fill="#0e1420")
+d.text((100, W - 118), "BEDFORD TOWN FC  •  DAILY", font=small, fill="#0e1420")
 os.makedirs("bedford", exist_ok=True)
 img.save("bedford/cover.png", optimize=True)
 print("bedford/cover.png written")

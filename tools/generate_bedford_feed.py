@@ -40,6 +40,10 @@ feed = f"""<?xml version="1.0" encoding="UTF-8"?>
     <language>en-gb</language>
     <description>A daily insider briefing on Bedford Town FC and the National League North -- team news, the wider divisional picture, and what's moving in the tiers above and below. Built for the people who run the club.</description>
     <itunes:author>JT Morning Brief</itunes:author>
+    <itunes:owner>
+      <itunes:name>PlayFundWin</itunes:name>
+      <itunes:email>steve@playfundwin.com</itunes:email>
+    </itunes:owner>
     <itunes:image href="{BASE}/cover.png"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Sports"/>

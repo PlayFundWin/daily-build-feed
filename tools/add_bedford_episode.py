@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Register a rendered Bedford Town Briefing episode in bedford/episodes/episodes.json.
+"""Register a rendered JT Morning Brief episode in bedford/episodes/episodes.json.
 
 Usage: python3 tools/add_bedford_episode.py <base> <meta.json>
   <base>      e.g. ep002  -> bedford/episodes/ep002.mp3 must exist

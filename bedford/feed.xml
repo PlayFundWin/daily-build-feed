@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The Bedford Town Briefing</title>
+    <title>JT Morning Brief</title>
     <link>https://playfundwin.github.io/daily-build-feed/bedford</link>
     <atom:link href="https://playfundwin.github.io/daily-build-feed/bedford/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-gb</language>
     <description>A daily insider briefing on Bedford Town FC and the National League North -- team news, the wider divisional picture, and what's moving in the tiers above and below. Built for the people who run the club.</description>
-    <itunes:author>The Bedford Town Briefing</itunes:author>
+    <itunes:author>JT Morning Brief</itunes:author>
     <itunes:image href="https://playfundwin.github.io/daily-build-feed/bedford/cover.png"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Sports"/>

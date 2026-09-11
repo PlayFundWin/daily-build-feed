@@ -364,6 +364,13 @@ aggregators for match reports and injury news), Bedford Town's own club channels
 Non-League Football Paper is paywalled — usable as a SEARCH-ONLY signal, not a
 CONFIRMED source, unless a specific article is actually accessible.
 
+A specific scoreline, scorer, or table position needs a per-game primary-source check,
+not just a table widget's season summary (added 2026-09-11 — Ep 1's first research
+pass had Bedford Town's win over Buxton as 2-1 off an aggregator; the club's own
+Pitchero match report said 3-0). When an aggregate figure and an individual match
+report disagree, trust the individual report and re-derive the aggregate yourself from
+confirmed individual results rather than repeat the aggregator's number.
+
 ## 3. Script
 Write the script following STYLE.md's Bedford Town section exactly, including its
 vocabulary-variety and structure-order-but-vary-the-wording rules — see the Daily Build
@@ -374,6 +381,13 @@ above; that 270 figure doesn't match Daily Build's own measured episode lengths 
 (cross-checked against Ep34: 1,222 seconds for a transcript well under 3,500 words), so
 don't carry it over into word-count planning for this show. Blank line between
 paragraphs.
+
+If confirmed news is genuinely thin on a given day, let the episode run shorter than
+~3,300 words rather than pad it with filler (added 2026-09-11, after Ep 1 ran about
+1,600 words / nine to ten minutes on a quiet news day) — a short, dense episode serves
+James better than a padded one, and inventing content to hit a word count breaks the
+hard content rules below. Say plainly in the recap that it was a quieter day rather
+than disguise the shorter length.
 
 Always close with a genuine, correctly attributed, real quote from an athlete (not
 necessarily a footballer) — never one already used (check the archive). No invented
@@ -418,3 +432,6 @@ databases are specific to that show. Revisit only if Steve asks.
 ## Process log
 - 2026-09-11: Show launched. First episode built the same day as the pipeline itself,
   previewing Bedford Town's next away fixture.
+- 2026-09-11: Ep 1's research caught and fixed a wrong scoreline from a first-pass
+  aggregator source (see the new rule in step 2) — the fix is a process rule now, not
+  a one-off correction.

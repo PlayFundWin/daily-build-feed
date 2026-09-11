@@ -1,0 +1,176 @@
+name: Build Bedford episode
+
+on:
+  push:
+    paths:
+      - 'bedford/pending/**'
+  workflow_dispatch:
+
+concurrency:
+  group: build-bedford-episode
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+
+      - name: Check for pending episode
+        id: check
+        run: |
+          shopt -s nullglob
+          scripts=(bedford/pending/*.txt)
+          if [ ${#scripts[@]} -eq 0 ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "No pending script. Nothing to do."
+          else
+            base=$(basename "${scripts[0]}" .txt)
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "script=${scripts[0]}" >> $GITHUB_OUTPUT
+            echo "base=$base" >> $GITHUB_OUTPUT
+            echo "Found ${scripts[0]} (base $base)"
+            wc -w "${scripts[0]}"
+            test -f "bedford/pending/$base.json"
+          fi
+
+      - name: Check for duplicate episode date
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -e
+          pending_date=$(jq -r '.date' "bedford/pending/${{ steps.check.outputs.base }}.json")
+          echo "Pending episode date: $pending_date"
+          if [ -f bedford/episodes/episodes.json ]; then
+            latest_date=$(jq -r '.[0].date // empty' bedford/episodes/episodes.json)
+            if [ -n "$latest_date" ] && [ "$pending_date" = "$latest_date" ]; then
+              echo "::error::DUPLICATE DATE - bedford/pending/${{ steps.check.outputs.base }}.json is dated $pending_date, which matches the most recently published episode's date. Refusing to publish a second episode for the same day. If this is genuinely intentional, fix the date in the pending JSON first."
+              exit 1
+            fi
+          fi
+          echo "Date check passed: $pending_date is new."
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.found == 'true'
+        with:
+          python-version: '3.11'
+
+      - name: Cache Kokoro model
+        if: steps.check.outputs.found == 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            kokoro-v1.0.onnx
+            voices-v1.0.bin
+          key: kokoro-model-v1.0
+
+      - name: Cache Whisper model
+        if: steps.check.outputs.found == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-tiny-en-v1
+
+      - name: Install system packages
+        if: steps.check.outputs.found == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg espeak-ng
+
+      - name: Install python packages
+        if: steps.check.outputs.found == 'true'
+        run: pip install kokoro-onnx soundfile numpy pillow faster-whisper --quiet
+
+      - name: Fetch Kokoro model files
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -e
+          [ -f kokoro-v1.0.onnx ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f voices-v1.0.bin ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          ls -la kokoro-v1.0.onnx voices-v1.0.bin
+
+      - name: Render audio
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          python3 tools/render_episode.py "${{ steps.check.outputs.script }}" "${{ steps.check.outputs.base }}.wav" bm_daniel 1.05
+
+      - name: Encode MP3
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          mkdir -p bedford/episodes
+          ffmpeg -y -loglevel error -i "${{ steps.check.outputs.base }}.wav" \
+            -codec:a libmp3lame -b:a 96k -ar 44100 \
+            -metadata artist="The Bedford Town Briefing" -metadata album="The Bedford Town Briefing" \
+            "bedford/episodes/${{ steps.check.outputs.base }}.mp3"
+          ls -la "bedford/episodes/${{ steps.check.outputs.base }}.mp3"
+
+      - name: Verify audio content (ASR spot-check)
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          python3 tools/verify_audio.py "bedford/episodes/${{ steps.check.outputs.base }}.mp3" "${{ steps.check.outputs.script }}"
+
+      - name: Register episode and build feed
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          if [ ! -f bedford/cover.png ]; then python3 tools/make_bedford_cover.py; fi
+          python3 tools/add_bedford_episode.py "${{ steps.check.outputs.base }}" "bedford/pending/${{ steps.check.outputs.base }}.json"
+          python3 tools/generate_bedford_feed.py
+
+      - name: Publish via API
+        if: steps.check.outputs.found == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! python3 tools/api_publish_bedford.py "${{ steps.check.outputs.base }}" > /tmp/pub.log 2>&1; then
+            echo "::error::PUBLISH FAILED - $(tr '\n' ' ' < /tmp/pub.log | tail -c 600)"
+            cat /tmp/pub.log
+            exit 1
+          fi
+          cat /tmp/pub.log
+
+      # Same staging step as build-episode.yml and deploy-pages.yml, and it stages
+      # BOTH shows' files every run, not just this one's — see the comment above the
+      # equivalent step in build-episode.yml for why.
+      - name: Stage Pages site
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -ex
+          mkdir -p _site/episodes _site/bedford/episodes
+          cp feed.xml _site/
+          [ -f cover.png ] && cp cover.png _site/ || true
+          cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          [ -f bedford/feed.xml ] && cp bedford/feed.xml _site/bedford/ || true
+          [ -f bedford/cover.png ] && cp bedford/cover.png _site/bedford/ || true
+          cp bedford/episodes/*.mp3 _site/bedford/episodes/ 2>/dev/null || true
+          ls -la _site _site/episodes _site/bedford _site/bedford/episodes
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outputs.found == 'true'
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: steps.check.outputs.found == 'true'
+        uses: actions/deploy-pages@v4
+
+      - name: Report
+        if: steps.check.outputs.found == 'true'
+        run: |
+          echo "Published ${{ steps.check.outputs.base }}"
+          echo "Feed at playfundwin.github.io/daily-build-feed/bedford/feed.xml"

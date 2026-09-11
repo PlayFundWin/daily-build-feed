@@ -113,7 +113,7 @@ jobs:
           mkdir -p bedford/episodes
           ffmpeg -y -loglevel error -i "${{ steps.check.outputs.base }}.wav" \
             -codec:a libmp3lame -b:a 96k -ar 44100 \
-            -metadata artist="The Bedford Town Briefing" -metadata album="The Bedford Town Briefing" \
+            -metadata artist="JT Morning Brief" -metadata album="JT Morning Brief" \
             "bedford/episodes/${{ steps.check.outputs.base }}.mp3"
           ls -la "bedford/episodes/${{ steps.check.outputs.base }}.mp3"
 

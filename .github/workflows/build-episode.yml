@@ -148,15 +148,23 @@ jobs:
       # served this repo. GITHUB_TOKEN-authored pushes (the API publish step above)
       # do not themselves trigger deploy-pages.yml's push trigger, so this job
       # deploys Pages directly using the same working tree it just published.
+      #
+      # This stages BOTH shows' files every run, not just this workflow's own show.
+      # GitHub Pages redeploys the entire _site tree from scratch on every deploy, so
+      # a run that staged only its own show's files would silently wipe the other
+      # show off the live site the next time either workflow ran.
       - name: Stage Pages site
         if: steps.check.outputs.found == 'true'
         run: |
           set -ex
-          mkdir -p _site/episodes
+          mkdir -p _site/episodes _site/bedford/episodes
           cp feed.xml _site/
           [ -f cover.png ] && cp cover.png _site/ || true
           cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
-          ls -la _site _site/episodes
+          [ -f bedford/feed.xml ] && cp bedford/feed.xml _site/bedford/ || true
+          [ -f bedford/cover.png ] && cp bedford/cover.png _site/bedford/ || true
+          cp bedford/episodes/*.mp3 _site/bedford/episodes/ 2>/dev/null || true
+          ls -la _site _site/episodes _site/bedford _site/bedford/episodes
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.check.outputs.found == 'true'

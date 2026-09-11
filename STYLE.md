@@ -65,3 +65,72 @@ template being filled in rather than a person talking.
 - Dates spoken ("Thursday the sixth of August"), no parentheses, no bullet symbols,
   no markdown in the script file. Paragraph breaks = natural pauses.
 - Websites spoken naturally ("Gov Auctions dot app").
+
+# The Bedford Town Briefing — style guide
+
+Listener: James, assistant manager at Bedford Town FC. A football insider — he already
+knows the club, the ground, the staff, and the basics of the non-league pyramid. Never
+explain any of that. This show's job is to make him sharper on the wider
+National-League-North/non-league ecosystem than he'd get from the club's own channels,
+at the level a knowledgeable analyst would brief a manager, not the level of an
+explainer aimed at a casual fan.
+
+## Voice and tone
+- Efficient, insider, information-dense. Think a trusted analyst or a well-sourced
+  non-league journalist briefing the coaching staff, not a broadcaster performing for a
+  general audience.
+- Second person, direct address ("you"), first person singular for the narrator ("I").
+- Short sentences, no padding. Respect that James's time is limited — every sentence
+  should earn its place.
+- Confidence flags spoken naturally, varied episode to episode (see RUNBOOK.md step 2
+  for the CONFIRMED/SEARCH-ONLY distinction this show runs on) — e.g. "I read this one
+  directly off their site," "this is doing the rounds but I haven't seen it confirmed
+  first-hand," "two separate sources have this the same way." Illustrations of the
+  pattern, not lines to reuse verbatim.
+- Never say "great question", "absolutely", "let's dive in", "game-changer".
+- Vocabulary variety: don't lean on the same connective tissue every episode — scan
+  before finishing a script for anything repeated more than two or three times and
+  swap it out (same discipline as the Daily Build section above).
+
+## Structure (~3,300 words ≈ 20 min at Kokoro bm_daniel 1.05 — see RUNBOOK.md step 3
+for why that's ~165 words per minute, not 270)
+1. Cold open: today's headline in a sentence or two, then date. (~120 words)
+2. Bedford Town team news: latest result, form, league position, next fixture, any
+   injury/squad news. (~700 words)
+3. The wider National League North picture — the day-before scan: who played, notable
+   results, and specifically the next opponent's result and any injury news pulled
+   from their own site. (~750 words)
+4. The National League (Step 1, above): what's moving that's actually relevant. (~500
+   words)
+5. Southern League Premier Division Central (Step 3, below): same. (~450 words)
+6. One practical, usable note — a genuine FA/regulatory storyline or something from the
+   wider scan James can actually use (e.g. an opponent's injury news feeding into
+   preparation). (~350 words)
+7. Sixty-second recap. (~200 words)
+8. Close with a genuine, attributed, never-reused athlete quote. (~80-150 words)
+
+Keep this order and rough word allocation, but vary the actual phrasing used to move
+between sections and to sign off — same reasoning as the Daily Build section above:
+fixed structure helps a daily listener know where they are, fixed wording makes it
+sound templated.
+
+## Hard content rules
+- Every claim dated 2026 with a source actually read this episode. Nothing from
+  training data dressed up as current. Discard rumours you can't source.
+- Never invent a scoreline, a table position, a transfer fee, an injury, or a quote.
+  If it isn't confirmable, say so plainly or leave it out.
+- Check `bedford/archive/covered.md` before writing: never re-cover a story or reuse a
+  closing quote. Follow-ups are fine and should reference the earlier episode.
+- No URLs read aloud. Attribute sources by name — the club, the league, TheFA.com, BBC
+  Sport, etc.
+- Reconfirm league placement (Bedford Town's tier, and the tiers above/below) at the
+  start of each new season rather than assuming last season's structure still holds
+  (see RUNBOOK.md's League tiers section).
+
+## TTS-safe writing (Kokoro reads this aloud verbatim)
+- Numbers as words where natural, "per cent" not "%", "nil" for 0 in a scoreline
+  ("two-nil"), dates spoken ("Saturday the twelfth of September").
+- No parentheses, no bullet symbols, no markdown in the script file. Paragraph breaks =
+  natural pauses.
+- Websites/handles spoken naturally if mentioned at all (rare — prefer naming the club
+  or organisation instead).

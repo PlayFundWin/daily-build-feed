@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish Bedford Town Briefing episode files to the repo via the GitHub Git Data API.
+"""Publish JT Morning Brief episode files to the repo via the GitHub Git Data API.
 
 Mirrors tools/api_publish.py exactly, namespaced under bedford/ for this separate show
 (see RUNBOOK.md's Bedford Town section). Same reason for existing: the runner's git

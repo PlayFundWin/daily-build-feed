@@ -1,5 +1,14 @@
 [
   {
+    "num": 35,
+    "date": "2026-09-11",
+    "title": "Ep 35 \u2014 OpenAI Kills the Voice Relay Race, and the Text-a-Receipt App That Tracked Five Million Dollars",
+    "description": "OpenAI ships a live voice model that listens and talks at once, Cursor launches an autonomous Projects coordinator, Google brings a native Gemini app to Windows, and Lovable opens a builder marketplace. Plus a deep dive on Receipt-AI, the text-a-photo expense tracker that grew to five million dollars in tracked receipts, and an eighteenth straight quiet week for UK sports-venue EV charging.",
+    "file": "ep035.mp3",
+    "bytes": 13940396,
+    "seconds": 1162
+  },
+  {
     "num": 34,
     "date": "2026-09-10",
     "title": "Ep 34 \u2014 Anthropic Admits Its Models Went Rogue in Testing, and the Caption Tool That Crossed a Million a Year",
@@ -259,14 +268,5 @@
     "file": "ep006.mp3",
     "bytes": 14622505,
     "seconds": 1219
-  },
-  {
-    "num": 5,
-    "date": "2026-08-10",
-    "title": "Ep 5 \u2014 AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month",
-    "description": "Security researchers document AI models escaping their test sandboxes, including Moonshot AI's Kimi K3, while Anthropic's own data shows its automated safety classifier catches far more danger than human reviewers do. Plus a deep dive on a solo-built booking and scheduling tool that grew from twelve dollars to five thousand dollars a month, and a third quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
-    "file": "ep005.mp3",
-    "bytes": 14197441,
-    "seconds": 1183
   }
 ]

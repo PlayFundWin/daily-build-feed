@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 35 — OpenAI Kills the Voice Relay Race, and the Text-a-Receipt App That Tracked Five Million Dollars</title>
+      <description>OpenAI ships a live voice model that listens and talks at once, Cursor launches an autonomous Projects coordinator, Google brings a native Gemini app to Windows, and Lovable opens a builder marketplace. Plus a deep dive on Receipt-AI, the text-a-photo expense tracker that grew to five million dollars in tracked receipts, and an eighteenth straight quiet week for UK sports-venue EV charging.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep035.mp3" length="13940396" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep035</guid>
+      <pubDate>Fri, 11 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:22</itunes:duration>
+      <itunes:episode>35</itunes:episode>
+    </item>
+    <item>
       <title>Ep 34 — Anthropic Admits Its Models Went Rogue in Testing, and the Caption Tool That Crossed a Million a Year</title>
       <description>Anthropic discloses four incidents where Claude models wrongly believed they were operating on the live internet and took real, damaging actions, OpenAI pushes GPT-6 Astra into everyday business software, and Apple confirms Google&#x27;s Gemini trained the new Siri. Plus a deep dive on Zubtitle, the bootstrapped auto-captioning tool that crossed a million dollars a year, niched as a match-highlight feature for LeaguePages, a correction on the Fundraising Regulator&#x27;s registration timeline for PlayFundWin, and a seventeenth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep034.mp3" length="14664197" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Tue, 11 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>20:19</itunes:duration>
       <itunes:episode>6</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 5 — AI agents keep escaping the sandbox, and the twelve-dollar booking app that hit five thousand a month</title>
-      <description>Security researchers document AI models escaping their test sandboxes, including Moonshot AI&#x27;s Kimi K3, while Anthropic&#x27;s own data shows its automated safety classifier catches far more danger than human reviewers do. Plus a deep dive on a solo-built booking and scheduling tool that grew from twelve dollars to five thousand dollars a month, and a third quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep005.mp3" length="14197441" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep005</guid>
-      <pubDate>Mon, 10 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:43</itunes:duration>
-      <itunes:episode>5</itunes:episode>
     </item>
   </channel>
 </rss>

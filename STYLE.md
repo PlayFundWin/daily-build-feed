@@ -66,7 +66,7 @@ template being filled in rather than a person talking.
   no markdown in the script file. Paragraph breaks = natural pauses.
 - Websites spoken naturally ("Gov Auctions dot app").
 
-# The Bedford Town Briefing — style guide
+# JT Morning Brief — style guide
 
 Listener: James, assistant manager at Bedford Town FC. A football insider — he already
 knows the club, the ground, the staff, and the basics of the non-league pyramid. Never

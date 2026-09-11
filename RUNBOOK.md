@@ -296,13 +296,14 @@ Runs on a budget model by design. Three research subagents maximum plus at most 
 verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
 daily episode.
 
-# The Bedford Town Briefing — daily production runbook
+# JT Morning Brief — daily production runbook
 
 A second, separate show in this same repo, for James (assistant manager, Bedford Town
 FC) rather than Steve. Different listener, different content rules, different
 namespace — everything for this show lives under `bedford/`. Read `STYLE.md`'s Bedford
 Town section (below the Daily Build style guide in that same file), not the Daily Build
-section, before writing a script for this show.
+section, before writing a script for this show. Renamed from "The Bedford Town
+Briefing" to "JT Morning Brief" 2026-09-11, at Steve's request — see Process log below.
 
 Feed: https://playfundwin.github.io/daily-build-feed/bedford/feed.xml
 Workflow: `.github/workflows/build-bedford-episode.yml`, triggered on push to
@@ -446,3 +447,17 @@ databases are specific to that show. Revisit only if Steve asks.
   ran to 448 seconds against a ~20-minute target — short partly from thin news, partly
   from this miscalibration. Step 3 now carries this show's own provisional wpm figure
   instead of borrowing Daily Build's.
+- 2026-09-11: Renamed the show from "The Bedford Town Briefing" to "JT Morning Brief"
+  at Steve's request, same day as launch. Updated: this file's section header,
+  STYLE.md's section header, `tools/generate_bedford_feed.py` (RSS `<title>` and
+  `<itunes:author>` — the `bedford-briefing-ep...` guid prefix was deliberately left
+  unchanged, it's a permanent per-episode ID not a display name), `tools/
+  make_bedford_cover.py` (cover art text), `build-bedford-episode.yml`'s MP3
+  artist/album ID3 tags, and the daily scheduled task's own prompt text (it hardcoded
+  the old name). `bedford/feed.xml` and `bedford/cover.png` were regenerated and
+  pushed directly rather than waiting for tomorrow's scheduled run, since the workflow
+  only rebuilds `cover.png` when the file is missing. Ep 1's actual rendered audio
+  still says "This is the Bedford Town Briefing" in its cold open — not re-rendered,
+  since re-running TTS for one already-published, zero-listens-so-far episode over a
+  single spoken line wasn't judged worth the round-trip; flagged to Steve rather than
+  decided silently.

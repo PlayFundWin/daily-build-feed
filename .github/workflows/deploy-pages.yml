@@ -7,6 +7,9 @@ on:
       - 'feed.xml'
       - 'cover.png'
       - 'episodes/**'
+      - 'bedford/feed.xml'
+      - 'bedford/cover.png'
+      - 'bedford/episodes/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
@@ -31,11 +34,14 @@ jobs:
       - name: Stage site
         run: |
           set -ex
-          mkdir -p _site/episodes
+          mkdir -p _site/episodes _site/bedford/episodes
           cp feed.xml _site/
           [ -f cover.png ] && cp cover.png _site/ || true
           cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
-          ls -la _site _site/episodes
+          [ -f bedford/feed.xml ] && cp bedford/feed.xml _site/bedford/ || true
+          [ -f bedford/cover.png ] && cp bedford/cover.png _site/bedford/ || true
+          cp bedford/episodes/*.mp3 _site/bedford/episodes/ 2>/dev/null || true
+          ls -la _site _site/episodes _site/bedford _site/bedford/episodes
 
       - uses: actions/upload-pages-artifact@v3
         with:

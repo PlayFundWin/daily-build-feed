@@ -92,8 +92,8 @@ explainer aimed at a casual fan.
   before finishing a script for anything repeated more than two or three times and
   swap it out (same discipline as the Daily Build section above).
 
-## Structure (~3,300 words ≈ 20 min at Kokoro bm_daniel 1.05 — see RUNBOOK.md step 3
-for why that's ~165 words per minute, not 270)
+## Structure (roughly 3,300-4,200 words ≈ 20 min at Kokoro bm_daniel 1.05, actual pace
+still being calibrated for this show — see RUNBOOK.md step 3)
 1. Cold open: today's headline in a sentence or two, then date. (~120 words)
 2. Bedford Town team news: latest result, form, league position, next fixture, any
    injury/squad news. (~700 words)
@@ -126,6 +126,8 @@ sound templated.
 - Reconfirm league placement (Bedford Town's tier, and the tiers above/below) at the
   start of each new season rather than assuming last season's structure still holds
   (see RUNBOOK.md's League tiers section).
+- If confirmed news is genuinely thin, let the episode run short rather than pad it —
+  see RUNBOOK.md step 3.
 
 ## TTS-safe writing (Kokoro reads this aloud verbatim)
 - Numbers as words where natural, "per cent" not "%", "nil" for 0 in a scoreline

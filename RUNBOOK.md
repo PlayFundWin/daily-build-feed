@@ -295,3 +295,126 @@ running commentary. This section is read in step 1 alongside the archive.
 Runs on a budget model by design. Three research subagents maximum plus at most one
 verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
 daily episode.
+
+# The Bedford Town Briefing — daily production runbook
+
+A second, separate show in this same repo, for James (assistant manager, Bedford Town
+FC) rather than Steve. Different listener, different content rules, different
+namespace — everything for this show lives under `bedford/`. Read `STYLE.md`'s Bedford
+Town section (below the Daily Build style guide in that same file), not the Daily Build
+section, before writing a script for this show.
+
+Feed: https://playfundwin.github.io/daily-build-feed/bedford/feed.xml
+Workflow: `.github/workflows/build-bedford-episode.yml`, triggered on push to
+`bedford/pending/**` (mirrors `build-episode.yml`'s architecture and Git Data API
+publish pattern exactly — see that workflow and the Architecture section above for how
+the two-track session/Actions split works; it isn't repeated here).
+
+James already works for the club — never explain club or pyramid basics he already
+knows. The job of this show is to make him more knowledgeable about the wider
+non-league/National League ecosystem at an insider level than he'd get from Bedford
+Town's own channels alone.
+
+## League tiers — reconfirm every season, never assume
+As of this show's launch (September 2026), Bedford Town sit in **National League
+North** (Step 2). One tier above is the **National League** (Step 1); one tier below is
+the **Southern League Premier Division Central** (Step 3, the league Bedford Town were
+promoted from). Composition of all three leagues, and Bedford Town's own division,
+changes at the end of every season via promotion/relegation — verify all three are
+still correct at the start of a new season (roughly each June/July) before relying on
+them, rather than carrying last season's structure forward unchecked.
+
+## 1. Read the archive
+Read `bedford/archive/covered.md`. Note every story, beat, and quote already covered —
+closing quotes especially must never repeat. Check its "Standing corrections" section
+for anything that overrides earlier episodes. Read `bedford/episodes/episodes.json` for
+the next episode number.
+
+## 2. Research — priority order
+Bedford Town's own news always comes first, then the wider National League North
+picture, then the tiers above and below. Tag every claim CONFIRMED (a source page you
+actually read) or SEARCH-ONLY (secondhand/aggregated) — say so naturally in the script,
+varying the phrasing (see STYLE.md). Never invent a result, a scoreline, a table
+position, or a quote; if it can't be confirmed, say so or leave it out.
+
+- **Bedford Town**: latest result, current form, league position, and next fixture.
+  Check the club's own channels (Pitchero/official site) directly, not just
+  aggregators, for team news and injuries.
+- **National League North — the day-before scan**: which NLN clubs played the day or
+  night before this episode airs, especially Bedford Town's next opponent. Check that
+  opponent's own club website directly for their result and any notable injury news —
+  a key player picked up in that game is scouting-relevant for Bedford Town's staff and
+  is exactly the kind of insider detail this show exists to surface. Widen to a few
+  other NLN results/storylines as time allows.
+- **National League (Step 1, above)**: promotion-race and other storylines relevant to
+  the wider picture — this tier doesn't need daily deep coverage, but a notable
+  development is worth a mention.
+- **Southern League Premier Division Central (Step 3, below)**: same — Bedford Town's
+  former league, so promotion-race news there is relevant to who might be coming up.
+- **TheFA.com**: check directly for regulatory or rule-change storylines (Laws of the
+  Game changes, disciplinary process changes, non-league-specific rule news) — this is
+  a separate check from club/league news and is often where the most genuinely useful
+  insider-level content comes from. Don't assume a headline rule change (e.g. VAR
+  expansion) actually reaches Step 2 — check which competitions/steps it actually
+  applies to before including it.
+
+Named sources: TheFA.com, the National League's own site, the Southern League's own
+site, BBC Sport's non-league coverage, individual club websites (always preferred over
+aggregators for match reports and injury news), Bedford Town's own club channels. The
+Non-League Football Paper is paywalled — usable as a SEARCH-ONLY signal, not a
+CONFIRMED source, unless a specific article is actually accessible.
+
+## 3. Script
+Write the script following STYLE.md's Bedford Town section exactly, including its
+vocabulary-variety and structure-order-but-vary-the-wording rules — see the Daily Build
+section above (step 3) for why this matters; the same discipline applies here.
+Target ~3,300 words for ~20 minutes at Kokoro bm_daniel, speed 1.05 — that pace is
+roughly **165 words per minute**, not the 270 wpm this runbook states for Daily Build
+above; that 270 figure doesn't match Daily Build's own measured episode lengths either
+(cross-checked against Ep34: 1,222 seconds for a transcript well under 3,500 words), so
+don't carry it over into word-count planning for this show. Blank line between
+paragraphs.
+
+Always close with a genuine, correctly attributed, real quote from an athlete (not
+necessarily a footballer) — never one already used (check the archive). No invented
+quotes, ever.
+
+## 4. Queue it
+Commit with `github_put_file`:
+- `bedford/pending/epNNN.txt` — the script
+- `bedford/pending/epNNN.json` — `{"num": NNN, "date": "YYYY-MM-DD", "title": "...",
+  "description": "two-sentence summary"}`
+
+Update `bedford/archive/covered.md` in the same pass: append the episode's entry (see
+that file's own header for the format), including which athlete quote was used.
+
+## 5. Build
+Dispatch `build-bedford-episode.yml` on `master` (a push touching `bedford/pending/**`
+usually starts it on its own — dispatch is the fallback). Same duplicate-date guard,
+same ASR content spot-check, same Git Data API publish pattern as Daily Build's
+workflow — see steps 5 and the Architecture section above for what these do and why;
+not repeated here since the mechanics are identical, just namespaced under `bedford/`.
+
+## 6. Verify
+Same GitHub-API-first approach as Daily Build (see step 6 above — this sandbox has no
+general network egress and WebFetch is unreliable against this feed's binary/XML
+responses):
+- `github_get` the latest `/deployments?environment=github-pages&per_page=1` entry and
+  its `/statuses` — confirm `state` is `success` and the `sha` matches the publish
+  commit.
+- `github_get_file` on `bedford/episodes/episodes.json` (ref `master`) — confirm
+  today's episode, byte size and duration are present.
+- `github_get_file` on `bedford/archive/covered.md` (ref `master`) — confirm today's
+  episode has a section.
+
+## 7. Notify
+Send James (via Steve, until James has his own channel set up) a short message: the
+episode title, a one-line summary, and confirmation it's live. State plainly if
+anything failed.
+
+No Notion logging for this show — Steve hasn't asked for it and the Daily Build Notion
+databases are specific to that show. Revisit only if Steve asks.
+
+## Process log
+- 2026-09-11: Show launched. First episode built the same day as the pipeline itself,
+  previewing Bedford Town's next away fixture.

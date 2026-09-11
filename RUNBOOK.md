@@ -461,3 +461,15 @@ databases are specific to that show. Revisit only if Steve asks.
   since re-running TTS for one already-published, zero-listens-so-far episode over a
   single spoken line wasn't judged worth the round-trip; flagged to Steve rather than
   decided silently.
+- 2026-09-11: Steve caught a gap in the same-day rename: `bedford/archive/covered.md`'s
+  header still read "The Bedford Town Briefing" and two tool docstrings
+  (`tools/add_bedford_episode.py`, `tools/api_publish_bedford.py`) still named the old
+  show in a comment. All three fixed and pushed. The original rename sweep covered the
+  feed, cover art, ID3 tags, STYLE.md/RUNBOOK.md headers, and the scheduled task, but
+  missed files that don't drive the feed directly -- worth a full-repo grep for the old
+  name rather than relying on the list of "files that matter" next time.
+
+## Cost discipline
+Runs on a budget model by design. Three research subagents maximum plus at most one
+verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
+daily episode.

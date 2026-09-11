@@ -375,16 +375,22 @@ confirmed individual results rather than repeat the aggregator's number.
 Write the script following STYLE.md's Bedford Town section exactly, including its
 vocabulary-variety and structure-order-but-vary-the-wording rules — see the Daily Build
 section above (step 3) for why this matters; the same discipline applies here.
-Target ~3,300 words for ~20 minutes at Kokoro bm_daniel, speed 1.05 — that pace is
-roughly **165 words per minute**, not the 270 wpm this runbook states for Daily Build
-above; that 270 figure doesn't match Daily Build's own measured episode lengths either
-(cross-checked against Ep34: 1,222 seconds for a transcript well under 3,500 words), so
-don't carry it over into word-count planning for this show. Blank line between
-paragraphs.
+
+Target roughly 3,300 to 4,200 words for ~20 minutes at Kokoro bm_daniel, speed 1.05 —
+actual pace depends on paragraph length and pause frequency and is still being
+calibrated for this show specifically, separately from Daily Build's own figure above.
+Ep 1 measured **211 words per minute** (1,576 words rendered in 448 seconds — check
+`bedford/episodes/episodes.json` for the exact numbers on any past episode), noticeably
+faster than Daily Build's ~165 wpm. Treat 211 wpm as provisional after a single data
+point, not settled: after each of the next few episodes, compare the pending script's
+word count against the published episode's `seconds` and tighten this figure with real
+data rather than trust either number blindly. Blank line between paragraphs — each
+blank line becomes a spoken pause, and pause frequency is likely a big part of why this
+show's pace differs from Daily Build's.
 
 If confirmed news is genuinely thin on a given day, let the episode run shorter than
-~3,300 words rather than pad it with filler (added 2026-09-11, after Ep 1 ran about
-1,600 words / nine to ten minutes on a quiet news day) — a short, dense episode serves
+target rather than pad it with filler (added 2026-09-11, after Ep 1 ran about 1,600
+words / seven and a half minutes on a quiet news day) — a short, dense episode serves
 James better than a padded one, and inventing content to hit a word count breaks the
 hard content rules below. Say plainly in the recap that it was a quieter day rather
 than disguise the shorter length.
@@ -435,3 +441,8 @@ databases are specific to that show. Revisit only if Steve asks.
 - 2026-09-11: Ep 1's research caught and fixed a wrong scoreline from a first-pass
   aggregator source (see the new rule in step 2) — the fix is a process rule now, not
   a one-off correction.
+- 2026-09-11: Ep 1 measured 211 wpm against a script written for an assumed ~165 wpm
+  (copied from Daily Build's figure without checking it applied here), so the episode
+  ran to 448 seconds against a ~20-minute target — short partly from thin news, partly
+  from this miscalibration. Step 3 now carries this show's own provisional wpm figure
+  instead of borrowing Daily Build's.

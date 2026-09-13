@@ -1,0 +1,5 @@
+Dario Amodei just told the entire industry to slow down, OpenAI built a data analyst you can talk to instead of hiring one, and somewhere in Toulouse a former IBM data scientist is quietly making more from staging empty rooms than most estate agents make from selling the houses in them.
+
+This is The Daily Build, for Sunday the thirteenth of September, twenty twenty-six. I'm your host, and as ever: this is research and ideas, not financial advice, so treat everything that follows as a starting point for your own homework, not an instruction to wire money anywhere.
+
+Let's get into what shipped.

@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 37 — The Big Three Talk Safety Pacts, and the AI Colouring-Book Business Clearing Seventeen Grand a Month</title>
+      <description>OpenAI&#x27;s Sam Altman rules out an IPO this year citing safety concerns, an anonymously sourced report has Anthropic eyeing an October Nasdaq listing near two trillion dollars, and all three major labs reportedly discuss a joint pre-release testing body. Plus a deep dive on Low Content AI, a Stripe-verified AI publishing business clearing seventeen and a half thousand dollars a month, and a twentieth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep037.mp3" length="14138822" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep037</guid>
+      <pubDate>Mon, 14 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:38</itunes:duration>
+      <itunes:episode>37</itunes:episode>
+    </item>
+    <item>
       <title>Ep 36 - Amodei Says Slow Down, and the App Staging Empty Rooms for Ten Grand a Month</title>
       <description>Anthropic&#x27;s Dario Amodei calls for the AI industry to deliberately pace itself, OpenAI ships a plain-English data analyst inside ChatGPT Work, and Google widens Gemini&#x27;s reach across Workspace. Plus a deep dive on IACrea, an AI room-staging tool for estate agents reportedly earning around ten thousand dollars a month, and a nineteenth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep036.mp3" length="14283331" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Thu, 13 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:16</itunes:duration>
       <itunes:episode>8</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 7 — Gemini crosses a billion users, and the mockup generator earning twelve thousand a month</title>
-      <description>Google&#x27;s Gemini app reportedly crosses one billion monthly users, OpenAI puts restaurant bookings inside ChatGPT, and Anthropic cancels a scheduled Claude Sonnet five price rise while extending its Compliance API to local Cowork and Claude Code sessions. Plus a deep dive on an AI mockup generator for merch sellers that reached twelve thousand dollars a month, and a fifth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep007.mp3" length="14225339" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep007</guid>
-      <pubDate>Wed, 12 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:45</itunes:duration>
-      <itunes:episode>7</itunes:episode>
     </item>
   </channel>
 </rss>

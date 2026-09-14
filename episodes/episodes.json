@@ -1,5 +1,14 @@
 [
   {
+    "num": 37,
+    "date": "2026-09-14",
+    "title": "Ep 37 \u2014 The Big Three Talk Safety Pacts, and the AI Colouring-Book Business Clearing Seventeen Grand a Month",
+    "description": "OpenAI's Sam Altman rules out an IPO this year citing safety concerns, an anonymously sourced report has Anthropic eyeing an October Nasdaq listing near two trillion dollars, and all three major labs reportedly discuss a joint pre-release testing body. Plus a deep dive on Low Content AI, a Stripe-verified AI publishing business clearing seventeen and a half thousand dollars a month, and a twentieth straight quiet episode for EV-Partnerships' sports-venue charging gap.",
+    "file": "ep037.mp3",
+    "bytes": 14138822,
+    "seconds": 1178
+  },
+  {
     "num": 36,
     "date": "2026-09-13",
     "title": "Ep 36 - Amodei Says Slow Down, and the App Staging Empty Rooms for Ten Grand a Month",
@@ -259,14 +268,5 @@
     "file": "ep008.mp3",
     "bytes": 13873940,
     "seconds": 1156
-  },
-  {
-    "num": 7,
-    "date": "2026-08-12",
-    "title": "Ep 7 \u2014 Gemini crosses a billion users, and the mockup generator earning twelve thousand a month",
-    "description": "Google's Gemini app reportedly crosses one billion monthly users, OpenAI puts restaurant bookings inside ChatGPT, and Anthropic cancels a scheduled Claude Sonnet five price rise while extending its Compliance API to local Cowork and Claude Code sessions. Plus a deep dive on an AI mockup generator for merch sellers that reached twelve thousand dollars a month, and a fifth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.",
-    "file": "ep007.mp3",
-    "bytes": 14225339,
-    "seconds": 1185
   }
 ]

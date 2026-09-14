@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 36 - Amodei Says Slow Down, and the App Staging Empty Rooms for Ten Grand a Month</title>
+      <description>Anthropic&#x27;s Dario Amodei calls for the AI industry to deliberately pace itself, OpenAI ships a plain-English data analyst inside ChatGPT Work, and Google widens Gemini&#x27;s reach across Workspace. Plus a deep dive on IACrea, an AI room-staging tool for estate agents reportedly earning around ten thousand dollars a month, and a nineteenth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep036.mp3" length="14283331" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep036</guid>
+      <pubDate>Sun, 13 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:50</itunes:duration>
+      <itunes:episode>36</itunes:episode>
+    </item>
+    <item>
       <title>Ep 35 — OpenAI Kills the Voice Relay Race, and the Text-a-Receipt App That Tracked Five Million Dollars</title>
       <description>OpenAI ships a live voice model that listens and talks at once, Cursor launches an autonomous Projects coordinator, Google brings a native Gemini app to Windows, and Lovable opens a builder marketplace. Plus a deep dive on Receipt-AI, the text-a-photo expense tracker that grew to five million dollars in tracked receipts, and an eighteenth straight quiet week for UK sports-venue EV charging.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep035.mp3" length="13940396" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Wed, 12 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:45</itunes:duration>
       <itunes:episode>7</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 6 — Anthropic&#x27;s nine-billion-dollar data centre bet, and the CV builder that beat the SEO grind</title>
-      <description>Anthropic signs a data centre lease worth up to sixteen billion dollars, OpenAI expands its AI cybersecurity tooling, and an unreleased Claude research swarm advances a decades-old maths problem. Plus a deep dive on a solo-built AI CV tool that reached a thousand dollars a month the honest, slow way, and a fourth quiet week for PlayFundWin, LeaguePages and EV-Partnerships regulation.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep006.mp3" length="14622505" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep006</guid>
-      <pubDate>Tue, 11 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>20:19</itunes:duration>
-      <itunes:episode>6</itunes:episode>
     </item>
   </channel>
 </rss>

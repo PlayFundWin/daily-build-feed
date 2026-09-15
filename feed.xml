@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 38 — Anthropic&#x27;s Nasdaq Whisper Gets a Date, and the AI Dubbing Tool That Took Three Years to Earn Real Money</title>
+      <description>Anthropic&#x27;s stock-market rumours firm up with a named exchange and a rough date, GitHub hands developers a cost-versus-quality dial for Copilot, and Claude Code ships real per-command sandboxing in a two-day patch train. Plus a deep dive on Stripe-verified AI dubbing tool VideoDubber.ai&#x27;s honest three-year grind to modest revenue, and updates for PlayFundWin, LeaguePages and EV-Partnerships including the sports-venue charging gap&#x27;s twenty-first straight episode and an eight-day countdown on the DCMS good-causes consultation.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep038.mp3" length="14383328" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep038</guid>
+      <pubDate>Tue, 15 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:59</itunes:duration>
+      <itunes:episode>38</itunes:episode>
+    </item>
+    <item>
       <title>Ep 37 — The Big Three Talk Safety Pacts, and the AI Colouring-Book Business Clearing Seventeen Grand a Month</title>
       <description>OpenAI&#x27;s Sam Altman rules out an IPO this year citing safety concerns, an anonymously sourced report has Anthropic eyeing an October Nasdaq listing near two trillion dollars, and all three major labs reportedly discuss a joint pre-release testing body. Plus a deep dive on Low Content AI, a Stripe-verified AI publishing business clearing seventeen and a half thousand dollars a month, and a twentieth straight quiet episode for EV-Partnerships&#x27; sports-venue charging gap.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep037.mp3" length="14138822" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Fri, 14 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>18:45</itunes:duration>
       <itunes:episode>9</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 8 — Anthropic&#x27;s six-billion-dollar video bet, and the FAQ chatbot earning three hundred thousand a year</title>
-      <description>Anthropic reportedly negotiates a six-billion-dollar acquisition of video-AI startup Decart, Lovable&#x27;s no-code builder doubles to a thirteen-billion-dollar valuation in eight months, and xAI&#x27;s Grok four point six lands inside Cursor on day one. Plus a deep dive on UK-founded chatbot My Ask AI, which reportedly reached three hundred thousand dollars a year, and the Fundraising Regulator quietly pushes its prize-draw ruling from September twenty twenty-six to early twenty twenty-seven.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep008.mp3" length="13873940" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep008</guid>
-      <pubDate>Thu, 13 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:16</itunes:duration>
-      <itunes:episode>8</itunes:episode>
     </item>
   </channel>
 </rss>

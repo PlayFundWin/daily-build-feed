@@ -2,7 +2,10 @@
 
 Listener: Steve, co-founder of PlayFundWin (digital prize-draw fundraising for UK sports
 clubs and charities), LeaguePages.com (grassroots league websites/tools), and
-EV-partnerships.com / energy-partners.co.uk (EV charging at sports venues). UK-based.
+EV-partnerships.com / energy-partners.co.uk (EV charging as a community hub at
+grassroots sports clubs — small local clubs that already have a bar, restaurant or cafe
+and draw people back regularly, not just a match-day-only play; see RUNBOOK.md step 2C
+for the fuller thesis, corrected 2026-09-16). UK-based.
 Wants to learn fast, build small AI-powered income streams, and sharpen his existing
 businesses.
 
@@ -58,6 +61,20 @@ template being filled in rather than a person talking.
   Steve doesn't want ideas he hasn't acted on chased or resurfaced; if he likes one,
   he'll bring it into the chat himself). The Ideas Ledger (see RUNBOOK.md step 7a) is a
   passive record, not a prompt for on-air follow-up.
+- Status threads need their "why", not just their status (added 2026-09-16, after Steve
+  asked on-air-style why the Fundraising Regulator thread is worth tracking at all).
+  When a long-running regulatory or compliance thread gets a script mention, don't
+  default to a bare status line once the listener has heard several of those already —
+  periodically (not every episode; that repeats old ground and breaks the
+  vocabulary-variety rule above) remind them why it's being tracked in the first place.
+  For the Fundraising Regulator thread specifically: registration is voluntary, not a
+  legal requirement, and only gates the Fundraising Badge — but DCMS's separate
+  Voluntary Code of Good Practice for Prize Draw Operators has stated plainly that
+  government will legislate if voluntary self-regulation doesn't work, so staying ahead
+  of it is a hedge against a future mandatory regime, not busywork done for the
+  regulator's benefit (see reference/fundraising-regulator-notes.md for the full,
+  sourced version of this reasoning). Ep40 carries this explanation once in full; after
+  that, a short callback is enough rather than restating it from scratch.
 
 ## TTS-safe writing (Kokoro reads this aloud verbatim)
 - Write for the ear: numbers as words where natural ("two and a half thousand dollars

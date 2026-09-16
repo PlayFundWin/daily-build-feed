@@ -60,6 +60,12 @@ today's date and the relevant archive lines so they skip covered ground.
 - A: AI releases/features from the last 48h (Anthropic/Claude, OpenAI, Google, agent
   tooling, voice AI, no-code builders). Official changelogs first. Each item: what,
   exact date, source URL, small-business angle, CONFIRMED (page read) vs SEARCH-ONLY.
+  No-code builders: check Lovable AND Base44 by name every pass (added 2026-09-16 at
+  Steve's explicit request — Base44 had never once appeared in this show despite
+  Lovable being a running thread since Ep8; Base44 is Wix-owned since an ~$80M
+  acquisition, reportedly around $100-150M ARR as of September 2026, and ships several
+  updates a day via its own changelog at docs.base44.com/changelog/product, so checking
+  it directly is cheap even on a quiet day).
 - B: Small AI-buildable business ideas with recent PUBLISHED revenue evidence (Indie
   Hackers, Hacker News, Starter Story, Product Hunt, subreddits). Pick ONE deep-dive
   idea: real named evidence, ~90% Claude-buildable in days, sellable in the UK, under
@@ -70,7 +76,10 @@ today's date and the relevant archive lines so they skip covered ground.
 - C: Sector news for the listener's ventures: UK fundraising/prize-draw tech and
   regulation; grassroots sports tech; UK EV destination charging. Check these named
   sources FIRST, before open web search, to keep this agent cheap on quiet weeks: the
-  Fundraising Regulator's own consultation/registration pages, Zapmap and DfT public
+  Fundraising Regulator's own consultation/registration pages (baseline facts are also
+  in `reference/fundraising-regulator-notes.md` — read that first and only search for
+  what's changed since its date-stamp, rather than re-deriving the whole picture from
+  scratch every episode; added 2026-09-16, see Process log), Zapmap and DfT public
   charging-point stats, and two or three named UK trade outlets (Third Sector, Civil
   Society, Fleet News / Fleet Point for EV). If those turn up nothing new beyond what's
   already in `archive/covered.md`, say so plainly and stop — do not pad by broadening
@@ -79,6 +88,22 @@ today's date and the relevant archive lines so they skip covered ground.
   show targets a 07:00 UK ship time, don't chase "today's" DfT release on its actual
   publish day expecting fresh numbers; plan to report the real figures the day after
   they land instead (see Process log, 2026-08-27).
+
+  EV-Partnerships thesis (corrected 2026-09-16, at Steve's explicit direction — see
+  Process log): this is NOT primarily a match-day-utilisation bet. The pitch is a
+  community-hub model — a small local club (football, rugby, cricket, golf) that
+  already has a bar, restaurant or cafe and is a place people return to regularly, not
+  just on fixture days, so EV charging there gets used far more like a destination
+  charger than a stadium-only one. The eight named national operators
+  (IONITY/RAW Charging/Allego/Believ/InstaVolt/Osprey/GRIDSERVE/Pod Point) are tracked
+  because they are the plausible THIRD-PARTY entrants into this space — that thread
+  measures whether the big networks have noticed grassroots clubs as a category, which
+  is a genuinely separate question from whether EV-Partnerships' own direct,
+  club-by-club sales motion is working. Do not conflate "no national operator has
+  moved" with "the thesis is unproven" — EV-Partnerships sells directly and Steve has
+  said (2026-09-16, see covered.md Standing corrections) that this is already
+  happening; treat the operator-gap thread and EV-Partnerships' own pipeline as two
+  separate facts in the script rather than one.
 
 Vary how you phrase these three briefs and which named sources you check first from one
 day to the next — don't silently reuse identical query wording or check the same source
@@ -239,6 +264,29 @@ you did about it. Never claim success you did not verify.
 Dated entries only, added when a real gap in this pipeline is found and fixed — not a
 running commentary. This section is read in step 1 alongside the archive.
 
+- 2026-09-16: Steve raised three fixes in one conversation, outside the normal episode
+  flow. (1) Base44 had never once been checked or mentioned despite Lovable running
+  since Ep8 — step 2A now names both explicitly. (2) The EV-Partnerships thesis this
+  show has been narrating (a match-day-utilisation bet, "genuine gap vs. fixture-day
+  economics" per Ep36-38) was wrong — Steve's actual pitch is a community-hub model
+  (clubs with a bar/restaurant/cafe that people visit regularly, not just on fixture
+  days), and EV-Partnerships sells directly club-by-club rather than waiting for a
+  national operator to move — step 2C corrected accordingly. (3) Steve asked, in plain
+  terms, what tracking the Fundraising Regulator actually gets PlayFundWin beyond extra
+  work — researched properly this session (see `reference/fundraising-regulator-notes.md`,
+  new this date): registration is voluntary, not a legal requirement, gated behind a
+  proposed charitable-contribution threshold (10% 2026/27 → 15% 2027/28 → 20% 2028/29),
+  and buys the Fundraising Badge as a public trust signal in a sector the Regulator's
+  own reasoning says is confusing donors about how much money reaches charity. The
+  sharper reason to keep tracking it: DCMS's separate Voluntary Code of Good Practice
+  for Prize Draw Operators (took effect 2026-05-20) states plainly that if voluntary
+  self-regulation doesn't resolve the sector's problems, government will legislate —
+  so staying ahead of this is a hedge against it becoming mandatory, not goodwill. Ep40
+  must fold this reasoning into its Apply It segment for PlayFundWin rather than
+  repeating bare status — a listener who's heard eight "still pending" episodes is
+  owed the actual "why," not just another status line. After Ep40 carries it once,
+  STYLE.md's normal don't-repeat-yourself discipline applies — no standing instruction
+  to re-explain this every episode, just don't leave it unexplained forever either.
 - 2026-08-27: The Ideas Ledger (see 7a) wasn't being updated per-episode — this runbook
   only ever referenced Episode Log, so the ledger had 4 entries out of 20 episodes.
   Added step 7a; backfilled the missing 16 historical entries the same day, sourced

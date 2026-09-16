@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 39 — The Big Three Talk Safety While Racing to List, and the Calorie App Built Over One Bank Holiday Weekend</title>
+      <description>OpenAI confirms it&#x27;s coordinating AI safety policy with Anthropic and Google DeepMind, Anthropic&#x27;s Nasdaq rumour firms up with real revenue numbers but still no on-record confirmation, and Google ships two new real-time voice models. Plus a deep dive on RevenueCat-verified calorie-tracking app nutrIA, built over a single Easter weekend, and updates for PlayFundWin, LeaguePages and EV-Partnerships including the Fundraising Regulator&#x27;s site reopening after four blocked days and a twenty-second straight quiet episode for sports-venue EV charging.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep039.mp3" length="14728144" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep039</guid>
+      <pubDate>Wed, 16 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:27</itunes:duration>
+      <itunes:episode>39</itunes:episode>
+    </item>
+    <item>
       <title>Ep 38 — Anthropic&#x27;s Nasdaq Whisper Gets a Date, and the AI Dubbing Tool That Took Three Years to Earn Real Money</title>
       <description>Anthropic&#x27;s stock-market rumours firm up with a named exchange and a rough date, GitHub hands developers a cost-versus-quality dial for Copilot, and Claude Code ships real per-command sandboxing in a two-day patch train. Plus a deep dive on Stripe-verified AI dubbing tool VideoDubber.ai&#x27;s honest three-year grind to modest revenue, and updates for PlayFundWin, LeaguePages and EV-Partnerships including the sports-venue charging gap&#x27;s twenty-first straight episode and an eight-day countdown on the DCMS good-causes consultation.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep038.mp3" length="14383328" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Sat, 15 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>18:22</itunes:duration>
       <itunes:episode>10</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 9 — A fourteen-times-faster OpenAI mode, and the paperwork chatbot that quietly hit sixty thousand a month</title>
-      <description>OpenAI previews a fourteen-times-faster Ultrafast inference mode and reportedly tops a forty-billion-dollar revenue run rate ahead of a possible IPO, while Claude Code ships cross-session agent messaging and Microsoft begins retiring free Copilot features on the eighteenth of August. Plus a deep dive on niching a document-chat tool for grant and compliance paperwork, evidence-backed by PDF.ai&#x27;s real run to sixty thousand dollars a month, and a quiet week for the Fundraising Regulator&#x27;s prize-draw ruling and EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep009.mp3" length="13500285" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep009</guid>
-      <pubDate>Fri, 14 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>18:45</itunes:duration>
-      <itunes:episode>9</itunes:episode>
     </item>
   </channel>
 </rss>

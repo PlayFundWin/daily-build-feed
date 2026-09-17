@@ -1,5 +1,14 @@
 [
   {
+    "num": 40,
+    "date": "2026-09-17",
+    "title": "Ep 40 \u2014 Claude's Cowork Mode Disappears Into Claude Itself, and the AI Headshots Clearing Three Hundred Thousand Dollars a Month",
+    "description": "Anthropic folds Cowork's background-task features into a single unified Claude experience with new Docs, Slides and Design tools built in, OpenAI opens sponsored in-chat agents and a Shopify ad integration, and Cohere merges with Aleph Alpha as OpenAI reportedly explores a pre-IPO round above one point two trillion dollars. Plus a deep dive on Danny Postma's AI headshot tool HeadshotPro's two-year run at around three hundred thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including Omaze signing a new prize-draw code of practice and a twenty-third straight quiet episode for sports-venue EV charging.",
+    "file": "ep040.mp3",
+    "bytes": 14376118,
+    "seconds": 1198
+  },
+  {
     "num": 39,
     "date": "2026-09-16",
     "title": "Ep 39 \u2014 The Big Three Talk Safety While Racing to List, and the Calorie App Built Over One Bank Holiday Weekend",
@@ -259,14 +268,5 @@
     "file": "ep011.mp3",
     "bytes": 14131299,
     "seconds": 1178
-  },
-  {
-    "num": 10,
-    "date": "2026-08-15",
-    "title": "Ep 10 \u2014 Claude's invisible watermark, and the testimonial widget that hit a million a year",
-    "description": "Anthropic begins invisibly watermarking Claude's text output for EU transparency rules, Google launches a cheaper, faster Gemini three point seven Flash for coding, and IBM strikes a formal enterprise partnership with OpenAI. Plus a deep dive on testimonial-widget tool Senja, which two co-founders grew from one hundred dollars a month to a million dollars a year, and a quiet week for the Fundraising Regulator's prize-draw ruling and EV-Partnerships.",
-    "file": "ep010.mp3",
-    "bytes": 13227566,
-    "seconds": 1102
   }
 ]

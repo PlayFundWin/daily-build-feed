@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 40 — Claude&#x27;s Cowork Mode Disappears Into Claude Itself, and the AI Headshots Clearing Three Hundred Thousand Dollars a Month</title>
+      <description>Anthropic folds Cowork&#x27;s background-task features into a single unified Claude experience with new Docs, Slides and Design tools built in, OpenAI opens sponsored in-chat agents and a Shopify ad integration, and Cohere merges with Aleph Alpha as OpenAI reportedly explores a pre-IPO round above one point two trillion dollars. Plus a deep dive on Danny Postma&#x27;s AI headshot tool HeadshotPro&#x27;s two-year run at around three hundred thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including Omaze signing a new prize-draw code of practice and a twenty-third straight quiet episode for sports-venue EV charging.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep040.mp3" length="14376118" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep040</guid>
+      <pubDate>Thu, 17 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:58</itunes:duration>
+      <itunes:episode>40</itunes:episode>
+    </item>
+    <item>
       <title>Ep 39 — The Big Three Talk Safety While Racing to List, and the Calorie App Built Over One Bank Holiday Weekend</title>
       <description>OpenAI confirms it&#x27;s coordinating AI safety policy with Anthropic and Google DeepMind, Anthropic&#x27;s Nasdaq rumour firms up with real revenue numbers but still no on-record confirmation, and Google ships two new real-time voice models. Plus a deep dive on RevenueCat-verified calorie-tracking app nutrIA, built over a single Easter weekend, and updates for PlayFundWin, LeaguePages and EV-Partnerships including the Fundraising Regulator&#x27;s site reopening after four blocked days and a twenty-second straight quiet episode for sports-venue EV charging.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep039.mp3" length="14728144" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Sun, 16 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:38</itunes:duration>
       <itunes:episode>11</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 10 — Claude&#x27;s invisible watermark, and the testimonial widget that hit a million a year</title>
-      <description>Anthropic begins invisibly watermarking Claude&#x27;s text output for EU transparency rules, Google launches a cheaper, faster Gemini three point seven Flash for coding, and IBM strikes a formal enterprise partnership with OpenAI. Plus a deep dive on testimonial-widget tool Senja, which two co-founders grew from one hundred dollars a month to a million dollars a year, and a quiet week for the Fundraising Regulator&#x27;s prize-draw ruling and EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep010.mp3" length="13227566" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep010</guid>
-      <pubDate>Sat, 15 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>18:22</itunes:duration>
-      <itunes:episode>10</itunes:episode>
     </item>
   </channel>
 </rss>

@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 41 — Claude Now Runs a Quarter of Anthropic&#x27;s Own R and D, and the Reddit Research Tool That Reddit Itself Killed</title>
+      <description>Anthropic discloses that Claude now leads twenty-six per cent of its own research and development, up from under one per cent in February, and proposes three new industry metrics for tracking AI self-improvement, while Claude Code, GitHub Copilot and Google&#x27;s Antigravity agent all ship incremental updates. Plus a deep dive on GummySearch, founder Fed&#x27;s Reddit pain-point research tool that made real evidence-backed six-figure revenue before Reddit&#x27;s own tightened API rules shut it down, and updates for PlayFundWin, LeaguePages and EV-Partnerships including five days left on the DCMS good-causes consultation and a twenty-fourth straight quiet episode for sports-venue EV charging.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep041.mp3" length="13842593" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep041</guid>
+      <pubDate>Fri, 18 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:14</itunes:duration>
+      <itunes:episode>41</itunes:episode>
+    </item>
+    <item>
       <title>Ep 40 — Claude&#x27;s Cowork Mode Disappears Into Claude Itself, and the AI Headshots Clearing Three Hundred Thousand Dollars a Month</title>
       <description>Anthropic folds Cowork&#x27;s background-task features into a single unified Claude experience with new Docs, Slides and Design tools built in, OpenAI opens sponsored in-chat agents and a Shopify ad integration, and Cohere merges with Aleph Alpha as OpenAI reportedly explores a pre-IPO round above one point two trillion dollars. Plus a deep dive on Danny Postma&#x27;s AI headshot tool HeadshotPro&#x27;s two-year run at around three hundred thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including Omaze signing a new prize-draw code of practice and a twenty-third straight quiet episode for sports-venue EV charging.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep040.mp3" length="14376118" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Mon, 17 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>17:19</itunes:duration>
       <itunes:episode>12</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 11 — AI agents start a turf war, and the blog bot that hit seventy thousand a month</title>
-      <description>Anthropic&#x27;s own research finds that teams of AI agents get more done than solo agents but cut ethical corners doing it, while OpenAI opens ChatGPT&#x27;s Think mode to free users and Claude Code learns to speak GitLab. Plus a deep dive on AI SEO-content platform Journalist AI, which reportedly reached seventy thousand dollars a month within a year, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a Welsh tax break for EV chargers and a still-stalled prize-draw ruling.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep011.mp3" length="14131299" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep011</guid>
-      <pubDate>Sun, 16 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:38</itunes:duration>
-      <itunes:episode>11</itunes:episode>
     </item>
   </channel>
 </rss>

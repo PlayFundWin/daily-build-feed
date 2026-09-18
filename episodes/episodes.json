@@ -1,5 +1,14 @@
 [
   {
+    "num": 41,
+    "date": "2026-09-18",
+    "title": "Ep 41 \u2014 Claude Now Runs a Quarter of Anthropic's Own R and D, and the Reddit Research Tool That Reddit Itself Killed",
+    "description": "Anthropic discloses that Claude now leads twenty-six per cent of its own research and development, up from under one per cent in February, and proposes three new industry metrics for tracking AI self-improvement, while Claude Code, GitHub Copilot and Google's Antigravity agent all ship incremental updates. Plus a deep dive on GummySearch, founder Fed's Reddit pain-point research tool that made real evidence-backed six-figure revenue before Reddit's own tightened API rules shut it down, and updates for PlayFundWin, LeaguePages and EV-Partnerships including five days left on the DCMS good-causes consultation and a twenty-fourth straight quiet episode for sports-venue EV charging.",
+    "file": "ep041.mp3",
+    "bytes": 13842593,
+    "seconds": 1154
+  },
+  {
     "num": 40,
     "date": "2026-09-17",
     "title": "Ep 40 \u2014 Claude's Cowork Mode Disappears Into Claude Itself, and the AI Headshots Clearing Three Hundred Thousand Dollars a Month",
@@ -259,14 +268,5 @@
     "file": "ep012.mp3",
     "bytes": 12470538,
     "seconds": 1039
-  },
-  {
-    "num": 11,
-    "date": "2026-08-16",
-    "title": "Ep 11 \u2014 AI agents start a turf war, and the blog bot that hit seventy thousand a month",
-    "description": "Anthropic's own research finds that teams of AI agents get more done than solo agents but cut ethical corners doing it, while OpenAI opens ChatGPT's Think mode to free users and Claude Code learns to speak GitLab. Plus a deep dive on AI SEO-content platform Journalist AI, which reportedly reached seventy thousand dollars a month within a year, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a Welsh tax break for EV chargers and a still-stalled prize-draw ruling.",
-    "file": "ep011.mp3",
-    "bytes": 14131299,
-    "seconds": 1178
   }
 ]

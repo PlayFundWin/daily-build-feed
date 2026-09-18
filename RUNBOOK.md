@@ -386,20 +386,49 @@ actually read) or SEARCH-ONLY (secondhand/aggregated) — say so naturally in th
 varying the phrasing (see STYLE.md). Never invent a result, a scoreline, a table
 position, or a quote; if it can't be confirmed, say so or leave it out.
 
-- **Bedford Town**: latest result, current form, league position, and next fixture.
-  Check the club's own channels (Pitchero/official site) directly, not just
-  aggregators, for team news and injuries.
-- **National League North — the day-before scan**: which NLN clubs played the day or
-  night before this episode airs, especially Bedford Town's next opponent. Check that
-  opponent's own club website directly for their result and any notable injury news —
-  a key player picked up in that game is scouting-relevant for Bedford Town's staff and
-  is exactly the kind of insider detail this show exists to surface. Widen to a few
-  other NLN results/storylines as time allows.
+- **Bedford Town**: latest result, current form, league position, and next fixture —
+  plus the selection/injury/quote layer, which is where the show earns its keep:
+  - `x.com/BedfordTown` (the club's official X account) posts a pre-match "Team News"
+    graphic naming the starting XI and bench, and post-match manager reaction, usually
+    as an "EaglesTV" video link. Read the latest posts every run: who started, who
+    dropped out, who came off early, what the manager said. This is first-party and
+    CONFIRMED-grade. Note the hashtags (#COYE, #BeThe12th) for search.
+    Practical caveat: x.com pages rarely render for WebFetch (login/JS wall). Reach
+    the posts through WebSearch instead — e.g. `site:x.com/BedfordTown "Team News"`
+    or `"Bedford Town" #COYE` — the search snippets carry the post text and date.
+    The XI itself is usually in an image, so expect the text to give you the
+    existence and timing of team news plus any named players in the caption or
+    manager quote, not always the full eleven; say "confirmed the club posted team
+    news" rather than list names you couldn't actually read.
+  - Pitchero: read the **match-reports archive** (`.../teams/92750/match-reports`) and
+    the **news** page, not just the fixture list — the written reports carry scorers,
+    subs and the odd injury line the fixture widget doesn't.
+  - NewsNow's Bedford Town filter (`newsnow.co.uk/h/Sport/Football/Non+League/
+    National+League+North/Bedford+Town`) — a live aggregator pre-filtered to this one
+    club. A 30-second scan for anything published since the last episode; treat what
+    it surfaces as SEARCH-ONLY until you've read the underlying page.
+- **National League North — the rundown, then the day-before scan**: first get the
+  full round of results and the table (Football Web Pages' National League North
+  pages, or NonLeagueHQ's — both live and current; pick one, cross-check the other if a
+  number looks odd). Then the day-before scan: which NLN clubs played the day or night
+  before this episode airs, especially Bedford Town's next opponent. Use the same
+  pattern as for Bedford — the opponent's own X account for their team-news graphic and
+  manager reaction, their club site for the match report — for their result and any
+  notable injury news. A key player picked up in that game is scouting-relevant for
+  Bedford Town's staff and is exactly the kind of insider detail this show exists to
+  surface. FotMob or Sofascore's match pages give lineups, substitutions and bookings
+  that club reports often omit — good for "who played, who came off" detail; still
+  confirm the scoreline itself against the club's own report per the rule below.
+  Widen to a few other NLN results/storylines as time allows — The Non-League Football
+  Paper's National League North tag page is the best single place for divisional
+  storylines beyond bare results.
 - **National League (Step 1, above)**: promotion-race and other storylines relevant to
   the wider picture — this tier doesn't need daily deep coverage, but a notable
-  development is worth a mention.
+  development is worth a mention. Same tooling: the league's own site plus Football
+  Web Pages for the round of results.
 - **Southern League Premier Division Central (Step 3, below)**: same — Bedford Town's
   former league, so promotion-race news there is relevant to who might be coming up.
+  Football Web Pages and NonLeagueHQ both carry Step 3 tables and results.
 - **TheFA.com**: check directly for regulatory or rule-change storylines (Laws of the
   Game changes, disciplinary process changes, non-league-specific rule news) — this is
   a separate check from club/league news and is often where the most genuinely useful
@@ -407,11 +436,22 @@ position, or a quote; if it can't be confirmed, say so or leave it out.
   expansion) actually reaches Step 2 — check which competitions/steps it actually
   applies to before including it.
 
-Named sources: TheFA.com, the National League's own site, the Southern League's own
-site, BBC Sport's non-league coverage, individual club websites (always preferred over
-aggregators for match reports and injury news), Bedford Town's own club channels. The
-Non-League Football Paper is paywalled — usable as a SEARCH-ONLY signal, not a
-CONFIRMED source, unless a specific article is actually accessible.
+Named sources, in tiers (revised 2026-09-18 — see Process log):
+- **First-party / CONFIRMED-grade**: Bedford Town's X account and Pitchero site (news +
+  match reports); each opponent's own X account and club site; TheFA.com; the National
+  League's own site; the Southern League's own site.
+- **Stats backbone**: Football Web Pages (`footballwebpages.co.uk` — fixtures, results,
+  tables, form, attendances, goalscorers for every step; confirmed current within the
+  week) and NonLeagueHQ (`nonleaguehq.com` — Steps 1–7 tables, goalscorers, FA
+  competitions). FotMob and Sofascore for per-match lineups, subs and cards.
+- **Storylines / SEARCH-ONLY until read**: NewsNow's Bedford Town and National League
+  North filters; The Non-League Football Paper (paywalled — a signal, not a CONFIRMED
+  source, unless the article is actually accessible); BBC Sport's non-league coverage;
+  Bedford Independent and The Bedford Citizen for off-field/community stories.
+
+Checked and rejected 2026-09-18, don't re-add: Non League Matters (content stops
+around 2018), The Non-League Network (a coaching-jobs and training marketplace, not a
+news or stats site), botw.org.uk's non-league page (a generic link directory).
 
 A specific scoreline, scorer, or table position needs a per-game primary-source check,
 not just a table widget's season summary (added 2026-09-11 — Ep 1's first research
@@ -516,6 +556,19 @@ databases are specific to that show. Revisit only if Steve asks.
   feed, cover art, ID3 tags, STYLE.md/RUNBOOK.md headers, and the scheduled task, but
   missed files that don't drive the feed directly -- worth a full-repo grep for the old
   name rather than relying on the list of "files that matter" next time.
+- 2026-09-18: Sourcing upgrade at Steve's request ("much better detail... a rundown of
+  what is happening in the leagues"). Step 2 rewritten: the club's own X account
+  (`x.com/BedfordTown`) is now a named first-tier source because it posts the pre-match
+  team-news graphic and post-match manager video — the selection/injury/quote layer the
+  first episodes lacked; Pitchero's match-reports archive replaces the fixture list as
+  the thing to actually read; Football Web Pages + NonLeagueHQ added as the stats
+  backbone for the full round of results in all three tiers; FotMob/Sofascore for
+  lineups and subs; NewsNow's club filter for a quick scan. Same pattern applies to
+  the next opponent. Three candidate sources Steve had been given were checked and
+  rejected (listed in step 2) so no future run re-adds them. The scheduled task's
+  prompt was updated the same day to point at this section's new named sources. Kept
+  deliberately clear of Wyscout-style analytics (xG, PPDA) — paid, and the wrong kind
+  of detail for a spoken briefing.
 
 ## Cost discipline
 Runs on a budget model by design. Three research subagents maximum plus at most one

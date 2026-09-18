@@ -105,6 +105,18 @@ today's date and the relevant archive lines so they skip covered ground.
   happening; treat the operator-gap thread and EV-Partnerships' own pipeline as two
   separate facts in the script rather than one.
 
+  Operator-gap reporting cadence (corrected 2026-09-18, at Steve's explicit direction —
+  see Process log): Steve already knows where the eight named operators sit and does not
+  want the "checked again, nothing new, gap still open for N consecutive episodes" beat
+  repeated every single episode — he flagged this as actively unwanted, not just stale
+  phrasing. From Ep42 onward: keep checking the eight operators as part of research every
+  episode, so nothing is missed, but only put it in the script when there's an actual
+  finding — a real new operator move at a sports/leisure venue, confirmed or debunked.
+  Do not narrate "still nothing," the running episode-count, or the "genuine gap vs.
+  match-day economics" theory as filler when nothing has changed. If nothing has changed,
+  the operator-gap thread simply does not appear in that day's script — handle it the same
+  way the retired prize-draw-ruling thread (Ep15/Steve correction) is handled.
+
 Vary how you phrase these three briefs and which named sources you check first from one
 day to the next — don't silently reuse identical query wording or check the same source
 first every single run, since that flattens both what gets found and how the eventual
@@ -263,6 +275,20 @@ you did about it. Never claim success you did not verify.
 ## Process log
 Dated entries only, added when a real gap in this pipeline is found and fixed — not a
 running commentary. This section is read in step 1 alongside the archive.
+
+- 2026-09-18: Steve gave two live corrections outside the normal episode flow, both about
+  the show repeating itself when nothing has actually changed. (1) The sports-venue
+  EV-charging operator-gap thread had been running a "checked again, nothing new, gap
+  still open for N episodes" beat every single episode since Ep18 — Steve said plainly to
+  stop, he already knows where the operators sit and only wants to hear about it when
+  there's an actual finding. Step 2C corrected accordingly: keep checking quietly, only
+  script it on a real change. (2) Steve pushed back on being told the Meridian FC
+  installation "isn't confirmed" — to be precise, the archive has recorded it as his
+  stated fact since 2026-09-11/16 and never disputed it; what's been withheld is naming
+  the club ON AIR, which is a separate, explicit-consent question he was asked twice
+  (Ep37, Ep39) and hadn't yet answered. Distinction restated to Steve directly rather than
+  silently clearing the on-air block; see covered.md Standing corrections for whatever he
+  decides.
 
 - 2026-09-16: Steve raised three fixes in one conversation, outside the normal episode
   flow. (1) Base44 had never once been checked or mentioned despite Lovable running

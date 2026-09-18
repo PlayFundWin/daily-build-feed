@@ -57,22 +57,41 @@ episode content. It's short; read it every time.
 ## 2. Research — three parallel subagents
 Launch three general-purpose agents in ONE message so they run concurrently. Give each
 today's date and the relevant archive lines so they skip covered ground.
-- A: AI releases/features from the last 48h (Anthropic/Claude, OpenAI, Google, agent
-  tooling, voice AI, no-code builders). Official changelogs first. Each item: what,
-  exact date, source URL, small-business angle, CONFIRMED (page read) vs SEARCH-ONLY.
-  No-code builders: check Lovable AND Base44 by name every pass (added 2026-09-16 at
-  Steve's explicit request — Base44 had never once appeared in this show despite
-  Lovable being a running thread since Ep8; Base44 is Wix-owned since an ~$80M
-  acquisition, reportedly around $100-150M ARR as of September 2026, and ships several
-  updates a day via its own changelog at docs.base44.com/changelog/product, so checking
-  it directly is cheap even on a quiet day).
+
+Research window (corrected 2026-09-18 — see Process log): do NOT use a fixed "last 48
+hours" cutoff for agent A. Read the most recent entry in `episodes/episodes.json` (or
+`archive/covered.md`) and use THAT episode's date as the actual research boundary —
+"everything dated after the last published episode." A fixed 48-hour window kept
+clipping stories right at the edge (flagged as "just outside window" across Ep19, 28,
+36, 38, 40 and 41 alone), sometimes covering them a day late and sometimes narrating
+them as boundary cases mid-script for no reason. Using the actual last-episode date
+instead means nothing falls in the gap and nothing gets covered twice, regardless of
+whether an episode ships early, late, or exactly on schedule.
+
+- A: AI releases/features dated after the last published episode (see Research window
+  above) — Anthropic/Claude, OpenAI, Google, agent tooling, voice AI, no-code builders.
+  Read `reference/ai-news-sources.md` FIRST (added 2026-09-18 — see Process log) and
+  hit every URL on it directly rather than relying on open search to surface what's
+  new; only search the open web for stories those sources don't cover themselves
+  (secondhand financial press, industry commentary). Each item: what, exact date,
+  source URL, small-business angle, CONFIRMED (page read) vs SEARCH-ONLY. No-code
+  builders: check Lovable AND Base44 by name every pass (added 2026-09-16 at Steve's
+  explicit request — Base44 had never once appeared in this show despite Lovable being
+  a running thread since Ep8; Base44 is Wix-owned since an ~$80M acquisition, reportedly
+  around $100-150M ARR as of September 2026, and ships several updates a day via its
+  own changelog, so checking it directly is cheap even on a quiet day).
 - B: Small AI-buildable business ideas with recent PUBLISHED revenue evidence (Indie
-  Hackers, Hacker News, Starter Story, Product Hunt, subreddits). Pick ONE deep-dive
-  idea: real named evidence, ~90% Claude-buildable in days, sellable in the UK, under
-  five hundred pounds to start. Plus 3 runner-ups. Never invent numbers. Before picking,
-  check `episodes/episodes.json` descriptions and `archive/covered.md` for ideas already
-  featured — pick something meaningfully different in category, not a variant of one
-  already covered.
+  Hackers, Hacker News, Starter Story, Product Hunt, subreddits including r/SaaS and
+  r/microsaas, TrustMRR/RevenueCat-verified listings, Getlatka, Failory case studies,
+  founder-interview podcasts like My First Million and The Bootstrapped Founder). Pick
+  ONE deep-dive idea: real named evidence, ~90% Claude-buildable in days, sellable in
+  the UK, under five hundred pounds to start. Plus 3 runner-ups. Never invent numbers.
+  Before picking, read `reference/business-idea-categories.md` (added 2026-09-18 — see
+  Process log) as a fast first filter for mechanics already used, then spot-check the
+  actual `archive/covered.md` entry for anything that looks close — pick something
+  meaningfully different in category, not a variant of one already covered. Append one
+  line to `reference/business-idea-categories.md` for today's pick in the same pass as
+  the rest of step 4's commits.
 - C: Sector news for the listener's ventures: UK fundraising/prize-draw tech and
   regulation; grassroots sports tech; UK EV destination charging. Check these named
   sources FIRST, before open web search, to keep this agent cheap on quiet weeks: the
@@ -140,7 +159,8 @@ Commit both files with `github_put_file`:
 
 Also update `archive/covered.md` in the same pass: append episode number, date, title,
 one line per news item covered, the build idea with its evidence, and any FOLLOW-UP
-threads opened or closed.
+threads opened or closed. In the same pass, append today's pick to
+`reference/business-idea-categories.md` (name + one-line mechanic) — see step 2B.
 
 Note: `pending/` is a work queue, not an archive — the build workflow deletes both
 files from it on every publish. It separately copies the script to a permanent
@@ -276,6 +296,21 @@ you did about it. Never claim success you did not verify.
 Dated entries only, added when a real gap in this pipeline is found and fixed — not a
 running commentary. This section is read in step 1 alongside the archive.
 
+- 2026-09-18 (later same day): Steve asked how to improve the research pass generally.
+  Two concrete gaps, not a vague "widen the scope": (1) a fixed 48-hour lookback window
+  on agent A kept clipping stories at the edge — flagged "just outside window" across
+  Ep19/28/36/38/40/41 — replaced with "everything since the last published episode's
+  date," read from `episodes/episodes.json`. (2) "Check official changelogs first" was
+  too vague to reliably act on — it's exactly how Base44 went unmentioned for five
+  weeks despite a similar instruction already existing. Added
+  `reference/ai-news-sources.md`, a concrete checklist of URLs agent A must hit
+  directly every pass (including two never-checked-before sources, Perplexity and
+  Hugging Face). Also added `reference/business-idea-categories.md` for agent B, a
+  cheap first-pass filter against 40-plus episodes of prior picks, since scanning all
+  of `archive/covered.md` for category uniqueness is getting expensive. Both reference
+  files follow the same pattern as `reference/fundraising-regulator-notes.md` — a
+  standing checklist that gets updated as sources/categories change, not re-derived
+  from scratch every episode.
 - 2026-09-18: Steve gave two live corrections outside the normal episode flow, both about
   the show repeating itself when nothing has actually changed. (1) The sports-venue
   EV-charging operator-gap thread had been running a "checked again, nothing new, gap

@@ -54,9 +54,12 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep39 — nutrIA (AI photo-based calorie/nutrition tracker)
 - Ep40 — HeadshotPro (AI professional headshot generator)
 - Ep41 — GummySearch (Reddit audience/pain-point mining + AI summarisation)
+- Ep42 — AIWriteBook (AI-assisted book-drafting/self-publishing, voice-matched from an author sample)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
 (Laravel upgrade automation, Jason McCreary), Boxer AI (boxing coach app), Verbi
 (language-learning app), Mentions (brand-monitoring AI, Cameron Trew) — all have
-appeared as runner-ups more than once.
+appeared as runner-ups more than once. Also now recurring: Logojoy (AI logo design,
+Dawson Whitfield), Warmup Inbox (email deliverability warm-up), Gravl (AI
+personal-training app, Julian Gargicevich) — all three appeared as Ep42 runner-ups.

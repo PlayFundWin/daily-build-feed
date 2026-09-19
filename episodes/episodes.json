@@ -1,5 +1,14 @@
 [
   {
+    "num": 42,
+    "date": "2026-09-19",
+    "title": "Ep 42 \u2014 The Ghostwriter Behind Fifteen Thousand Books, and a Fundraising Regulator Promise That Slipped to Next Year",
+    "description": "A quiet day for AI releases makes room for a deep dive on AIWriteBook, the solo-founder tool that has helped over fifteen thousand authors self-publish, niched here into a grassroots-club history-book fundraiser for PlayFundWin. Plus the Fundraising Regulator quietly pushes its free-draw registration timeline from September to early twenty twenty-seven, and a quiet week for both LeaguePages sector news and EV charging at sports venues.",
+    "file": "ep042.mp3",
+    "bytes": 14197127,
+    "seconds": 1183
+  },
+  {
     "num": 41,
     "date": "2026-09-18",
     "title": "Ep 41 \u2014 Claude Now Runs a Quarter of Anthropic's Own R and D, and the Reddit Research Tool That Reddit Itself Killed",
@@ -259,14 +268,5 @@
     "file": "ep013.mp3",
     "bytes": 14497431,
     "seconds": 1208
-  },
-  {
-    "num": 12,
-    "date": "2026-08-17",
-    "title": "Ep 12 \u2014 Claude goes dark for forty minutes, and the faceless video bot earning ninety-two thousand a month",
-    "description": "Claude, Claude Code and Cowork go down for forty minutes on a Saturday night, Stripe acquires AI model-router OpenRouter for over seven billion dollars, and leaked documents put Anthropic's quarterly revenue above eleven and a half billion dollars alongside disclosure of a more capable, unreleased internal model. Plus a deep dive on faceless short-form video generator AutoShorts.ai, founder Eric Smith reportedly reaching ninety-two thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a still-pending Fundraising Regulator ruling.",
-    "file": "ep012.mp3",
-    "bytes": 12470538,
-    "seconds": 1039
   }
 ]

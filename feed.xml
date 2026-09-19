@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 42 — The Ghostwriter Behind Fifteen Thousand Books, and a Fundraising Regulator Promise That Slipped to Next Year</title>
+      <description>A quiet day for AI releases makes room for a deep dive on AIWriteBook, the solo-founder tool that has helped over fifteen thousand authors self-publish, niched here into a grassroots-club history-book fundraiser for PlayFundWin. Plus the Fundraising Regulator quietly pushes its free-draw registration timeline from September to early twenty twenty-seven, and a quiet week for both LeaguePages sector news and EV charging at sports venues.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep042.mp3" length="14197127" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep042</guid>
+      <pubDate>Sat, 19 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:43</itunes:duration>
+      <itunes:episode>42</itunes:episode>
+    </item>
+    <item>
       <title>Ep 41 — Claude Now Runs a Quarter of Anthropic&#x27;s Own R and D, and the Reddit Research Tool That Reddit Itself Killed</title>
       <description>Anthropic discloses that Claude now leads twenty-six per cent of its own research and development, up from under one per cent in February, and proposes three new industry metrics for tracking AI self-improvement, while Claude Code, GitHub Copilot and Google&#x27;s Antigravity agent all ship incremental updates. Plus a deep dive on GummySearch, founder Fed&#x27;s Reddit pain-point research tool that made real evidence-backed six-figure revenue before Reddit&#x27;s own tightened API rules shut it down, and updates for PlayFundWin, LeaguePages and EV-Partnerships including five days left on the DCMS good-causes consultation and a twenty-fourth straight quiet episode for sports-venue EV charging.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep041.mp3" length="13842593" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Tue, 18 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>20:08</itunes:duration>
       <itunes:episode>13</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 12 — Claude goes dark for forty minutes, and the faceless video bot earning ninety-two thousand a month</title>
-      <description>Claude, Claude Code and Cowork go down for forty minutes on a Saturday night, Stripe acquires AI model-router OpenRouter for over seven billion dollars, and leaked documents put Anthropic&#x27;s quarterly revenue above eleven and a half billion dollars alongside disclosure of a more capable, unreleased internal model. Plus a deep dive on faceless short-form video generator AutoShorts.ai, founder Eric Smith reportedly reaching ninety-two thousand dollars a month, and updates for PlayFundWin, LeaguePages and EV-Partnerships including a still-pending Fundraising Regulator ruling.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep012.mp3" length="12470538" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep012</guid>
-      <pubDate>Mon, 17 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>17:19</itunes:duration>
-      <itunes:episode>12</itunes:episode>
     </item>
   </channel>
 </rss>

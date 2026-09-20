@@ -55,6 +55,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep40 — HeadshotPro (AI professional headshot generator)
 - Ep41 — GummySearch (Reddit audience/pain-point mining + AI summarisation)
 - Ep42 — AIWriteBook (AI-assisted book-drafting/self-publishing, voice-matched from an author sample)
+- Ep43 — aiCarousels (AI carousel-post generator, topic/text/URL to styled multi-slide social post)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -63,3 +64,7 @@ fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
 appeared as runner-ups more than once. Also now recurring: Logojoy (AI logo design,
 Dawson Whitfield), Warmup Inbox (email deliverability warm-up), Gravl (AI
 personal-training app, Julian Gargicevich) — all three appeared as Ep42 runner-ups.
+Also now recurring: Pika/Pika.style (screenshot-to-marketing-image beautifier, Rishi
+Mohan), FounderPal.ai (AI marketing-strategy generator, Sveta Bay), Neural Frames (AI
+music-visualiser video generator, Nicolai Klemke) — all three appeared as Ep43
+runner-ups.

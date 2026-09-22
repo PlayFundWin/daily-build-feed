@@ -56,6 +56,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep41 — GummySearch (Reddit audience/pain-point mining + AI summarisation)
 - Ep42 — AIWriteBook (AI-assisted book-drafting/self-publishing, voice-matched from an author sample)
 - Ep43 — aiCarousels (AI carousel-post generator, topic/text/URL to styled multi-slide social post)
+- Ep44 — Sleek (AI chat-to-mobile-app-UI mockup generator, exports to Figma/code)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -67,4 +68,7 @@ personal-training app, Julian Gargicevich) — all three appeared as Ep42 runner
 Also now recurring: Pika/Pika.style (screenshot-to-marketing-image beautifier, Rishi
 Mohan), FounderPal.ai (AI marketing-strategy generator, Sveta Bay), Neural Frames (AI
 music-visualiser video generator, Nicolai Klemke) — all three appeared as Ep43
-runner-ups.
+runner-ups. Also now recurring: Studr (AI lecture notes/flashcards, Mustafa), AI
+Podcasting (AI-augmented podcast production service, Adithyan Ilangovan),
+EulogyGenerator / Maid of Honor Speech Generator (AI occasion speech-writing, Stefan
+Wirth) — all three appeared as Ep44 runner-ups.

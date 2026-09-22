@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 44 — Grok&#x27;s Cheaper-Per-Token Trap, and the App-Mockup Tool Built From Two Failed Products</title>
+      <description>xAI&#x27;s Grok 4.7 ships with a lower per-token price but independent testing finds it can cost more per task once real token usage is counted, while GitHub Copilot adds the model same-day and Perplexity cuts AI-agent tool-call failures by over 21 percent. Plus a deep dive on Sleek, the AI mobile-app mockup generator that hit $10k MRR in six weeks — built largely from its founder&#x27;s two earlier failed products — niched here as a live-pitch instant-mockup tool for PlayFundWin and LeaguePages, with the Fundraising Regulator and EV-Partnerships operator-gap threads both unchanged this week.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep044.mp3" length="12327282" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep044</guid>
+      <pubDate>Tue, 22 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>17:07</itunes:duration>
+      <itunes:episode>44</itunes:episode>
+    </item>
+    <item>
       <title>Ep 43 — A Second Quiet News Day, and the Carousel Tool That Split Its Own Story Between Two Numbers</title>
       <description>A genuinely thin AI news day — nothing dated past yesterday across eighteen tracked sources, though Cursor and ElevenLabs have both gone unusually quiet — makes room for a deep dive on aiCarousels, Fernando Pessagno&#x27;s solo-built carousel-post generator, niched here into &quot;match-day carousel packs&quot; for PlayFundWin and LeaguePages. Plus the Fundraising Regulator&#x27;s timeline stays unchanged at early twenty twenty-seven, and the good-causes deadline is three days out with Steve&#x27;s own submission already done.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep043.mp3" length="12284964" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Thu, 20 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:44</itunes:duration>
       <itunes:episode>15</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 14 — Cursor&#x27;s GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month</title>
-      <description>Cursor&#x27;s new GitHub alternative, Origin, opens to beta users on the very day GitHub and Copilot go down worldwide, OpenAI expands ChatGPT Ads across thirty-one European markets and pauses frontier-model training over cyber-capability concerns, and Claude Code ships two quick releases including auto-resume on usage limits. Plus a deep dive on podcast-repurposing tool Podsqueeze, founder Tiago Ferreira&#x27;s climb to sixteen thousand dollars a month, and a touched-but-unchanged week for the Fundraising Regulator&#x27;s still-pending prize-draw ruling.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep014.mp3" length="14671720" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep014</guid>
-      <pubDate>Wed, 19 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>20:23</itunes:duration>
-      <itunes:episode>14</itunes:episode>
     </item>
   </channel>
 </rss>

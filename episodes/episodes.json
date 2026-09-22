@@ -1,5 +1,14 @@
 [
   {
+    "num": 44,
+    "date": "2026-09-22",
+    "title": "Ep 44 \u2014 Grok's Cheaper-Per-Token Trap, and the App-Mockup Tool Built From Two Failed Products",
+    "description": "xAI's Grok 4.7 ships with a lower per-token price but independent testing finds it can cost more per task once real token usage is counted, while GitHub Copilot adds the model same-day and Perplexity cuts AI-agent tool-call failures by over 21 percent. Plus a deep dive on Sleek, the AI mobile-app mockup generator that hit $10k MRR in six weeks \u2014 built largely from its founder's two earlier failed products \u2014 niched here as a live-pitch instant-mockup tool for PlayFundWin and LeaguePages, with the Fundraising Regulator and EV-Partnerships operator-gap threads both unchanged this week.",
+    "file": "ep044.mp3",
+    "bytes": 12327282,
+    "seconds": 1027
+  },
+  {
     "num": 43,
     "date": "2026-09-20",
     "title": "Ep 43 \u2014 A Second Quiet News Day, and the Carousel Tool That Split Its Own Story Between Two Numbers",
@@ -259,14 +268,5 @@
     "file": "ep015.mp3",
     "bytes": 14214054,
     "seconds": 1184
-  },
-  {
-    "num": 14,
-    "date": "2026-08-19",
-    "title": "Ep 14 \u2014 Cursor's GitHub rival launches into a global GitHub outage, and the podcast tool that hit sixteen thousand a month",
-    "description": "Cursor's new GitHub alternative, Origin, opens to beta users on the very day GitHub and Copilot go down worldwide, OpenAI expands ChatGPT Ads across thirty-one European markets and pauses frontier-model training over cyber-capability concerns, and Claude Code ships two quick releases including auto-resume on usage limits. Plus a deep dive on podcast-repurposing tool Podsqueeze, founder Tiago Ferreira's climb to sixteen thousand dollars a month, and a touched-but-unchanged week for the Fundraising Regulator's still-pending prize-draw ruling.",
-    "file": "ep014.mp3",
-    "bytes": 14671720,
-    "seconds": 1223
   }
 ]

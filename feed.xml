@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 45 — Opus Five Five and GPT-Six Land in Copilot the Same Day, and the Formula Bot a Non-Coder Turned Into Six Figures</title>
+      <description>Anthropic&#x27;s cheaper Claude Opus five point five and OpenAI&#x27;s GPT-six Sol and Luna both landed on September the twenty-second and were live in GitHub Copilot within hours, while Lovable ended a quiet stretch with a new web-reading integration. Plus a deep dive on the plain-English spreadsheet-formula tool a solo, non-technical founder grew into a projected six-figure annual profit, and what today&#x27;s actual Fundraising Regulator and DCMS good-causes deadline mean for PlayFundWin, LeaguePages and EV-Partnerships.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep045.mp3" length="14163272" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep045</guid>
+      <pubDate>Wed, 23 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>19:40</itunes:duration>
+      <itunes:episode>45</itunes:episode>
+    </item>
+    <item>
       <title>Ep 44 — Grok&#x27;s Cheaper-Per-Token Trap, and the App-Mockup Tool Built From Two Failed Products</title>
       <description>xAI&#x27;s Grok 4.7 ships with a lower per-token price but independent testing finds it can cost more per task once real token usage is counted, while GitHub Copilot adds the model same-day and Perplexity cuts AI-agent tool-call failures by over 21 percent. Plus a deep dive on Sleek, the AI mobile-app mockup generator that hit $10k MRR in six weeks — built largely from its founder&#x27;s two earlier failed products — niched here as a live-pitch instant-mockup tool for PlayFundWin and LeaguePages, with the Fundraising Regulator and EV-Partnerships operator-gap threads both unchanged this week.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep044.mp3" length="12327282" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Fri, 21 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>20:01</itunes:duration>
       <itunes:episode>16</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 15 — OpenAI locks its own staff out of your prompts, and the AI clone that hit six figures before it launched</title>
-      <description>OpenAI previews a privacy layer that flags misuse without staff reading your prompts, Cursor lets its coding agents run whole goals unsupervised, and Google, Replit and Amazon all ship new AI features. Plus a deep dive on Jodie Cook&#x27;s AI-clone coaching platform Coachvox AI, which reportedly hit six figures in revenue before launch, and fresh urban EV-charging hub openings from IONITY and RAW Charging that validate the EV-Partnerships destination-charging thesis.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep015.mp3" length="14214054" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep015</guid>
-      <pubDate>Thu, 20 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:44</itunes:duration>
-      <itunes:episode>15</itunes:episode>
     </item>
   </channel>
 </rss>

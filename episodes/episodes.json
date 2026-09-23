@@ -1,5 +1,14 @@
 [
   {
+    "num": 45,
+    "date": "2026-09-23",
+    "title": "Ep 45 \u2014 Opus Five Five and GPT-Six Land in Copilot the Same Day, and the Formula Bot a Non-Coder Turned Into Six Figures",
+    "description": "Anthropic's cheaper Claude Opus five point five and OpenAI's GPT-six Sol and Luna both landed on September the twenty-second and were live in GitHub Copilot within hours, while Lovable ended a quiet stretch with a new web-reading integration. Plus a deep dive on the plain-English spreadsheet-formula tool a solo, non-technical founder grew into a projected six-figure annual profit, and what today's actual Fundraising Regulator and DCMS good-causes deadline mean for PlayFundWin, LeaguePages and EV-Partnerships.",
+    "file": "ep045.mp3",
+    "bytes": 14163272,
+    "seconds": 1180
+  },
+  {
     "num": 44,
     "date": "2026-09-22",
     "title": "Ep 44 \u2014 Grok's Cheaper-Per-Token Trap, and the App-Mockup Tool Built From Two Failed Products",
@@ -259,14 +268,5 @@
     "file": "ep016.mp3",
     "bytes": 14409032,
     "seconds": 1201
-  },
-  {
-    "num": 15,
-    "date": "2026-08-20",
-    "title": "Ep 15 \u2014 OpenAI locks its own staff out of your prompts, and the AI clone that hit six figures before it launched",
-    "description": "OpenAI previews a privacy layer that flags misuse without staff reading your prompts, Cursor lets its coding agents run whole goals unsupervised, and Google, Replit and Amazon all ship new AI features. Plus a deep dive on Jodie Cook's AI-clone coaching platform Coachvox AI, which reportedly hit six figures in revenue before launch, and fresh urban EV-charging hub openings from IONITY and RAW Charging that validate the EV-Partnerships destination-charging thesis.",
-    "file": "ep015.mp3",
-    "bytes": 14214054,
-    "seconds": 1184
   }
 ]

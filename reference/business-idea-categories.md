@@ -23,7 +23,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep8 — My Ask AI (general chatbot)
 - Ep9 — PDF.ai (document chat)
 - Ep10 — Senja (testimonial widgets)
-- Ep11 — Journalist AI (SEO article writer)
+- Ep11 — Journalist AI (SEO article write)
 - Ep12 — AutoShorts.ai (faceless short-form video generator)
 - Ep13 — Price2Spy (competitor pricing intelligence)
 - Ep14 — Podsqueeze (podcast content repurposing)
@@ -56,7 +56,8 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep41 — GummySearch (Reddit audience/pain-point mining + AI summarisation)
 - Ep42 — AIWriteBook (AI-assisted book-drafting/self-publishing, voice-matched from an author sample)
 - Ep43 — aiCarousels (AI carousel-post generator, topic/text/URL to styled multi-slide social post)
-- Ep44 — Sleek (AI chat-to-mobile-app-UI mockup generator, exports to Figma/code)
+- Ep44 — Sleek (AI chat-to-mobile-app-UI-mockup generator, exports to Figma/code)
+- Ep45 — Excel Formula Bot (AI plain-English-to-spreadsheet-formula generator, exports formula + explanation)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -71,4 +72,7 @@ music-visualiser video generator, Nicolai Klemke) — all three appeared as Ep43
 runner-ups. Also now recurring: Studr (AI lecture notes/flashcards, Mustafa), AI
 Podcasting (AI-augmented podcast production service, Adithyan Ilangovan),
 EulogyGenerator / Maid of Honor Speech Generator (AI occasion speech-writing, Stefan
-Wirth) — all three appeared as Ep44 runner-ups.
+Wirth) — all three appeared as Ep44 runner-ups. Also now recurring: SuperX (viral-X-post
+pattern analysis, Rob Hallam & Tibo Louis-Lucas), Tech Lockdown (AI-assisted
+DNS/website-blocking, Ben Bozzay), Kleo (LinkedIn ghostwriting browser extension,
+Cameron Whiteside) — all three appeared as Ep45 runner-ups.

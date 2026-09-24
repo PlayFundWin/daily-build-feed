@@ -58,6 +58,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep43 — aiCarousels (AI carousel-post generator, topic/text/URL to styled multi-slide social post)
 - Ep44 — Sleek (AI chat-to-mobile-app-UI-mockup generator, exports to Figma/code)
 - Ep45 — Excel Formula Bot (AI plain-English-to-spreadsheet-formula generator, exports formula + explanation)
+- Ep46 — SongMaker AI / Composer AI (AI original-song generator, subject/mood/style to produced track with lyrics and vocals; niched as personalised "season songs" sold via clubs)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -75,4 +76,7 @@ EulogyGenerator / Maid of Honor Speech Generator (AI occasion speech-writing, St
 Wirth) — all three appeared as Ep44 runner-ups. Also now recurring: SuperX (viral-X-post
 pattern analysis, Rob Hallam & Tibo Louis-Lucas), Tech Lockdown (AI-assisted
 DNS/website-blocking, Ben Bozzay), Kleo (LinkedIn ghostwriting browser extension,
-Cameron Whiteside) — all three appeared as Ep45 runner-ups.
+Cameron Whiteside) — all three appeared as Ep45 runner-ups. Also now recurring:
+MagicSlides (AI Google Slides deck add-on, Sanskar Tiwari — close to Ep43's carousel
+mechanic), Talefy (AI interactive story games), Tree Nerd Academy (arborist-exam prep,
+not AI) — all three appeared as Ep46 runner-ups.

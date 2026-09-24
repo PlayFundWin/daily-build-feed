@@ -1,0 +1,135 @@
+Two of the tools I'd been watching finally broke their silence. Cursor had gone thirteen days without a word. ElevenLabs had gone nine. Both turned up on the same Wednesday, and both brought something you can actually use.
+
+Elsewhere, a national charging network has put twenty two bays into a leisure park, where the whole point is that you charge while you eat. And the build today is an AI song app that makes seventy three thousand dollars a month, verified, from people who simply fancy a song written to order.
+
+This is The Daily Build for Thursday the twenty fourth of September. Episode forty six. The usual small print applies: this is research and ideas, not financial advice.
+
+Right. What landed.
+
+Cursor first, because it has been a long wait. Its changelog had sat still since the tenth of September. On Wednesday the twenty third it shipped two features, and neither is a tweak to autocomplete.
+
+The first is called Rollouts. You merge a change, and Cursor follows it out into the world, first to staging and then to production. At each step it gives a verdict: verified healthy, regression detected, or inconclusive. If something breaks it can open a pull request that reverts the change for you, or it can send an agent in to try a fix. It connects to monitoring tools such as Datadog, so it isn't guessing from the code alone. It's reading the same dashboards a person would.
+
+The second is Security Review. It's a bot that reads every pull request looking for exploitable bugs. The list is injection attacks, authentication bypasses, secrets committed by mistake, server-side request forgery, unsafe deserialisation, and risky changes to dependencies. Every finding gets a severity rating and a suggested fix.
+
+I read this on Cursor's own changelog. The limits are that both features are for Teams and Enterprise plans only, and they come with ten days of free credit, which covers roughly fifty changes on Teams and roughly five hundred on Enterprise.
+
+Why you care: a small software shop has never been able to afford a dedicated security reviewer or someone watching every deploy. This doesn't replace that person, but it does the dull first pass that nobody gets round to. If LeaguePages or PlayFundWin has code going live every week, a bot that says "this one leaks a key" before it ships is cheap insurance. That also closes the Cursor quiet-watch thread we opened in episode forty three. The silence wasn't a sign of trouble after all. They were building.
+
+Next, the other half of that watch. ElevenLabs' changelog had nothing new after the fourteenth of September. On the twenty third it posted, and the news is a removal, not a feature.
+
+OpenAI is retiring Sora 2 and Sora 2 Pro, its video generation models, today, the twenty fourth. ElevenLabs is taking both out of its model picker. Anything you made with them stays in your history. But any saved flow or template that uses a Sora step will stop working. ElevenLabs suggests Google's Gemini Omni one point one Flash as the replacement. The same entry gives notice that Seedance one point five Pro goes on the eleventh of November, with Seedance two point zero taking its place.
+
+That comes straight from ElevenLabs' changelog.
+
+Why you care: this is the risk in renting a model, and it's a real case, not a hypothetical. If you built a weekly promo video template on top of one named model, that template now has a date on which it fails without warning. The fix is dull but important. Keep a list of which external models each of your automations depends on, and give each one a named fallback before you need it. Today it's Sora. In November it's Seedance. Next year it'll be something you're relying on right now.
+
+Third, Anthropic, with something that isn't a product launch at all. It's a research result. On the twenty third, Anthropic published a post describing how nine hundred and fifty Claude agents worked through public DNA databases for twenty one hours. Between them they used two hundred and ten million tokens, and they came back with a previously unknown enzyme system, which Anthropic calls ART, carrying repeats that resemble CRISPR. Then came the important step: the finding was tested in a lab and it held up. Alongside the post, Anthropic announced a new life sciences research group and invited outside researchers to propose questions for it.
+
+I read the announcement myself. One gap: the post doesn't say which Claude model was used, so don't take this as a verdict on last week's Opus five point five.
+
+Why you care: you're not about to discover an enzyme. But look at how the job was done. Hundreds of agents ran unsupervised for most of a day on a search too big for a person, and the result was checked by people who could prove it wrong. That's the pattern that will reach small businesses first, at a much smaller scale. Picture fifty agents reading every sports club's website in three counties overnight and handing you a checked list by morning. The expensive part isn't the agents any more. It's the checking at the end, and that's still your job.
+
+Fourth, OpenAI. Two posts on the twenty third, and I'll take them together.
+
+The first says ChatGPT's ads programme is expanding into Indonesia, Malaysia, the Philippines, Singapore, Thailand, Vietnam and Taiwan. OpenAI says that takes it past sixty countries. Businesses can buy ads themselves through an Ads Manager, or through the big agency groups. This announcement is entirely about Asia and says nothing about Britain, so don't read it as a UK launch. What it does show is that advertising inside a chat assistant is now a normal channel in a lot of places, and that direction only runs one way.
+
+The second is a customer story. Airbnb says it's widening use of GPT-6 Astra, the model we mentioned on Tuesday in the context of Grok's token bill. Airbnb's claims are that it ships eighty per cent more features than it did a year ago, and that document analysis which took twenty or more passes with other models now takes three or four. Treat those as a customer quote published on OpenAI's own blog, which is testimony and not an audit.
+
+Why you care: on the ads side, if paid search is part of how PlayFundWin finds clubs, the next channel is heading inside the assistant rather than next to the search results. It isn't here yet, but it's worth knowing it's on its way. On Airbnb, the number to hold onto isn't eighty per cent. It's passes per document. That's the measure that tells you whether a model saves money on your own paperwork, and you can test it yourself on ten real documents in an afternoon.
+
+Last, a few shorter items to finish the round.
+
+Base44, the no-code builder I've promised to check by name every episode, has moved at last. Its changelog shows entries on the twenty first and twenty second. They landed after yesterday's research had closed, so they're new to you. The notable one is an AI Visibility tab inside its SEO settings. That's the answer-engine visibility idea from episode twenty two, now built into a mainstream builder as a free checkbox. The less welcome one: Google's Gemini three point eight Flash now costs twice as many credits per use inside Base44. Check your usage before the bill does it for you.
+
+Claude Code reached version two point one point two eight one on the twenty third. It's a small release. The two useful changes are that connected tools can now open a sign-in or approval page in your browser, and a "send now" option moves running tools into the background instead of cancelling what Claude was doing.
+
+And on Hugging Face, NVIDIA published an open model called Nemotron three Diarization. Diarization means working out who spoke when. This model is small, handles up to eight speakers, can run live, and NVIDIA says it tops a public benchmark for the task. If you've ever wanted a club committee meeting transcript that knows the treasurer from the chair, the building blocks are now free.
+
+So that's the news. Time for the build.
+
+I'll start with the evidence, as always.
+
+The product is called SongMaker AI. On its listing it's Composer AI, and its web address is different again, so it goes by a few names. You describe a song, a subject, a mood and a style, and it writes and produces an original track with lyrics and vocals. It's a mobile app, sold mainly to consumers.
+
+The figures come from TrustMRR, which verifies revenue by connecting directly to the payment system. In this case that's RevenueCat, the subscription platform many mobile apps run on. I read the listing myself this morning, and it was updated at a quarter to seven today. Monthly recurring revenue is seventy three thousand and forty eight dollars. Revenue over the last thirty days is seventy six thousand, eight hundred and fourteen dollars. All-time revenue is two million, one hundred and ten thousand dollars. It has five thousand six hundred and four active subscriptions. The price is six dollars ninety nine a week, or sixty nine dollars a year. It has four point seven stars from just over two thousand App Store ratings. And it's listed for sale at an asking price of one point one million dollars.
+
+Now the weak point, which I'll say straight away. The founder appears on the listing only as "h shen". There's no interview, no build-in-public thread, and no story of how it grew. That's unusual for this show. Normally I'd hand you a founder's own account of their first thousand dollars. What we have instead is the reverse: verified numbers and no story. I'd rather have audited figures from a near-stranger than a charming story with no figures behind it, but you should know which of the two you're getting.
+
+Why pick it? Because it's a new mechanic for us. Forty five episodes in, we've done captions, dubbing, headshots, carousels and a formula bot. We've never done music. It also shows something the show keeps circling: a consumer AI app at a weekly price point can build a serious revenue base without any public founder brand at all.
+
+Before I get to how you'd build it, there's a question I want to put to you. Five thousand six hundred subscriptions at seven dollars a week is not people who need a song. It's people who enjoy making songs. That matters, because it tells you what's being sold. The product is fun, a gift, the joke at a leaving do. The music is secondary. Keep that in mind, because it changes where you'd point this.
+
+How it's built. I'd say this is about ninety per cent buildable with Claude, with one important piece rented.
+
+Claude does the words. It turns "a song about the under-twelves finally beating Harpenden" into a verse, a chorus and a bridge, sets the mood, and writes the prompt for the music model. The music itself comes from a third-party music generation API. Several audio companies now sell one. Pick one whose terms clearly allow commercial use of what it generates, and check that before anything else.
+
+Around those two pieces sits a very ordinary app: a form, a payment step, a player, a download button and a share link. Claude Code can build that in days. Put Stripe on the web version and skip the App Store at first. Starting costs are a domain, hosting and some API credit, well under five hundred pounds. Most of your early spend is the cost of each song generated, so do the maths on that before you set a price.
+
+If I were sequencing it, it would go like this. Days one and two: generate twenty songs by hand with the music API and play them to people you know. You're checking whether the output is good enough that a parent would share it, not whether the software works. Days three to five: have Claude Code build the form, payment and player, with a hard cap on how many generations anyone can trigger, so a bored teenager can't run up your bill overnight. Week two: one pilot club, one weekend, with a single link sent out through the club's usual parent WhatsApp group. By the Monday you'll know the only number that counts, which is what share of parents paid, and no spreadsheet forecast can tell you that in advance.
+
+Now the part that matters for you, because I don't think you should build a consumer song app. The app stores are crowded, the weekly-subscription model depends on buying installs through paid ads, and you'd be competing on ad spend with people who do nothing else.
+
+What you have is a distribution channel into clubs, plus a working model for turning small payments into club funds. So here's the niche.
+
+Call it Season Songs, as a PlayFundWin add-on. At the end of a season a junior club offers parents a personalised thirty second song about their child's season. It uses the kid's name, the team, the moment they scored against the old rivals, sung in whatever style the child likes. The parent pays, say, five pounds. The club keeps a share, just as it keeps a share of a prize draw. It becomes a fundraising product that doesn't feel like fundraising, because what the parent is buying is a gift.
+
+It also works for adults. There's the club anthem for the centenary, the walk-out track for the veterans' cup final, and the leaving song for the groundsman who's been there thirty years. On LeaguePages, the team page is the natural place for it to live, with a "make this team's song" button next to the fixtures.
+
+Conservative money maths, and I mean conservative. Take one junior club with a hundred and fifty players. Say one parent in five buys a song at five pounds. That's thirty songs and a hundred and fifty pounds, before the club's share and before generation costs. Across ten clubs in a season, you're looking at roughly fifteen hundred pounds gross, shared with the clubs. That's not a business. It's a feature that pays for itself and gives clubs one more reason to stay on your platform. The upside is volume. If it spreads across a few hundred clubs through PlayFundWin's existing relationships, the arithmetic changes. But I'd plan on the feature, and treat the business as a bonus if it arrives.
+
+The risks, and there are real ones.
+
+One: children's data. You're putting a named child into a system that generates content about them. That means parental consent, UK GDPR, and clear retention rules, set up before launch and not added after the first complaint. Keep the child's surname out of every prompt. Only the parent should be able to share the song, and your platform shouldn't publish it anywhere by default.
+
+Two: the legal ground under AI music is still moving. There's live dispute over what these music models were trained on. You don't want a club's centenary anthem tangled up in that argument. Choose a provider whose licence terms explicitly give you commercial rights, keep a record of those terms, and avoid prompts that ask it to sound like a named artist.
+
+Three: model dependency, which the ElevenLabs news showed this very morning. Your song feature rests on someone else's model. If they retire it, as OpenAI is doing with Sora today, your feature stops working. Build the music step so it can be swapped, and know your second choice from day one.
+
+Four: novelty fades. The first round of season songs will be delightful. By the third year some parents will be tired of it. Treat it as a seasonal campaign, not a monthly subscription.
+
+Now the runners-up. There are three, and I'll be quick.
+
+MagicSlides, from a founder called Sanskar Tiwari. It's a Google Slides add-on that turns a title and a slide count into a finished presentation. TrustMRR verifies it through Stripe at eleven thousand, one hundred and eighteen dollars a month, with seven hundred and sixteen thousand dollars all-time and eight hundred and fifteen subscriptions. It's growing at about one per cent a month, it's listed for sale at seven hundred thousand dollars, and its marketing is YouTube and search. I didn't make it the main pick because it sits too close to the carousel generator from episode forty three. There's a useful niche in sponsor pitch decks for clubs, but the underlying mechanic is one you've already heard.
+
+Talefy, which makes AI interactive story games. TrustMRR verifies it at twenty one thousand, three hundred and eleven dollars a month, with nine hundred and forty two thousand dollars all-time. The founder appears only by a social handle, so it has the same thin story as today's pick. There's no natural fit with your ventures, and I'm telling you so rather than forcing one.
+
+Tree Nerd Academy, a study system for the professional arborist exam, priced around two hundred dollars. The TrustMRR listing showed twenty three thousand dollars a month when last updated in March, but a category page gave a different figure, so take it with some salt. It isn't really AI either. It's in the list for the format: paid exam preparation in a narrow professional niche. There could be a sports version for referee and coaching badge exams, which is a thought for LeaguePages, not a plan.
+
+Let's bring today back to your three businesses.
+
+PlayFundWin first. The sector was quiet this window, with nothing new from Third Sector, Civil Society, or the Gambling Commission on lotteries or prize draws. The Fundraising Regulator's consultation page wouldn't load for my research pass today, so there's no update on that thread, and you've heard the reasoning for tracking it since episode forty. One piece of background I haven't mentioned before, which isn't new: in July, the industry formed a Prize Competition Council with more than fifty member operators, chaired by George McGregor, to back the government's voluntary code. It's dated early July, and I read it from a trade source. The point for you: when a sector sets up its own body to support a voluntary code, it's usually trying to show government that legislation isn't needed. Whether PlayFundWin wants a seat inside that group or would rather watch from outside is a decision worth making on purpose, not by default.
+
+One more thing that's live. A general call from the Gambling Commission for industry proposals on cutting regulatory burdens closes tomorrow, the twenty fifth. I only have it from my research pass's scan of their news page and haven't read it in full. It may not touch free-entry prize draws at all. If PlayFundWin has one bit of red tape it wishes someone would look at, that call is today's open door.
+
+And the song idea is the most direct link for PlayFundWin. It's a product for clubs to sell that runs on exactly the mechanic you already operate, which is small payments, a club share, and a feel-good reason to pay.
+
+LeaguePages. For the fifth week running there's been no sector news in grassroots sports tech: nothing from the FA's digital side, nothing from Sport England in the window, and nothing from the club-app crowd. So the useful links are practical. Cursor's Security Review is the kind of guard you want on any codebase that stores club officials' contact details. NVIDIA's free speaker-labelling model is the missing piece for a feature that turns a league's committee meeting recording into minutes that know who said what. And the team page is where a season song would sit.
+
+EV-Partnerships. Here there's actually something to report, so it gets air time today.
+
+RAW Charging, one of the eight national operators we track, has opened a twenty two bay charging hub at Bentley Bridge Leisure Park in Wolverhampton. There are four standard bays, two rapid, and sixteen ultra-rapid. It's the city's largest ultra-rapid hub. The site belongs to Landsec, the big property company, and the deal is part of a wider partnership with Aviva Investors. The stated pitch is that you charge while you use the park's restaurants and entertainment. I read the report in TheBusinessDesk, and Zapmap listed it on the twenty second. The article itself is dated the twenty first, just before our window, but it hasn't been on this show before. A couple of trade outlets also mention a free-charging launch offer, which I couldn't read first-hand.
+
+Now, what this does and doesn't mean. These are two separate facts, and I'll keep them apart.
+
+On the operator question: yes, a national network has now moved into a leisure venue. It's a large commercial leisure park with a major landlord, not a grassroots club. None of the eight has moved on a sports club, golf club or cricket club, as far as this search could find.
+
+On EV-Partnerships' own pitch: this is evidence for you, not competition. A national operator and a big landlord have looked at the numbers and bet that people will plug in where they're eating and relaxing. That's your community-hub argument, made at a scale no club committee could argue with. The clubhouse bar and cafe is the same idea, smaller, closer to home, and somewhere people come back to every week. You can now say that one of the country's charging networks has made this bet in public.
+
+So one thing to do today, and it's that.
+
+Take thirty minutes and rewrite a single slide in the EV-Partnerships club pitch. Headline: national networks are now putting chargers where people eat and linger. Underneath, put one line on RAW Charging at Bentley Bridge Leisure Park in Wolverhampton, twenty two bays, backed by Landsec and Aviva Investors. Then one line bringing it down to the club: your clubhouse is the same destination, with members who come back every week. That's all. One slide, one real example, and a pitch that's no longer only an idea. Send it to the next club committee on your list, or keep it for the next meeting.
+
+A minute on the essentials.
+
+One. Cursor is back, with Rollouts to watch your deploys and Security Review to read your pull requests, on Teams and Enterprise only, with ten days free.
+
+Two. OpenAI retires Sora 2 today, and ElevenLabs says any template using it breaks. Give every model you depend on a named fallback.
+
+Three. Anthropic's agents found a new enzyme system in twenty one hours, and a lab confirmed it. The lesson for you is many agents, then human checking at the end.
+
+Four. The build is an AI song app with seventy three thousand dollars a month in verified revenue. Your version is season songs sold through clubs as a fundraiser, with children's data handled properly from day one.
+
+Five. RAW Charging put twenty two bays into a Wolverhampton leisure park so people charge while they eat. That's your community-hub pitch backed by a national network, so use it.
+
+That's the lot for today. Tomorrow I'll see whether OpenAI adds the UK to its ads list, and whether Base44 keeps up its pace. Until then, this has been The Daily Build.

@@ -1,5 +1,14 @@
 [
   {
+    "num": 46,
+    "date": "2026-09-24",
+    "title": "Ep 46 \u2014 Cursor and ElevenLabs Wake Up, a National Charger Network Moves Into a Leisure Park, and the AI Song App Doing Seventy-Three Thousand a Month",
+    "description": "Cursor ships deploy-watching Rollouts and a pull-request Security Review bot, ElevenLabs pulls Sora 2 as OpenAI retires it, Anthropic's agents find a new enzyme system, and RAW Charging puts twenty-two bays into a Wolverhampton leisure park. The build is a TrustMRR-verified AI song generator at seventy-three thousand dollars a month, reworked as end-of-season personalised songs clubs can sell as a fundraiser.",
+    "file": "ep046.mp3",
+    "bytes": 14208099,
+    "seconds": 1184
+  },
+  {
     "num": 45,
     "date": "2026-09-23",
     "title": "Ep 45 \u2014 Opus Five Five and GPT-Six Land in Copilot the Same Day, and the Formula Bot a Non-Coder Turned Into Six Figures",
@@ -259,14 +268,5 @@
     "file": "ep017.mp3",
     "bytes": 14305274,
     "seconds": 1192
-  },
-  {
-    "num": 16,
-    "date": "2026-08-21",
-    "title": "Ep 16 \u2014 Anthropic gives agents working hands, and the essay tool that limped to two thousand dollars before it hit ten million a year",
-    "description": "Anthropic ships Computer Use and a new Browser Use tool to general availability and launches a free Claude Academy, while OpenAI opens a new AI Futures policy research arm. Plus a deep dive on Jenni AI, the academic-writing assistant that grew from two thousand dollars a month to over ten million dollars a year in revenue, and why the Fundraising Regulator, grassroots sports tech and EV destination charging trackers are all quiet this week for PlayFundWin, LeaguePages and EV-Partnerships.",
-    "file": "ep016.mp3",
-    "bytes": 14409032,
-    "seconds": 1201
   }
 ]

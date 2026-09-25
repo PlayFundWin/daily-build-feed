@@ -59,6 +59,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep44 — Sleek (AI chat-to-mobile-app-UI-mockup generator, exports to Figma/code)
 - Ep45 — Excel Formula Bot (AI plain-English-to-spreadsheet-formula generator, exports formula + explanation)
 - Ep46 — SongMaker AI / Composer AI (AI original-song generator, subject/mood/style to produced track with lyrics and vocals; niched as personalised "season songs" sold via clubs)
+- Ep47 — FootballGPT (AI training-session planner for grassroots coaches, team/age/constraints/problem to session plan with drill diagrams and coaching points; niched as a LeaguePages coach assistant)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -79,4 +80,7 @@ DNS/website-blocking, Ben Bozzay), Kleo (LinkedIn ghostwriting browser extension
 Cameron Whiteside) — all three appeared as Ep45 runner-ups. Also now recurring:
 MagicSlides (AI Google Slides deck add-on, Sanskar Tiwari — close to Ep43's carousel
 mechanic), Talefy (AI interactive story games), Tree Nerd Academy (arborist-exam prep,
-not AI) — all three appeared as Ep46 runner-ups.
+not AI) — all three appeared as Ep46 runner-ups. Also now recurring: Enquiry Genie (AI
+Airbnb guest-enquiry replies, "George" — TrustMRR figures internally inconsistent), Stat
+AI (AI sports analysis app, betting-adjacent), myterrace.net (match-day club social
+graphics, Ronnie Fisher) — all three appeared as Ep47 runner-ups.

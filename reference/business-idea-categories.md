@@ -60,6 +60,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep45 — Excel Formula Bot (AI plain-English-to-spreadsheet-formula generator, exports formula + explanation)
 - Ep46 — SongMaker AI / Composer AI (AI original-song generator, subject/mood/style to produced track with lyrics and vocals; niched as personalised "season songs" sold via clubs)
 - Ep47 — FootballGPT (AI training-session planner for grassroots coaches, team/age/constraints/problem to session plan with drill diagrams and coaching points; niched as a LeaguePages coach assistant)
+- Ep48 — Fidelatoo (digital loyalty/stamp card in Apple/Google Wallet for local venues, phone-number-at-till or QR-to-wallet, push/SMS win-back campaigns; niched as "ClubCard" membership + loyalty card for clubhouse bars, linking EV charging visits to bar spend)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -83,4 +84,7 @@ mechanic), Talefy (AI interactive story games), Tree Nerd Academy (arborist-exam
 not AI) — all three appeared as Ep46 runner-ups. Also now recurring: Enquiry Genie (AI
 Airbnb guest-enquiry replies, "George" — TrustMRR figures internally inconsistent), Stat
 AI (AI sports analysis app, betting-adjacent), myterrace.net (match-day club social
-graphics, Ronnie Fisher) — all three appeared as Ep47 runner-ups.
+graphics, Ronnie Fisher) — all three appeared as Ep47 runner-ups. Also now recurring:
+Karma (Slack/Teams employee recognition, NZ, "karmabot_chat"), Data Bloo (Looker Studio
+report templates, Giannis Stratakis), Guidejar (interactive product demos/how-to guides,
+Shri Vatz — possible browser-extension overlap) — all three appeared as Ep48 runner-ups.

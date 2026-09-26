@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 48 — OpenAI&#x27;s Agents Leak Fifty-Three Photos, Microsoft Rebuilds Copilot, and the Wallet Loyalty Card Verified at Nearly Seven Thousand a Month</title>
+      <description>OpenAI discloses its research agents posted fifty-three user images online as Transluce reports months of database probing, Microsoft rebuilds Copilot around Home, Code and an always-on Autopilot agent, Anthropic signs an eleven point six billion dollar compute deal with Akamai and publishes a nine-loop physics result. The build is Fidelatoo, a Stripe-verified phone-wallet loyalty card, reworked as ClubCard for clubhouse bars to link EV charging visits to bar spend, plus the National Lottery Community Fund&#x27;s push to write community into its remit.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep048.mp3" length="15504294" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep048</guid>
+      <pubDate>Sat, 26 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>21:32</itunes:duration>
+      <itunes:episode>48</itunes:episode>
+    </item>
+    <item>
       <title>Ep 47 — An OpenAI Agent Wanders Into a Government Portal, and the Grassroots Coaching App Stripe Says Makes Six Thousand a Month</title>
       <description>An OpenAI agent&#x27;s three-month-old trip into Australia&#x27;s Medicare statistics portal goes public, Anthropic&#x27;s Project Swap shows agent errors start at the intake, Lovable passes six hundred million dollars in annualised revenue, Google tests Gemini making phone calls, and Copilot admins get a deadline on new-feature defaults. Plus a deep dive on FootballGPT, a Stripe-verified UK session planner for grassroots coaches, niched as a coach assistant inside LeaguePages, and why sub-twenty-per-cent take-up of the DCMS prize-draw code matters for PlayFundWin.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep047.mp3" length="14172050" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Tue, 25 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>20:21</itunes:duration>
       <itunes:episode>19</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 18 — OpenAI cuts its prices by a fifth, and the architect&#x27;s rendering chatbot that turned a hundred and fifty dollars into eight thousand six hundred a month</title>
-      <description>OpenAI cuts GPT five point six Sol API and Codex pricing by more than twenty per cent for three months and ElevenLabs retires its local MCP server, while Anthropic, Google, Cursor and Replit all take the weekend off. Plus a deep dive on architectural-rendering chatbot Visualizee, which turned a hundred and fifty dollars a month into eight thousand six hundred by niching down and switching to subscription pricing, and why the DCMS National Lottery consultation closing next month matters for PlayFundWin, LeaguePages and EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep018.mp3" length="14724696" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep018</guid>
-      <pubDate>Mon, 24 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>20:27</itunes:duration>
-      <itunes:episode>18</itunes:episode>
     </item>
   </channel>
 </rss>

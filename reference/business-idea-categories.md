@@ -61,6 +61,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep46 — SongMaker AI / Composer AI (AI original-song generator, subject/mood/style to produced track with lyrics and vocals; niched as personalised "season songs" sold via clubs)
 - Ep47 — FootballGPT (AI training-session planner for grassroots coaches, team/age/constraints/problem to session plan with drill diagrams and coaching points; niched as a LeaguePages coach assistant)
 - Ep48 — Fidelatoo (digital loyalty/stamp card in Apple/Google Wallet for local venues, phone-number-at-till or QR-to-wallet, push/SMS win-back campaigns; niched as "ClubCard" membership + loyalty card for clubhouse bars, linking EV charging visits to bar spend)
+- Ep49 — Draftly (AI prompt-to-cinematic-scroll-website builder, brief to generated video to scroll-synced frames, exportable live site; niched as "Big Moment Pages" for draw launches, charger switch-ons and season launches)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -88,3 +89,8 @@ graphics, Ronnie Fisher) — all three appeared as Ep47 runner-ups. Also now rec
 Karma (Slack/Teams employee recognition, NZ, "karmabot_chat"), Data Bloo (Looker Studio
 report templates, Giannis Stratakis), Guidejar (interactive product demos/how-to guides,
 Shri Vatz — possible browser-extension overlap) — all three appeared as Ep48 runner-ups.
+Also now recurring: Parola (finds local businesses without websites, generates AI sites
+for freelancers to pitch, "matt"), Artisania (voice-to-construction-quote for tradespeople,
+Thibaut Monopoli — TrustMRR figures inconsistent), HoodCleaningReport (job photos to
+kitchen-exhaust inspection reports, Viraj Shah — overlaps Ep24) — all three appeared as
+Ep49 runner-ups.

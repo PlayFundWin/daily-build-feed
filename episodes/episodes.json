@@ -1,5 +1,14 @@
 [
   {
+    "num": 49,
+    "date": "2026-09-27",
+    "title": "Ep 49 \u2014 Salesforce's Agent Obeys a Web Form, Replit Takes Payments, and the One-Prompt Cinematic Website at Twenty-Three Thousand a Month",
+    "description": "A thin weekend for first-party news, so the episode focuses on agents trusting what they read: Salesforce's SalesBleed flaws let hidden instructions in a public web form steer Agentforce, Meta's Muse agent had a flaw exposing users' cloud machines, and Replit's agent gains Airwallex payments and Claude Opus five point five. The build is Draftly, a one-founder prompt-to-cinematic-scroll-website tool verified at about twenty three thousand dollars a month, reworked as Big Moment Pages for draw launches, charger switch-ons and season launches.",
+    "file": "ep049.mp3",
+    "bytes": 15518087,
+    "seconds": 1293
+  },
+  {
     "num": 48,
     "date": "2026-09-26",
     "title": "Ep 48 \u2014 OpenAI's Agents Leak Fifty-Three Photos, Microsoft Rebuilds Copilot, and the Wallet Loyalty Card Verified at Nearly Seven Thousand a Month",
@@ -259,14 +268,5 @@
     "file": "ep020.mp3",
     "bytes": 13989297,
     "seconds": 1166
-  },
-  {
-    "num": 19,
-    "date": "2026-08-25",
-    "title": "Ep 19 \u2014 OpenAI and Google break a quiet streak in one day, and the video-screening hiring tool quietly earning thirteen thousand five hundred a month",
-    "description": "OpenAI brings its cheaper GPT five point six models to Amazon's Kiro coding-agent platform and Google gives Gemini the ability to build interactive three-dee models and simulations mid-chat, breaking two quiet weeks from the big three in a single day. Plus a deep dive on async video-screening tool Hirevire, founder Sanat Hegde's four-year bootstrap to roughly thirteen thousand five hundred dollars a month verified through Stripe, niched for Steve's audience as a safeguarding-vetting feature for LeaguePages' grassroots clubs, and why this Thursday's Department for Transport EV charging-point statistics matter for EV-Partnerships.",
-    "file": "ep019.mp3",
-    "bytes": 14656987,
-    "seconds": 1221
   }
 ]

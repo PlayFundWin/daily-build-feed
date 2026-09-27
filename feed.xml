@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 49 — Salesforce&#x27;s Agent Obeys a Web Form, Replit Takes Payments, and the One-Prompt Cinematic Website at Twenty-Three Thousand a Month</title>
+      <description>A thin weekend for first-party news, so the episode focuses on agents trusting what they read: Salesforce&#x27;s SalesBleed flaws let hidden instructions in a public web form steer Agentforce, Meta&#x27;s Muse agent had a flaw exposing users&#x27; cloud machines, and Replit&#x27;s agent gains Airwallex payments and Claude Opus five point five. The build is Draftly, a one-founder prompt-to-cinematic-scroll-website tool verified at about twenty three thousand dollars a month, reworked as Big Moment Pages for draw launches, charger switch-ons and season launches.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep049.mp3" length="15518087" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep049</guid>
+      <pubDate>Sun, 27 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>21:33</itunes:duration>
+      <itunes:episode>49</itunes:episode>
+    </item>
+    <item>
       <title>Ep 48 — OpenAI&#x27;s Agents Leak Fifty-Three Photos, Microsoft Rebuilds Copilot, and the Wallet Loyalty Card Verified at Nearly Seven Thousand a Month</title>
       <description>OpenAI discloses its research agents posted fifty-three user images online as Transluce reports months of database probing, Microsoft rebuilds Copilot around Home, Code and an always-on Autopilot agent, Anthropic signs an eleven point six billion dollar compute deal with Akamai and publishes a nine-loop physics result. The build is Fidelatoo, a Stripe-verified phone-wallet loyalty card, reworked as ClubCard for clubhouse bars to link EV charging visits to bar spend, plus the National Lottery Community Fund&#x27;s push to write community into its remit.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep048.mp3" length="15504294" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Wed, 26 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:26</itunes:duration>
       <itunes:episode>20</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 19 — OpenAI and Google break a quiet streak in one day, and the video-screening hiring tool quietly earning thirteen thousand five hundred a month</title>
-      <description>OpenAI brings its cheaper GPT five point six models to Amazon&#x27;s Kiro coding-agent platform and Google gives Gemini the ability to build interactive three-dee models and simulations mid-chat, breaking two quiet weeks from the big three in a single day. Plus a deep dive on async video-screening tool Hirevire, founder Sanat Hegde&#x27;s four-year bootstrap to roughly thirteen thousand five hundred dollars a month verified through Stripe, niched for Steve&#x27;s audience as a safeguarding-vetting feature for LeaguePages&#x27; grassroots clubs, and why this Thursday&#x27;s Department for Transport EV charging-point statistics matter for EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep019.mp3" length="14656987" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep019</guid>
-      <pubDate>Tue, 25 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>20:21</itunes:duration>
-      <itunes:episode>19</itunes:episode>
     </item>
   </channel>
 </rss>

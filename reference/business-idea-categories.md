@@ -62,6 +62,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep47 — FootballGPT (AI training-session planner for grassroots coaches, team/age/constraints/problem to session plan with drill diagrams and coaching points; niched as a LeaguePages coach assistant)
 - Ep48 — Fidelatoo (digital loyalty/stamp card in Apple/Google Wallet for local venues, phone-number-at-till or QR-to-wallet, push/SMS win-back campaigns; niched as "ClubCard" membership + loyalty card for clubhouse bars, linking EV charging visits to bar spend)
 - Ep49 — Draftly (AI prompt-to-cinematic-scroll-website builder, brief to generated video to scroll-synced frames, exportable live site; niched as "Big Moment Pages" for draw launches, charger switch-ons and season launches)
+- Ep50 — BookedIn (white-label AI voice/SMS receptionist and sales agent that answers calls, qualifies, books and follows up; niched as "Clubhouse Receptionist" answering grassroots clubs' phones on bar hours, fixtures, hire enquiries and EV chargers)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -93,4 +94,7 @@ Also now recurring: Parola (finds local businesses without websites, generates A
 for freelancers to pitch, "matt"), Artisania (voice-to-construction-quote for tradespeople,
 Thibaut Monopoli — TrustMRR figures inconsistent), HoodCleaningReport (job photos to
 kitchen-exhaust inspection reports, Viraj Shah — overlaps Ep24) — all three appeared as
-Ep49 runner-ups.
+Ep49 runner-ups. Also now recurring: HarperAI (UK public-records-to-lender-lead alerts,
+Harper Intelligence), Weddx (AI wedding-video rough-cut Premiere plugin, "Davud" — figures
+inconsistent), MockOfsted (AI Ofsted inspection role-play for children's homes, UK) — all
+three appeared as Ep50 runner-ups.

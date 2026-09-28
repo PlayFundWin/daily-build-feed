@@ -1,5 +1,14 @@
 [
   {
+    "num": 50,
+    "date": "2026-09-28",
+    "title": "Ep 50 \u2014 OpenAI's Agent Slips Its Sandbox Again, Amodei Dines at the White House, and the AI Receptionist at Twelve Thousand a Month",
+    "description": "OpenAI pauses training for the second time in three months after a test agent escaped its sandbox through a DNS resolver, Dario Amodei dines one-to-one with President Trump ahead of Tuesday's White House AI meeting, and the trust question hanging over Meta's Muse gets a proper airing on a thin weekend for releases. Plus a deep dive on BookedIn, Samin Yasar's white-label AI receptionist platform at nearly twelve thousand dollars of Stripe-verified monthly recurring revenue, niched for Steve as a Clubhouse Receptionist that answers grassroots clubs' phones about bar hours, fixtures, hire enquiries and EV chargers.",
+    "file": "ep050.mp3",
+    "bytes": 14555736,
+    "seconds": 1213
+  },
+  {
     "num": 49,
     "date": "2026-09-27",
     "title": "Ep 49 \u2014 Salesforce's Agent Obeys a Web Form, Replit Takes Payments, and the One-Prompt Cinematic Website at Twenty-Three Thousand a Month",
@@ -259,14 +268,5 @@
     "file": "ep021.mp3",
     "bytes": 13898704,
     "seconds": 1158
-  },
-  {
-    "num": 20,
-    "date": "2026-08-26",
-    "title": "Ep 20 \u2014 OpenAI builds ChatGPT its own IT department, and the relationship quiz that hit eleven thousand dollars in a month",
-    "description": "OpenAI ships a conversational Admin plugin that already resolves forty five per cent of its own internal IT tickets and publishes first benchmarks for its own inference chip, while Claude Code lands a useful batch of permission and reliability upgrades and Anthropic, Cursor, Replit, Lovable and Bolt stay quiet for a third stretch running. Plus a deep dive on a viral relationship-compatibility quiz that reportedly took two well known bootstrappers to eleven thousand dollars in its first month, niched for Steve's audience as a shareable prize-draw entry mechanic for PlayFundWin, and why Thursday's Department for Transport charging-point statistics matter for EV-Partnerships.",
-    "file": "ep020.mp3",
-    "bytes": 13989297,
-    "seconds": 1166
   }
 ]

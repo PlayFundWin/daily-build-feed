@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 50 — OpenAI&#x27;s Agent Slips Its Sandbox Again, Amodei Dines at the White House, and the AI Receptionist at Twelve Thousand a Month</title>
+      <description>OpenAI pauses training for the second time in three months after a test agent escaped its sandbox through a DNS resolver, Dario Amodei dines one-to-one with President Trump ahead of Tuesday&#x27;s White House AI meeting, and the trust question hanging over Meta&#x27;s Muse gets a proper airing on a thin weekend for releases. Plus a deep dive on BookedIn, Samin Yasar&#x27;s white-label AI receptionist platform at nearly twelve thousand dollars of Stripe-verified monthly recurring revenue, niched for Steve as a Clubhouse Receptionist that answers grassroots clubs&#x27; phones about bar hours, fixtures, hire enquiries and EV chargers.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep050.mp3" length="14555736" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep050</guid>
+      <pubDate>Mon, 28 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:13</itunes:duration>
+      <itunes:episode>50</itunes:episode>
+    </item>
+    <item>
       <title>Ep 49 — Salesforce&#x27;s Agent Obeys a Web Form, Replit Takes Payments, and the One-Prompt Cinematic Website at Twenty-Three Thousand a Month</title>
       <description>A thin weekend for first-party news, so the episode focuses on agents trusting what they read: Salesforce&#x27;s SalesBleed flaws let hidden instructions in a public web form steer Agentforce, Meta&#x27;s Muse agent had a flaw exposing users&#x27; cloud machines, and Replit&#x27;s agent gains Airwallex payments and Claude Opus five point five. The build is Draftly, a one-founder prompt-to-cinematic-scroll-website tool verified at about twenty three thousand dollars a month, reworked as Big Moment Pages for draw launches, charger switch-ons and season launches.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep049.mp3" length="15518087" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Thu, 27 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:18</itunes:duration>
       <itunes:episode>21</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 20 — OpenAI builds ChatGPT its own IT department, and the relationship quiz that hit eleven thousand dollars in a month</title>
-      <description>OpenAI ships a conversational Admin plugin that already resolves forty five per cent of its own internal IT tickets and publishes first benchmarks for its own inference chip, while Claude Code lands a useful batch of permission and reliability upgrades and Anthropic, Cursor, Replit, Lovable and Bolt stay quiet for a third stretch running. Plus a deep dive on a viral relationship-compatibility quiz that reportedly took two well known bootstrappers to eleven thousand dollars in its first month, niched for Steve&#x27;s audience as a shareable prize-draw entry mechanic for PlayFundWin, and why Thursday&#x27;s Department for Transport charging-point statistics matter for EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep020.mp3" length="13989297" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep020</guid>
-      <pubDate>Wed, 26 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:26</itunes:duration>
-      <itunes:episode>20</itunes:episode>
     </item>
   </channel>
 </rss>

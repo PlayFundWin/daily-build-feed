@@ -149,8 +149,8 @@ whether an episode ships early, late, or exactly on schedule.
   the eight-national-operator thread and the DfT/Zapmap checks. The EV-Partnerships
   thesis and operator-gap cadence notes that used to sit here are preserved in the
   Process log entries of 2026-09-16 and 2026-09-18 below and in `archive/covered.md`.
-  Do not resume them unless Dean adds EV-Partnerships back. Onyxia: status unconfirmed,
-  do not research or mention until Dean confirms it is active.
+  Do not resume them unless Dean adds EV-Partnerships back. Onyxia: Dean no longer runs
+  or has this business (confirmed 2026-09-30); do not research or mention it.
 
 Vary how you phrase these three briefs and which named sources you check first from one
 day to the next — don't silently reuse identical query wording or check the same source
@@ -427,6 +427,10 @@ what failed and what you did about it. Never claim success you did not verify.
 Dated entries only, added when a real gap in this pipeline is found and fixed — not a
 running commentary. This section is read in step 1 alongside the archive.
 
+- 2026-09-30: Onyxia dropped. Dean confirmed he no longer runs or has the business, so
+  it moved from "status unsure" to "not on the estate" in `STYLE.md`, the ASK DEAN row
+  left `members/pronunciations.md`, and `members/denylist.txt` now lists it under
+  former ventures (still blocked, so it never reaches a member episode).
 - 2026-09-30: Dean's decisions. (1) The daily episode stops being public and is
   retargeted to Dean's own estate (listener Dean, not Steve): `STYLE.md` rewritten
   (estate list, Apply it scope, EV-Partnerships out, Onyxia unconfirmed), step 2C

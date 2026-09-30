@@ -64,6 +64,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep49 — Draftly (AI prompt-to-cinematic-scroll-website builder, brief to generated video to scroll-synced frames, exportable live site; niched as "Big Moment Pages" for draw launches, charger switch-ons and season launches)
 - Ep50 — BookedIn (white-label AI voice/SMS receptionist and sales agent that answers calls, qualifies, books and follows up; niched as "Clubhouse Receptionist" answering grassroots clubs' phones on bar hours, fixtures, hire enquiries and EV chargers)
 - Ep51 — Bank Statement Converter (PDF bank statement to structured CSV/Excel transaction rows, Angus Cheng; niched as "Club Treasurer" — categorised, balance-reconciled AGM income & expenditure summary for grassroots club treasurers)
+- Ep52 — CheckForm Gymnastics (AI video technique scoring: film one movement, vision model scores it against a rubric, returns deductions + drills; niched as adults-first "Clip and Score" for LeaguePages clubs)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -102,4 +103,7 @@ three appeared as Ep50 runner-ups. Also now recurring: Orshot (template-to-image
 automation API, Rishi Mohan — same founder as Pika), Festejar (branded per-club ticketing
 for Catalan local clubs — TrustMRR likely gross ticket volume), ZenGrants (AI UK
 grant-application writer — $162 all-time, early signal only) — all three appeared as Ep51
-runner-ups.
+runner-ups. Also now recurring: Tailride (inbox invoice finder,
+Miki Palet — TrustMRR all-time vs MRR inconsistent), Replygo (AI Google review replies,
+"Rauf" — thin/stale), Pet Plus Us (AI pet+owner portraits, Or Hirschhorn — figures
+inconsistent, near Ep40 headshots) — all three appeared as Ep52 runner-ups.

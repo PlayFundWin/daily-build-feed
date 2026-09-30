@@ -197,7 +197,9 @@ def http(method, url, key, body=None, accept="application/json"):
     if data is not None:
         req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as r:
-        return r.status, dict(r.headers), r.read()
+        # r.headers is an HTTPMessage: .get() is case-insensitive, which matters for
+        # the "request-id" header used for stitching. Do not convert it to a dict.
+        return r.status, r.headers, r.read()
 
 
 def quota_precheck(key, needed_chars):
@@ -245,7 +247,7 @@ def tts_chunk(key, voice_id, text, prev_ids, seed, dict_loc):
             status, headers, audio = http("POST", url, key, body, accept="audio/mpeg")
             if not audio:
                 raise RuntimeError("empty audio body")
-            req_id = headers.get("request-id") or headers.get("Request-Id")
+            req_id = headers.get("request-id")
             return audio, req_id
         except urllib.error.HTTPError as e:
             detail = e.read().decode(errors="replace")[:400]
@@ -353,10 +355,14 @@ def main():
         f"{len(chunks)} chunks, {len(chapter_titles)} chapters, {len(pron)} pronunciation aliases.")
 
     if args.plan:
+        # Actions logs on this repo are public while it is public: never print script
+        # text there. The text preview only shows on a local run.
+        show_text = os.environ.get("GITHUB_ACTIONS") != "true"
         for i, c in enumerate(chunks):
             tag = f" CHAPTER={c['chapter']}" if c["chapter"] else ""
             tag += f" STORY={c['story']}" if c["story"] else ""
-            log(f"  chunk {i:02d}: {len(c['text']):4d} chars{tag} | {c['text'][:70]!r}")
+            preview = f" | {c['text'][:70]!r}" if show_text else ""
+            log(f"  chunk {i:02d}: {len(c['text']):4d} chars{tag}{preview}")
         return 0
 
     os.makedirs(args.out_dir, exist_ok=True)

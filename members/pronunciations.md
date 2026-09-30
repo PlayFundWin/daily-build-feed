@@ -25,7 +25,6 @@ alone). Rows whose "Spoken as" says ASK DEAN are skipped until Dean decides.
 | GPT | G P T | |
 | LLM | L L M | |
 | API | A P I | |
-| Onyxia | ASK DEAN | not applied until Dean confirms how he says it |
 
 Verified against the first clone render: not yet (update this line with the date and
 any fixes after Dean listens to the first episode).

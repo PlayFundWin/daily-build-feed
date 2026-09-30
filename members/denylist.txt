@@ -54,4 +54,7 @@ cs:Cherished Wedding Venues
 cs:Cherished Retreats
 Sporting Escapes
 cs:Trusted Media
+
+# --- Former ventures (Dean no longer runs them; still never named to members) ---
+# Onyxia: dropped 2026-09-30.
 Onyxia

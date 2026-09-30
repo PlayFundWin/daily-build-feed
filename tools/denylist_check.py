@@ -11,8 +11,9 @@ committing, too (see RUNBOOK.md step 3b).
 
 Denylist syntax (members/denylist.txt), one entry per line:
   # comment              ignored, as are blank lines
-  Some Phrase            case-insensitive, whole words/phrase only
-  cs:Some Phrase         case-SENSITIVE, whole words/phrase only
+  Some Phrase            case-insensitive, whole words/phrase only; any run of
+                         spaces, hyphens or line breaks between words matches
+  cs:Some Phrase         the same, but case-SENSITIVE
   re:<regex>             Python regex, case-insensitive
 """
 import argparse
@@ -33,12 +34,14 @@ def load_denylist(path):
             entry = line.strip()
             if entry.startswith("re:"):
                 pat = re.compile(entry[3:], re.IGNORECASE)
-            elif entry.startswith("cs:"):
-                pat = re.compile(r"(?<!\w)" + re.escape(entry[3:]) + r"(?!\w)")
             else:
-                # tolerate any run of whitespace/hyphens between words
-                words = [re.escape(w) for w in re.split(r"[\s\-]+", entry) if w]
-                pat = re.compile(r"(?<!\w)" + r"[\s\-]*".join(words) + r"(?!\w)", re.IGNORECASE)
+                # tolerate any run of whitespace/hyphens (including a line break)
+                # between words, for cs: entries too
+                case_sensitive = entry.startswith("cs:")
+                phrase = entry[3:] if case_sensitive else entry
+                words = [re.escape(w) for w in re.split(r"[\s\-]+", phrase) if w]
+                pat = re.compile(r"(?<!\w)" + r"[\s\-]*".join(words) + r"(?!\w)",
+                                 0 if case_sensitive else re.IGNORECASE)
             rules.append((entry, pat, n))
     if not rules:
         raise SystemExit(f"::error::Denylist {path} is empty - refusing to pass an unchecked member edition.")
@@ -56,12 +59,13 @@ def walk_strings(obj, path="$"):
             yield from walk_strings(v, f"{path}[{i}]")
 
 
-def scan(label, text, rules, hits):
+def scan(label, text, rules, hits, line_numbers=False):
     for entry, pat, rule_line in rules:
         for m in pat.finditer(text):
             lo, hi = max(0, m.start() - 40), min(len(text), m.end() + 40)
             ctx = text[lo:hi].replace("\n", " ")
-            hits.append(f"{label}: matched denylist entry '{entry}' (denylist line {rule_line}) -> ...{ctx}...")
+            where = f"{label}:{text.count(chr(10), 0, m.start()) + 1}" if line_numbers else label
+            hits.append(f"{where}: matched denylist entry '{entry}' (denylist line {rule_line}) -> ...{ctx}...")
 
 
 def main():
@@ -80,8 +84,10 @@ def main():
             for jpath, s in walk_strings(data):
                 scan(f"{path} {jpath}", s, rules, hits)
         else:
-            for i, line in enumerate(raw.splitlines(), 1):
-                scan(f"{path}:{i}", line, rules, hits)
+            # Whole text, not line by line: a phrase wrapped across a line break
+            # ("Play Fund" / "Win") must still fail the gate. Hits report the line
+            # the match starts on.
+            scan(path, raw, rules, hits, line_numbers=True)
 
     if hits:
         print(f"::error::DENYLIST GATE FAILED - {len(hits)} match(es). The member edition must not "

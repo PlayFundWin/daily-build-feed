@@ -8,6 +8,8 @@ name: Build member edition
 # Hard rules this workflow enforces:
 #   - denylist gate first: any private-estate term fails the run before any
 #     ElevenLabs characters are spent (tools/denylist_check.py)
+#   - no DAILY_BUILD_INGEST_SECRET, no render: the run fails before any audio
+#     is made, and the pending files stay queued
 #   - member audio is NEVER committed to the repo and NEVER staged on Pages;
 #     it exists only on the runner and in the ingest POST
 #   - only master pushes fire it; *.example.* files in members/pending never do
@@ -77,6 +79,18 @@ jobs:
       - name: Denylist gate
         if: steps.check.outputs.found == 'true'
         run: python3 tools/denylist_check.py "${{ steps.check.outputs.script }}" "${{ steps.check.outputs.meta }}"
+
+      # Fail before any audio is made (and before any ElevenLabs characters are
+      # spent) if there is nowhere to post the result. The pending files stay put.
+      - name: Check ingest secret
+        if: steps.check.outputs.found == 'true'
+        env:
+          DAILY_BUILD_INGEST_SECRET: ${{ secrets.DAILY_BUILD_INGEST_SECRET }}
+        run: |
+          if [ -z "$DAILY_BUILD_INGEST_SECRET" ]; then
+            echo "::error::DAILY_BUILD_INGEST_SECRET is not set - nothing to post the member edition to. Not rendering."
+            exit 1
+          fi
 
       - name: Chunk plan
         if: steps.check.outputs.found == 'true'

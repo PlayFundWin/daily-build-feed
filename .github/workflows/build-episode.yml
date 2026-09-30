@@ -1,5 +1,19 @@
 name: Build episode
 
+# Private estate edition of The Daily Build (listener: Dean).
+# Render -> ASR check -> POST to deanlynn.com ingest (kind 'private') ->
+# register + feed + commit via API -> (optional) GitHub Pages.
+#
+# Repo variable PUBLISH_PAGES (Settings -> Secrets and variables -> Actions ->
+# Variables) controls the old public route:
+#   unset or anything but 'false'  Pages job runs exactly as before (default,
+#                                  so merging this changes nothing public)
+#   'false'                        Pages job is skipped, the Daily Build files
+#                                  are left out of every Pages deploy (see
+#                                  deploy-pages.yml / build-bedford-episode.yml),
+#                                  and a failed ingest FAILS the run, because
+#                                  ingest is then the only route to Dean.
+
 on:
   push:
     paths:
@@ -10,18 +24,15 @@ concurrency:
   group: build-episode
   cancel-in-progress: true
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: write
+    outputs:
+      found: ${{ steps.check.outputs.found }}
+      base: ${{ steps.check.outputs.base }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -123,6 +134,38 @@ jobs:
           set -ex
           python3 tools/verify_audio.py "episodes/${{ steps.check.outputs.base }}.mp3" "${{ steps.check.outputs.script }}"
 
+      # Private route to Dean: deanlynn.com ingest, kind 'private'. While
+      # PUBLISH_PAGES is not 'false', Pages is still the working route, so a
+      # missing secret or a failed POST only warns. Once PUBLISH_PAGES is
+      # 'false', both are hard failures (the pending files stay put and the
+      # run can be re-dispatched; nothing is half-published).
+      - name: Post to deanlynn.com ingest (kind private)
+        if: steps.check.outputs.found == 'true'
+        env:
+          DAILY_BUILD_INGEST_SECRET: ${{ secrets.DAILY_BUILD_INGEST_SECRET }}
+          INGEST_MAX_INLINE_MB: ${{ vars.INGEST_MAX_INLINE_MB }}
+          PUBLISH_PAGES: ${{ vars.PUBLISH_PAGES }}
+        run: |
+          base="${{ steps.check.outputs.base }}"
+          if [ -z "$DAILY_BUILD_INGEST_SECRET" ]; then
+            if [ "$PUBLISH_PAGES" = "false" ]; then
+              echo "::error::DAILY_BUILD_INGEST_SECRET is not set and PUBLISH_PAGES is 'false' - there is no route to publish this episode."
+              exit 1
+            fi
+            echo "::warning::DAILY_BUILD_INGEST_SECRET not set - skipping deanlynn.com ingest (Pages route still on)."
+            exit 0
+          fi
+          if ! python3 tools/ingest_post.py --kind private \
+                 --meta "pending/$base.json" \
+                 --transcript "${{ steps.check.outputs.script }}" \
+                 --audio "episodes/$base.mp3"; then
+            if [ "$PUBLISH_PAGES" = "false" ]; then
+              echo "::error::INGEST FAILED and PUBLISH_PAGES is 'false' - refusing to register the episode. Fix and re-dispatch."
+              exit 1
+            fi
+            echo "::warning::deanlynn.com ingest failed; continuing because the Pages route is still on."
+          fi
+
       - name: Register episode and build feed
         if: steps.check.outputs.found == 'true'
         run: |
@@ -143,18 +186,47 @@ jobs:
           fi
           cat /tmp/pub.log
 
-      # Pages is deployed via GitHub Actions (build_type: workflow), not the legacy
-      # Jekyll branch builder — that builder was permanently stuck/broken and never
-      # served this repo. GITHUB_TOKEN-authored pushes (the API publish step above)
-      # do not themselves trigger deploy-pages.yml's push trigger, so this job
-      # deploys Pages directly using the same working tree it just published.
-      #
-      # This stages BOTH shows' files every run, not just this workflow's own show.
-      # GitHub Pages redeploys the entire _site tree from scratch on every deploy, so
-      # a run that staged only its own show's files would silently wipe the other
-      # show off the live site the next time either workflow ran.
-      - name: Stage Pages site
+      - name: Report
         if: steps.check.outputs.found == 'true'
+        run: |
+          echo "Published ${{ steps.check.outputs.base }} to master (episodes.json, feed.xml, transcript)."
+          if [ "${{ vars.PUBLISH_PAGES }}" = "false" ]; then
+            echo "PUBLISH_PAGES=false: not deployed to GitHub Pages. Private route: deanlynn.com ingest."
+          else
+            echo "Pages job follows. Feed at playfundwin.github.io/daily-build-feed/feed.xml"
+          fi
+
+  # Pages is deployed via GitHub Actions (build_type: workflow), not the legacy
+  # Jekyll branch builder - that builder was permanently stuck/broken and never
+  # served this repo. GITHUB_TOKEN-authored pushes (the API publish step above)
+  # do not themselves trigger deploy-pages.yml's push trigger, so this job
+  # deploys Pages directly. It checks out master AFTER the publish commit, so
+  # it stages exactly what was just published.
+  #
+  # This stages BOTH shows' files every run, not just this workflow's own show.
+  # GitHub Pages redeploys the entire _site tree from scratch on every deploy, so
+  # a run that staged only its own show's files would silently wipe the other
+  # show off the live site the next time either workflow ran.
+  #
+  # Skipped entirely when the repo variable PUBLISH_PAGES is 'false'.
+  pages:
+    needs: build
+    if: needs.build.outputs.found == 'true' && vars.PUBLISH_PAGES != 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+
+      - name: Stage Pages site
         run: |
           set -ex
           mkdir -p _site/episodes _site/bedford/episodes
@@ -167,17 +239,14 @@ jobs:
           ls -la _site _site/episodes _site/bedford _site/bedford/episodes
 
       - uses: actions/upload-pages-artifact@v3
-        if: steps.check.outputs.found == 'true'
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        if: steps.check.outputs.found == 'true'
         uses: actions/deploy-pages@v4
 
       - name: Report
-        if: steps.check.outputs.found == 'true'
         run: |
-          echo "Published ${{ steps.check.outputs.base }}"
+          echo "Deployed ${{ needs.build.outputs.base }} to GitHub Pages"
           echo "Feed at playfundwin.github.io/daily-build-feed/feed.xml"

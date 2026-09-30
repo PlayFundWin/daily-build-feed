@@ -32,9 +32,8 @@ Confirmed ventures (source: Dean's own estate list, 2026-09-30):
   advice on self-management, teal organisations, holacracy and sociocracy for UHNW/HNW
   individuals, families and family offices. Also home of the member edition.
 
-Status unsure — do NOT cover until Dean confirms:
-- **Onyxia** — no live domain found in the June 2026 audit and flagged as being wound
-  down since; Dean to confirm whether it is active.
+Not on the estate — do NOT research or cover:
+- **Onyxia** — Dean no longer runs or has this business (Dean, 2026-09-30). Dropped.
 - **EV-Partnerships / energy-partners.co.uk** — Steve's venture, not on Dean's estate
   list. Dropped from research and Apply it from the first retargeted episode unless
   Dean adds it back.

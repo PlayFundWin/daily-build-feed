@@ -1,0 +1,135 @@
+OpenAI spent Tuesday handing out AI employees that never clock off. Washington spent the same afternoon getting the biggest names in AI to sign a promise nobody can enforce. And somewhere in Kuwait, one developer is making a living, a modest one, by telling gymnasts exactly why their handspring lost them three tenths of a point.
+
+This is The Daily Build, episode fifty-two, for Wednesday the thirtieth of September. Research and ideas, not financial advice. Let's get moving.
+
+Here's what landed since yesterday's episode.
+
+First up, and it's the big one, OpenAI held its DevDay on Tuesday the twenty-ninth, and the headline act is something called dots. A dot is an always-on agent. Each one gets its own cloud computer, runs around the clock, plugs into what OpenAI says is more than four thousand apps, and learns your preferences as it goes. You talk to it through ChatGPT, Slack or Teams, with text messaging listed as coming later. I read OpenAI's own announcement and recap for this, so the details are first-hand.
+
+The access wording matters. Dots are available on the Pro and Business Premium plans, and the phrase used is "in eligible markets". Enterprise, education and healthcare customers get a beta if their admin switches it on. What the page does not do is say which markets are eligible, so whether a UK Pro subscriber gets one this morning is something you should check in your own account rather than assume. Pricing for extra dots isn't published either.
+
+Why you care. The pitch has moved from "an assistant you ask" to "a colleague who keeps working after you close the laptop". For a small team that's the dream, and it's also exactly the thing this show has spent a fortnight warning about. On Monday we covered OpenAI pausing training after an agent slipped out of its sandbox, and yesterday its apology to Australia. An always-on agent with four thousand connectors is the same trust question with a subscription attached. The rule hasn't changed: give it the fewest tools that do the job, log what it does, and keep a human between it and anything that moves money or messages customers.
+
+Second, same stage, same day. OpenAI shipped a new model, GPT six point one Sol. API pricing is two dollars per million input tokens and ten dollars per million output, with cached input at ten cents. OpenAI says it matches their bigger GPT six Astra on a coding benchmark at roughly a fifth of the cost. It's available across the API and the paid ChatGPT plans. Alongside it came a new top tier called Pro five hundred, with twenty-five times the Plus allowance, an Agents API that can drive a computer, and Sign in with ChatGPT, which lets other apps use your ChatGPT identity and, for some plans, your ChatGPT usage allowance.
+
+What it means for you. Yesterday we covered Anthropic's Claude Sonnet five point five at, you'll remember, two dollars in and ten dollars out. Twenty-four hours later OpenAI lands on the identical sticker. When the two biggest labs converge on the same price in the same week, the price stops being the differentiator. What's left is how many tokens each one burns to finish your actual task, which was the Grok lesson from episode forty-four. So don't switch on the headline. Run your three most common jobs through both and compare the bill.
+
+Third, ElevenLabs. Their changelog, which I checked directly, lists Eleven v four and v four Turbo, dated Monday the twenty-eighth. Version four is pitched as more expressive speech and better voice cloning across more than ninety languages. The Turbo variant is built for real-time conversation, with a median latency of around a hundred milliseconds. ElevenLabs has also added six more language models you can plug into its agents platform, including OpenAI's new Sol and Anthropic's Opus models, and test runs now show their cost in credits and in dollars.
+
+The point for you. A hundred milliseconds is roughly the gap where a phone caller stops noticing they're waiting on a machine. Any business putting a voice agent on a phone line just got a more natural-sounding option. And the cost-per-test-run display is small but useful: you can see what a conversation costs before you put it in front of the public, rather than after the invoice arrives.
+
+Fourth, Perplexity. On Tuesday its Computer product gained Automations. You can set an agent to run on a schedule, say every Monday at eight, or to fire when something happens in Slack, Gmail, Outlook, Linear or GitHub, with conditions attached, such as only emails from certain senders. Each run remembers the last one and builds on it, and credits are only spent when a task actually runs, not while it sits waiting. Perplexity's own examples are drafting replies to customer emails and a weekly competitor pricing report. I read the announcement myself.
+
+Why it matters. Put that next to OpenAI's dots and a pattern appears. Everyone is racing to own the recurring job, the thing you'd otherwise do every Monday morning with a coffee and a sigh. Trigger-based agents are the cheaper, narrower version of the always-on colleague. For most small businesses, narrow and predictable beats clever and roaming.
+
+Fifth, a follow-up. On Monday we flagged that the White House was hosting AI chief executives on Tuesday. We now know the outcome. According to Forbes, which I read, the meeting produced a voluntary document called the Accord on Super Intelligence. Forbes lists the signatories as President Trump, Elon Musk, Mark Zuckerberg, Jensen Huang, Dario Amodei, Sundar Pichai and Greg Brockman. It sets out four layers of control: internal monitoring of cyber and biological capabilities, oversight by internal teams, independent outside audits, and oversight by board committees. The President called it "morally binding". There's no government enforcement, and the text itself says it "may make sense to codify" into law at some point.
+
+Your angle. Morally binding is a lovely phrase. It's what you say when something isn't binding. For a UK business the practical reading is that America is sticking with self-regulation for now, so your compliance direction of travel will be set in London and Brussels, not Washington. It's also a reminder that the governance promises around the models you rent are, at this stage, promises.
+
+Two quick ones to round off the news. OpenAI published a paper on Monday called "Towards safety cases for frontier AI training", proposing structured safety documentation, pause runbooks and public incident reports before big training runs continue. It does not mention the current training pause and gives no restart date, so that thread stays open. And for anyone following Australia, reporting from Startup Daily, which I only have secondhand via its citation of the Sydney Morning Herald, says OpenAI's Jason Kwon will appear before a joint parliamentary committee in Sydney on Tuesday the sixth of October, with Anthropic also sending someone.
+
+Last, Google. Its Workspace Updates blog says Google Vids voiceovers are getting a speech upgrade powered by Gemini three point eight Flash Lite, rolling out now across business, education and consumer plans. The payoff: if you already pay for Workspace, your explainer videos just started sounding less like a sat nav, at no extra cost.
+
+On to the build.
+
+Today's idea is technique scoring from a phone video. You film a movement, a vision model scores it against a rubric, and you get back what went wrong and what drill to fix it with. It's a different mechanic from anything we've done. Not a session planner, not a photo classifier, not a chatbot. It's judgement at the level of a single movement.
+
+The evidence comes from an app called CheckForm Gymnastics. The App Store lists the developer as Mohammad Alfoudari. The product's public listing on TrustMRR, a site where founders connect their payment provider so the numbers come straight from the source, says it was founded in February of this year, in Kuwait.
+
+Here's what it does. A gymnast films or uploads a skill. The AI scores it, lists the form deductions, the bent knees, the flexed feet, the short landing, and recommends drills for that specific skill. It covers men's and women's apparatus, and there's a live coaching mode with pose-detection overlays and spoken feedback. It's aimed at gymnasts, coaches, cheer and acrobatics.
+
+Now the numbers, and I'm going to be careful, because they are small and they are real. The TrustMRR listing is verified through RevenueCat, the subscription platform that sits between an app and Apple or Google's billing. The page was updated on Tuesday the twenty-ninth of September. It shows monthly recurring revenue of one thousand two hundred and six dollars. Revenue over the last thirty days of one thousand eight hundred and seventeen dollars. All-time revenue of eight thousand five hundred and ninety dollars. And one hundred and sixty active subscriptions. The founder has listed the business for sale at eighty-four thousand dollars and states a profit margin of ninety-five per cent.
+
+Let me be clear what that is and isn't. It is not a fortune. It's a seven-month-old app from a founder with nine followers on his product's X account, doing a bit over a thousand dollars a month in verified recurring revenue. The asking price is the founder's opinion, not a valuation. What makes it worth your twenty minutes is the shape: a narrow sport, a specific pain, paid subscriptions from strangers, and verified numbers that have grown from nothing since February.
+
+If you divide the recurring revenue by the subscriber count, you get somewhere around seven and a half dollars per subscription per month. That's my arithmetic, not a published price, and annual plans will blur it. The app itself publishes only that the download is free, the first analysis is free with no card, and annual plans come with a three-day trial.
+
+There are two caveats I want on the record. One, TrustMRR's own homepage card described it as eighteen hundred dollars a month, which is the thirty-day cash figure, not the recurring number. Small thing, but it's exactly how inflated revenue claims get born. Two, and more important, the App Store rating is four point two from seventeen reviews, and several reviewers say it struggles to recognise skills, particularly vault and competition footage. Accuracy is the whole product here. If the judge is wrong, nobody pays twice.
+
+And to keep us honest about the mechanic, the same research pass turned up other video-technique tools doing far worse. A padel video-analysis tool called VamosPRO, from Peteris Ozolins, shows sixty-eight dollars in verified revenue, all time. A gym form checker called Form AI, from Andrei Rizea, shows nine dollars of recurring revenue. The mechanic doesn't sell itself. CheckForm's edge appears to be picking a sport where scoring is codified, deductions are written down, and athletes already obsess over tenths of a point.
+
+That's the hinge for you. Which grassroots sports have a written rubric that coaches already use?
+
+Cricket has bowling-action coaching points. Football has penalty and free-kick technique, and the FA's coaching resources are full of written key factors. Netball has a shooting action. Golf, which is in the EV-Partnerships club list, is practically built on swing analysis. The pattern is the same everywhere. A coach knows what good looks like, has twenty players and forty minutes, and can't watch each one closely enough.
+
+So here's how I'd build a version for LeaguePages. Call it Clip and Score for now.
+
+Step one, and it's the unglamorous one, pick a single movement in a single sport. Not "football technique". Something like "an adult cricket bowling action". Write the rubric with a qualified coach: six to eight checkpoints, each with what good looks like and the most common fault.
+
+Step two, build a web upload page in Lovable or Base44. The player or coach uploads a short clip, no more than ten seconds.
+
+Step three, sample the clip into a handful of still frames. There are standard libraries for this and Claude can write that code in an afternoon. Send those frames, plus the rubric, to a vision-capable model with a strict instruction: score each checkpoint, say how confident you are, and if the angle or lighting makes a checkpoint impossible to judge, say so rather than guess.
+
+Step four, return a one-page result. What was good, the one biggest fault, and one drill to fix it, drawn from a drill list the coach wrote, not invented by the model.
+
+Step five, keep a history, so a player can see their third clip against their first. That's the retention hook. Progress is what people pay monthly for.
+
+What you're not building is the live pose overlay with voice coaching. That's real app development, and it's the part of CheckForm that's nowhere near no-code. The upload-and-score version is the ninety per cent you can have in days, for well under five hundred pounds: a Lovable or Base44 plan, some model usage, and a domain.
+
+Now the money maths, conservative and clearly illustrative. Say you sell it to clubs, not individuals, at fifteen pounds a month per club for coach access. Thirty clubs is four hundred and fifty pounds a month. A hundred clubs is fifteen hundred. Or sell to adult players directly at three pounds a month: a hundred and fifty subscribers, roughly CheckForm's size, is about four hundred and fifty pounds a month. Neither is life-changing. Both are the right size for a feature inside LeaguePages that makes a club less likely to leave, with a standalone upside if one sport catches.
+
+Now the risks, and one of them is serious.
+
+The serious one is children. Grassroots sport is full of under-eighteens, and a product whose raw material is video of young people's bodies is squarely in safeguarding territory. In the UK, the Information Commissioner's Children's Code applies to online services likely to be used by children, and the FA and most governing bodies publish guidance on filming young players. My advice is blunt: launch adults-only. Adult cricket, adult golf, veterans' football, walking football. Only go near junior footage once you have a club safeguarding officer involved, explicit parental consent, clear deletion rules, and a model provider on a business agreement that doesn't train on uploads. If that sounds like a lot of paperwork, that's the point. It's a wall the casual competitors won't climb.
+
+Second risk, accuracy. The CheckForm reviews tell you what happens when the judge misreads the footage. Build the "I can't see that from this angle" answer in from day one, and have a coach spot-check the first hundred results.
+
+Third, the model is a scorer, not a coach. The drills and the tone come from a real human's rubric, or you've built a confident nonsense machine.
+
+Fourth, the market. Big clubs already use serious video platforms. You're not competing with them. You're serving the club whose video analysis is currently a dad with a phone.
+
+And where you have the edge. LeaguePages gives you distribution into clubs who already trust you with their website. PlayFundWin gives you a hook, which I'll come to in a moment. And the golf and cricket clubs in the EV-Partnerships conversation are exactly the adult, rubric-driven, practice-obsessed members this suits best.
+
+Three runners-up, quickly, with the caveats they deserve.
+
+Tailride, from Miki Palet in Spain, finds invoices in your Gmail or Outlook inbox and files them for bookkeeping. Free for ten invoices a month, then nineteen dollars. Its Stripe-verified TrustMRR listing shows all-time revenue of about a hundred and nineteen thousand dollars, and current recurring revenue of thirty-four dollars with one active subscription. Those two numbers don't belong in the same sentence, so treat it as unproven. The mechanic is interesting for club treasurers chasing receipts.
+
+Replygo, from a founder listed only as Rauf, writes AI replies to Google reviews for local businesses, from eighteen dollars a month. Verified revenue was two hundred and thirty-seven dollars over a thirty-day period that ended in May, so the data is thin and four months old. Easy to build, though, and every clubhouse bar has Google reviews it never answers.
+
+And Pet Plus Us, from Or Hirschhorn, sells one-off AI portraits of pets with their owners, nineteen dollars for the first. Stripe-verified all-time revenue of fifteen thousand seven hundred and sixty-four dollars, while the founder claims around thirty thousand in the last thirty days, which is nearly double the verified lifetime total. I'd park it. It's also close to the AI headshots idea we've already done.
+
+Time to point all of that at the day job.
+
+PlayFundWin first. The most useful sector item this week came from UK Fundraising on Monday: goDonate published its December twenty twenty-five giving data. Fifteen per cent of December's one-off donations arrived in the last seventy-two hours before Christmas. Sixty-seven per cent of Christmas Eve donations were made on a mobile. And fifty-three per cent of Christmas Eve payments went through PayPal, Apple Pay or Google Pay. I read the piece directly.
+
+That's a planning brief for your festive draws. If a club's Christmas draw closes on the twentieth, it might be walking away from the busiest giving window of the month. And if checkout on a phone takes more than a thumb and a face scan, you're leaking entries. Worth checking, with each partner club, when their Christmas draw closes and how many taps it takes to enter on a phone.
+
+On the AI side, dots and Perplexity's Automations are both relevant, and both come with the same caution. The obvious PlayFundWin use is a recurring job: every Monday, pull last week's entries per club, flag the clubs whose sales dropped, and draft a nudge for your team to review. That's a good fit for a trigger-based agent. What it must never do is contact supporters, touch payments or run a draw on its own. The Accord in Washington is voluntary. Your terms and conditions are not.
+
+On the regulatory front, nothing moved. The Fundraising Regulator's free draw page is unchanged since the fifteenth, and the DCMS code's signatory list hasn't been updated since the start of September. Remember why we watch it: it's the preview of any future mandatory regime. Today it's quiet.
+
+And the build connects. A technique-of-the-month draw, where members enter a clip and the club's scoring tool picks the most improved, is a way to make a club draw feel like part of the club rather than a raffle bolted on. Keep it adults-only, and keep the skill element and the prize mechanics checked properly before anyone runs it.
+
+LeaguePages. The build is the headline here: Clip and Score as a paid feature, starting with one adult sport. The other item is small. The FA's news page on Tuesday carried a piece honouring Civil Service Football Club for a hundred and sixty-four years of continuous play. I only saw the headline on the FA's listing, not the article, so hold the details lightly. The takeaway is that heritage is content. Nearly every club on LeaguePages has a founding date, a first fixture, a photo of a moustached team from nineteen-oh-something. A club history page is cheap to build and it's the kind of thing members share. And with Google Vids voiceovers improving at no extra cost for Workspace users, a two-minute history video is now an evening's job for a volunteer.
+
+EV-Partnerships. Zapmap reported on Tuesday that Lidl is putting another ten million pounds into EV charging, about a hundred new rapid chargers this financial year, taking its spend since twenty seventeen to thirty-five million. The detail that matters to you is ownership. Lidl moved to owning its chargers outright after ending its arrangement with Pod Point in July twenty twenty-four, and a third of its UK stores now have rapid charging.
+
+Two readings. One, more supermarket rapids means more competition for the quick "top up while you're there" stop. That makes the community-hub pitch sharper, not weaker: nobody lingers two hours at Lidl, but they will over a Sunday roast and the second half of a cup tie at the clubhouse. Two, the own-versus-operator question Lidl just answered for itself is the same question every club asks you. It's worth having a clean, one-page answer ready for when a committee asks why they shouldn't just own the kit.
+
+The ElevenLabs Turbo release also matters for this venture. Charger availability, opening hours and "is the bar open" are exactly the questions a voice agent on a club phone answers well, and it just got faster and more natural.
+
+On the research side, the Department for Transport's charging statistics haven't moved since the ninth of September, and nothing new on grid flexible-connection offers.
+
+Your one action today. Thirty minutes, no code.
+
+Pick one adult sport you have a friendly contact in. Cricket, golf or walking football are ideal. Film one ten-second clip of an adult, yourself is fine, doing one movement: a bowling action, a golf swing, a penalty.
+
+Then write six checkpoints for that movement, or better, ask a coach to text you them. Take four still frames from the clip, the screenshot button will do, and give them to Claude with the checkpoints and one instruction: score each one, and say "can't judge" where the angle doesn't allow it.
+
+Send the result to that coach with one question. "Is this right, and would your players pay for it?"
+
+If the coach says it's mostly right, you have a product test. If the coach says it's rubbish, you've saved yourself a build. Either answer is worth half an hour. Adults only for this test, please, no junior footage.
+
+Sixty seconds, five things.
+
+One. OpenAI launched dots, always-on agents with their own cloud computer, on Pro and Business Premium in eligible markets. Check whether the UK is one before you plan around it.
+
+Two. GPT six point one Sol arrived at two dollars in, ten out, the same sticker as Claude Sonnet five point five. Price parity means you compare on your real tasks, not the rate card.
+
+Three. The White House Accord on Super Intelligence is voluntary and, in the President's words, morally binding. UK firms should take their compliance cues from London and Brussels.
+
+Four. The build: technique scoring from a phone video. CheckForm Gymnastics shows about twelve hundred dollars of verified monthly revenue from a hundred and sixty subscribers. Small, real, and it works because gymnastics already has a rubric. Launch adults-only.
+
+Five. goDonate's data says the last seventy-two hours before Christmas and a mobile wallet checkout matter. Check your partner clubs' Christmas draw closing dates.
+
+That's today. Tomorrow we'll see whether anyone in the UK can actually get a dot, and what the week's second half brings. Go and film something.

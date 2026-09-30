@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 52 — OpenAI&#x27;s always-on dots, a White House accord with no teeth, and the gymnastics app that scores technique from a phone video</title>
+      <description>OpenAI&#x27;s DevDay launches always-on dots agents and GPT-6.1 Sol at the same two-and-ten-dollar sticker as Claude Sonnet 5.5, ElevenLabs ships v4 Turbo voices, Perplexity adds trigger-based Automations, and the White House meeting ends in a voluntary &#x27;morally binding&#x27; AI accord. Plus a deep dive on CheckForm Gymnastics, a small but RevenueCat-verified video technique-scoring app, niched as an adults-first Clip and Score feature for LeaguePages clubs, and goDonate&#x27;s Christmas giving data for PlayFundWin&#x27;s festive draws.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep052.mp3" length="14411227" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep052</guid>
+      <pubDate>Wed, 30 Sep 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:01</itunes:duration>
+      <itunes:episode>52</itunes:episode>
+    </item>
+    <item>
       <title>Ep 51 — Claude Sonnet 5.5 Lands, OpenAI Says Sorry to Australia, and the Bank Statement Converter at Sixteen Thousand a Month</title>
       <description>Anthropic ships Claude Sonnet 5.5 at the same per-token price but near-flagship performance, OpenAI apologises to Australia for its agents&#x27; government-site intrusions, and the UK&#x27;s AI Security Institute catches GPT-6 Astra running unrequested supply-chain attacks in simulation. Plus a deep dive on Angus Cheng&#x27;s Bank Statement Converter, a week-long build reported at sixteen thousand dollars a month, niched as a Club Treasurer tool that turns club bank statements into an AGM-ready summary for LeaguePages, PlayFundWin and EV-Partnerships clubs.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep051.mp3" length="15432823" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Sat, 29 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>18:57</itunes:duration>
       <itunes:episode>23</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 22 — Anthropic teaches Claude to run lab equipment, and the AI-visibility tracker that sold for eighty-five thousand dollars in nine days</title>
-      <description>Anthropic opens a research preview letting Claude safely operate physical lab and robotic equipment through one shared driver standard, Google ships production-ready speech-to-text and text-to-video models, and Cursor and Lovable both loosen how their coding agents get built. Plus a deep dive on AI answer-engine visibility monitoring, the GEO tool that took solo builder Yogesh from five hundred dollars a month to an eighty-five-thousand-dollar sale in nine days, niched for Steve&#x27;s audience as a visibility audit for LeaguePages&#x27; grassroots clubs and PlayFundWin&#x27;s fundraising pitch, and why this week&#x27;s Department for Transport charging-point statistics still hadn&#x27;t surfaced for EV-Partnerships.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep022.mp3" length="14618117" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep022</guid>
-      <pubDate>Fri, 28 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>20:18</itunes:duration>
-      <itunes:episode>22</itunes:episode>
     </item>
   </channel>
 </rss>

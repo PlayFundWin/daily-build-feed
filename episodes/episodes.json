@@ -1,5 +1,14 @@
 [
   {
+    "num": 52,
+    "date": "2026-09-30",
+    "title": "Ep 52 \u2014 OpenAI's always-on dots, a White House accord with no teeth, and the gymnastics app that scores technique from a phone video",
+    "description": "OpenAI's DevDay launches always-on dots agents and GPT-6.1 Sol at the same two-and-ten-dollar sticker as Claude Sonnet 5.5, ElevenLabs ships v4 Turbo voices, Perplexity adds trigger-based Automations, and the White House meeting ends in a voluntary 'morally binding' AI accord. Plus a deep dive on CheckForm Gymnastics, a small but RevenueCat-verified video technique-scoring app, niched as an adults-first Clip and Score feature for LeaguePages clubs, and goDonate's Christmas giving data for PlayFundWin's festive draws.",
+    "file": "ep052.mp3",
+    "bytes": 14411227,
+    "seconds": 1201
+  },
+  {
     "num": 51,
     "date": "2026-09-29",
     "title": "Ep 51 \u2014 Claude Sonnet 5.5 Lands, OpenAI Says Sorry to Australia, and the Bank Statement Converter at Sixteen Thousand a Month",
@@ -259,14 +268,5 @@
     "file": "ep023.mp3",
     "bytes": 13650123,
     "seconds": 1137
-  },
-  {
-    "num": 22,
-    "date": "2026-08-28",
-    "title": "Ep 22 \u2014 Anthropic teaches Claude to run lab equipment, and the AI-visibility tracker that sold for eighty-five thousand dollars in nine days",
-    "description": "Anthropic opens a research preview letting Claude safely operate physical lab and robotic equipment through one shared driver standard, Google ships production-ready speech-to-text and text-to-video models, and Cursor and Lovable both loosen how their coding agents get built. Plus a deep dive on AI answer-engine visibility monitoring, the GEO tool that took solo builder Yogesh from five hundred dollars a month to an eighty-five-thousand-dollar sale in nine days, niched for Steve's audience as a visibility audit for LeaguePages' grassroots clubs and PlayFundWin's fundraising pitch, and why this week's Department for Transport charging-point statistics still hadn't surfaced for EV-Partnerships.",
-    "file": "ep022.mp3",
-    "bytes": 14618117,
-    "seconds": 1218
   }
 ]

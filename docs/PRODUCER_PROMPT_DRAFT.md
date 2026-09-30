@@ -17,8 +17,9 @@ stop addressing Steve.
 ```
 The Daily Build is now Dean's private estate briefing. Listener: Dean Lynn. Apply it
 covers Dean's estate as listed in STYLE.md ("Dean's estate"). Do not address Steve, do
-not say "your three businesses", and do not cover EV-Partnerships or Onyxia. Send the
-finished-run message to Dean, not Steve.
+not say "your three businesses", and do not cover EV-Partnerships or Onyxia (Dean no
+longer has Onyxia; dropped 2026-09-30). Send the finished-run message to Dean, not
+Steve.
 ```
 
 ## Block 2 — add after the research step

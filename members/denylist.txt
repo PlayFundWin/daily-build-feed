@@ -1,0 +1,57 @@
+# Member edition denylist - read by tools/denylist_check.py.
+# ANY match in members/pending/epNNN.txt or epNNN.json FAILS the member build
+# (no ElevenLabs spend, nothing posted). These are private estate edition terms:
+# people, ventures, clients and the private sector niches. Rewrite, don't delete
+# lines to get a build through.
+#
+# Syntax: plain line = case-insensitive whole phrase (spaces and hyphens are
+# interchangeable); cs: = case-sensitive; re: = regex (case-insensitive).
+
+# --- People (private edition listener and co-founder) ---
+Steve
+Stephen Lightfoot
+Lightfoot
+
+# --- Private-edition framing ---
+your three businesses
+re:\byour\s+(two|three|four)\s+(businesses|ventures|companies)\b
+
+# --- Ventures kept out of the member edition (Dean's decision 2026-09-30) ---
+LeaguePages
+League Pages
+EV-Partnerships
+EV Partnerships
+re:ev-?partnerships(\.com)?
+energy-partners
+Energy Partners
+
+# --- Client / installer names from archive/covered.md standing corrections ---
+Meridian
+Greencharge
+Green charge
+
+# --- Private venture niche terms (research agent C output is always private) ---
+Fundraising Regulator
+re:\bprize[\s\-]?draws?\b
+free draw
+Voluntary Code of Good Practice
+society lottery
+re:\bEV\s+charg
+destination charging
+charge point operator
+grassroots
+
+# --- Dean's estate ventures (the private edition's 'Apply it' territory) ---
+# Dean: delete any line below if you decide a venture may be named to members.
+PlayFundWin
+Play Fund Win
+5050draws
+myclubraffle
+cs:Discount Vouchers
+cs:Cherished Group
+cs:Cherished Venues
+cs:Cherished Wedding Venues
+cs:Cherished Retreats
+Sporting Escapes
+cs:Trusted Media
+Onyxia

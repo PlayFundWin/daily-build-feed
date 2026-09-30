@@ -1,10 +1,21 @@
 # The Daily Build — daily production runbook
 
-Produce today's episode. Target: live in the feed by 07:00 UK time. Work unattended:
-make reasonable choices, never block on questions, never fabricate.
+Produce today's TWO editions from one research pass (changed 2026-09-30, Dean's
+decision — see Process log):
+- **Private estate edition** — Dean's own daily briefing about his estate
+  (`STYLE.md`). Goes to his private feed on deanlynn.com via the ingest function.
+- **Member edition, "The Daily Build — with Dean Lynn"** — Dean's first-person update
+  for deanlynn.com members (`STYLE-MEMBERS.md`), read by his ElevenLabs voice clone.
+  Always lands on deanlynn.com as a draft for Dean to approve.
+
+Target: both queued so the private edition is in Dean's feed by 07:00 UK time. Work
+unattended: make reasonable choices, never block on questions, never fabricate.
 
 Repo: `PlayFundWin/daily-build-feed`, branch `master`.
-Feed: https://playfundwin.github.io/daily-build-feed/feed.xml
+Private route: `POST https://deanlynn.com/functions/ingestDailyBuild` (contract and
+the only code that knows it: `tools/ingest_post.py`).
+Legacy public feed (until Dean sets the repo variable `PUBLISH_PAGES` to `false`):
+https://playfundwin.github.io/daily-build-feed/feed.xml
 
 ## Architecture — read this first
 
@@ -15,8 +26,18 @@ type, and R2 / api.cloudflare.com are blocked. So the split is:
 - **This session does**: research, write the script, commit TEXT files via the GitHub
   MCP tools (`github_put_file`), dispatch the build workflow, verify, notify, log to
   Notion.
-- **GitHub Actions does**: TTS render, MP3 encode, feed regeneration, committing the
-  audio. Runners have full network and write access.
+- **GitHub Actions does**: TTS render, MP3 encode, the POST to deanlynn.com ingest,
+  feed regeneration, committing the private-edition audio. Runners have full network
+  and write access. Two workflows:
+  - `build-episode.yml` (private edition, on `pending/**`): Kokoro render → ASR check →
+    ingest `kind: private` → `add_episode.py` / `generate_feed.py` → `api_publish.py`
+    → optional Pages job.
+  - `build-member-edition.yml` (member edition, on `members/pending/**`, master only,
+    `*.example.*` ignored): denylist gate → ElevenLabs clone render (chunked, stitched,
+    loudness-normalised, chapter timings) → ASR check → Kokoro stand-in if the clone
+    fails → text-only if both fail → ingest `kind: member` (draft) →
+    `member_archive.py` moves the TEXT to `members/published/`. Member audio is never
+    committed and never staged on Pages.
 
 Commits made via the GitHub MCP tools DO fire the `push` trigger on `pending/**` (they're
 authored as an external actor, not the runner's own `GITHUB_TOKEN`), so a build usually
@@ -29,26 +50,38 @@ plus a manual dispatch), so extra triggers are safe — the newest one just supe
 earlier, still-running attempt instead of racing it to a duplicate publish. (The one
 place `GITHUB_TOKEN`-authored pushes genuinely don't retrigger anything is the
 workflow's own "Publish via API" step — that's a separate, still-correct fact; see the
-comment above "Stage Pages site" in `build-episode.yml`.)
+comment above the `pages` job in `build-episode.yml`.)
 
-Pages hosting: this repo uses Actions-based Pages deployment (Settings → Pages →
-Source: GitHub Actions), not the legacy branch/Jekyll builder — that builder got
-permanently stuck on every single commit and never once served this repo (fixed
-2026-08-06). `build-episode.yml`'s last two steps deploy the site directly
-(`actions/upload-pages-artifact` + `actions/deploy-pages`), so a successful workflow
-run means Pages is already live. `deploy-pages.yml` also exists in this repo as a
-manual-trigger fallback (Actions tab → Deploy Pages → Run workflow) for redeploying
-Pages without publishing a new episode.
+Pages hosting (legacy public route, being retired): this repo uses Actions-based Pages
+deployment (Settings → Pages → Source: GitHub Actions), not the legacy branch/Jekyll
+builder — that builder got permanently stuck on every single commit and never once
+served this repo (fixed 2026-08-06). `build-episode.yml`'s separate `pages` job deploys
+the site directly (`actions/upload-pages-artifact` + `actions/deploy-pages`) after the
+publish commit. `deploy-pages.yml` also exists as a manual-trigger fallback (Actions tab
+→ Deploy Pages → Run workflow) for redeploying Pages without publishing a new episode.
+
+**The `PUBLISH_PAGES` switch** (repo variable, Settings → Secrets and variables →
+Actions → Variables). Unset or anything other than `false` = old behaviour, The Daily
+Build still deploys to Pages. `false` = the `pages` job is skipped, `deploy-pages.yml`
+and `build-bedford-episode.yml` leave The Daily Build's `feed.xml`, `cover.png` and
+`episodes/*.mp3` out of every Pages deploy (JT Morning Brief keeps deploying), and a
+missing `DAILY_BUILD_INGEST_SECRET` or a failed ingest POST fails the private-edition
+run, because ingest is then the only route to Dean. Dean flips it only after the
+private feed on deanlynn.com has been confirmed in a podcast app, then runs Deploy
+Pages once by hand so the public copy disappears.
 
 ## 1. Read the archive
 Read `archive/covered.md` (raw URL:
 https://raw.githubusercontent.com/PlayFundWin/daily-build-feed/master/archive/covered.md).
 Note every item and idea already covered and any open threads marked FOLLOW-UP. Never
 re-cover an item as new; follow-ups must reference the earlier episode by day. Also
-check for a "Standing corrections" section at the end of the file — these are direct
-corrections from Steve that override anything said in earlier episodes (e.g. a
-FOLLOW-UP thread that's actually closed, or a standing fact about one of the ventures).
-Read `episodes/episodes.json` for the next episode number (NNN, zero-padded to 3).
+check for a "Standing corrections" section near the top of the file — these are direct
+corrections (from Steve for Ep1-52, from Dean from the retargeted episodes on) that
+override anything said in earlier episodes (e.g. a FOLLOW-UP thread that's actually
+closed, or a standing fact about one of the ventures). Corrections about EV-Partnerships
+stay as history; that venture is out of scope from 2026-09-30 (see `STYLE.md`).
+Read `episodes/episodes.json` for the next episode number (NNN, zero-padded to 3). The
+member edition uses the same NNN for the same morning.
 
 Also read the **Process log** section near the end of this file — it's the same idea as
 covered.md's Standing corrections, but for how this pipeline itself is run rather than
@@ -92,96 +125,169 @@ whether an episode ships early, late, or exactly on schedule.
   meaningfully different in category, not a variant of one already covered. Append one
   line to `reference/business-idea-categories.md` for today's pick in the same pass as
   the rest of step 4's commits.
-- C: Sector news for the listener's ventures: UK fundraising/prize-draw tech and
-  regulation; grassroots sports tech; UK EV destination charging. Check these named
-  sources FIRST, before open web search, to keep this agent cheap on quiet weeks: the
-  Fundraising Regulator's own consultation/registration pages (baseline facts are also
-  in `reference/fundraising-regulator-notes.md` — read that first and only search for
-  what's changed since its date-stamp, rather than re-deriving the whole picture from
-  scratch every episode; added 2026-09-16, see Process log), Zapmap and DfT public
-  charging-point stats, and two or three named UK trade outlets (Third Sector, Civil
-  Society, Fleet News / Fleet Point for EV). If those turn up nothing new beyond what's
+- C: Sector news for Dean's estate (retargeted 2026-09-30 — the venture list and what
+  is in or out of scope is in `STYLE.md`, "Dean's estate"). Rotate across the
+  ventures; each day cover only the two to four where something real happened:
+  UK prize-draw and fundraising regulation and club/charity fundraising tech (Play Fund
+  Win), grassroots league and club tech (LeaguePages), affiliate, voucher and partner
+  email marketing (Discount Vouchers), UK sports travel and hospitality (Sporting
+  Escapes Group), wedding and luxury venue hospitality (Cherished Group), agency and
+  no-code build market (Trusted Media — overlaps agent A's Base44/Lovable check), and
+  AI adoption, self-management and governance for family offices and HNW clients
+  (deanlynn.com). For Play Fund Win, check the Fundraising Regulator's own
+  consultation/registration pages first (baseline facts are in
+  `reference/fundraising-regulator-notes.md` — read that first and only search for
+  what's changed since its date-stamp; added 2026-09-16, see Process log), plus Third
+  Sector and Civil Society. If the named sources turn up nothing new beyond what's
   already in `archive/covered.md`, say so plainly and stop — do not pad by broadening
-  into unrelated general AI/business news search just to fill space. Note: DfT's public
-  charging-point statistics are typically published around 09:30 UK time — since this
-  show targets a 07:00 UK ship time, don't chase "today's" DfT release on its actual
-  publish day expecting fresh numbers; plan to report the real figures the day after
-  they land instead (see Process log, 2026-08-27).
+  into unrelated general AI/business news search just to fill space. Every agent C item
+  is marked `"private": true` in the research JSON (step 2b) and never reaches the
+  member edition.
 
-  EV-Partnerships thesis (corrected 2026-09-16, at Steve's explicit direction — see
-  Process log): this is NOT primarily a match-day-utilisation bet. The pitch is a
-  community-hub model — a small local club (football, rugby, cricket, golf) that
-  already has a bar, restaurant or cafe and is a place people return to regularly, not
-  just on fixture days, so EV charging there gets used far more like a destination
-  charger than a stadium-only one. The eight named national operators
-  (IONITY/RAW Charging/Allego/Believ/InstaVolt/Osprey/GRIDSERVE/Pod Point) are tracked
-  because they are the plausible THIRD-PARTY entrants into this space — that thread
-  measures whether the big networks have noticed grassroots clubs as a category, which
-  is a genuinely separate question from whether EV-Partnerships' own direct,
-  club-by-club sales motion is working. Do not conflate "no national operator has
-  moved" with "the thesis is unproven" — EV-Partnerships sells directly and Steve has
-  said (2026-09-16, see covered.md Standing corrections) that this is already
-  happening; treat the operator-gap thread and EV-Partnerships' own pipeline as two
-  separate facts in the script rather than one.
-
-  Operator-gap reporting cadence (corrected 2026-09-18, at Steve's explicit direction —
-  see Process log): Steve already knows where the eight named operators sit and does not
-  want the "checked again, nothing new, gap still open for N consecutive episodes" beat
-  repeated every single episode — he flagged this as actively unwanted, not just stale
-  phrasing. From Ep42 onward: keep checking the eight operators as part of research every
-  episode, so nothing is missed, but only put it in the script when there's an actual
-  finding — a real new operator move at a sports/leisure venue, confirmed or debunked.
-  Do not narrate "still nothing," the running episode-count, or the "genuine gap vs.
-  match-day economics" theory as filler when nothing has changed. If nothing has changed,
-  the operator-gap thread simply does not appear in that day's script — handle it the same
-  way the retired prize-draw-ruling thread (Ep15/Steve correction) is handled.
+  Out of scope from 2026-09-30: EV-Partnerships / energy-partners.co.uk (Steve's
+  venture, not on Dean's estate list) and with it the UK EV destination-charging beat,
+  the eight-national-operator thread and the DfT/Zapmap checks. The EV-Partnerships
+  thesis and operator-gap cadence notes that used to sit here are preserved in the
+  Process log entries of 2026-09-16 and 2026-09-18 below and in `archive/covered.md`.
+  Do not resume them unless Dean adds EV-Partnerships back. Onyxia: status unconfirmed,
+  do not research or mention until Dean confirms it is active.
 
 Vary how you phrase these three briefs and which named sources you check first from one
 day to the next — don't silently reuse identical query wording or check the same source
 first every single run, since that flattens both what gets found and how the eventual
 script reads (see Process log, 2026-08-27). Rotate the order within a category (e.g.
 don't always hit Indie Hackers before Starter Story, don't always check the Fundraising
-Regulator before Zapmap) and phrase each day's actual search queries freshly.
+Regulator before Third Sector) and phrase each day's actual search queries freshly.
 
-## 3. Script
-Write the script following `STYLE.md` exactly, including its vocabulary-variety rules —
-don't lean on the same connective phrases or copy any of STYLE.md's example phrasing
-verbatim into the script episode after episode; every example in that file illustrates a
-pattern, it isn't text to reuse. ~4,000 words (Kokoro at speed 1.05 runs
-roughly 270 words per minute, so 4,000 words ≈ 15 minutes; scale up if you want closer
-to 20). Blank line between paragraphs — each blank line becomes a spoken pause.
+## 2b. Save the research (added 2026-09-30)
+Before writing either script, commit today's research as structured data with
+`github_put_file`: `research/YYYY-MM-DD.json`. Until now nothing structured survived a
+run (covered.md carries no URLs; the pending JSON is four fields), so the member
+edition's sources, and any later fact-check, had nothing to point at. Both scripts are
+written FROM this file. `research/**` triggers no workflow.
+
+Shape (all URLs are the pages the agents actually read; never a guessed URL — if an
+item has no readable page, it doesn't go in):
+
+```json
+{
+  "date": "2026-10-01",
+  "episode_num": 53,
+  "window_since": "2026-09-30",
+  "stories": [
+    {"id": "s1", "agent": "A", "private": false,
+     "headline": "...", "date": "2026-09-29", "summary": "...",
+     "facts": ["..."], "small_business_angle": "...",
+     "confidence": "confirmed | reported | search_only",
+     "sources": [{"name": "OpenAI announcement", "url": "https://...", "read": true}]}
+  ],
+  "quick_ones": [{"headline": "...", "private": false, "sources": [{"name": "...", "url": "https://..."}]}],
+  "build": {
+    "pick": {"name": "...", "mechanic": "...", "private": false,
+             "evidence": [{"claim": "MRR", "figure": "one thousand two hundred dollars",
+                           "as_of": "2026-09-29", "verified_by": "TrustMRR via RevenueCat",
+                           "source": {"name": "...", "url": "https://..."}}],
+             "caveats": ["..."]},
+    "runners_up": [{"name": "...", "mechanic": "...", "evidence": [], "caveats": []}]
+  },
+  "sector": [
+    {"venture": "Play Fund Win", "private": true, "headline": "...", "facts": ["..."],
+     "sources": [{"name": "...", "url": "https://..."}]}
+  ]
+}
+```
+
+Rules: every `sector` item is `"private": true`. Mark an agent A story `"private":
+true` too if it only matters to one of Dean's ventures. The member edition may only
+use items with `"private": false`. Keep this file at public-news level — no private
+business detail, client names or numbers about Dean's companies (the repo is public
+until Dean makes it private in the rollout).
+
+## 3. Script — write TWO from the research file
+Both scripts: blank line between paragraphs (each blank line becomes a spoken pause),
+TTS-safe (numbers and prices in words, no URLs read out, no markdown), vocabulary
+variety rules, no copying of any style file's example phrasing — every example in those
+files illustrates a pattern, it isn't text to reuse.
+
+**3a. Private estate edition** — follow `STYLE.md` exactly. Listener is Dean; Apply it
+covers his estate. Target ~3,800 words for ~20 minutes: measured pace is ~190 words per
+minute (Ep43-52 mean 194 wpm, range 189-198, Kokoro bm_daniel at 1.05 — the old "270
+wpm, 4,000 words ≈ 15 minutes" figure here was wrong; 4,000 words actually runs about
+21 minutes).
+
+**3b. Member edition** — follow `STYLE-MEMBERS.md` exactly. Dean's first-person voice,
+~1,600-2,200 words (~8-12 minutes), opening with the disclosure paragraph word for
+word, `[[CHAPTER: …]]` and `[[STORY: id]]` marker lines, generic (de-niched) build idea
+with steps and may / may-not guardrails. Only research items with `"private": false`.
+Then write the JSON (`STYLE-MEMBERS.md`, "The JSON"; `members/pending/ep053.example.json`
+shows the shape) with `sources[].url` copied from the research file, never typed from
+memory. Before committing, run the same gate the workflow runs, and fix any hit:
+`python3 tools/denylist_check.py members/pending/epNNN.txt members/pending/epNNN.json`
+(if you cannot run Python, read `members/denylist.txt` and search the text for every
+entry yourself). The member edition's audio uses Dean's ElevenLabs characters — a
+denylist failure costs nothing, a bad script that passes costs real money, so check.
 
 ## 4. Queue it (text only — this is all the sandbox does)
-Commit both files with `github_put_file`:
-- `pending/epNNN.txt` — the script
-- `pending/epNNN.json` — `{"num": NNN, "date": "YYYY-MM-DD", "title": "Ep NNN — ...",
-  "description": "two-sentence summary"}`
+Commit with `github_put_file`, in this order:
+1. `research/YYYY-MM-DD.json` (step 2b)
+2. `pending/epNNN.txt` — the private script
+3. `pending/epNNN.json` — `{"num": NNN, "date": "YYYY-MM-DD", "title": "Ep NNN — ...",
+   "description": "two-sentence summary"}`
+4. `members/pending/epNNN.txt` — the member script
+5. `members/pending/epNNN.json` — the member JSON. Commit the .txt first; the workflow
+   waits for the .json and only renders once both are there.
 
 Also update `archive/covered.md` in the same pass: append episode number, date, title,
 one line per news item covered, the build idea with its evidence, and any FOLLOW-UP
-threads opened or closed. In the same pass, append today's pick to
-`reference/business-idea-categories.md` (name + one-line mechanic) — see step 2B.
+threads opened or closed, plus one line saying what the member edition used (story
+headlines + build title). In the same pass, append today's pick to
+`reference/business-idea-categories.md` (name + one-line mechanic) — see step 2B. The
+member build idea gets its own line there too, marked "(member)".
 
 Note: `pending/` is a work queue, not an archive — the build workflow deletes both
 files from it on every publish. It separately copies the script to a permanent
 `transcripts/epNNN.txt` before doing so (added 2026-08-08), so the full script survives
 for reuse (LinkedIn/blog/social repurposing) — don't rely on `pending/` for history, and
 don't recreate the old behaviour of only keeping the two-sentence JSON description.
+`members/pending/` works the same way: after a successful ingest the member workflow
+moves the script, JSON and `render.json` to `members/published/` (text only). Files
+named `*.example.*` in `members/pending/` are samples and never trigger a build.
 
 ## 5. Build
-Dispatch `build-episode.yml` on `master`. The workflow first checks the pending
-episode's `date` against `episodes/episodes.json`'s most recent entry and refuses to
-build if they match (added 2026-08-13 — guards against ever publishing two episodes
-dated the same day, e.g. from an accidental double-trigger of this whole routine). It
-then renders with Kokoro (voice `bm_daniel`, speed 1.05), encodes a 96k MP3, runs an
-ASR-based content spot-check on the rendered audio (added 2026-08-13, see below),
-registers the episode, prunes to the newest 30, regenerates `feed.xml`, publishes
-everything to `master` via the Git Data API, then deploys `feed.xml` / `cover.png` /
-`episodes/*.mp3` straight to GitHub Pages as its last two steps. Typical run: 10-20
-minutes including the model downloads (cached between runs).
+Both workflows start on their own from the pushes; `github_dispatch_workflow` on
+`master` is the fallback for either if nothing has started after a minute or two.
 
-Poll the run until it completes. On failure, read the job logs, fix, and re-dispatch —
-do not leave a half-published state (pending files present but no MP3).
+**Private edition — `build-episode.yml`.** First checks the pending episode's `date`
+against `episodes/episodes.json`'s most recent entry and refuses to build if they
+match (added 2026-08-13 — guards against ever publishing two episodes dated the same
+day, e.g. from an accidental double-trigger of this whole routine). It then renders
+with Kokoro (voice `bm_daniel`, speed 1.05), encodes a 96k MP3, runs an ASR-based
+content spot-check on the rendered audio (added 2026-08-13, see below), POSTs the
+episode to deanlynn.com ingest as `kind: private` (added 2026-09-30,
+`tools/ingest_post.py`), registers the episode, prunes to the newest 30, regenerates
+`feed.xml`, publishes everything to `master` via the Git Data API, and — only while
+`PUBLISH_PAGES` is not `false` — deploys `feed.xml` / `cover.png` / `episodes/*.mp3` to
+GitHub Pages in a second `pages` job. Typical run: 10-20 minutes including the model
+downloads (cached between runs). While Pages is still on, a missing ingest secret or a
+failed POST is only a warning; once `PUBLISH_PAGES` is `false` either one fails the run
+before anything is registered.
+
+**Member edition — `build-member-edition.yml`.** Denylist gate (fails fast, no audio
+spend) → chunk plan → ElevenLabs clone render with `tools/render_elevenlabs.py`
+(`eleven_multilingual_v2`, chunks of at most 2,500 characters split at paragraph ends
+and at every chapter/story marker, request stitching via `previous_request_ids`, fixed
+seed, pronunciation aliases from `members/pronunciations.md` plus the ElevenLabs
+dictionary if configured, retries, quota pre-check against `GET /v1/user/subscription`
+— that endpoint's fields are still to be confirmed, so a failed pre-check only warns)
+→ loudness normalise to about -16 LUFS, 128k MP3, ID3 comment "AI-narrated in Dean's
+cloned voice" → exact chapter and story start times → ASR check → if the clone render
+or its check fails, Kokoro bm_daniel with the stand-in disclosure and the fallback
+line → if that fails too, text-only → ingest `kind: member` (always a draft on
+deanlynn.com) → text archived to `members/published/`. Runs queue rather than cancel,
+so a second trigger never throws away paid characters. Typical run: 5-15 minutes.
+
+Poll the runs until they complete. On failure, read the job logs, fix, and re-dispatch —
+do not leave a half-published state (pending files present but no MP3 / no ingest).
 
 **Audio content check** (`tools/verify_audio.py`): transcribes the finished MP3 with
 faster-whisper (`tiny.en`, CPU) and compares the transcript's word count against the
@@ -195,41 +301,57 @@ pipeline's actual Whisper-vs-script ratio on a known-good episode. If this step 
 read the actual numbers in the job log before assuming the audio is broken — it may be a
 threshold-tuning problem rather than a bad render, especially on the first few runs
 after this was added. Tighten or loosen the thresholds once several real runs establish
-what a normal ratio looks like for this voice/speed.
+what a normal ratio looks like for this voice/speed. The member edition runs the same
+check against `spoken.txt` (the exact text sent to the voice, aliases applied); the
+clone's normal ratio is not yet known either.
 
 ## 6. Verify
 PRIMARY method — use the GitHub API, not a direct URL fetch. This sandbox's bash has no
 general network egress (only allowlisted package registries — confirmed via curl 403
-against the Pages domain), and WebFetch has proven unreliable against this feed's
-XML/binary responses (repeatedly reports back "[binary data]" instead of content).
-Don't waste a cycle rediscovering this each time — go straight to the API:
-- `github_get` on `/repos/PlayFundWin/daily-build-feed/deployments?environment=github-pages&per_page=1`
-  — the latest entry's `sha` should match the publish commit `api_publish.py` just made;
-  then `github_get` its `/statuses` URL and confirm the newest status `state` is
-  `success`.
+against the Pages domain and against deanlynn.com), and WebFetch has proven unreliable
+against this feed's XML/binary responses (repeatedly reports back "[binary data]"
+instead of content). Don't waste a cycle rediscovering this each time — go straight to
+the API.
+
+Private edition:
+- The run's own log: `github_get` on
+  `/repos/PlayFundWin/daily-build-feed/actions/workflows/build-episode.yml/runs?per_page=1`,
+  confirm `conclusion` is `success`. Then list that run's jobs
+  (`/actions/runs/{run_id}/jobs`) and read the `build` job's annotations
+  (`/check-runs/{job_id}/annotations`): any annotation mentioning ingest or
+  `DAILY_BUILD_INGEST_SECRET` means the episode did NOT reach the private feed (while
+  Pages is on, those are warnings, not failures) — say so plainly in the notify step.
 - `github_get_file` on `episodes/episodes.json` (ref `master`) and confirm today's
   episode number, byte size and duration are present — `add_episode.py` only writes
-  this file after `ffprobe` successfully reads a real MP3, so its presence is itself
-  proof of a working render, not just a guess. It also only runs after the ASR content
-  check (section 5) has passed, so this same presence check now doubles as indirect
-  proof the audio content check passed too.
+  this file after `ffprobe` successfully reads a real MP3, and only after the ASR
+  content check (section 5) has passed, so its presence is proof of a working render.
 - `github_get_file` on `archive/covered.md` (ref `master`) and confirm today's episode
   actually has a section in it (added 2026-08-27, see Process log — Ep20 was published
   with no covered.md entry at all and nothing in this runbook would have caught it
   before this check existed).
-Treat those three checks together as sufficient proof of a live, properly-recorded
-episode.
-SECONDARY, opportunistic only: if you want a literal HTTP 200 and WebFetch happens to
-cooperate, hit `https://playfundwin.github.io/daily-build-feed/feed.xml` and the day's
-`episodes/epNNN.mp3` and check the `Content-Length` against the feed's `length`
-attribute. But do not block publishing, retry-loop, or declare the run a failure solely
-because this secondary check doesn't work — the API checks above already are the proof.
+- Only while `PUBLISH_PAGES` is not `false`: `github_get` on
+  `/repos/PlayFundWin/daily-build-feed/deployments?environment=github-pages&per_page=1`
+  — the latest entry's `sha` should match the publish commit `api_publish.py` just made;
+  then `github_get` its `/statuses` URL and confirm the newest status `state` is
+  `success`.
 
-If you see more than one workflow run in progress for the same episode (check
-`/repos/PlayFundWin/daily-build-feed/actions/workflows/build-episode.yml/runs`), that's
-expected now and then given two pending-file commits plus a possible manual dispatch —
-the concurrency guard means only the newest survives, so just confirm the checks
-above pass, don't try to cancel anything yourself.
+Member edition:
+- `github_get` on `.../actions/workflows/build-member-edition.yml/runs?per_page=1`,
+  `conclusion` `success` (the member ingest step has no soft-fail: success means the
+  POST returned 2xx). The `build` job's annotations say whether the clone was used —
+  a "Kokoro stand-in" or "TEXT ONLY" warning means it wasn't; tell Dean.
+- `github_get_file` on `members/published/epNNN.render.json` (ref `master`) — its
+  `narration`, `seconds` and chapter start times are the record of what went to
+  deanlynn.com. It only exists after a successful ingest.
+
+Treat those checks together as sufficient proof. Whether the ingest function actually
+stored and served the episode is checked on deanlynn.com, not from here.
+
+If you see more than one workflow run in progress for the same episode (check the runs
+endpoints above), that's expected now and then given two pending-file commits plus a
+possible manual dispatch — `build-episode.yml`'s concurrency guard means only the
+newest survives, and `build-member-edition.yml` queues the second run, which then finds
+nothing to do. Just confirm the checks above pass; don't try to cancel anything yourself.
 
 ## 7. Log to Notion
 Log today's episode to the **"Daily Build — Episode Log"** Notion database (lives under
@@ -242,16 +364,20 @@ Use `notion-create-pages` with `parent: {"type": "data_source_id", "data_source_
 "c7871de0-669f-4d3e-9d6b-ece7e19ed9a5"}`. One page per episode:
 - Properties: `Episode` (title — the full episode title, e.g. "Ep NNN — ..."),
   `Number`, `Date` (YYYY-MM-DD), `Duration` (mm:ss, from the feed/workflow),
-  `Status` (`Published`), `Audio URL`
-  (`https://playfundwin.github.io/daily-build-feed/episodes/epNNN.mp3`), `Description`
+  `Status` (`Published`), `Audio URL` (while `PUBLISH_PAGES` is on:
+  `https://playfundwin.github.io/daily-build-feed/episodes/epNNN.mp3`; once it is
+  `false`, leave it empty — the private audio lives on deanlynn.com), `Description`
   (the two-sentence summary from `pending/epNNN.json`).
 - Content (Notion markdown): `## News covered` (bulleted, one line per item, mirroring
   what you just wrote to `archive/covered.md` — don't shorten it to the two-sentence
   description), `## Build idea` (the pick, its evidence, and the runner-ups),
   `## Follow-ups` (status of any open FOLLOW-UP threads touched this episode),
-  `## Ventures` (the PlayFundWin/LeaguePages/EV-Partnerships updates).
+  `## Ventures` (the Apply it updates, one line per venture covered — see `STYLE.md`
+  for Dean's estate), `## Member edition` (story headlines, build title, narration
+  used). Notion access is unverified as of 2026-09-30: if the tools fail, the rule
+  below applies.
 
-If Steve gives a direct correction in conversation that affects earlier episodes (a
+If Dean gives a direct correction in conversation that affects earlier episodes (a
 FOLLOW-UP thread closing, a standing fact about a venture, etc.), do not rewrite the
 core text of older Notion pages — append a dated "Standing correction" note instead
 (same practice as `archive/covered.md`'s own "Standing corrections" section), and carry
@@ -271,31 +397,52 @@ Process log) — do not skip it.
 Use `notion-create-pages` with `parent: {"type": "data_source_id", "data_source_id":
 "eb0480b5-9d8f-43dd-91d8-76fa1032eb30"}`. One page for today's build idea:
 - `Idea` (title — "Ep NNN — <idea name>, niched to <venture>" where it was niched for
-  one of Steve's ventures, otherwise just "Ep NNN — <idea name>")
+  one of Dean's ventures, otherwise just "Ep NNN — <idea name>")
 - `Episode` (number), `Date` (YYYY-MM-DD)
 - `Evidence` (named source + revenue figure cited on air, one or two sentences)
-- `Stream` (PFW / LeaguePages / Energy Partners / Cross-venture / New/Standalone)
+- `Stream` (PFW / LeaguePages / Discount Vouchers / Sporting Escapes / Cherished /
+  Trusted Media / deanlynn.com / Cross-venture / New/Standalone; Energy Partners is
+  historical only — if a new option is rejected by the database, use Cross-venture and
+  say so in the notify step)
 - `Status`: always `Proposed` by default. Only ever set `In Progress` or `Live` if
-  Steve has explicitly said, in conversation, that he or someone named is acting on it
+  Dean has explicitly said, in conversation, that he or someone named is acting on it
   — never infer this from the episode content alone.
-- `Owner`: `Unassigned` by default; only set to a named person if Steve has said so
+- `Owner`: `Unassigned` by default; only set to a named person if Dean has said so
   explicitly.
 
-This is a **passive record only**. Steve does not want ideas he hasn't acted on chased,
-resurfaced, or asked about, on air or anywhere else — if he wants to progress an idea
-he'll raise it himself in chat. Never build or run any mechanism that revisits a
-`Proposed` idea to report or ask what happened to it.
+This is a **passive record only**. Dean (like Steve before him) does not want ideas
+he hasn't acted on chased, resurfaced, or asked about, on air or anywhere else — if he
+wants to progress an idea he'll raise it himself in chat. Never build or run any
+mechanism that revisits a `Proposed` idea to report or ask what happened to it.
 
 ## 8. Notify
 `SendUserFile` is not available for the MP3 in this flow (the audio only exists on the
-runner), so send Steve a short message: the episode title, a one-line summary, and the
-fact that it is live in the feed. If ANY step failed, say plainly what failed and what
-you did about it. Never claim success you did not verify.
+runner), so send Dean a short message: the private episode title and a one-line
+summary, whether it reached the private feed (ingest OK) or only Pages, and the member
+edition's title, which voice read it (clone / stand-in / text only) and that it is
+waiting as a draft on deanlynn.com for his approval. If ANY step failed, say plainly
+what failed and what you did about it. Never claim success you did not verify.
 
 ## Process log
 Dated entries only, added when a real gap in this pipeline is found and fixed — not a
 running commentary. This section is read in step 1 alongside the archive.
 
+- 2026-09-30: Dean's decisions. (1) The daily episode stops being public and is
+  retargeted to Dean's own estate (listener Dean, not Steve): `STYLE.md` rewritten
+  (estate list, Apply it scope, EV-Partnerships out, Onyxia unconfirmed), step 2C
+  retargeted, notify goes to Dean. Rendered private episodes are POSTed to the
+  deanlynn.com ingest function (`tools/ingest_post.py`, `kind: private`) from
+  `build-episode.yml`; Pages publishing now sits behind the repo variable
+  `PUBLISH_PAGES` (unset = on, so merging changed nothing public; Dean sets it to
+  `false` once the private feed works, then the repo goes private and Pages is
+  deleted). (2) New member edition, "The Daily Build — with Dean Lynn": same research,
+  second script in Dean's voice (`STYLE-MEMBERS.md`), rendered by
+  `build-member-edition.yml` with his ElevenLabs clone (Kokoro stand-in and text-only
+  fallbacks), gated by `members/denylist.txt`, POSTed as `kind: member` and always
+  landing as a draft. (3) New step 2b: research is committed as
+  `research/YYYY-MM-DD.json` with source URLs — until now no structured research
+  survived a run. (4) Pace corrected: measured ~190 wpm (Ep43-52 mean 194), not the
+  270 wpm step 3 used to state or the ~165 wpm implied by STYLE.md; targets updated.
 - 2026-09-18 (later same day): Steve asked how to improve the research pass generally.
   Two concrete gaps, not a vague "widen the scope": (1) a fixed 48-hour lookback window
   on agent A kept clipping stories at the edge — flagged "just outside window" across
@@ -373,7 +520,8 @@ running commentary. This section is read in step 1 alongside the archive.
   reused verbatim day to day.
 - 2026-08-27: Steve wants the feed made more private (it was previously fine being
   public-but-obscure). Implementation approach not yet decided/built as of this entry —
-  update this log once it is.
+  update this log once it is. Update 2026-09-30: decided — private feed on deanlynn.com
+  via the ingest function, Pages behind `PUBLISH_PAGES`, see the 2026-09-30 entry.
 - 2026-08-28: Found the actual root cause of Ep20 and Ep21 both publishing with no
   `covered.md` entry (the 2026-08-27 fix only added a verify check for this, it never
   found *why* it kept happening). `tools/api_publish.py` fetches a fresh `base_tree`
@@ -403,7 +551,12 @@ running commentary. This section is read in step 1 alongside the archive.
 ## Cost discipline
 Runs on a budget model by design. Three research subagents maximum plus at most one
 verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
-daily episode.
+daily episode. One research pass feeds both editions — never run a second research
+pass for the member edition. ElevenLabs characters are spent only by
+`build-member-edition.yml`, only after the denylist gate passes: about eleven thousand
+characters per episode (the 1,921-word sample `members/pending/ep053.example.txt` is
+10,829 spoken characters), so roughly 330,000 a month at one a day. Check that fits
+Dean's ElevenLabs plan.
 
 # JT Debrief — production runbook
 

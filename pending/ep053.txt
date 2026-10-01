@@ -1,0 +1,137 @@
+Google has a new top model, and you are not allowed to use it yet. An American regulator has opened a probe into the biggest AI labs at once. And a German founder appears to be making serious money from the least glamorous idea imaginable: a QR code on a table at a party.
+
+This is The Daily Build, episode fifty-three, for Thursday the first of October. I'm your host. As ever, this is research and ideas, not financial advice.
+
+October, then. The clocks haven't gone back yet, the club bars are filling up for the autumn, and the AI labs have spent the last day and a half doing what they do best, which is announcing things with an asterisk attached. Let me take you through what landed.
+
+First up, the headline from Wednesday the thirtieth of September. Google announced Gemini four Argon, its new frontier model, built for long, multi-step work: software engineering, office knowledge work, and cyber defence. I read Google's own announcement for this one, so the specifics are first-hand.
+
+The numbers that matter. Output can now run to one million tokens in a single response, up from sixty-four thousand. That is the difference between a model writing you a chapter and a model writing you the whole book in one go. On Google's own software engineering benchmark, DeepSWE, it scores seventy-seven point nine per cent, and on a business automation test called AutomationBench it ranks first, at fifty-one point three per cent. Google also claims leading results on resisting prompt injection, which is the attack where hidden text in a web page or document hijacks the model's instructions.
+
+Pricing is aggressive. An introductory rate of two dollars per million input tokens and ten dollars per million output, with cached input ninety-five per cent off. After the introductory period, it doubles to four and twenty. If those numbers sound familiar, they should: that introductory price lands exactly where Claude Sonnet five point five and OpenAI's new Sol model sit, which we covered on Tuesday and Wednesday. Three labs, one price point. That is not a coincidence, that is a market settling.
+
+Now the asterisk. Right now Argon is only rolling out to what Google calls trusted cyber defenders, through something named the Fairwind Program. Paid API customers and Google AI Ultra subscribers get it next, as soon as possible, which is corporate for "no date". Nothing in the announcement about the UK or Europe.
+
+Why you care: you cannot build on it today, so there's nothing to switch. But the price war at the top end is now a three-way tie, which means the model you choose for any automation should be picked on how well it does your specific task, not on the sticker. Same lesson as the Grok episode a few weeks back. Benchmark the job, not the brochure.
+
+Second. Also on Wednesday, the US Federal Trade Commission opened an industry-wide probe into Anthropic, OpenAI and other AI labs, looking at, quote, the potential dangers their technology poses to consumers. That comes from a senior FTC official speaking to Reuters. I need to be careful here: I've only seen the opening of the Reuters piece, the rest sits behind a paywall, so I don't have the legal mechanism or the companies' responses. Treat the detail as thin.
+
+The reason it matters: on Wednesday we covered the White House's voluntary accord, the one with no enforcement and a vague line about how it "may make sense to codify" it later. Twenty-four hours on, a regulator with actual teeth has started asking questions. That's a US story, not a UK one. But the tools you build on are made by the companies under the microscope, and consumer-protection scrutiny tends to show up later as new terms of service, new limits on what agents can do with customer data, and new disclosure rules. If you're building anything that faces the public, write down today what your AI does and doesn't do with people's information. You'll want that page when someone asks.
+
+Third, and this is the one with an actual deadline. Anthropic has announced that Claude Sonnet four point five will be retired on the thirtieth of November. I read the platform release notes myself. Anthropic recommends moving to Sonnet five point five.
+
+The practical upshot: if anything you or a contractor built in the last year calls that older model by name, it stops working in two months. And the move is not a like-for-like swap. The release notes for Sonnet five point five list breaking changes, including that forcing the model to use a particular tool now returns an error rather than an answer. So the job is: find every automation, every script, every Zapier step, every little internal tool that names Sonnet four point five, switch it, and test it. Do it in October, not on the twenty-ninth of November.
+
+Fourth. On Tuesday the twenty-ninth, OpenAI's new G P T six point one Sol model arrived in GitHub Copilot, generally available and rolling out across Visual Studio Code, JetBrains, Xcode, the command line, the coding agent and the mobile app. It's on Copilot Pro Plus, Max, Business and Enterprise, billed at OpenAI's list price under usage-based billing. I read GitHub's own changelog for this.
+
+The bit that matters is buried: new models are switched on by default unless an administrator turns them off. For you: if anyone on your team has a Copilot business seat, a shiny new model just appeared in their dropdown, and it's metered. Nobody needs to panic, but someone should look at the usage page this month rather than next.
+
+And some quicker hits.
+
+OpenAI published a report on Wednesday saying a group linked to Moonshot AI, the Chinese company behind the Kimi models, tried to copy its models' hidden reasoning. Sixteen thousand requests from over four thousand accounts at the peak in late July, shut down by the twenty-eighth. OpenAI says it has tightened sign-up checks and closed the loophole. Low impact for you, but it tells you why API sign-ups keep getting stricter.
+
+Anthropic's research team published a piece on Wednesday asking what work robots can do. Their answer: robots can technically do about seventy-four per cent of physical tasks, but are cost-competitive on only zero point three per cent of them, and at current price falls it would take around forty years to reach ten per cent. Useful the next time someone at the bar tells you the groundsman is about to be replaced by a machine. He isn't.
+
+The OpenClaw Foundation launched something called OpenClaw Enterprise, described as Kubernetes for agents: a free, self-hosted system for giving each AI agent its own space, permissions, credentials and an activity log. It's backed by OpenAI, Nvidia, Red Hat and GitHub. It's also pre-version-one and explicitly for internal pilots only, so file it under interesting, not yet.
+
+And a follow-up. On Tuesday I told you about reports of Anthropic's draft IPO prospectus, but I only had it second-hand and promised to confirm before quoting figures. Fortune has now published the numbers from the leaked draft, and I've read their piece. Revenue of four point six billion dollars in twenty twenty-five, rising to eleven and a half billion in the second quarter of this year alone, with the company operating-profitable for a second straight quarter. Around five hundred and eighteen billion committed to cloud and data centres, and two customers making up a quarter of revenue. One caveat stays: this is a leaked draft reported by journalists, not a public filing with the American regulator. What it means for you: the company behind a tool you lean on every day now looks commercially durable, which lowers one kind of platform risk. The concentration in two customers is the line I'd keep an eye on.
+
+Right. Enough of the giants. Let's talk about something you could have live by next weekend.
+
+Today's build is the event photo wall. The mechanic is almost embarrassingly simple. The host of an event gets a QR code printed on a table card or a sign. Guests scan it with their phone camera, and upload photos and videos straight from the browser. No app to download, no account to create. Everything lands in one private gallery. There's a live slideshow that can run on a screen in the room, and at the end the host downloads the lot. The customer pays once, per event.
+
+Now the evidence, and I'll be precise about what I can and can't stand behind.
+
+The main case sits on TrustMRR, the site where founders connect their payment accounts so revenue is pulled directly rather than typed in. There's a listing called simply "Photo sharing app for events", from a founder named Denis in Germany, founded in April twenty twenty-four. It's verified through Stripe, and the page was updated on Wednesday, the thirtieth of September. I checked it myself this morning. All-time revenue: five hundred and forty thousand, one hundred and fifteen dollars. Revenue in the last thirty days: thirty-seven thousand, eight hundred and fifty dollars. Monthly recurring revenue is listed as zero, which fits a pay-once-per-event model rather than subscriptions. It's listed for sale at one and a half million dollars, with a stated profit margin of forty-five per cent. The stack is Astro, React, Tailwind, Cloudflare, SQLite and Stripe. Marketing is Google Ads, search and Instagram.
+
+The listing doesn't name the product. Our research found a German service called Photo-Space, whose website names a Denis as founder and technical lead and which charges a one-off thirty-nine euros. That's very probably the same business, but I can't prove it, so hold it as a strong guess rather than a fact.
+
+If it is Photo-Space, here's some arithmetic of my own, and it is only that: thirty-seven thousand eight hundred dollars a month at roughly forty euros a go would mean something like eight hundred events a month. That "if" is carrying a lot of weight, because there may be higher tiers I haven't seen.
+
+One more oddity on that listing. It shows only four hundred and twenty-four website visitors in the last thirty days, against all that revenue. Either the visitor tracking is incomplete, or the sales come mostly through paid Google Ads landing on pages the counter doesn't see. Either way, don't assume this business runs on free traffic.
+
+The second case is messier, and I'm including it precisely because it's messy. SnapTheKnot, built by Eric Maclean in the United States, does QR-code photo sharing for weddings at nineteen dollars one-off, or twenty-nine with video. Its TrustMRR page shows a hundred and eighty-two thousand dollars all-time, Stripe-verified. But that data was last updated on the third of July, so it's stale. And the company's own website says five hundred and ninety-two weddings and about twenty-four and a half thousand guest uploads. Five hundred and ninety-two weddings at nineteen to twenty-nine dollars comes to somewhere between eleven and seventeen thousand dollars, nowhere near a hundred and eighty-two. One of those numbers is wrong, or there's revenue from somewhere I can't see. So I'd lean on Denis, and treat SnapTheKnot as proof the category exists rather than proof of its size.
+
+And the counter-evidence, because a good build segment should hurt a bit. Two tools that do only face-blurring of photos, which sounds like a neighbour of this idea, have gone nowhere. Blurfaces, in the US, shows twenty dollars all-time on Stripe despite claiming around ten thousand users. Blur Your Bub, in Australia, shows six hundred and twenty dollars all-time. The lesson: privacy features don't sell on their own. They sell as part of something people already want, which is the photos.
+
+So, why does this work for you, Steve, rather than for any random builder?
+
+Because you already stand in rooms full of the right customers. Every club on LeaguePages has an end-of-season presentation night. Every PlayFundWin partner club has a draw night or a fundraising dinner. Every club EV-Partnerships talks to has a bar, which means it has events: quiz nights, race nights, sixtieth birthdays in the function room. The incumbents in this market, and there are plenty, are selling to brides through Google Ads. Nobody is selling to the club secretary of a cricket club in Hertfordshire through a platform she already logs into.
+
+And there's a sponsor angle the wedding apps can't touch. A club gallery and a slideshow on the clubhouse television is a place to put a local sponsor's logo, which gives the club something extra to sell, and gives you a reason for the club to want it rather than merely tolerate it.
+
+Call it the Clubhouse Photo Wall. Here's how I'd build it, roughly in order.
+
+One. Have Claude build a simple web app: a front end in Astro or Next, file storage on Cloudflare's R two service, a small database, and Stripe Checkout for payment. That is close to Denis's own stack, so you know the approach can carry a business of that size.
+
+Two. Each event gets its own short link, a QR code, and a print-ready A five table card as a PDF, with the club crest and the sponsor logo on it.
+
+Three. Upload from the phone browser with no login. Big button, works on a bad signal, retries if it drops. Most clubhouse wifi is a rumour.
+
+Four. A slideshow page designed for a TV screen, cycling new uploads as they arrive. That's the bit that sells it in the room, because people see their own photo pop up and immediately take three more.
+
+Five. A moderation check on every upload, using a vision model to hold back anything inappropriate for the organiser to approve. And this is the non-negotiable part for junior clubs: launch for adult events first. If you ever open it to junior presentation nights, it needs the club's welfare officer involved, clear consent from parents, an option to blur faces, and a firm rule on deleting everything after a set period. That's UK GDPR and basic safeguarding, not paperwork for its own sake.
+
+Six. A download-all button at the end, and an automatic deletion date the organiser can see from day one.
+
+Costs: a domain, storage and a few printed sample cards. Comfortably under a hundred and fifty pounds to start, well inside our five hundred pound ceiling.
+
+Money maths, and this is illustration, not a forecast. Price it at twenty-nine pounds per event, or seventy-nine pounds a year per club for unlimited events. Ten single events a month is two hundred and ninety pounds a month. Fifty clubs on the annual plan is just under four thousand pounds a year. Neither of those changes your life. A hundred and fifty clubs on the annual plan, plus a trickle of one-off events from their members' own parties, starts to look like a proper side stream, with storage costs that stay small because most events are a few hundred photos.
+
+Now the risks. It's crowded: Kululu, Guestpix, Wedibox, GuestCam and a long tail of others already do this. Google Photos shared albums are free and good enough for plenty of people. Denis's revenue looks ad-driven, so you can't assume organic growth. Demand is seasonal, peaking around presentation nights in spring and early summer and the Christmas do. And the safeguarding point above is the one that could hurt you if you get it wrong, which is why adults-first isn't optional.
+
+Where you win is distribution and fit. You're not trying to out-advertise the wedding apps. You're adding a feature to relationships you already have.
+
+Three runners-up, briefly, so you can see what else is on the table.
+
+First, bltn, from Justin Funk and his brother in the US. One workflow turns a weekly church bulletin into web, print, email, text message and social posts. TrustMRR shows about two hundred and forty-seven thousand dollars all-time, Stripe-verified on Wednesday, though the subscription figures on the same page don't line up with that total, so treat the size with care. The obvious translation is a weekly club newsletter that writes itself from fixtures and results.
+
+Second, ThreadRecap, from André Daniel in Brazil. Upload a WhatsApp chat export and get summaries, timelines, decision logs and evidence packs. Four thousand and eighty-six dollars all-time, nearly two thousand of it in the last thirty days, Stripe-verified, built on the Anthropic and OpenAI APIs. Small, but growing fast. Every committee in the country runs on a WhatsApp group nobody can search. Minutes from the chat writes itself as a pitch.
+
+Third, FixMyExport, from Kazi Hasan Ali in India: a one-off fifteen dollar tool that restores dates and location data to Snapchat photo exports. Eleven thousand one hundred and ninety-three dollars all-time. A small, boring fix for one specific annoyance, and people pay.
+
+Now, bringing today's news home to your three businesses.
+
+PlayFundWin first. Third Sector reported a YouGov poll on Wednesday, more than two thousand adults surveyed in August, on how people in Britain give. Donating goods came top at fifty-two per cent, then buying from charity shops at forty-seven, then cash donations at forty-three. The age gap is the striking bit: fifty-seven per cent of over fifty-fives gave money, against just twenty-three per cent of eighteen to twenty-four year olds. I read the article but not the full poll, and the article doesn't say who commissioned it. Crucially, it doesn't measure raffles or prize draws at all, so please don't quote it as evidence for draws. What it does tell you is that plain asking for money is landing with your partner clubs' older members and missing their younger ones. A draw is a different proposition, a chance to win something rather than a request, and that's the hypothesis worth testing with your own entry data by age band, if you collect it.
+
+On the regulatory side, nothing has moved. The Fundraising Regulator's position is unchanged, and the government's list of prize-draw operators signed up to the voluntary code still shows its first of September update. The reason we keep one eye on it hasn't changed either: that code is the dress rehearsal for a mandatory regime if self-regulation doesn't work.
+
+And the Clubhouse Photo Wall slots neatly into draw nights. A slideshow running in the room while the draw happens is free atmosphere, and a sponsor logo in the corner of it is something your clubs can sell.
+
+One housekeeping point from the news: if any PlayFundWin automation, a reporting script, a supporter email drafter, anything at all, calls Sonnet four point five by name, it has until the thirtieth of November.
+
+LeaguePages next. The photo wall is a natural add-on for presentation nights, which every league's member clubs run. Pitchero, the obvious comparison, has flagged a redesigned media section as coming soon in its latest newsletter. No details yet, but it tells you photos and media are on their roadmap too, so being first into clubhouses with something live is worth more than being second with something prettier. And the ThreadRecap runner-up is a cheap experiment: offer league secretaries a tool that turns a committee WhatsApp export into draft minutes. Draft only. A human signs them off.
+
+EV-Partnerships, and there's real news to report here, which makes a change from the national operators doing nothing in particular.
+
+First, something I can now say out loud. EV-Partnerships tells me its first sports-club charger is installed at Meridian FC. This is the company's own install, from your own first-hand account and your own photos, rather than something I've seen documented publicly. But it means the community-hub thesis, a club with a bar where people come back week after week rather than only on match days, now has a real site behind it, not just a slide.
+
+Which makes this week's charging-price news more useful. Fleet Point reported on Tuesday that Be E V has launched monthly charging passes. Go Pass is forty-nine pounds a month for a hundred and twenty kilowatt hours, about four hundred miles. Go Further Pass is eighty-nine pounds for two hundred and fifty kilowatt hours, about eight hundred miles. There's also a Flexi Pass at thirteen pounds ninety-nine a month, then thirty-nine pence per kilowatt hour, and the off-peak window runs from seven in the evening to seven in the morning. Be E V says the passes save fifty-one to fifty-seven per cent against the UK average ultra-rapid price of eighty-three pence per kilowatt hour.
+
+Seven in the evening to seven in the morning. Think about when a club bar is busiest. Training nights, quiz nights, Friday pints. That's exactly the window.
+
+Zapmap also reported the AA's EV Readiness Index hitting sixty, its highest score yet. Two figures from that matter for Meridian. Public rapid charging now costs fifteen per cent more per mile than petrol, while home charging is sixty-six per cent cheaper. And a used electric car now costs only one per cent more than its petrol equivalent. So the members most likely to plug in at a club are driving used EVs, and they're getting stung on rapid prices. A club charger priced somewhere between home and rapid rates has a very clean story.
+
+Related, also via Zapmap: InstaVolt says it will keep the older CHAdeMO connector at all its sites, because the used market is full of older Nissan Leafs that need it. Club chargers at seven to twenty-two kilowatts are usually the Type Two plug, which a Leaf can use, so this is less about hardware and more about confirming who your members actually are. If a lot of them drive old Leafs, that's a pricing and messaging point, not an engineering one.
+
+And the national operators? I checked, as always. Nothing new at sports or leisure venues, so that's all I'll say.
+
+So, one thing to do today, thirty minutes, no code.
+
+Open a blank page and write the Meridian FC members' charging offer. Three lines. Line one: the price per kilowatt hour, set somewhere between what a member pays at home and what Be E V's Flexi Pass charges, which is thirty-nine pence. You know the club's electricity cost; I don't, so you pick the number. Line two: one monthly option, benchmarked against Be E V's forty-nine pound Go Pass, but sized for a club member who plugs in twice a week during training or at the bar, not for a high-mileage driver. Line three: one thing that ties it to the clubhouse, such as a pint or a coffee with a monthly pass, or a discount on evenings from seven o'clock.
+
+Then send it to whoever runs the bar at Meridian, with one question: "Would your members understand this in ten seconds?" If the answer is yes, you've got a template for the next club. If it's no, you've learned that before printing a single sign.
+
+Your sixty-second recap.
+
+One. Google's Gemini four Argon is out, but only to a small group of cyber defenders. Its launch price matches Claude and OpenAI's mid-tier models. Three labs, one price, so choose on the task, not the sticker.
+
+Two. The US Federal Trade Commission has opened a probe into the big AI labs, a day after a voluntary White House accord with no teeth. Write down what your AI tools do with customer data before someone asks.
+
+Three. Claude Sonnet four point five retires on the thirtieth of November. Find anything that names it, switch it, test it. And if you have Copilot business seats, the new OpenAI model is switched on and metered.
+
+Four. Today's build is the Clubhouse Photo Wall: QR code on the table, guests upload with no app, live slideshow, pay per event. A German founder's Stripe-verified listing shows over half a million dollars all-time. Adults first, safeguarding before juniors.
+
+Five. Meridian FC is EV-Partnerships' first installed club charger, and Be E V's new passes just handed you a public price benchmark with an off-peak window that matches club bar hours. Write the three-line members' offer today.
+
+That's the lot for Thursday. Tomorrow is Friday, which usually means the labs go quiet and the build gets bolder. I'll see you then.

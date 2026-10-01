@@ -1,5 +1,14 @@
 [
   {
+    "num": 53,
+    "date": "2026-10-01",
+    "title": "Ep 53 \u2014 Gemini 4 Argon arrives behind a velvet rope, and the QR-code photo wall clearing thirty-seven thousand dollars a month",
+    "description": "Google unveils Gemini 4 Argon at the same introductory price as Claude Sonnet 5.5 and GPT-6.1 Sol but limits it to cyber defenders for now, the US FTC opens a probe into the major AI labs, and Anthropic sets a 30 November retirement date for Claude Sonnet 4.5. Plus a deep dive on QR-code event photo sharing, backed by a Stripe-verified German listing with over half a million dollars all-time, niched as an adults-first Clubhouse Photo Wall, and Meridian FC named on air for the first time as EV-Partnerships' first installed club charger alongside Be.EV's new monthly charging passes.",
+    "file": "ep053.mp3",
+    "bytes": 15088321,
+    "seconds": 1257
+  },
+  {
     "num": 52,
     "date": "2026-09-30",
     "title": "Ep 52 \u2014 OpenAI's always-on dots, a White House accord with no teeth, and the gymnastics app that scores technique from a phone video",
@@ -259,14 +268,5 @@
     "file": "ep024.mp3",
     "bytes": 14261075,
     "seconds": 1188
-  },
-  {
-    "num": 23,
-    "date": "2026-08-29",
-    "title": "Ep 23 \u2014 OpenAI cuts Cursor loose after a SpaceX takeover, and the AI wrapper that turned two hundred dollars into two million a year",
-    "description": "OpenAI moves to cut Cursor off from its GPT models by the twelfth of November after SpaceX's acquisition of the company, Google DeepMind pilots the first double-blind evaluation of a frontier AI model inside a cryptographic sandbox, and Anthropic widens Claude for Teachers to full U.S. school districts. Plus a deep dive on Three-Dee AI Studio, founder Jan Hammer's wrapper around commercial text-to-three-dee generation APIs that grew from a two-hundred-dollar build to roughly two million dollars a year in revenue, and why Thursday's Department for Transport charging-point statistics have now missed their own confirmed release date, leaving PlayFundWin, LeaguePages and EV-Partnerships with real gaps to work with instead of numbers to report.",
-    "file": "ep023.mp3",
-    "bytes": 13650123,
-    "seconds": 1137
   }
 ]

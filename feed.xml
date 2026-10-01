@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 53 — Gemini 4 Argon arrives behind a velvet rope, and the QR-code photo wall clearing thirty-seven thousand dollars a month</title>
+      <description>Google unveils Gemini 4 Argon at the same introductory price as Claude Sonnet 5.5 and GPT-6.1 Sol but limits it to cyber defenders for now, the US FTC opens a probe into the major AI labs, and Anthropic sets a 30 November retirement date for Claude Sonnet 4.5. Plus a deep dive on QR-code event photo sharing, backed by a Stripe-verified German listing with over half a million dollars all-time, niched as an adults-first Clubhouse Photo Wall, and Meridian FC named on air for the first time as EV-Partnerships&#x27; first installed club charger alongside Be.EV&#x27;s new monthly charging passes.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep053.mp3" length="15088321" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep053</guid>
+      <pubDate>Thu, 01 Oct 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>20:57</itunes:duration>
+      <itunes:episode>53</itunes:episode>
+    </item>
+    <item>
       <title>Ep 52 — OpenAI&#x27;s always-on dots, a White House accord with no teeth, and the gymnastics app that scores technique from a phone video</title>
       <description>OpenAI&#x27;s DevDay launches always-on dots agents and GPT-6.1 Sol at the same two-and-ten-dollar sticker as Claude Sonnet 5.5, ElevenLabs ships v4 Turbo voices, Perplexity adds trigger-based Automations, and the White House meeting ends in a voluntary &#x27;morally binding&#x27; AI accord. Plus a deep dive on CheckForm Gymnastics, a small but RevenueCat-verified video technique-scoring app, niched as an adults-first Clip and Score feature for LeaguePages clubs, and goDonate&#x27;s Christmas giving data for PlayFundWin&#x27;s festive draws.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep052.mp3" length="14411227" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Sun, 30 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:48</itunes:duration>
       <itunes:episode>24</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 23 — OpenAI cuts Cursor loose after a SpaceX takeover, and the AI wrapper that turned two hundred dollars into two million a year</title>
-      <description>OpenAI moves to cut Cursor off from its GPT models by the twelfth of November after SpaceX&#x27;s acquisition of the company, Google DeepMind pilots the first double-blind evaluation of a frontier AI model inside a cryptographic sandbox, and Anthropic widens Claude for Teachers to full U.S. school districts. Plus a deep dive on Three-Dee AI Studio, founder Jan Hammer&#x27;s wrapper around commercial text-to-three-dee generation APIs that grew from a two-hundred-dollar build to roughly two million dollars a year in revenue, and why Thursday&#x27;s Department for Transport charging-point statistics have now missed their own confirmed release date, leaving PlayFundWin, LeaguePages and EV-Partnerships with real gaps to work with instead of numbers to report.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep023.mp3" length="13650123" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep023</guid>
-      <pubDate>Sat, 29 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>18:57</itunes:duration>
-      <itunes:episode>23</itunes:episode>
     </item>
   </channel>
 </rss>

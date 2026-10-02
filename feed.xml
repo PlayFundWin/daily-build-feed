@@ -11,6 +11,15 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Business"/>
     <item>
+      <title>Ep 54 — Barclays goes big on Claude, Sunderland plugs in, and the letter-posting site doing five thousand a month</title>
+      <description>Barclays puts Claude in front of sixteen thousand staff, Google sets hard dates for Gems becoming skills, GitHub Copilot learns to drive desktop apps, and RAW Charging and Believ make fresh national-operator moves into football stadiums and pub chains. Plus a deep dive on Send Letters Online, a Stripe-verified UK hybrid-mail site at over five thousand dollars a month, niched as ClubPost — AI-written sponsor letters that clubs post to raise money.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep054.mp3" length="15820585" type="audio/mpeg"/>
+      <guid isPermaLink="false">daily-build-ep054</guid>
+      <pubDate>Fri, 02 Oct 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>21:58</itunes:duration>
+      <itunes:episode>54</itunes:episode>
+    </item>
+    <item>
       <title>Ep 53 — Gemini 4 Argon arrives behind a velvet rope, and the QR-code photo wall clearing thirty-seven thousand dollars a month</title>
       <description>Google unveils Gemini 4 Argon at the same introductory price as Claude Sonnet 5.5 and GPT-6.1 Sol but limits it to cyber defenders for now, the US FTC opens a probe into the major AI labs, and Anthropic sets a 30 November retirement date for Claude Sonnet 4.5. Plus a deep dive on QR-code event photo sharing, backed by a Stripe-verified German listing with over half a million dollars all-time, niched as an adults-first Clubhouse Photo Wall, and Meridian FC named on air for the first time as EV-Partnerships&#x27; first installed club charger alongside Be.EV&#x27;s new monthly charging passes.</description>
       <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep053.mp3" length="15088321" type="audio/mpeg"/>
@@ -270,15 +279,6 @@
       <pubDate>Mon, 31 Aug 2026 05:30:00 +0000</pubDate>
       <itunes:duration>19:38</itunes:duration>
       <itunes:episode>25</itunes:episode>
-    </item>
-    <item>
-      <title>Ep 24 — Cursor learns to build without a GitHub account, and the compliance-paperwork tool with a revenue number that doesn&#x27;t add up</title>
-      <description>Cursor&#x27;s Cloud Agents can now build an app from nothing, no repo required, while Google takes speech-to-text and text-to-video tools to general availability and Anthropic teaches Claude to drive lab hardware through one shared spec. Plus a deep dive on Comp AI, a compliance-paperwork generator whose Stripe-linked revenue tracker shows two wildly different numbers, niched for Steve&#x27;s audience as an instant policy-pack tool for grassroots sports clubs, and the Department for Transport&#x27;s EV charging-point statistics that finally turned up three days late.</description>
-      <enclosure url="https://playfundwin.github.io/daily-build-feed/episodes/ep024.mp3" length="14261075" type="audio/mpeg"/>
-      <guid isPermaLink="false">daily-build-ep024</guid>
-      <pubDate>Sun, 30 Aug 2026 05:30:00 +0000</pubDate>
-      <itunes:duration>19:48</itunes:duration>
-      <itunes:episode>24</itunes:episode>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,147 @@
+A British bank has handed Claude to sixteen thousand of its staff. One of England's biggest football stadiums is getting twenty ultra-rapid chargers. And somewhere in Britain, a one-person website is making five thousand dollars a month by doing the one thing the internet was supposed to kill off. Posting letters.
+
+This is The Daily Build, episode fifty-four, for Friday the second of October. I'm your narrator, and the usual rule applies: this is research and ideas, not financial or legal advice. Let's get moving.
+
+Here's the shape of today. Five things that shipped, one of which comes with a calendar deadline you'll want to diary. Then a build that sounds almost comically low-tech until you look at the numbers. Then what it all means for PlayFundWin, LeaguePages and EV-Partnerships, where, for once, the national charging operators have actually done something worth talking about.
+
+First, the releases.
+
+Barclays has scaled up its use of Claude, and the figures are hefty. I read Anthropic's own announcement on this one, published Thursday the first of October. More than sixteen thousand Barclays colleagues now use something called the Colleague Knowledge Assistant, built on Claude. It supports the teams who serve more than twenty million UK retail customers, and it has already handled over a million searches. In Global Markets, Claude is processing roughly a hundred and twenty thousand emails a day. And Barclays expects half of its developers to be using Claude Code by the end of this year. Anthropic described it as a significant milestone for them in the UK.
+
+Bear in mind that this is the vendor telling the story of its own customer, so the numbers are the friendly version. But Barclays is a regulated British bank with a compliance department the size of a small town, and it has let an AI model loose on the internal knowledge its customer-facing staff rely on.
+
+Why you care. Every time you pitch an AI-powered feature to a club treasurer or a charity trustee, you hit the same wall: is this safe, is this proper, would a serious organisation do this. You now have a one-line answer. A high-street bank does it at sixteen thousand seats. That doesn't make your product safe by association, and you shouldn't claim it does. But it moves the conversation from "is AI allowed" to "how are you using it", which is a far better conversation to be in.
+
+Next, GitHub. On Thursday, GitHub Copilot gained the ability to operate desktop applications directly. GitHub's own changelog says Copilot can now read the screen, click, type and scroll inside ordinary graphical apps, the kind that have no API at all. It's in public preview, it works in the Copilot app on Mac and Windows and in the Copilot command-line tool, and you switch it on with a single command. It asks permission before it takes the controls, and organisations can turn it off entirely. Which paid plans include it isn't spelled out yet.
+
+This is the same family of trick as the computer-use features OpenAI rolled into its Agents API at DevDay, which we covered on Wednesday. The difference is where it lives. GitHub is putting it in front of developers who already pay for Copilot, rather than asking anyone to adopt a new platform.
+
+Why you care. Every small business, and every sports club, has at least one piece of software from roughly two thousand and nine that nobody can integrate with. The till system. The membership database. The booking screen at the golf club that only works in one browser. An agent that can drive the screen like a person means those systems are no longer dead ends. The obvious caveat: an agent clicking around a live system can click the wrong thing. Run it against a copy, or a test account, before you let it near anything with money in it.
+
+Third, a follow-up. On Tuesday we flagged that Google is retiring Gemini Gems and replacing them with something called skills. Google's Workspace Updates blog has now published the actual timetable, and it's more specific than what we had then. I read the post itself, dated Wednesday the thirtieth of September.
+
+Skills are reusable instruction sets that you call from inside an ordinary chat, and you can stack several in one prompt. They're written in an open Markdown format, which means, in principle, a skill you write for Gemini isn't trapped in Gemini. The rollout starts in Workspace on the fifth of October for rapid-release domains, and the nineteenth for scheduled release. The Gemini app gets it from the thirteenth. Gems get moved into the settings panel on the seventeenth of November. And the date that matters for businesses: Business and Enterprise Gems stop working entirely on the first of March twenty twenty-seven, at which point they're converted into draft skills automatically.
+
+One caution I only have secondhand. Android Authority reported at the end of September that skills currently need a paid Google AI plan, and Google hasn't said what happens to Gems built by free users. A newsletter also claims Google's Opal tool closes in November, but I couldn't find Google saying so, so park that.
+
+Why you care. If anyone at PlayFundWin or a partner club has built a Gem for brand voice, draw copy, or a standard reply to supporters, it now has an expiry date. Automatic conversion into a "draft" is Google's way of saying "we'll move your furniture, you check nothing broke". Make a list of the Gems you rely on this month, while it's a ten-minute job rather than a March emergency.
+
+Fourth, Base44. The Wix-owned app builder shipped two changes on Thursday, which I read on its changelog. First, anyone inside your workspace now becomes a collaborator on an app simply by opening it, with no invite step. Second, and more useful, there's a new embedding control. You choose whether your app can be placed inside an iframe on anyone's site, only on sites you list, or nowhere at all. Enterprise customers get workspace-wide governance of the same setting. No change to pricing.
+
+Why you care. LeaguePages lives and dies on widgets dropped into other people's websites: fixtures, tables, sponsor boards. If you prototype one of those in Base44, you can now let your own club sites embed it while stopping a competitor from lifting it onto theirs. That's a dull-looking setting with a commercial point. The collaboration change cuts the other way: if your workspace has a few casual members in it, they now get edit access by default. Check who's in there before someone tidies your live app for you.
+
+Fifth, a story you can't use yet, but should watch. Perplexity and American Express announced ten ready-made business skills inside Perplexity Computer on Thursday, and I read Perplexity's post. They cover cash-flow forecasting, tax preparation, reconciliation, marketing campaigns, ad-spend review and hiring. The catch is a large one. It's US only, it needs a US American Express business card, and it needs Perplexity's enterprise plan.
+
+Why you care. Not for the product. For the direction. A card issuer bundling an AI agent that reads your transactions and forecasts your cash is a preview of how small-business finance tools get sold here within a year or two: free with the card, sticky by design. If you ever pitch a finance-flavoured tool to clubs, know that the banks may end up giving away the basic version.
+
+Two quick ones. GitHub also released a research preview called HydraFusion, which splits a single task across several AI models, either in sequence or with one model critiquing another. It's included in existing Copilot plans, with admins needing to switch on previews for business accounts. And Claude Code version two point one point two eight seven, out Thursday, adds what Anthropic calls Claude Mods, letting plugins change deeper behaviour. Both are incremental. Neither is a reason to change anything today.
+
+On the Anthropic share-sale story we've followed since Tuesday: still no public filing. Several reports now float listing dates that contradict each other, and none of them is first-hand, so I'm not repeating any of them until something real appears.
+
+Right. On to the build.
+
+Today's idea is called hybrid mail. You type a letter on a website, pay, and someone else prints it, folds it, stamps it and posts it. That's the whole product. It sounds like a business from nineteen ninety-eight. The revenue says otherwise.
+
+The case study is a UK site called Send Letters Online. It's listed on TrustMRR, which pulls figures straight from a company's Stripe account, so these are not founder boasts. The research pass read the listing on Friday morning, and it was last synced on Wednesday the thirtieth of September.
+
+Here's the line. The site says: type your letter, choose a service, and we'll print, fold, frank and post it via Royal Mail, from two pounds eighty-six. It covers first and second class, Signed For, Special Delivery, tracked services and international post. Orders before half past one go out the same day. There's a bulk tier for businesses sending five hundred or more letters a month, a developer API, and even a page explaining how AI assistants can send letters through it.
+
+It was founded on the fourteenth of May this year. Here's the monthly revenue, in dollars, as Stripe reports it. May, about six hundred and fifty. June, about three thousand four hundred. July, roughly four thousand six hundred. August, nearly five thousand eight hundred. September, about five thousand two hundred. The trailing thirty days show five thousand two hundred and fifty-four dollars, down around six per cent. All-time, just under twenty thousand dollars in four and a half months.
+
+Now the important caveats, because there are several.
+
+One. These are gross figures. Every letter carries Royal Mail postage and printing costs, and the listing publishes no margin. Five thousand dollars of letters is not five thousand dollars of profit. It may be a fraction of it.
+
+Two. The founder is listed only as Ioannis. No surname, no company name on the website. The revenue is verified; the person behind it is thin. I'd normally want a fuller name, so treat this as strong evidence for the market rather than a profile of a founder.
+
+Three. The site has two reviews on Trustpilot. Both are one star, from July and September, both about late letters and poor communication. The replies are defensive. That tells you exactly where this business breaks: not in the software, but in the physical bit at the end.
+
+And four, the counter-evidence, which is the part I'd pay most attention to. Two other UK sites on the same platform do the same thing. One, called PrintPigeon, made about thirty-five thousand dollars all-time and was doing two to two and a half thousand a month from last October to February. Then, from March, it drops to roughly nothing. The listing doesn't say whether that's customers leaving or Stripe being disconnected, so don't read too much into the cliff. Another, called Postage dot TO, charging five ninety-nine a letter, made about two thousand eight hundred dollars in total, peaked in January, and is now listed for sale. And above all of them sit established players like Stannp, Docmail and UK Postbox.
+
+So the honest read is this. People will pay to avoid finding a printer, an envelope and a stamp. A lot of them. The demand is real and it's mostly search-driven: the winning site has almost no social following and a low domain rating, and lives on pages aimed at people writing to HMRC, the DVLA, councils and MPs. But the mechanic is fragile, competitors stall, and margins are thin.
+
+Which is why I wouldn't copy it. I'd point it at a narrower job where the letter itself is the valuable part.
+
+Call it ClubPost. Letters that raise money.
+
+Here's the insight. Grassroots clubs still win sponsors on paper. The local builder, the estate agent, the curry house on the high street: they get a hundred emails a week and roughly no well-written letters. A letter with a club crest, a specific ask and a named contact gets opened. And the people who still respond best to post, older supporters and lapsed members, are exactly the ones who never see a club's Instagram.
+
+The product. A club secretary logs in and picks a template. Sponsorship ask to local businesses. Thank-you letter to a prize sponsor. Membership renewal or subs reminder. Draw winner notification. They type in three or four facts: what the sponsor gets, what it costs, what the money pays for. Claude drafts the letter in a plain, local voice, adds the club crest and a QR code pointing to the club's PlayFundWin draw page or sponsorship form. The secretary approves it, uploads a short list of addresses, and a print-and-post service does the physical part.
+
+The build, step by step. A Next.js or Lovable front end with Stripe Checkout. A single Claude prompt per template, with strict instructions to stay under one page and never invent facts about the club. A PDF generator that lays out the crest, letter body and QR code. And the bit you don't build: printing and posting. Several UK print-and-post firms, Stannp among them, offer APIs. Check their current prices and service levels before you commit, because that partner is your reputation. No printers, no franking machine, no envelopes in your garage. Domain, hosting and API credits, comfortably under five hundred pounds to launch. Claude can write most of this in a few days. The part that takes longer is choosing a print partner you trust.
+
+Now the money, and I want to be careful here, because this is my arithmetic, not anyone's published figure. Say you sell a pack of ten sponsor letters, written, printed and posted, for thirty-nine pounds. Suppose print and postage take roughly half of that, and you need to confirm the real cost with a quote. You'd keep something like twenty pounds a pack. Twenty clubs buying a pack a month is about four hundred pounds a month. That's a side stream, not a company.
+
+But look at it from the club's side and the maths changes. If one letter in ten lands a local sponsor at, say, two hundred and fifty pounds for the season, the club has turned thirty-nine pounds into two hundred and fifty. That's the sentence you sell with. Not "we post letters", but "we find you sponsors by post". And that's why it belongs inside PlayFundWin rather than standing alone: a sponsor who funds the draw prize is the most valuable letter a club will ever send.
+
+The risks, in order.
+
+Delivery is your brand. The winning case study's only reviews are about late post. If a club's letters arrive a week after the draw closes, you're the villain, not Royal Mail. Pick the partner carefully and show tracking where you can.
+
+Margins are thin and postage only goes one direction. Price in packs, not per letter, so a stamp rise doesn't wipe you out.
+
+Data. Business addresses are low-risk. Supporter addresses are personal data. The club is the controller, you're the processor, and you need a simple processing agreement and a clean way to honour anyone who asks not to be written to. Addressed fundraising mail also sits under the Fundraising Code, so keep the tone honest and the opt-out obvious.
+
+And the AI risk: a letter that confidently promises a sponsor something the club can't deliver. The fix is boring and effective. The secretary signs off every letter. Nothing goes in the post unapproved.
+
+Your edge, Steve, is distribution. PlayFundWin already sits with clubs at the exact moment they need money and prizes. LeaguePages can offer it to every club in a league at once. And the same pipe works for EV-Partnerships: a properly posted introduction letter to club secretaries is more likely to reach the person who signs off a charger than a cold email to an info address.
+
+Three runner-ups, briefly, all with Stripe-verified figures read on Friday.
+
+Play Designer Pro, built by Aaron Butler in the UK. A play-design tool for American football that automatically turns a team's playbook into quizzes, so players learn it on their phones. About five thousand six hundred dollars of monthly recurring revenue from two hundred and fifty subscribers, climbing steeply since last November. The strongest numbers of the day. I didn't pick it because it sits a little close to the coach session planner we covered last week. But rugby lineout calls or netball centre-pass plays as a phone quiz is a thought.
+
+Santa's Whisper, by Kyle Greig, also UK. Personalised Santa videos naming a child and their achievements, under ten minutes to deliver, seven ninety-nine each. About two thousand three hundred dollars all-time, nearly all of it last December, and nothing since. It's listed for sale. Small, seasonal, and timely if a club wanted a Christmas fundraiser, but six weeks a year is a hobby.
+
+And QuizWhizzer, by Tim Bartrum, UK, running since twenty nineteen. Game-style live quizzes, mainly for teachers. Over a hundred and twenty thousand dollars all-time, but only around seven hundred dollars a month now, and listed for sale. A clubhouse quiz-night version is easy to imagine, but Leeds-based KwizzBit says it's already in more than a hundred and fifty Greene King pubs.
+
+Now, what all this means for your three businesses.
+
+PlayFundWin first.
+
+The Gambling Commission's new fee schedule took effect on Thursday the first of October. I have this via LexisNexis's write-up of the government's consultation outcome, published back in July. Most licence fees went up by twenty-five per cent. Society lottery fees were frozen, and the stated reason was to protect returns to good causes. For any partner club or charity that also runs a Commission-licensed society lottery alongside its PlayFundWin draws, that's one cost that didn't move. The wider signal is more useful than the saving: government is still, in its own words, choosing to protect good-cause lotteries when it raises everything else.
+
+Second, a funding pot your clubs should hear about from you before they hear it from someone else. Flutter, the owner of Paddy Power and Betfair, opened its Cash4Clubs fund on the first of October. Trade outlet SBC News reported it on the twenty-fifth of September. It's a five hundred thousand pound fund, delivered by the charity Sported, with two-thousand-pound grants plus five larger grants of ten thousand pounds, open to grassroots clubs across the UK and Ireland. Over seven million pounds has gone out since two thousand and eight. One site gives a December closing date, but it mixes in last year's details, so check the official page before you quote it to anyone.
+
+Two angles. Practically, a PlayFundWin club that applies for a two-thousand-pound grant and runs a draw at the same time has stacked two income lines for one effort, and ClubPost could write the application covering letter. Strategically, betting-company money is now a direct rival to your draws for a club's fundraising attention. Help clubs use both, rather than pretending it isn't there.
+
+On the regulatory threads, nothing moved. The Fundraising Regulator's threshold work is still pencilled for early next year and the DCMS prize draw code's signatory list hasn't changed since September the first. Same reason as ever to keep half an eye on it: it's the rehearsal for whatever becomes mandatory.
+
+And one AI tie-in. If your team has Gems doing draw copy or supporter replies, that March twenty twenty-seven cut-off from Google applies to you. List them now.
+
+LeaguePages next. A quiet day in grassroots sports tech. The research pass found nothing new from Sport England, England Football, Spond or TeamApp. Pitchero's latest newsletter adds one minor feature: its social cards will soon share through any app on a phone. That's a competitor polishing the match-day graphic, which tells you where clubs' attention is. The two pieces that matter for you today come from the news section. The Base44 embedding control, if you're prototyping widgets for club sites. And GitHub's desktop-app agent, if you've ever been asked to pull data out of a league's ancient registration system that doesn't export anything. One test on a copy of that system would tell you whether the old wall has come down.
+
+Now EV-Partnerships, and for once the national operators have given us an actual finding rather than a non-event.
+
+RAW Charging has partnered with Sunderland AFC to build a twenty-bay ultra-rapid hub at the Stadium of Light. Football Stadium Management published the announcement on the thirtieth of September, and Zapmap covered it on the first of October. Sixteen bays at a hundred and fifty kilowatts, four at three hundred, on renewable electricity, billed as the largest hub in the North East. RAW funds it, runs it and maintains it. The chargers carry the club's own eco branding, and they're open to fans, visitors and the wider community. There's free charging next Thursday and Friday to launch it.
+
+This is the first fresh move by one of the eight national operators at a football club that this show has found since it started watching. Read it carefully, though. It's the operator-funds, club-hosts model, at a professional stadium with a huge car park and a motorway-sized audience. That's a different animal from a clubhouse with a bar and forty parking spaces. It validates the idea that football clubs are charging destinations. It doesn't compete with what EV-Partnerships sells, which is a direct, club-by-club install where the club's bar and cafe drive the dwell time. In your pitch, use Sunderland as proof the category is real, and then explain why your model fits a club that size and theirs doesn't.
+
+The second finding is closer to home, and I'd argue more important. Believ has partnered with Marston's, the pub group, to roll out fully funded charging across its estate. Zapmap reported it on the first of October. Believ pays for and handles everything, from survey to maintenance, and Marston's pays nothing upfront. The charger speeds are matched to how long people stay, a meal or an overnight stay, with at least one accessible bay per site. Marston's already has over five hundred chargers across nearly two hundred sites, and the first new installs are expected late this year.
+
+That is, almost word for word, the community-hub thesis. Charge while you eat and drink. A national operator is now running it across a pub estate. Two consequences. It proves the model your pitch rests on, which you can quote to any club committee that thinks charging belongs on motorways. And it signals that Believ understands hospitality hosts, which means a clubhouse bar is not invisible to them forever. The defence is speed and relationship: you're already in the room at Meridian FC, and the club gets something the operator-funded model may not offer, which is a say in pricing and a share of the income. Write that difference down before a Believ salesperson writes it for you.
+
+One small compliance note. From the first of October, installers working to the Electrotechnical Assessment Specification need a recognised, formally assessed EV charging qualification. My source is a training firm selling the course, so read it with that in mind, but it's an easy question to ask your installer before the next site goes in.
+
+And on the background facts: DfT's charging statistics are still at the August release, and there's no new news on flexible grid connections.
+
+One thing to do today, thirty minutes, no code.
+
+Pick one PlayFundWin partner club with a draw coming up. Open Claude and give it four facts: the club's name, what the next draw raises money for, what a local business gets for sponsoring a prize, and a named contact. Ask for a one-page letter to a local business, plain English, under two hundred and fifty words, no promises the club hasn't made. Then ask for two variants: one for a trades business, one for a pub or restaurant.
+
+Send all three to the club secretary with one question. Would you sign this and post it to five local businesses this week?
+
+If they say yes, you've just tested ClubPost's core promise with five stamps and no software. If they say no, ask why, because their answer is your product spec.
+
+The sixty-second version.
+
+One. Barclays has sixteen thousand staff on Claude and half its developers heading to Claude Code. Use it to change the conversation from "is AI allowed" to "how".
+
+Two. Google Gems become skills. Business Gems stop working on the first of March. List the ones you depend on this month.
+
+Three. GitHub Copilot can now drive desktop apps, and Base44 lets you control who embeds your app. Test the first on a copy, set the second before you share a widget.
+
+Four. Today's build is ClubPost: letters that find sponsors, built on a hybrid-mail model doing over five thousand dollars a month in Stripe-verified sales, with real caveats on margin and delivery.
+
+Five. RAW is building at Sunderland and Believ is funding chargers across Marston's pubs. The community-hub idea is proven; now it has company.
+
+That's Friday. The weekend tends to be thinner for releases, so tomorrow may lean harder on the build. I'll see you then.

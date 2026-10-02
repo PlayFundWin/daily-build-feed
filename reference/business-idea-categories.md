@@ -66,6 +66,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep51 — Bank Statement Converter (PDF bank statement to structured CSV/Excel transaction rows, Angus Cheng; niched as "Club Treasurer" — categorised, balance-reconciled AGM income & expenditure summary for grassroots club treasurers)
 - Ep52 — CheckForm Gymnastics (AI video technique scoring: film one movement, vision model scores it against a rubric, returns deductions + drills; niched as adults-first "Clip and Score" for LeaguePages clubs)
 - Ep53 — Event photo sharing (QR code to no-app guest upload, shared gallery + live slideshow + download-all, one-off per-event fee; TrustMRR "Denis" DE, probably Photo-Space, and SnapTheKnot (Eric Maclean); niched as adults-first "Clubhouse Photo Wall" for presentation/draw nights with AI moderation and sponsor logo)
+- Ep54 — Hybrid mail / print-and-post (type a letter online, service prints, folds, franks and posts it via Royal Mail, pay per letter; Send Letters Online UK, "Ioannis"; niched as "ClubPost" — AI-drafted, secretary-approved sponsor/thank-you/renewal/winner letters with crest + QR to the club's draw, fulfilled via a print-and-post API)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -111,4 +112,9 @@ inconsistent, near Ep40 headshots) — all three appeared as Ep52 runner-ups. Al
 recurring: bltn (weekly church bulletin to web/print/email/SMS/social, Justin Funk —
 MRR vs all-time inconsistent), ThreadRecap (WhatsApp export to summaries/decision logs,
 André Daniel), FixMyExport (restores dates/GPS to Snapchat exports, Kazi Hasan Ali) — all
-three appeared as Ep53 runner-ups.
+three appeared as Ep53 runner-ups. Also now recurring: Play Designer Pro (American
+football play design to auto playbook quizzes, Aaron Butler, UK — strong Stripe-verified
+MRR but near Ep47 coach planner), santaswhisper (personalised Santa videos, Kyle Greig,
+UK — seasonal), QuizWhizzer (live game quizzes for teachers, Tim Bartrum, UK — near Ep20
+quiz) — all three appeared as Ep54 runner-ups. Same-mechanic counter-examples for Ep54:
+PrintPigeon Ltd and Postage.TO (UK hybrid mail, both stalled).

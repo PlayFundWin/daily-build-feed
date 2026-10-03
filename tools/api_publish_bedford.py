@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Publish JT Morning Brief episode files to the repo via the GitHub Git Data API.
+"""Publish JT Debrief episode files to the repo via the GitHub Git Data API.
 
 Mirrors tools/api_publish.py exactly, namespaced under bedford/ for this separate show
-(see RUNBOOK.md's Bedford Town section). Same reason for existing: the runner's git
+(see RUNBOOK.md's JT Debrief section). Same reason for existing: the runner's git
 credential path has proven unreliable, so this uses the Git Data API directly instead
 of `git push`.
 

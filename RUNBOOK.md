@@ -64,7 +64,7 @@ publish commit. `deploy-pages.yml` also exists as a manual-trigger fallback (Act
 Actions → Variables). Unset or anything other than `false` = old behaviour, The Daily
 Build still deploys to Pages. `false` = the `pages` job is skipped, `deploy-pages.yml`
 and `build-bedford-episode.yml` leave The Daily Build's `feed.xml`, `cover.png` and
-`episodes/*.mp3` out of every Pages deploy (JT Morning Brief keeps deploying), and a
+`episodes/*.mp3` out of every Pages deploy (JT Debrief keeps deploying), and a
 missing `DAILY_BUILD_INGEST_SECRET` or a failed ingest POST fails the private-edition
 run, because ingest is then the only route to Dean. Dean flips it only after the
 private feed on deanlynn.com has been confirmed in a podcast app, then runs Deploy

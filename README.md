@@ -9,4 +9,4 @@ The Daily Build — daily AI business audio briefing, in two editions:
 
 Daily procedure: `RUNBOOK.md`. The legacy GitHub Pages feed stays on until the repo
 variable `PUBLISH_PAGES` is set to `false` (see RUNBOOK.md, Architecture).
-Also in this repo: JT Morning Brief (`bedford/`).
+Also in this repo: JT Debrief (`bedford/`).

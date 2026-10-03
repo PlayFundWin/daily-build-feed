@@ -1,5 +1,14 @@
 [
   {
+    "num": 55,
+    "date": "2026-10-03",
+    "title": "Ep 55 \u2014 Anthropic's hundred-million-dollar Claude academy, Lovable apps learn to talk, and the old-photo colouriser doing five thousand a month",
+    "description": "Anthropic launches a $100m Claude Frontier Academy to train 10,000 engineers (London included), Lovable adds live voice conversation to no-code apps, GitHub retires four Copilot models, and Microsoft's Digital Defense Report flags browser extensions harvesting AI chat histories. Plus a deep dive on colorize.cc, the Stripe-verified old-photo colouriser clearing about $5,500 a month, niched as a Club Heritage Wall fundraiser, and a correction: Flutter's Cash4Clubs closes 1 January 2027 but only for adult-only groups.",
+    "file": "ep055.mp3",
+    "bytes": 14573290,
+    "seconds": 1214
+  },
+  {
     "num": 54,
     "date": "2026-10-02",
     "title": "Ep 54 \u2014 Barclays goes big on Claude, Sunderland plugs in, and the letter-posting site doing five thousand a month",
@@ -259,14 +268,5 @@
     "file": "ep026.mp3",
     "bytes": 13919707,
     "seconds": 1160
-  },
-  {
-    "num": 25,
-    "date": "2026-08-31",
-    "title": "Ep 25 \u2014 Anthropic pledges more compute to Cursor as music publishers sue over training data, and the weekend Amazon tool now clearing thirty thousand dollars a month",
-    "description": "Sony Music Publishing and Warner Chappell sue Anthropic over how Claude was trained, an infostealer campaign is hijacking live Claude login sessions without needing a password, and Anthropic's Chief Compute Officer publicly pledges more capacity to Cursor within hours of OpenAI's move to cut it off. Plus a deep dive on Launch Fast, Hasaam Bhatti's forty-eight-hour weekend build that reached thirty thousand dollars a month in Amazon seller-research revenue within ninety days, and why the DCMS National Lottery consultation and the still-unclaimed sports-venue EV-charging gap both remain live threads for PlayFundWin, LeaguePages and EV-Partnerships.",
-    "file": "ep025.mp3",
-    "bytes": 14136628,
-    "seconds": 1178
   }
 ]

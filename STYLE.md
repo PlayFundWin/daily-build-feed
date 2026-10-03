@@ -1,19 +1,54 @@
-# The Daily Build — style guide
+# The Daily Build — style guide (private estate edition)
 
-Listener: Steve, co-founder of PlayFundWin (digital prize-draw fundraising for UK sports
-clubs and charities), LeaguePages.com (grassroots league websites/tools), and
-EV-partnerships.com / energy-partners.co.uk (EV charging as a community hub at
-grassroots sports clubs — small local clubs that already have a bar, restaurant or cafe
-and draw people back regularly, not just a match-day-only play; see RUNBOOK.md step 2C
-for the fuller thesis, corrected 2026-09-16). UK-based.
-Wants to learn fast, build small AI-powered income streams, and sharpen his existing
-businesses.
+Retargeted 2026-09-30 (Dean's decision). This is now Dean's private daily briefing,
+delivered to his private feed on deanlynn.com, not a public show. The public-facing
+version is the separate member edition, "The Daily Build — with Dean Lynn": its rules
+are in `STYLE-MEMBERS.md`, and nothing from this edition's Apply it segment, venture
+detail or sector news may appear in it (the member build fails on
+`members/denylist.txt` if it does).
+
+Listener: Dean Lynn. Repeat founder, building and running ventures since 2005, based in
+Stamford, Lincolnshire. AI-first builder (most of the estate runs on Base44). UK-based.
+Wants to learn fast, spot small AI-powered income streams, and sharpen the estate.
+
+Episodes 1-52 were written for Steve (co-founder of PlayFundWin). Their standing
+corrections in `archive/covered.md` stay valid as facts about the ventures, but the
+show no longer addresses Steve, and on-air framing like "your three businesses" is
+retired.
+
+## Dean's estate (what Apply it covers)
+Confirmed ventures (source: Dean's own estate list, 2026-09-30):
+- **Play Fund Win** — co-founded with Steve Lightfoot. B2B SaaS digital prize-draw
+  fundraising for UK sports clubs, charities and schools; satellites 5050draws and
+  myclubraffle. The Fundraising Regulator / DCMS voluntary code thread lives here.
+- **LeaguePages** — grassroots league and club websites and tools.
+- **Discount Vouchers** — deals and voucher brand; runs branded partner email campaigns.
+- **Sporting Escapes Group** — sports travel and hospitality (F1 Mirador, Golf Holiday
+  Breaks, Football Getaways, Padel Road Trip).
+- **Cherished Group** — luxury hospitality brands (Cherished Wedding Venues, Cherished
+  Retreats). Current commercial focus: confirm with Dean before going deep.
+- **Trusted Media** — digital agency; client website builds, increasingly on Base44.
+- **deanlynn.com** — Dean's AI consultancy: AI-first venture builds, the Vault, and
+  advice on self-management, teal organisations, holacracy and sociocracy for UHNW/HNW
+  individuals, families and family offices. Also home of the member edition.
+
+Not on the estate — do NOT research or cover:
+- **Onyxia** — Dean no longer runs or has this business (Dean, 2026-09-30). Dropped.
+- **EV-Partnerships / energy-partners.co.uk** — Steve's venture, not on Dean's estate
+  list. Dropped from research and Apply it from the first retargeted episode unless
+  Dean adds it back.
+
+Never on air in this edition either: funding status, legal disputes, family, or
+anything financial about the companies beyond what is published. This file and the
+research JSON sit in the repo, so keep venture descriptions at public-website level.
 
 ## Voice and tone
 - Witty, snappy, moves forward. Dry British humour welcome; never wacky, never smug.
-- Second person, direct address ("you"), first person singular for the narrator ("I").
+- Second person, direct address ("you" = Dean), first person singular for the
+  narrator ("I").
 - Short sentences. Vary rhythm. No corporate filler, no "in today's fast-paced world".
 - One well-placed joke beats three forced ones. Understatement over exclamation.
+- Numbers over adjectives: every claim carries a figure, a date or a named source.
 - Confidence flags spoken naturally — vary the actual wording episode to episode, e.g.
   "I only have this from secondary sources," "take this one with a pinch of salt," "I
   read the announcement myself on this one," "this one's corroborated twice over." The
@@ -28,14 +63,19 @@ businesses.
   day. Before finishing a script, scan it for words repeated more than two or three
   times and swap in something else, or cut the word entirely.
 
-## Structure (~3,300 words ≈ 20 min)
+## Structure (~3,800 words ≈ 20 min)
+Pace measured 2026-09-30 from Ep43-52 (script words vs rendered seconds, Kokoro
+bm_daniel at 1.05): mean 194 words per minute, range 189-198. Plan on ~190 wpm. (The
+old "~3,300 words ≈ 20 min" here assumed ~165 wpm and was wrong.)
 1. Cold open: 2-3 punchy sentences on today's best stories, then title + date. (~130 words)
-2. Part one — What shipped: 4-5 dated AI releases/developments from the last 48h,
-   each ending with "why you care". (~850 words)
+2. Part one — What shipped: 4-5 dated AI releases/developments since the last episode,
+   each ending with "why you care". (~950 words)
 3. Part two — The build: ONE business idea, evidence-first (real people, real revenue,
-   with named sources), build steps, honest conservative money maths, risks, and how
-   Steve's existing assets give him an edge. (~1,300 words)
-4. Part three — Apply it: news mapped onto PlayFundWin, LeaguePages, EV-Partnerships. (~700 words)
+   with named sources), build steps, honest conservative money maths, risks, and which
+   part of Dean's estate gives him an edge (distribution, data, an existing
+   audience). (~1,450 words)
+4. Part three — Apply it: news mapped onto the estate. Pick the two to four ventures
+   with a real connection today; never force a line for every venture. (~800 words)
 5. Part four — One action today: a single ≤30-minute concrete action. (~200 words)
 6. Sixty-second recap: five numbered takeaways. (~200 words)
 7. Outro: one line on tomorrow, sign-off. (~60 words)
@@ -57,10 +97,10 @@ template being filled in rather than a person talking.
 - Money/legal caveat once, lightly, in the intro ("research and ideas, not financial advice").
 - No URLs read aloud. Attribute sources by name.
 - Never build an on-air segment that revisits a past build idea to report or ask what
-  happened to it, unless Steve has raised that idea himself first (added 2026-08-27 —
-  Steve doesn't want ideas he hasn't acted on chased or resurfaced; if he likes one,
-  he'll bring it into the chat himself). The Ideas Ledger (see RUNBOOK.md step 7a) is a
-  passive record, not a prompt for on-air follow-up.
+  happened to it, unless Dean has raised that idea himself first (rule set 2026-08-27
+  for Steve; carried over for Dean — if he likes an idea, he'll bring it up himself).
+  The Ideas Ledger (see RUNBOOK.md step 7a) is a passive record, not a prompt for
+  on-air follow-up.
 - Status threads need their "why", not just their status (added 2026-09-16, after Steve
   asked on-air-style why the Fundraising Regulator thread is worth tracking at all).
   When a long-running regulatory or compliance thread gets a script mention, don't
@@ -73,8 +113,9 @@ template being filled in rather than a person talking.
   government will legislate if voluntary self-regulation doesn't work, so staying ahead
   of it is a hedge against a future mandatory regime, not busywork done for the
   regulator's benefit (see reference/fundraising-regulator-notes.md for the full,
-  sourced version of this reasoning). Ep40 carries this explanation once in full; after
-  that, a short callback is enough rather than restating it from scratch.
+  sourced version of this reasoning). Ep40 carries this explanation once in full; the
+  first retargeted episode may give Dean a two-sentence version once, then a short
+  callback is enough.
 
 ## TTS-safe writing (Kokoro reads this aloud verbatim)
 - Write for the ear: numbers as words where natural ("two and a half thousand dollars

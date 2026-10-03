@@ -146,14 +146,24 @@ jobs:
       # Same staging step as build-episode.yml and deploy-pages.yml, and it stages
       # BOTH shows' files every run, not just this one's — see the comment above the
       # equivalent step in build-episode.yml for why.
+      #
+      # Exception: when the repo variable PUBLISH_PAGES is 'false', The Daily Build
+      # (feed.xml, cover.png, episodes/*.mp3) is private and is left OUT of the
+      # staged site, so this deploy removes it from Pages and serves Bedford only.
       - name: Stage Pages site
         if: steps.check.outputs.found == 'true'
+        env:
+          PUBLISH_PAGES: ${{ vars.PUBLISH_PAGES }}
         run: |
           set -ex
           mkdir -p _site/episodes _site/bedford/episodes
-          cp feed.xml _site/
-          [ -f cover.png ] && cp cover.png _site/ || true
-          cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          if [ "$PUBLISH_PAGES" != "false" ]; then
+            cp feed.xml _site/
+            [ -f cover.png ] && cp cover.png _site/ || true
+            cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          else
+            echo "PUBLISH_PAGES=false - The Daily Build is not staged on Pages."
+          fi
           [ -f bedford/feed.xml ] && cp bedford/feed.xml _site/bedford/ || true
           [ -f bedford/cover.png ] && cp bedford/cover.png _site/bedford/ || true
           cp bedford/episodes/*.mp3 _site/bedford/episodes/ 2>/dev/null || true

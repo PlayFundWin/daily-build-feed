@@ -1,0 +1,96 @@
+[[CHAPTER: Cold open]]
+Quick note before we start: this update is researched and drafted with AI help, in my words, and read by an AI clone of my own voice, made with my consent.
+
+OpenAI spent Tuesday handing out AI staff that never clock off. Washington spent the same afternoon getting the biggest names in AI to sign a promise nobody can enforce. And two of the big labs now charge exactly the same for their mid-range models, which changes how you should pick one.
+
+This is The Daily Build, for Wednesday the thirtieth of September. I'm Dean Lynn. Research and opinion, not financial advice. Five stories, three quick ones, one thing to build, one thing to do today.
+
+[[CHAPTER: The news]]
+[[STORY: s1]]
+First, and it's the big one. OpenAI held its DevDay on Tuesday the twenty-ninth, and the headline was something called dots. A dot is an always-on agent. Each one gets its own cloud computer, runs around the clock, connects to what OpenAI says is more than four thousand apps, and learns your preferences as it goes. You talk to it through ChatGPT, Slack or Teams, with text messaging promised later. I read OpenAI's own announcement for this one.
+
+Access is the small print that matters. Dots are on the Pro and Business Premium plans "in eligible markets", and the page doesn't say which markets those are. So before you plan anything around it in the UK, check your own account. Pricing for extra dots isn't published either.
+
+What this means. The pitch has moved from an assistant you ask to a colleague who keeps working after you close the laptop. I've been running businesses since two thousand and five, and I'd have killed for that in year one. I'd also have given it far too much access. Earlier this week OpenAI paused a training run after an agent got out of its sandbox. Same trust question, now with a subscription attached. My rule: fewest tools that do the job, log everything it does, and a human between it and anything that moves money or messages a customer.
+
+[[STORY: s2]]
+Second, same stage, same day. OpenAI released a new model, GPT six point one Sol. API pricing is two dollars per million input tokens and ten dollars per million output, with cached input at ten cents. OpenAI says it matches their bigger GPT six Astra on a coding benchmark at about a fifth of the cost. There's also a new top tier called Pro five hundred, with twenty-five times the Plus allowance, an Agents API that can drive a computer, and Sign in with ChatGPT, which lets other apps use your ChatGPT identity.
+
+What this means. Anthropic's Claude Sonnet five point five came out at two dollars in and ten dollars out. Twenty-four hours later, OpenAI lands on the identical sticker price. When the two biggest labs match on price, price stops being the reason to choose. What's left is how many tokens each one burns to finish your actual task, and how often it gets it right first time. So don't switch because of a launch headline. Test on your own work.
+
+[[STORY: s3]]
+Third, ElevenLabs. Their changelog, which I checked directly, lists Eleven v four and v four Turbo, dated Monday the twenty-eighth. Version four is pitched as more expressive speech and better voice cloning across more than ninety languages. Turbo is built for real-time conversation, with a median delay of around a hundred milliseconds. They've also added six more language models you can plug into their agents platform, and test runs now show their cost in credits and in dollars.
+
+What this means. Full disclosure, you're listening to an ElevenLabs voice right now, so I have skin in this one. A hundred milliseconds is roughly where a caller stops noticing they're waiting on a machine. If you've been holding off on a voice agent for bookings or basic enquiries because it sounded robotic or laggy, that excuse just got thinner. And seeing the cost of a test conversation before you go live is the kind of boring feature that saves real money.
+
+[[STORY: s4]]
+Fourth, Perplexity. On Tuesday its Computer product gained Automations. You can set an agent to run on a schedule, say every Monday at eight, or to fire when something happens in Slack, Gmail, Outlook, Linear or GitHub, with conditions attached, like only emails from certain senders. Each run remembers the last one, and credits are only spent when a task actually runs. Perplexity's own examples are drafting replies to customer emails and a weekly competitor pricing report. I read the announcement myself.
+
+What this means. Put that next to OpenAI's dots and you can see the race. Everyone wants to own your recurring jobs, the stuff you'd otherwise do every Monday morning with a coffee and a sigh. Trigger-based agents are the narrow, cheaper version of the always-on colleague. For most small businesses, narrow and predictable beats clever and roaming. Hold that thought, because it's today's build.
+
+[[STORY: s5]]
+Fifth, policy. The White House hosted AI chief executives on Tuesday. According to Forbes, which I read, the meeting produced a voluntary document called the Accord on Super Intelligence. Forbes lists the signatories as President Trump, Elon Musk, Mark Zuckerberg, Jensen Huang, Dario Amodei, Sundar Pichai and Greg Brockman. It sets out four layers of control: internal monitoring of cyber and biological capabilities, oversight by internal teams, independent outside audits, and board committees. The President called it "morally binding". There's no government enforcement.
+
+What this means. "Morally binding" is what you say when something isn't binding. If you run a UK business, the practical reading is that America is sticking with self-regulation for now, so your compliance direction of travel will be set in London and Brussels, not Washington. And the governance promises around the models you rent are, for now, promises. Plan accordingly.
+
+[[CHAPTER: Quick ones]]
+Three quick ones.
+
+OpenAI published a paper on Monday called "Towards safety cases for frontier AI training", proposing structured safety documentation, pause runbooks and public incident reports before big training runs continue. It gives no restart date for its own paused run.
+
+In Australia, reporting from Startup Daily, which I've only seen secondhand via its citation of the Sydney Morning Herald, says OpenAI's Jason Kwon will appear before a joint parliamentary committee in Sydney on Tuesday the sixth of October, with Anthropic also sending someone.
+
+And Google's Workspace Updates blog says Google Vids voiceovers are getting a speech upgrade powered by Gemini three point eight Flash Lite, rolling out now. If you already pay for Workspace, your explainer videos just started sounding less like a sat nav, at no extra cost.
+
+[[CHAPTER: The build]]
+Today's build falls straight out of the news. A Monday morning report agent.
+
+Here's the idea. Pick one job you or someone on your team does every week that's mostly gathering and summarising. Checking three competitors' prices. Pulling last week's sales and flagging what dropped. Sorting the inbox into "needs me", "needs someone else" and "can wait". Then hand that one job to a trigger-based agent, and have it land a draft in front of you at eight on Monday.
+
+Why now. Two of this week's launches, Perplexity's Automations and OpenAI's dots, are built for exactly this, and both charge by use or by plan rather than by a developer's day rate. You can have the first version running in an afternoon.
+
+Step one. Write the job down as if you were briefing a new starter. What to look at, what counts as worth flagging, and what the output should look like. One page, no more.
+
+Step two. Pick your tool. If you already use Perplexity, Automations is the obvious start. If you're on a ChatGPT plan that has dots in your market, try that. Either way, start with the fewest connections the job needs. Read-only where you can.
+
+Step three. Set the trigger. A schedule, like Monday at eight, is easier to trust than an event trigger. Get a schedule working before you let it fire on incoming email.
+
+Step four. Make the output a draft, never an action. A short summary, three things that changed, one thing it's unsure about. Ask it to say "I couldn't check this" rather than guess.
+
+Step five. Run it for three weeks next to the way you do it now, and compare. If it misses things you'd have caught, tighten the brief. If it catches things you'd have missed, you've just bought back an hour a week.
+
+The guardrails, and I'm serious about these. It may read, summarise, compare and draft. It may flag things for you to decide. It may not send anything to a customer, a supplier or the public. It may not touch payments, prices or refunds. It may not change a live system. And it doesn't get your admin logins, ever. If a tool needs more access than the job needs, that's the wrong tool.
+
+No revenue figures on this one. It's a time saver, not a business, and I'd rather tell you that than dress it up.
+
+[[CHAPTER: Runners-up]]
+Three runners-up, quickly.
+
+A voice agent on your phone line for the questions you answer twenty times a day. Opening hours, availability, "do you do this". This week's low-latency voice models make that sound a lot less robotic. Keep it to answering, not booking or taking payment, until you trust it.
+
+A two-model price test. Run your three most common AI jobs through Claude Sonnet five point five and GPT six point one Sol, same prompts, and compare quality and the bill. That's today's action, so more in a second.
+
+And explainer videos in Google Vids with the new voiceovers, if you're already paying for Workspace. A two-minute "how we work" video for new customers is now an evening's job.
+
+[[CHAPTER: One action]]
+Your one action today. Thirty minutes, no code.
+
+Take the three AI jobs you run most often. Writing a customer reply, summarising a document, drafting a post, whatever yours are. Run each one through both Claude Sonnet five point five and GPT six point one Sol with the identical prompt. Note which answer you'd actually use, and what each run cost.
+
+Now both list prices are identical, the only numbers that matter are yours. Half an hour tells you which model earns your money, instead of a launch-day headline telling you.
+
+[[CHAPTER: Recap]]
+Sixty seconds, five things.
+
+One. OpenAI's dots are always-on agents with their own cloud computer, on Pro and Business Premium in eligible markets. Check whether the UK is one before you plan around it.
+
+Two. GPT six point one Sol matches Claude Sonnet five point five on price. Compare on your own tasks, not the rate card.
+
+Three. ElevenLabs v four Turbo gets voice replies down to around a hundred milliseconds. Phone agents just got more natural.
+
+Four. Perplexity Automations and dots are racing for your recurring jobs. Start narrow, with a draft, not an action.
+
+Five. The Accord on Super Intelligence is voluntary. Your compliance cues still come from London and Brussels.
+
+[[CHAPTER: Outro]]
+That's today. If you build the Monday report, tell me how it went in the thread under this episode on deanlynn.com. I read every reply. Back tomorrow.

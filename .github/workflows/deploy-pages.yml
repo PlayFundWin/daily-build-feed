@@ -31,13 +31,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # When the repo variable PUBLISH_PAGES is 'false', The Daily Build is
+      # private (deanlynn.com ingest) and is left OUT of the site; running this
+      # workflow manually then removes it from Pages and keeps Bedford live.
       - name: Stage site
+        env:
+          PUBLISH_PAGES: ${{ vars.PUBLISH_PAGES }}
         run: |
           set -ex
           mkdir -p _site/episodes _site/bedford/episodes
-          cp feed.xml _site/
-          [ -f cover.png ] && cp cover.png _site/ || true
-          cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          if [ "$PUBLISH_PAGES" != "false" ]; then
+            cp feed.xml _site/
+            [ -f cover.png ] && cp cover.png _site/ || true
+            cp episodes/*.mp3 _site/episodes/ 2>/dev/null || true
+          else
+            echo "PUBLISH_PAGES=false - The Daily Build is not staged on Pages."
+          fi
           [ -f bedford/feed.xml ] && cp bedford/feed.xml _site/bedford/ || true
           [ -f bedford/cover.png ] && cp bedford/cover.png _site/bedford/ || true
           cp bedford/episodes/*.mp3 _site/bedford/episodes/ 2>/dev/null || true

@@ -1,0 +1,150 @@
+{
+  "_example_note": "SHAPE SAMPLE ONLY. Built from the news section of transcripts/ep052.txt (30 Sep 2026), rewritten in Dean's voice; build idea and runners-up are derived from that news, not from agent B revenue research. Source URLs are null because ep052 names its sources but does not record URLs; on live runs every url comes from research/YYYY-MM-DD.json. The .example suffix keeps build-member-edition.yml from firing. Delete this key in real files.",
+  "num": 53,
+  "date": "2026-09-30",
+  "title": "Always-on agents, matching price tags, and a promise nobody enforces",
+  "description": "OpenAI launched always-on agents and a new model priced the same as Claude Sonnet five point five, ElevenLabs and Perplexity shipped, and Washington signed a voluntary AI accord. Today's build: a Monday morning report agent with hard guardrails.",
+  "slug": "2026-09-30-always-on-agents-matching-prices",
+  "dek": "OpenAI's dots, a price tie between the two biggest labs, faster voice, and a Monday report agent you can set up this afternoon.",
+  "cold_open": "OpenAI spent Tuesday handing out AI staff that never clock off. Washington spent the same afternoon getting the biggest names in AI to sign a promise nobody can enforce. And two of the big labs now charge exactly the same for their mid-range models, which changes how you should pick one.",
+  "chapters": [
+    {"title": "Cold open", "start_s": null},
+    {"title": "The news", "start_s": null},
+    {"title": "Quick ones", "start_s": null},
+    {"title": "The build", "start_s": null},
+    {"title": "Runners-up", "start_s": null},
+    {"title": "One action", "start_s": null},
+    {"title": "Recap", "start_s": null},
+    {"title": "Outro", "start_s": null}
+  ],
+  "stories": [
+    {
+      "id": "s1",
+      "tag": "Agents",
+      "headline": "OpenAI launches dots, always-on agents with their own cloud computer",
+      "short": "Announced at DevDay on 29 September for Pro and Business Premium plans in unnamed 'eligible markets'.",
+      "facts": [
+        "Each dot runs around the clock on its own cloud computer",
+        "OpenAI says more than four thousand app connections",
+        "Reached through ChatGPT, Slack or Teams; text messaging listed as coming later",
+        "Pro and Business Premium plans, 'in eligible markets' (markets not listed)",
+        "Enterprise, education and healthcare get a beta if their admin enables it",
+        "Pricing for extra dots not published"
+      ],
+      "what_it_means": "The pitch has moved from an assistant you ask to a colleague that keeps working. Give it the fewest tools that do the job, log what it does, and keep a human between it and money or customers. Check UK availability in your own account first.",
+      "confidence": "confirmed",
+      "sources": [{"name": "OpenAI announcement and DevDay recap", "url": null}],
+      "start_s": null
+    },
+    {
+      "id": "s2",
+      "tag": "Models",
+      "headline": "GPT six point one Sol lands at the same price as Claude Sonnet five point five",
+      "short": "Two dollars per million input tokens, ten per million output, cached input ten cents.",
+      "facts": [
+        "API: two dollars per million input tokens, ten dollars per million output, cached input ten cents",
+        "OpenAI says it matches GPT six Astra on a coding benchmark at about a fifth of the cost",
+        "Available across the API and paid ChatGPT plans",
+        "Also launched: Pro five hundred tier (twenty-five times the Plus allowance), an Agents API that can drive a computer, and Sign in with ChatGPT"
+      ],
+      "what_it_means": "With the two biggest labs on the same sticker price, price stops being the reason to choose. Compare token use and first-time accuracy on your own tasks.",
+      "confidence": "confirmed",
+      "sources": [{"name": "OpenAI announcement", "url": null}],
+      "start_s": null
+    },
+    {
+      "id": "s3",
+      "tag": "Voice",
+      "headline": "ElevenLabs ships Eleven v four and v four Turbo",
+      "short": "More expressive speech and better cloning; Turbo aims at real-time conversation at around a hundred milliseconds median latency.",
+      "facts": [
+        "Changelog dated Monday 28 September",
+        "v four: more expressive speech, better voice cloning, more than ninety languages",
+        "v four Turbo: median latency around a hundred milliseconds",
+        "Six more language models added to the agents platform",
+        "Test runs now show cost in credits and in dollars"
+      ],
+      "what_it_means": "Phone and booking voice agents just got more natural. Seeing the cost of a test conversation before going live saves real money.",
+      "confidence": "confirmed",
+      "sources": [{"name": "ElevenLabs changelog", "url": null}],
+      "start_s": null
+    },
+    {
+      "id": "s4",
+      "tag": "Automation",
+      "headline": "Perplexity Computer gets scheduled and triggered Automations",
+      "short": "Agents can run on a schedule or fire on events in Slack, Gmail, Outlook, Linear or GitHub, with conditions.",
+      "facts": [
+        "Launched Tuesday 29 September",
+        "Schedule or event triggers, with conditions such as specific senders",
+        "Each run remembers the previous one",
+        "Credits spent only when a task runs",
+        "Perplexity's examples: drafting customer email replies, weekly competitor pricing report"
+      ],
+      "what_it_means": "Everyone wants to own your recurring jobs. Narrow and predictable beats clever and roaming for most small businesses. Start with a draft, not an action.",
+      "confidence": "confirmed",
+      "sources": [{"name": "Perplexity announcement", "url": null}],
+      "start_s": null
+    },
+    {
+      "id": "s5",
+      "tag": "Policy",
+      "headline": "White House AI meeting produces a voluntary Accord on Super Intelligence",
+      "short": "Forbes reports four layers of control and no government enforcement; the President called it 'morally binding'.",
+      "facts": [
+        "Signatories per Forbes: President Trump, Elon Musk, Mark Zuckerberg, Jensen Huang, Dario Amodei, Sundar Pichai, Greg Brockman",
+        "Four layers: internal monitoring of cyber and biological capabilities, internal team oversight, independent outside audits, board committee oversight",
+        "No government enforcement; text says it 'may make sense to codify' later"
+      ],
+      "what_it_means": "The US is sticking with self-regulation for now. UK businesses should take compliance cues from London and Brussels, and treat vendor governance promises as promises.",
+      "confidence": "reported",
+      "sources": [{"name": "Forbes", "url": null}],
+      "start_s": null
+    }
+  ],
+  "quick_ones": [
+    {"headline": "OpenAI paper 'Towards safety cases for frontier AI training' proposes safety documentation, pause runbooks and public incident reports; no restart date for its paused run", "url": null},
+    {"headline": "Startup Daily, citing the Sydney Morning Herald: OpenAI's Jason Kwon to appear before an Australian parliamentary committee on 6 October, Anthropic also attending (secondhand)", "url": null},
+    {"headline": "Google Vids voiceovers upgraded with Gemini three point eight Flash Lite, rolling out to Workspace plans at no extra cost", "url": null}
+  ],
+  "build": {
+    "title": "A Monday morning report agent",
+    "why_now": "Perplexity Automations and OpenAI's dots both launched this week for exactly this kind of scheduled, recurring job, priced by use or plan rather than a developer's day rate.",
+    "steps": [
+      "Write the job down as a one-page brief for a new starter: what to look at, what is worth flagging, what the output looks like.",
+      "Pick the tool you already pay for (Perplexity Automations, or dots if your plan and market have them) and connect only what the job needs, read-only where possible.",
+      "Set a schedule trigger (for example Monday 08:00) before trying event triggers.",
+      "Make the output a draft: short summary, three changes, one thing it could not check.",
+      "Run it for three weeks alongside the manual version and compare; tighten the brief where it misses things."
+    ],
+    "may": [
+      "Read, summarise and compare",
+      "Draft a report or reply for you to review",
+      "Flag items for a human decision"
+    ],
+    "may_not": [
+      "Send anything to a customer, supplier or the public",
+      "Touch payments, prices or refunds",
+      "Change a live system",
+      "Hold admin logins"
+    ]
+  },
+  "vault_extras": {
+    "build_pack_md": "# Monday morning report agent - build pack\n\n## Brief template\n- Job: \n- Sources to check (read-only): \n- Worth flagging when: \n- Output: summary (5 lines), three changes, one thing you could not check\n\n## Trigger\nSchedule first (Monday 08:00). Event triggers only after three clean weeks.\n\n## Guardrails\nMay: read, summarise, compare, draft, flag.\nMay not: send, pay, refund, change prices, change live systems, hold admin logins.\n\n## Three-week comparison log\n| Week | Agent caught | Agent missed | Time saved |\n|---|---|---|---|\n",
+    "prompts": [
+      {
+        "title": "Monday report agent - core instruction",
+        "body": "Every Monday at 08:00, check the sources listed in the brief. Produce a draft only: a five-line summary, the three most important changes since last week, and one thing you could not check (say 'I couldn't check this' rather than guess). Do not send, publish, change or buy anything."
+      },
+      {
+        "title": "Two-model price test",
+        "body": "I will give you the same task twice, once per model. Score each answer 1-5 for 'would I use this as-is', note the token count and cost of each run, and tell me which model to use for this task and why, in two sentences."
+      }
+    ]
+  },
+  "poll": {
+    "question": "Would you let an always-on agent send anything without your sign-off?",
+    "options": ["Never", "Internal messages only", "Low-risk customer replies", "Already do"]
+  },
+  "newsletter_summary": "OpenAI launched dots, always-on agents with their own cloud computer, plus GPT six point one Sol at the same price as Claude Sonnet five point five. ElevenLabs cut voice latency to around a hundred milliseconds, Perplexity added scheduled Automations, and Washington signed a voluntary AI accord. Build of the day: a Monday morning report agent that drafts, never acts. Action: run your top three AI jobs through both models and compare the bill."
+}

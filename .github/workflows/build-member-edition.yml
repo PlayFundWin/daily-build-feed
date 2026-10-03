@@ -1,0 +1,214 @@
+name: Build member edition
+
+# The Daily Build — with Dean Lynn. Renders members/pending/epNNN.txt in Dean's
+# ElevenLabs voice clone (Kokoro fallback, then text-only) and POSTs it to the
+# deanlynn.com ingest function as kind 'member', where it ALWAYS lands as a
+# draft for Dean to approve.
+#
+# Hard rules this workflow enforces:
+#   - denylist gate first: any private-estate term fails the run before any
+#     ElevenLabs characters are spent (tools/denylist_check.py)
+#   - no DAILY_BUILD_INGEST_SECRET, no render: the run fails before any audio
+#     is made, and the pending files stay queued
+#   - member audio is NEVER committed to the repo and NEVER staged on Pages;
+#     it exists only on the runner and in the ingest POST
+#   - only master pushes fire it; *.example.* files in members/pending never do
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'members/pending/**'
+      - '!members/pending/*.example.*'
+  workflow_dispatch:
+
+concurrency:
+  group: build-member-edition
+  # Queue rather than cancel: cancelling mid-render throws away paid ElevenLabs
+  # characters. The queued run finds the queue already cleared and no-ops.
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+
+      - name: Check for pending member episode
+        id: check
+        run: |
+          shopt -s nullglob
+          found=""
+          for f in members/pending/ep*.txt; do
+            name=$(basename "$f")
+            if [[ "$name" =~ ^ep[0-9]{3}\.txt$ ]]; then found="$f"; break; fi
+          done
+          if [ -z "$found" ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "No pending member script. Nothing to do."
+            exit 0
+          fi
+          base=$(basename "$found" .txt)
+          if [ ! -f "members/pending/$base.json" ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "::notice::$found is queued but members/pending/$base.json has not landed yet. The JSON commit will trigger the real run."
+            exit 0
+          fi
+          if [ -f "members/published/$base.json" ]; then
+            echo "::error::members/published/$base.json already exists - refusing to post member $base twice. Renumber or remove the pending files."
+            exit 1
+          fi
+          echo "found=true" >> $GITHUB_OUTPUT
+          echo "base=$base" >> $GITHUB_OUTPUT
+          echo "script=$found" >> $GITHUB_OUTPUT
+          echo "meta=members/pending/$base.json" >> $GITHUB_OUTPUT
+          wc -w "$found"
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.found == 'true'
+        with:
+          python-version: '3.11'
+
+      - name: Denylist gate
+        if: steps.check.outputs.found == 'true'
+        run: python3 tools/denylist_check.py "${{ steps.check.outputs.script }}" "${{ steps.check.outputs.meta }}"
+
+      # Fail before any audio is made (and before any ElevenLabs characters are
+      # spent) if there is nowhere to post the result. The pending files stay put.
+      - name: Check ingest secret
+        if: steps.check.outputs.found == 'true'
+        env:
+          DAILY_BUILD_INGEST_SECRET: ${{ secrets.DAILY_BUILD_INGEST_SECRET }}
+        run: |
+          if [ -z "$DAILY_BUILD_INGEST_SECRET" ]; then
+            echo "::error::DAILY_BUILD_INGEST_SECRET is not set - nothing to post the member edition to. Not rendering."
+            exit 1
+          fi
+
+      - name: Chunk plan
+        if: steps.check.outputs.found == 'true'
+        run: python3 tools/render_elevenlabs.py --plan --engine elevenlabs --script "${{ steps.check.outputs.script }}" --meta "${{ steps.check.outputs.meta }}" --out-dir build/plan
+
+      - name: Install system packages
+        if: steps.check.outputs.found == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Cache Whisper model
+        if: steps.check.outputs.found == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-tiny-en-v1
+
+      - name: Install python packages (verify)
+        if: steps.check.outputs.found == 'true'
+        run: pip install faster-whisper --quiet
+
+      # ---------------- 1. Dean's voice clone ----------------
+      - name: Render with ElevenLabs clone
+        id: el
+        if: steps.check.outputs.found == 'true'
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_PRON_DICT_ID: ${{ secrets.ELEVENLABS_PRON_DICT_ID }}
+          ELEVENLABS_PRON_DICT_VERSION: ${{ secrets.ELEVENLABS_PRON_DICT_VERSION }}
+        run: |
+          set -e
+          python3 tools/render_elevenlabs.py --engine elevenlabs \
+            --script "${{ steps.check.outputs.script }}" --meta "${{ steps.check.outputs.meta }}" \
+            --out-dir build/el
+
+      - name: Verify clone audio (ASR spot-check)
+        id: vel
+        if: steps.check.outputs.found == 'true' && steps.el.outcome == 'success'
+        continue-on-error: true
+        run: python3 tools/verify_audio.py build/el/member.mp3 build/el/spoken.txt
+
+      # ---------------- 2. Kokoro stand-in ----------------
+      - name: Cache Kokoro model
+        if: steps.check.outputs.found == 'true' && (steps.el.outcome != 'success' || steps.vel.outcome != 'success')
+        uses: actions/cache@v4
+        with:
+          path: |
+            kokoro-v1.0.onnx
+            voices-v1.0.bin
+          key: kokoro-model-v1.0
+
+      - name: Render with Kokoro fallback
+        id: ko
+        if: steps.check.outputs.found == 'true' && (steps.el.outcome != 'success' || steps.vel.outcome != 'success')
+        continue-on-error: true
+        run: |
+          set -e
+          echo "::warning::Clone render or its audio check failed - falling back to Kokoro with the stand-in disclosure."
+          sudo apt-get install -y -qq espeak-ng
+          pip install kokoro-onnx soundfile numpy --quiet
+          [ -f kokoro-v1.0.onnx ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f voices-v1.0.bin ] || curl -sL --retry 3 -O https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          python3 tools/render_elevenlabs.py --engine kokoro \
+            --script "${{ steps.check.outputs.script }}" --meta "${{ steps.check.outputs.meta }}" \
+            --out-dir build/ko
+          python3 tools/verify_audio.py build/ko/member.mp3 build/ko/spoken.txt
+
+      # ---------------- 3. decide ----------------
+      - name: Choose narration
+        id: pick
+        if: steps.check.outputs.found == 'true'
+        run: |
+          set -e
+          if [ "${{ steps.el.outcome }}" = "success" ] && [ "${{ steps.vel.outcome }}" = "success" ]; then
+            dir=build/el; audio=true
+            echo "Narration: ElevenLabs clone"
+          elif [ "${{ steps.ko.outcome }}" = "success" ]; then
+            dir=build/ko; audio=true
+            echo "::warning::Narration: Kokoro stand-in (fallback line spoken)"
+          else
+            python3 tools/render_elevenlabs.py --engine text-only \
+              --script "${{ steps.check.outputs.script }}" --meta "${{ steps.check.outputs.meta }}" \
+              --out-dir build/text
+            dir=build/text; audio=false
+            echo "::warning::Narration: TEXT ONLY - both audio engines failed"
+          fi
+          echo "dir=$dir" >> $GITHUB_OUTPUT
+          echo "audio=$audio" >> $GITHUB_OUTPUT
+          cat "$dir/render.json"
+
+      # ---------------- 4. post as draft ----------------
+      - name: Post to deanlynn.com ingest (kind member, lands as draft)
+        if: steps.check.outputs.found == 'true'
+        env:
+          DAILY_BUILD_INGEST_SECRET: ${{ secrets.DAILY_BUILD_INGEST_SECRET }}
+          INGEST_MAX_INLINE_MB: ${{ vars.INGEST_MAX_INLINE_MB }}
+        run: |
+          set -e
+          dir="${{ steps.pick.outputs.dir }}"
+          audio_args=()
+          if [ "${{ steps.pick.outputs.audio }}" = "true" ]; then audio_args=(--audio "$dir/member.mp3"); fi
+          python3 tools/ingest_post.py --kind member \
+            --meta "${{ steps.check.outputs.meta }}" \
+            --transcript "$dir/transcript.txt" \
+            --render "$dir/render.json" \
+            "${audio_args[@]}"
+
+      - name: Archive member text and clear the queue
+        if: steps.check.outputs.found == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/member_archive.py "${{ steps.check.outputs.base }}" "${{ steps.pick.outputs.dir }}/render.json"
+
+      - name: Report
+        if: steps.check.outputs.found == 'true'
+        run: |
+          echo "Member ${{ steps.check.outputs.base }} posted to deanlynn.com as a DRAFT - Dean approves it there."
+          rm -rf build

@@ -405,170 +405,170 @@ Runs on a budget model by design. Three research subagents maximum plus at most 
 verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
 daily episode.
 
-# JT Morning Brief — daily production runbook
+# JT Debrief — production runbook
 
-A second, separate show in this same repo, for James (assistant manager, Bedford Town
-FC) rather than Steve. Different listener, different content rules, different
-namespace — everything for this show lives under `bedford/`. Read `STYLE.md`'s Bedford
-Town section (below the Daily Build style guide in that same file), not the Daily Build
-section, before writing a script for this show. Renamed from "The Bedford Town
-Briefing" to "JT Morning Brief" 2026-09-11, at Steve's request — see Process log below.
+Renamed and restructured from "JT Morning Brief" 2026-10-03, at Steve's direction —
+see the Process log below for the full reasoning. Still the second, separate show in
+this same repo for James (assistant manager, Bedford Town FC) rather than Steve; still
+lives entirely under `bedford/`, with the same feed, the same episode numbering, and
+the same session/Actions split as before (see the Architecture section at the top of
+this file). What changed is the trigger and the content, not the plumbing: this show
+no longer runs daily and no longer covers team news or the wider divisional picture.
+It is event-triggered — it exists to turn a scouting data file Steve uploads (a
+Wyscout/Hudl-style team report on Bedford Town's next opponent so far, or similar)
+into a plain-language breakdown of that opponent for the coaching staff, plus whatever
+supplementary research confirms, extends, or dates that data. Read STYLE.md's JT
+Debrief section (same location in that file, below the Daily Build style guide), not
+the old Bedford Town section, before writing a script for this show.
 
-Feed: https://playfundwin.github.io/daily-build-feed/bedford/feed.xml
+Feed: https://playfundwin.github.io/daily-build-feed/bedford/feed.xml (unchanged)
 Workflow: `.github/workflows/build-bedford-episode.yml`, triggered on push to
-`bedford/pending/**` (mirrors `build-episode.yml`'s architecture and Git Data API
-publish pattern exactly — see that workflow and the Architecture section above for how
-the two-track session/Actions split works; it isn't repeated here).
+`bedford/pending/**` (unchanged — see the Architecture section above for the two-track
+session/Actions split; not repeated here). This push trigger already IS this show's
+on-demand mechanism — there is no cron involved in producing an episode, and there
+never needs to be again for this show.
 
-James already works for the club — never explain club or pyramid basics he already
-knows. The job of this show is to make him more knowledgeable about the wider
-non-league/National League ecosystem at an insider level than he'd get from Bedford
-Town's own channels alone.
+## Trigger — no schedule
+There is no scheduled task driving this show. The scheduled task that used to fire
+this routine ("JT Morning Brief — daily episode", trig_01B71Nzn5MgvukkokeGNvce8) has
+been disabled, not deleted, 2026-10-03 — deleting it would have ended the very session
+that disabled it, since that scheduled task is what started it (a scheduled task
+cannot delete itself; see its own tool's refusal message if this comes up again).
+Leave it disabled; do not re-enable it and do not create a replacement scheduled task
+for this show without Steve explicitly asking for one. An episode happens only when
+Steve uploads a data file for a specific opponent in conversation. Do not build an
+episode from opposition analytics alone without a genuine data file behind it — the
+hard content rule against ever inventing a stat makes the data file a prerequisite,
+not an optional nice-to-have.
 
 ## League tiers — reconfirm every season, never assume
 As of this show's launch (September 2026), Bedford Town sit in **National League
-North** (Step 2). One tier above is the **National League** (Step 1); one tier below is
-the **Southern League Premier Division Central** (Step 3, the league Bedford Town were
-promoted from). Composition of all three leagues, and Bedford Town's own division,
-changes at the end of every season via promotion/relegation — verify all three are
-still correct at the start of a new season (roughly each June/July) before relying on
-them, rather than carrying last season's structure forward unchecked.
+North** (Step 2). One tier above is the **National League** (Step 1); one tier below
+is the **Southern League Premier Division Central** (Step 3, the league Bedford Town
+were promoted from). Composition of all three leagues, and Bedford Town's own
+division, changes at the end of every season via promotion/relegation — verify all
+three are still correct at the start of a new season (roughly each June/July) before
+relying on them, rather than carrying last season's structure forward unchecked. This
+still matters for this show even though it no longer covers the wider divisional
+picture day to day, because it governs which league table/results source applies to
+whichever team is the current focus.
 
 ## 1. Read the archive
-Read `bedford/archive/covered.md`. Note every story, beat, and quote already covered —
-closing quotes especially must never repeat. Check its "Standing corrections" section
-for anything that overrides earlier episodes. Read `bedford/episodes/episodes.json` for
-the next episode number.
+Read `bedford/archive/covered.md`. Note every opponent, framing, and closing line
+already used — closing quotes especially must never repeat. If this episode's focus
+team has appeared before (a repeat opponent later in the season), reference the
+earlier episode rather than re-covering the same ground from scratch. Check the
+"Standing corrections" section for anything that overrides an earlier episode. Read
+`bedford/episodes/episodes.json` for the next episode number — numbering continues
+from the old show, it does not reset with the rename (same precedent as the
+2026-09-11 "Bedford Town Briefing" to "JT Morning Brief" rename; see the Process log).
 
-## 2. Research — priority order
-Bedford Town's own news always comes first, then the wider National League North
-picture, then the tiers above and below. Tag every claim CONFIRMED (a source page you
-actually read) or SEARCH-ONLY (secondhand/aggregated) — say so naturally in the script,
-varying the phrasing (see STYLE.md). Never invent a result, a scoreline, a table
-position, or a quote; if it can't be confirmed, say so or leave it out.
+## 2. Read the data file
+The uploaded file (a PDF so far — a Wyscout/Hudl-style "Team Report": players and
+player stats, formations, match-by-match breakdowns, defence, build-up, attack,
+finishing, transitions, sustained danger, and set pieces) is this episode's spine.
+Read every page — these reports run long and the useful detail is spread across the
+player-stats tables, the per-match formation/lineup pages, and the zone-by-zone
+duel/defence pages, not just a summary page. Before writing anything else, note
+explicitly:
+- What window the data covers — how many games, against whom, which dates. This show
+  must state that window on air; never let a listener assume "the data" means "the
+  season" when it might mean five games.
+- The team-level aggregate numbers for both the focus team and their opposition across
+  that window — goals, expected goals, possession, pass accuracy, PPDA (passes per
+  defensive action, a pressing-intensity metric — explain it in the script, don't just
+  name it). The gap between goals and expected goals is often the single most useful
+  line in the episode.
+- The individual players producing or conceding the most, by category: shots and
+  expected goals, key passes and expected assists, dribbles, duels won and lost by
+  zone, crosses, set-piece takers.
+- Set-piece patterns: corners and free kicks, who takes them, which side, conversion
+  so far.
+Cross-check anything you plan to state as a specific scoreline, scorer, or table
+position against the research in step 3, same discipline as every other show in this
+repo. Ep 2's Chester FC report checked out exactly against Football Web Pages'
+independent record, including scorers, for its most recent match — a good first data
+point that this report format is reliable, but confirm each time rather than assuming
+that holds forever; a single clean check is not a standing guarantee.
 
-- **Bedford Town**: latest result, current form, league position, and next fixture —
-  plus the selection/injury/quote layer, which is where the show earns its keep:
-  - `x.com/BedfordTown` (the club's official X account) posts a pre-match "Team News"
-    graphic naming the starting XI and bench, and post-match manager reaction, usually
-    as an "EaglesTV" video link. Read the latest posts every run: who started, who
-    dropped out, who came off early, what the manager said. This is first-party and
-    CONFIRMED-grade. Note the hashtags (#COYE, #BeThe12th) for search.
-    Practical caveat: x.com pages rarely render for WebFetch (login/JS wall). Reach
-    the posts through WebSearch instead — e.g. `site:x.com/BedfordTown "Team News"`
-    or `"Bedford Town" #COYE` — the search snippets carry the post text and date.
-    The XI itself is usually in an image, so expect the text to give you the
-    existence and timing of team news plus any named players in the caption or
-    manager quote, not always the full eleven; say "confirmed the club posted team
-    news" rather than list names you couldn't actually read.
-  - Pitchero: read the **match-reports archive** (`.../teams/92750/match-reports`) and
-    the **news** page, not just the fixture list — the written reports carry scorers,
-    subs and the odd injury line the fixture widget doesn't.
-  - NewsNow's Bedford Town filter (`newsnow.co.uk/h/Sport/Football/Non+League/
-    National+League+North/Bedford+Town`) — a live aggregator pre-filtered to this one
-    club. A 30-second scan for anything published since the last episode; treat what
-    it surfaces as SEARCH-ONLY until you've read the underlying page.
-- **National League North — the rundown, then the day-before scan**: first get the
-  full round of results and the table (Football Web Pages' National League North
-  pages, or NonLeagueHQ's — both live and current; pick one, cross-check the other if a
-  number looks odd). Then the day-before scan: which NLN clubs played the day or night
-  before this episode airs, especially Bedford Town's next opponent. Use the same
-  pattern as for Bedford — the opponent's own X account for their team-news graphic and
-  manager reaction, their club site for the match report — for their result and any
-  notable injury news. A key player picked up in that game is scouting-relevant for
-  Bedford Town's staff and is exactly the kind of insider detail this show exists to
-  surface. FotMob or Sofascore's match pages give lineups, substitutions and bookings
-  that club reports often omit — good for "who played, who came off" detail; still
-  confirm the scoreline itself against the club's own report per the rule below.
-  Widen to a few other NLN results/storylines as time allows — The Non-League Football
-  Paper's National League North tag page is the best single place for divisional
-  storylines beyond bare results.
-- **National League (Step 1, above)**: promotion-race and other storylines relevant to
-  the wider picture — this tier doesn't need daily deep coverage, but a notable
-  development is worth a mention. Same tooling: the league's own site plus Football
-  Web Pages for the round of results.
-- **Southern League Premier Division Central (Step 3, below)**: same — Bedford Town's
-  former league, so promotion-race news there is relevant to who might be coming up.
-  Football Web Pages and NonLeagueHQ both carry Step 3 tables and results.
-- **TheFA.com**: check directly for regulatory or rule-change storylines (Laws of the
-  Game changes, disciplinary process changes, non-league-specific rule news) — this is
-  a separate check from club/league news and is often where the most genuinely useful
-  insider-level content comes from. Don't assume a headline rule change (e.g. VAR
-  expansion) actually reaches Step 2 — check which competitions/steps it actually
-  applies to before including it.
+## 3. Research — supplementary, focus team only
+Confirm and extend what the data file shows. Do not research, and do not fold in,
+anything about Bedford Town's own squad, shape, or personnel — Steve has been
+explicit that matching the opposition's weaknesses to Bedford's own players and
+tactics is the coaching staff's job, not this show's. Stay on the opposition's side of
+the ball throughout. Tag every claim CONFIRMED (a source page actually read) or
+SEARCH-ONLY, same convention as the rest of this repo. Roughly in priority order:
+- The fixture itself: confirm date, venue, and competition from Football Web Pages or
+  the focus team's own site — don't assume the data file's most recent match is close
+  to today's date.
+- Current league position and form, from Football Web Pages or NonLeagueHQ (the same
+  stats backbone this repo already uses) — gives the data file's form run context: a
+  hot streak, a slump, settled mid-table, whatever it actually is.
+- Management and squad context: who manages the focus team, how long, any recent
+  managerial change. This explains shifts the data file alone can't — a new manager
+  mid-season is a plausible reason underlying numbers and actual results diverge. The
+  focus team's own site/news page plus a general web search for recent, dated
+  coverage are the right tools here.
+- Team news close to the actual fixture — injuries, suspensions, likely absentees.
+  Often genuinely unavailable when an episode is built well ahead of kickoff; say so
+  plainly rather than leave a silent gap. Built closer to kickoff, the focus team's
+  own X account and site are the first place to check — same sourcing tier the old
+  Morning Brief used for its day-before scan.
+- Wider storylines only if they bear directly on the focus team (a managerial change,
+  a financial story, a genuine injury crisis) — this show does not need a wider
+  National League North round-up; stay on the one team.
 
-Named sources, in tiers (revised 2026-09-18 — see Process log):
-- **First-party / CONFIRMED-grade**: Bedford Town's X account and Pitchero site (news +
-  match reports); each opponent's own X account and club site; TheFA.com; the National
-  League's own site; the Southern League's own site.
-- **Stats backbone**: Football Web Pages (`footballwebpages.co.uk` — fixtures, results,
-  tables, form, attendances, goalscorers for every step; confirmed current within the
-  week) and NonLeagueHQ (`nonleaguehq.com` — Steps 1–7 tables, goalscorers, FA
-  competitions). FotMob and Sofascore for per-match lineups, subs and cards.
-- **Storylines / SEARCH-ONLY until read**: NewsNow's Bedford Town and National League
-  North filters; The Non-League Football Paper (paywalled — a signal, not a CONFIRMED
-  source, unless the article is actually accessible); BBC Sport's non-league coverage;
-  Bedford Independent and The Bedford Citizen for off-field/community stories.
-
-Checked and rejected 2026-09-18, don't re-add: Non League Matters (content stops
-around 2018), The Non-League Network (a coaching-jobs and training marketplace, not a
-news or stats site), botw.org.uk's non-league page (a generic link directory).
+Named sources, reused from this repo's existing Bedford Town coverage tiers:
+- **First-party / CONFIRMED-grade**: the focus team's own X account and club site;
+  TheFA.com; the National League's own site; the Southern League's own site.
+- **Stats backbone**: Football Web Pages (`footballwebpages.co.uk` — fixtures,
+  results, tables, form, for every step) and NonLeagueHQ (`nonleaguehq.com`). FotMob
+  and Sofascore for per-match lineups, subs and cards.
+- **Storylines / SEARCH-ONLY until read**: NewsNow's club-specific filter if one
+  exists; The Non-League Football Paper (paywalled — a signal, not a CONFIRMED source,
+  unless the article is actually accessible); BBC Sport's non-league coverage.
+Checked and rejected, carried over unchanged: Non League Matters, The Non-League
+Network, botw.org.uk.
 
 A specific scoreline, scorer, or table position needs a per-game primary-source check,
-not just a table widget's season summary (added 2026-09-11 — Ep 1's first research
-pass had Bedford Town's win over Buxton as 2-1 off an aggregator; the club's own
-Pitchero match report said 3-0). When an aggregate figure and an individual match
-report disagree, trust the individual report and re-derive the aggregate yourself from
-confirmed individual results rather than repeat the aggregator's number.
+not just a table widget's season summary — same rule as the rest of this repo. When an
+aggregate figure and an individual match report disagree, trust the individual report.
 
-## 3. Script
-Write the script following STYLE.md's Bedford Town section exactly, including its
-vocabulary-variety and structure-order-but-vary-the-wording rules — see the Daily Build
-section above (step 3) for why this matters; the same discipline applies here.
+## 4. Script
+Write the script following STYLE.md's JT Debrief section exactly. There is no fixed
+word-count target for this show — let the material set the length. A thorough data
+file plus solid supplementary research will likely run shorter than the old
+20-minute Morning Brief target, because this show has one job instead of several; say
+so plainly in the episode rather than padding toward a number that was never this
+show's target in the first place. Blank line between paragraphs — each blank line
+becomes a spoken pause.
 
-Target roughly 3,300 to 4,200 words for ~20 minutes at Kokoro bm_daniel, speed 1.05 —
-actual pace depends on paragraph length and pause frequency and is still being
-calibrated for this show specifically, separately from Daily Build's own figure above.
-Ep 1 measured **211 words per minute** (1,576 words rendered in 448 seconds — check
-`bedford/episodes/episodes.json` for the exact numbers on any past episode), noticeably
-faster than Daily Build's ~165 wpm. Treat 211 wpm as provisional after a single data
-point, not settled: after each of the next few episodes, compare the pending script's
-word count against the published episode's `seconds` and tighten this figure with real
-data rather than trust either number blindly. Blank line between paragraphs — each
-blank line becomes a spoken pause, and pause frequency is likely a big part of why this
-show's pace differs from Daily Build's.
+Always close with a genuine, correctly attributed, real quote if the research turned
+up one that actually fits and hasn't been used before (check the archive) — never an
+invented one, and never one forced in just to fill the slot; a plain sign-off is fine
+if nothing fits.
 
-If confirmed news is genuinely thin on a given day, let the episode run shorter than
-target rather than pad it with filler (added 2026-09-11, after Ep 1 ran about 1,600
-words / seven and a half minutes on a quiet news day) — a short, dense episode serves
-James better than a padded one, and inventing content to hit a word count breaks the
-hard content rules below. Say plainly in the recap that it was a quieter day rather
-than disguise the shorter length.
-
-Always close with a genuine, correctly attributed, real quote from an athlete (not
-necessarily a footballer) — never one already used (check the archive). No invented
-quotes, ever.
-
-## 4. Queue it
+## 5. Queue it
 Commit with `github_put_file`:
 - `bedford/pending/epNNN.txt` — the script
 - `bedford/pending/epNNN.json` — `{"num": NNN, "date": "YYYY-MM-DD", "title": "...",
   "description": "two-sentence summary"}`
 
-Update `bedford/archive/covered.md` in the same pass: append the episode's entry (see
-that file's own header for the format), including which athlete quote was used.
+Update `bedford/archive/covered.md` in the same pass: append the episode's entry —
+focus team, the data window it drew on, the key findings covered, and the closing
+quote if one was used (see that file's own header for the exact format).
 
-## 5. Build
-Dispatch `build-bedford-episode.yml` on `master` (a push touching `bedford/pending/**`
-usually starts it on its own — dispatch is the fallback). Same duplicate-date guard,
-same ASR content spot-check, same Git Data API publish pattern as Daily Build's
-workflow — see steps 5 and the Architecture section above for what these do and why;
-not repeated here since the mechanics are identical, just namespaced under `bedford/`.
+## 6. Build
+Dispatch `build-bedford-episode.yml` on `master` (a push touching
+`bedford/pending/**` usually starts it on its own — dispatch is the fallback). Same
+duplicate-date guard, ASR content spot-check, and Git Data API publish pattern as
+before — see the Architecture section above for what these do and why; mechanics are
+unchanged from the old Morning Brief workflow, just namespaced the same way under
+`bedford/`.
 
-## 6. Verify
-Same GitHub-API-first approach as Daily Build (see step 6 above — this sandbox has no
-general network egress and WebFetch is unreliable against this feed's binary/XML
-responses):
+## 7. Verify
+Same GitHub-API-first approach as the rest of this repo (this sandbox has no general
+network egress and WebFetch is unreliable against this feed's binary/XML responses):
 - `github_get` the latest `/deployments?environment=github-pages&per_page=1` entry and
   its `/statuses` — confirm `state` is `success` and the `sha` matches the publish
   commit.
@@ -577,61 +577,71 @@ responses):
 - `github_get_file` on `bedford/archive/covered.md` (ref `master`) — confirm today's
   episode has a section.
 
-## 7. Notify
-Send James (via Steve, until James has his own channel set up) a short message: the
-episode title, a one-line summary, and confirmation it's live. State plainly if
-anything failed.
+## 8. Notify
+Send Steve a short message: the episode title, a one-line summary, and confirmation
+it's live. State plainly if anything failed.
 
-No Notion logging for this show — Steve hasn't asked for it and the Daily Build Notion
-databases are specific to that show. Revisit only if Steve asks.
+No Notion logging for this show, same as before — revisit only if Steve asks.
 
 ## Process log
-- 2026-09-11: Show launched. First episode built the same day as the pipeline itself,
-  previewing Bedford Town's next away fixture.
+- 2026-10-03: Renamed from "JT Morning Brief" to "JT Debrief" and restructured from a
+  daily team-news show into an event-triggered opposition-analytics show, at Steve's
+  explicit direction. He supplied a Wyscout "Team Report" PDF on Chester FC (Bedford
+  Town's National League North opponent, away, Saturday the tenth of October 2026) as
+  the first focus-team data file, for Ep 2. Three explicit directions shaped this
+  rewrite, given in his own words: (1) "not a daily routine only triggers when I
+  upload" data — the show's scheduled task is disabled, not deleted (see the Trigger
+  section above for why it couldn't be deleted outright); (2) "do extra research on
+  team that we have focus on" — step 3 above is new, reusing this repo's existing
+  sourcing tiers but pointed only at the opposition; (3) "dont worry about what
+  Bedford can do - that the coaching staffs job" — explicitly out of scope. An earlier
+  draft of this plan had recommended Bedford Town get its own Wyscout report too, to
+  pair the opposition's weaknesses against Bedford's own strengths; Steve corrected
+  that directly and it was dropped. The show's value, per Steve, is "break down these
+  analytics in a clear and understandable fashion" — translation, not prescription.
+- 2026-10-03: The League tiers section and named-source tiers above are carried over
+  from the old Morning Brief runbook essentially unchanged, since this show still
+  needs Bedford Town's league context and still uses the same stats backbone, just
+  pointed at a single focus team instead of the whole division. The old show's
+  day-to-day steps (team news, the day-before scan, the wider NLN picture) do not
+  carry over — this show does not do that job — but the scoreline-verification
+  discipline and the rejected-sources list do, since both are still true regardless of
+  what the show covers.
+- 2026-09-11: Show launched as "The Bedford Town Briefing", then renamed "JT Morning
+  Brief" the same day at Steve's request — see the rename sweep this entry originally
+  documented: this file's section header, STYLE.md's section header,
+  `tools/generate_bedford_feed.py` (RSS `<title>` and `<itunes:author>`),
+  `tools/make_bedford_cover.py` (cover art text), `build-bedford-episode.yml`'s MP3
+  artist/album ID3 tags, and the scheduled task's own prompt text. The RSS guid prefix
+  (`bedford-briefing-ep...`) was deliberately left unchanged then, and is unchanged
+  again by the 2026-10-03 rename — it is a permanent per-episode identifier, not a
+  display name. A full-repo grep for the old name caught two tool docstrings the
+  original sweep missed (`tools/add_bedford_episode.py`, `tools/api_publish_bedford.py`)
+  — worth repeating that grep after the 2026-10-03 rename rather than trusting the
+  "files that matter" list alone twice in a row.
 - 2026-09-11: Ep 1's research caught and fixed a wrong scoreline from a first-pass
-  aggregator source (see the new rule in step 2) — the fix is a process rule now, not
-  a one-off correction.
-- 2026-09-11: Ep 1 measured 211 wpm against a script written for an assumed ~165 wpm
-  (copied from Daily Build's figure without checking it applied here), so the episode
-  ran to 448 seconds against a ~20-minute target — short partly from thin news, partly
-  from this miscalibration. Step 3 now carries this show's own provisional wpm figure
-  instead of borrowing Daily Build's.
-- 2026-09-11: Renamed the show from "The Bedford Town Briefing" to "JT Morning Brief"
-  at Steve's request, same day as launch. Updated: this file's section header,
-  STYLE.md's section header, `tools/generate_bedford_feed.py` (RSS `<title>` and
-  `<itunes:author>` — the `bedford-briefing-ep...` guid prefix was deliberately left
-  unchanged, it's a permanent per-episode ID not a display name), `tools/
-  make_bedford_cover.py` (cover art text), `build-bedford-episode.yml`'s MP3
-  artist/album ID3 tags, and the daily scheduled task's own prompt text (it hardcoded
-  the old name). `bedford/feed.xml` and `bedford/cover.png` were regenerated and
-  pushed directly rather than waiting for tomorrow's scheduled run, since the workflow
-  only rebuilds `cover.png` when the file is missing. Ep 1's actual rendered audio
-  still says "This is the Bedford Town Briefing" in its cold open — not re-rendered,
-  since re-running TTS for one already-published, zero-listens-so-far episode over a
-  single spoken line wasn't judged worth the round-trip; flagged to Steve rather than
-  decided silently.
-- 2026-09-11: Steve caught a gap in the same-day rename: `bedford/archive/covered.md`'s
-  header still read "The Bedford Town Briefing" and two tool docstrings
-  (`tools/add_bedford_episode.py`, `tools/api_publish_bedford.py`) still named the old
-  show in a comment. All three fixed and pushed. The original rename sweep covered the
-  feed, cover art, ID3 tags, STYLE.md/RUNBOOK.md headers, and the scheduled task, but
-  missed files that don't drive the feed directly -- worth a full-repo grep for the old
-  name rather than relying on the list of "files that matter" next time.
-- 2026-09-18: Sourcing upgrade at Steve's request ("much better detail... a rundown of
-  what is happening in the leagues"). Step 2 rewritten: the club's own X account
-  (`x.com/BedfordTown`) is now a named first-tier source because it posts the pre-match
-  team-news graphic and post-match manager video — the selection/injury/quote layer the
-  first episodes lacked; Pitchero's match-reports archive replaces the fixture list as
-  the thing to actually read; Football Web Pages + NonLeagueHQ added as the stats
-  backbone for the full round of results in all three tiers; FotMob/Sofascore for
-  lineups and subs; NewsNow's club filter for a quick scan. Same pattern applies to
-  the next opponent. Three candidate sources Steve had been given were checked and
-  rejected (listed in step 2) so no future run re-adds them. The scheduled task's
-  prompt was updated the same day to point at this section's new named sources. Kept
-  deliberately clear of Wyscout-style analytics (xG, PPDA) — paid, and the wrong kind
-  of detail for a spoken briefing.
+  aggregator source — the fix is a process rule now (see step 2's cross-check
+  requirement above), not a one-off correction.
+- 2026-09-11: Ep 1 measured 211 words per minute against a script written for an
+  assumed ~165 wpm (copied from Daily Build's own figure without checking it applied
+  here), so the episode ran short against its then-20-minute target — partly thin
+  news, partly this miscalibration. Moot now that this show has no fixed word-count
+  target, but the underlying wpm figure (Kokoro bm_daniel, speed 1.05) may still be
+  useful if word-per-minute pacing ever needs estimating again.
+- 2026-09-18: Sourcing upgrade at Steve's request, while this was still "JT Morning
+  Brief": the club's own X account became a named first-tier source, Pitchero's
+  match-reports archive replaced the fixture list, Football Web Pages and NonLeagueHQ
+  were added as the stats backbone, FotMob/Sofascore for lineups, NewsNow for a quick
+  scan. Three candidate sources were checked and rejected (listed in step 3 above) so
+  no future run re-adds them. That sourcing upgrade is what step 3 above still draws
+  on, now re-pointed at a single focus team. Kept deliberately clear of Wyscout-style
+  analytics then (xG, PPDA) as "the wrong kind of detail for a spoken briefing" — note
+  that this show now does the opposite on purpose: Wyscout-style analytics are the
+  entire point of JT Debrief. That is an intentional difference between what this show
+  now is and what the old Morning Brief was, not an oversight to fix.
 
 ## Cost discipline
-Runs on a budget model by design. Three research subagents maximum plus at most one
-verification pass. Keep subagent prompts tight. Never spend Higgsfield credits on the
-daily episode.
+Runs on a budget model by design, same as the rest of this repo. One research pass is
+usually enough given step 3's narrower scope — go wider only if the data file is thin
+or supplementary research turns up little on the first pass. Never spend Higgsfield
+credits on this show.

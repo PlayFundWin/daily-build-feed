@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Regenerate bedford/feed.xml from bedford/episodes/episodes.json. Run from repo root.
 
-Mirrors tools/generate_feed.py, namespaced under bedford/ for JT Morning Brief -- a
-separate show in this same repo (the Bedford Town FC briefing for James), rather than
-Steve. See RUNBOOK.md's Bedford Town section. Renamed from "The Bedford Town Briefing"
-2026-09-11; the RSS guid prefix ("bedford-briefing-ep...") is intentionally left
-unchanged since it's a permanent per-episode identifier, not a display name.
+Mirrors tools/generate_feed.py, namespaced under bedford/ for JT Debrief -- a
+separate show in this same repo (an opposition-analytics breakdown for James,
+Bedford Town's assistant manager), rather than Steve. See RUNBOOK.md's JT Debrief
+section. Renamed from "The Bedford Town Briefing" to "JT Morning Brief" 2026-09-11,
+then to "JT Debrief" 2026-10-03; the RSS guid prefix ("bedford-briefing-ep...") is
+intentionally left unchanged across both renames since it's a permanent per-episode
+identifier, not a display name.
 """
 import json, email.utils, datetime, html
 
@@ -34,12 +36,12 @@ for e in eps:
 feed = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JT Morning Brief</title>
+    <title>JT Debrief</title>
     <link>{BASE}</link>
     <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-gb</language>
-    <description>A daily insider briefing on Bedford Town FC and the National League North -- team news, the wider divisional picture, and what's moving in the tiers above and below. Built for the people who run the club.</description>
-    <itunes:author>JT Morning Brief</itunes:author>
+    <description>A plain-language breakdown of Bedford Town FC's next opponent, built from scouting data Steve uploads plus supplementary research -- for the coaching staff, triggered on demand rather than on a schedule.</description>
+    <itunes:author>JT Debrief</itunes:author>
     <itunes:owner>
       <itunes:name>PlayFundWin</itunes:name>
       <itunes:email>steve@playfundwin.com</itunes:email>

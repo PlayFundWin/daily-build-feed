@@ -83,73 +83,100 @@ template being filled in rather than a person talking.
   no markdown in the script file. Paragraph breaks = natural pauses.
 - Websites spoken naturally ("Gov Auctions dot app").
 
-# JT Morning Brief — style guide
+# JT Debrief — style guide
 
-Listener: James, assistant manager at Bedford Town FC. A football insider — he already
-knows the club, the ground, the staff, and the basics of the non-league pyramid. Never
-explain any of that. This show's job is to make him sharper on the wider
-National-League-North/non-league ecosystem than he'd get from the club's own channels,
-at the level a knowledgeable analyst would brief a manager, not the level of an
-explainer aimed at a casual fan.
+Listener: James, assistant manager at Bedford Town FC. A football insider who already
+knows the club, the ground, the staff, and the non-league pyramid — never explain any
+of that. This show is different in kind from a news or results show: it takes a data
+export on Bedford Town's upcoming opponent (a Wyscout/Hudl-style team report so far,
+or similar) plus this show's own supplementary research on that opponent, and turns
+the two into a clear, spoken breakdown of what that team actually does. Renamed and
+restructured from "JT Morning Brief" 2026-10-03, at Steve's direction — see
+RUNBOOK.md's Process log for the full reasoning. What Bedford Town should do about any
+of it is explicitly the coaching staff's call, not this show's — stay on the
+opposition's side of the ball throughout and never cross into Bedford-specific tactics
+or personnel.
 
 ## Voice and tone
-- Efficient, insider, information-dense. Think a trusted analyst or a well-sourced
-  non-league journalist briefing the coaching staff, not a broadcaster performing for a
-  general audience.
+- An analyst talking a coach through a report, not a broadcaster performing for an
+  audience and not a data scientist reading out a spreadsheet. Translate every
+  advanced metric into what it actually means, at or before the point it's used —
+  never assume analytics fluency just because James is a football insider; those are
+  two different kinds of fluency, and closing that gap is this show's whole job.
 - Second person, direct address ("you"), first person singular for the narrator ("I").
-- Short sentences, no padding. Respect that James's time is limited — every sentence
-  should earn its place.
-- Confidence flags spoken naturally, varied episode to episode (see RUNBOOK.md step 2
-  for the CONFIRMED/SEARCH-ONLY distinction this show runs on) — e.g. "I read this one
-  directly off their site," "this is doing the rounds but I haven't seen it confirmed
-  first-hand," "two separate sources have this the same way." Illustrations of the
-  pattern, not lines to reuse verbatim.
+- Short, direct sentences, no padding. This is a working document someone listens to
+  once or twice before a team talk, not a broadcast for a general audience.
+- Confidence flags spoken naturally, varied episode to episode (see RUNBOOK.md's JT
+  Debrief section for the CONFIRMED/SEARCH-ONLY distinction this show runs on) — e.g.
+  "I read this one directly off their site," "this is doing the rounds but I haven't
+  seen it confirmed first-hand," "two separate sources have this the same way."
+  Illustrations of the pattern, not lines to reuse verbatim. This show needs a second,
+  data-specific flag alongside those: say plainly when a pattern rests on a small
+  sample ("that's across five games, so treat it as a lean, not a law") rather than
+  letting a handful of matches read as settled fact.
 - Never say "great question", "absolutely", "let's dive in", "game-changer".
 - Vocabulary variety: don't lean on the same connective tissue every episode — scan
   before finishing a script for anything repeated more than two or three times and
   swap it out (same discipline as the Daily Build section above).
 
-## Structure (roughly 3,300-4,200 words ≈ 20 min at Kokoro bm_daniel 1.05, actual pace
-still being calibrated for this show — see RUNBOOK.md step 3)
-1. Cold open: today's headline in a sentence or two, then date. (~120 words)
-2. Bedford Town team news: latest result, form, league position, next fixture, any
-   injury/squad news. (~700 words)
-3. The wider National League North picture — the day-before scan: who played, notable
-   results, and specifically the next opponent's result and any injury news pulled
-   from their own site. (~750 words)
-4. The National League (Step 1, above): what's moving that's actually relevant. (~500
-   words)
-5. Southern League Premier Division Central (Step 3, below): same. (~450 words)
-6. One practical, usable note — a genuine FA/regulatory storyline or something from the
-   wider scan James can actually use (e.g. an opponent's injury news feeding into
-   preparation). (~350 words)
-7. Sixty-second recap. (~200 words)
-8. Close with a genuine, attributed, never-reused athlete quote. (~80-150 words)
+## Structure (length follows the material — see RUNBOOK.md's JT Debrief section step
+4; there is no fixed word-count target for this show)
+1. Cold open: who the episode is about, the fixture it's building toward, and the data
+   window it's drawn from — e.g. "their last five league games". (~100 words)
+2. The form picture: the result-by-result record, but led by the underlying numbers
+   (expected goals for and against, possession, pass accuracy) where those tell a
+   different story than the bare record — say plainly when they diverge.
+3. The primary attacking threat: the individual player or players actually producing
+   chances and goals, what service they thrive on, explained in plain terms.
+4. Build-up and pressing: how they progress the ball and through whom, and how hard
+   they press in return — described as what the data shows, not prescriptively.
+5. Where it breaks down: duels lost by player and zone, and what that directly
+   produces — shots and goals against. Framed as "here's what the numbers say", never
+   "here's how we'd exploit it."
+6. Set pieces and discipline: delivery patterns, takers, conversion so far this
+   window; fouls or cards only if there's an actual pattern in the data or research.
+7. Supplementary research: confirmed context around the data — current form and table
+   position, management and squad news, anything that explains or dates what the
+   numbers show.
+8. Close: an honest one-line summary of what this episode does and doesn't tell the
+   coaching staff, handed over for them to take from here. A genuine, attributed quote
+   if the research turned up one that fits and hasn't been used before (check the
+   archive); otherwise a plain sign-off rather than a forced one.
 
-Keep this order and rough word allocation, but vary the actual phrasing used to move
-between sections and to sign off — same reasoning as the Daily Build section above:
-fixed structure helps a daily listener know where they are, fixed wording makes it
-sound templated.
+Vary the actual phrasing used to move between sections and to sign off episode to
+episode — same reasoning as the Daily Build section above: fixed structure helps a
+listener know where they are, fixed wording makes it sound templated.
 
 ## Hard content rules
-- Every claim dated 2026 with a source actually read this episode. Nothing from
-  training data dressed up as current. Discard rumours you can't source.
-- Never invent a scoreline, a table position, a transfer fee, an injury, or a quote.
-  If it isn't confirmable, say so plainly or leave it out.
-- Check `bedford/archive/covered.md` before writing: never re-cover a story or reuse a
-  closing quote. Follow-ups are fine and should reference the earlier episode.
-- No URLs read aloud. Attribute sources by name — the club, the league, TheFA.com, BBC
-  Sport, etc.
-- Reconfirm league placement (Bedford Town's tier, and the tiers above/below) at the
-  start of each new season rather than assuming last season's structure still holds
-  (see RUNBOOK.md's League tiers section).
-- If confirmed news is genuinely thin, let the episode run short rather than pad it —
-  see RUNBOOK.md step 3.
+- Every number comes from the uploaded data file or a source actually read this
+  episode. Never invent a stat, a result, a table position, or a quote — if the data
+  file doesn't show it and research can't confirm it, say so plainly or leave it out.
+- Name the data source and its window once, early on ("from a Wyscout team report
+  covering their last five league games") — James should know exactly how much
+  football this episode is built on.
+- Explain, don't just cite: the first time a metric appears — expected goals, PPDA,
+  a progressive pass, a final-third duel, whatever the data file's own vocabulary is
+  — say in half a sentence what it measures before using it again unexplained.
+- Flag sample size honestly. A pattern from five games is a lean, not a law — say so
+  the way you'd want it said to you, rather than dressing it up as settled.
+- Stay on the opposition's side of the ball. This show describes what the data and
+  research show about the focus team — their threats, patterns, and frailties — never
+  what Bedford Town should do in response. That translation belongs to the coaching
+  staff, not this show.
+- Check `bedford/archive/covered.md` before writing: don't recycle framing or a
+  closing line used for an earlier opponent. If this is the same opponent's second
+  meeting of the season, reference the earlier episode rather than starting fresh.
+- No URLs read aloud. Attribute sources by name — the club, the league, TheFA.com,
+  Football Web Pages, etc.
+- If the data file is thin, or supplementary research turns up little, say so plainly
+  and let the episode run short — never pad to hit a word count, especially since this
+  show doesn't have one.
 
 ## TTS-safe writing (Kokoro reads this aloud verbatim)
-- Numbers as words where natural, "per cent" not "%", "nil" for 0 in a scoreline
-  ("two-nil"), dates spoken ("Saturday the twelfth of September").
-- No parentheses, no bullet symbols, no markdown in the script file. Paragraph breaks =
+- Numbers as words where natural, "per cent" not "%". Spell out stat jargon in full on
+  first use ("expected goals, x-G for short") before using the short form.
+- No parentheses, no bullet symbols, no markdown, and no table formatting in the
+  script file — translate every table into spoken sentences. Paragraph breaks =
   natural pauses.
-- Websites/handles spoken naturally if mentioned at all (rare — prefer naming the club
-  or organisation instead).
+- Websites/handles spoken naturally if mentioned at all (rare — prefer naming the
+  club or organisation instead).

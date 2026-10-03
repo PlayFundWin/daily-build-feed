@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JT Morning Brief</title>
+    <title>JT Debrief</title>
     <link>https://playfundwin.github.io/daily-build-feed/bedford</link>
     <atom:link href="https://playfundwin.github.io/daily-build-feed/bedford/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-gb</language>
-    <description>A daily insider briefing on Bedford Town FC and the National League North -- team news, the wider divisional picture, and what's moving in the tiers above and below. Built for the people who run the club.</description>
-    <itunes:author>JT Morning Brief</itunes:author>
+    <description>A plain-language breakdown of Bedford Town FC's next opponent, built from scouting data Steve uploads plus supplementary research -- for the coaching staff, triggered on demand rather than on a schedule.</description>
+    <itunes:author>JT Debrief</itunes:author>
     <itunes:owner>
       <itunes:name>PlayFundWin</itunes:name>
       <itunes:email>steve@playfundwin.com</itunes:email>
@@ -14,6 +14,15 @@
     <itunes:image href="https://playfundwin.github.io/daily-build-feed/bedford/cover.png"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Sports"/>
+    <item>
+      <title>Ep 2 — Chester FC, away at Swansway Stadium</title>
+      <description>A Wyscout breakdown of Chester FC&#x27;s last five league games ahead of Bedford Town&#x27;s trip there on the tenth of October: a big gap between their underlying numbers and their results, Ben Waters as the clear attacking focus, and a repeated frailty down their right-back channel. Plus confirmed table position, fixture detail, and management context.</description>
+      <enclosure url="https://playfundwin.github.io/daily-build-feed/bedford/episodes/ep002.mp3" length="4676425" type="audio/mpeg"/>
+      <guid isPermaLink="false">bedford-briefing-ep002</guid>
+      <pubDate>Sat, 03 Oct 2026 05:30:00 +0000</pubDate>
+      <itunes:duration>6:30</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+    </item>
     <item>
       <title>Ep 1 — Away at Spalding United</title>
       <description>Bedford Town go to Spalding on the back of three straight wins, with a fresh Law change on delayed restarts now in effect and Real Bedford setting the pace two divisions down. Team news, the wider National League North picture, and what&#x27;s moving at Step One and Step Three.</description>

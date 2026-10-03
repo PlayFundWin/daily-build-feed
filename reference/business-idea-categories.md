@@ -67,6 +67,7 @@ sign to trim old entries' detail, not to skip adding new ones.
 - Ep52 — CheckForm Gymnastics (AI video technique scoring: film one movement, vision model scores it against a rubric, returns deductions + drills; niched as adults-first "Clip and Score" for LeaguePages clubs)
 - Ep53 — Event photo sharing (QR code to no-app guest upload, shared gallery + live slideshow + download-all, one-off per-event fee; TrustMRR "Denis" DE, probably Photo-Space, and SnapTheKnot (Eric Maclean); niched as adults-first "Clubhouse Photo Wall" for presentation/draw nights with AI moderation and sponsor logo)
 - Ep54 — Hybrid mail / print-and-post (type a letter online, service prints, folds, franks and posts it via Royal Mail, pay per letter; Send Letters Online UK, "Ioannis"; niched as "ClubPost" — AI-drafted, secretary-approved sponsor/thank-you/renewal/winner letters with crest + QR to the club's draw, fulfilled via a print-and-post API)
+- Ep55 — colorize.cc (AI old-photo colourisation + restoration, upload B&W photo, free preview then pay-per-credit packs; Alexander Kozhevin / "Alex Polymath"; niched as "Club Heritage Wall" — club's own kit colours fed to the model, human check, per-club gallery + framed print-on-demand prints as a fundraiser/draw prize)
 
 Frequently-used runner-up names worth remembering too, so they don't get treated as
 fresh picks if they resurface: SFX Engine (AI sound effects, Kuba Rogut), Shift
@@ -117,4 +118,8 @@ football play design to auto playbook quizzes, Aaron Butler, UK — strong Strip
 MRR but near Ep47 coach planner), santaswhisper (personalised Santa videos, Kyle Greig,
 UK — seasonal), QuizWhizzer (live game quizzes for teachers, Tim Bartrum, UK — near Ep20
 quiz) — all three appeared as Ep54 runner-ups. Same-mechanic counter-examples for Ep54:
-PrintPigeon Ltd and Postage.TO (UK hybrid mail, both stalled).
+PrintPigeon Ltd and Postage.TO (UK hybrid mail, both stalled). Also now recurring:
+GeoSports (daily sports geography map game, "Frank" — Starter Story ~$40k/mo self-reported,
+mostly ads, near Ep20 quiz), Readbetter (newsletters to Kindle, Robert Bouschery, DE —
+TrustMRR stale, key expired), Knoott (wedding gift registry fee model, José Campillo, MX —
+TrustMRR likely gross gift volume) — all three appeared as Ep55 runner-ups.
